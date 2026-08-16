@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Report Issue - Cabin Care</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#314b4e",
+                    "inverse-surface": "#2e3132",
+                    "outline-variant": "#c3c7ca",
+                    "background": "#f8f9fa",
+                    "secondary-container": "#cbe8eb",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#cde5ff",
+                    "tertiary": "#002842",
+                    "surface": "#f8f9fa",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#f8f9fa",
+                    "outline": "#73787b",
+                    "on-surface-variant": "#43474a",
+                    "secondary-fixed": "#cbe8eb",
+                    "surface-container-low": "#f3f4f5",
+                    "secondary-fixed-dim": "#b0cccf",
+                    "on-tertiary-fixed": "#001d32",
+                    "on-primary-fixed-variant": "#3a4951",
+                    "tertiary-container": "#003f63",
+                    "inverse-primary": "#b9c9d3",
+                    "on-secondary-container": "#4f696c",
+                    "tertiary-fixed-dim": "#94ccff",
+                    "primary-fixed": "#d5e5ef",
+                    "primary-fixed-dim": "#b9c9d3",
+                    "on-tertiary-fixed-variant": "#004b74",
+                    "primary-container": "#2f3e46",
+                    "secondary": "#496366",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#99a9b2",
+                    "surface-dim": "#d9dadb",
+                    "surface-container": "#edeeef",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#e1e3e4",
+                    "surface-tint": "#516169",
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "inverse-on-surface": "#f0f1f2",
+                    "on-secondary-fixed": "#031f22",
+                    "on-tertiary-container": "#59adef",
+                    "surface-container-high": "#e7e8e9",
+                    "surface-variant": "#e1e3e4",
+                    "on-surface": "#191c1d",
+                    "on-primary-fixed": "#0e1d25",
+                    "on-error": "#ffffff",
+                    "primary": "#192830",
+                    "surface-container-lowest": "#ffffff",
+                    "on-background": "#191c1d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "margin-desktop": "80px",
+                    "margin-mobile": "20px",
+                    "container-max": "1440px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "story-heading": [
+                            "Playfair Display"
+                    ],
+                    "label-caps": [
+                            "Inter"
+                    ],
+                    "headline-lg": [
+                            "Inter"
+                    ],
+                    "headline-xl": [
+                            "Inter"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "headline-lg-mobile": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "story-heading": [
+                            "32px",
+                            {
+                                    "lineHeight": "44px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "48px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-xl": [
+                            "64px",
+                            {
+                                    "lineHeight": "72px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom Utilities for Glassmorphism */
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .input-underline {
+            border: none;
+            border-bottom: 1px solid rgba(115, 120, 123, 0.3); /* outline at 30% */
+            background: transparent;
+            border-radius: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .input-underline:focus {
+            outline: none;
+            box-shadow: none;
+            border-bottom-color: #192830; /* primary */
+        }
+        
+        /* Subtle background gradient to make glass visible */
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e1e3e4 100%);
+            background-attachment: fixed;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen text-on-surface antialiased flex flex-col relative selection:bg-primary-container selection:text-on-primary-container">
+<!-- Decorative background elements for glassmorphism effect -->
+<div class="fixed top-0 left-0 w-full h-64 bg-secondary-container/30 rounded-full blur-[100px] -translate-y-1/2 pointer-events-none z-0"></div>
+<div class="fixed bottom-0 right-0 w-96 h-96 bg-primary-fixed/20 rounded-full blur-[120px] translate-y-1/3 translate-x-1/3 pointer-events-none z-0"></div>
+<!-- Contextual Task Header (Navigation Shell Suppressed per rules) -->
+<header class="sticky top-0 z-50 glass-panel border-b border-outline/10 px-margin-mobile py-4 flex items-center justify-between">
+<button aria-label="Close" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary">close</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">Report Issue</h1>
+<div class="w-10 h-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-margin-mobile py-8 pb-32 relative z-10 flex flex-col gap-10">
+<!-- Step 1: Unit Selection -->
+<section class="flex flex-col gap-4">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">1. Location</h2>
+<div class="glass-panel rounded-xl p-5 shadow-sm">
+<button class="w-full flex items-center justify-between input-underline pb-2 group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">home_work</span>
+<span class="font-body-md text-body-md text-on-surface text-left">Select Cabin or Unit</span>
+</div>
+<span class="material-symbols-outlined text-outline">expand_more</span>
+</button>
+</div>
+</section>
+<!-- Step 2: Category -->
+<section class="flex flex-col gap-4">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">2. Category</h2>
+<div class="grid grid-cols-2 gap-4">
+<!-- Electrical -->
+<button class="glass-panel rounded-xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-primary/5 active:bg-primary/10 transition-all border border-transparent hover:border-primary/20">
+<span class="material-symbols-outlined text-3xl text-secondary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-body-md text-body-md font-medium text-on-surface">Electrical</span>
+</button>
+<!-- Plumbing -->
+<button class="glass-panel rounded-xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-primary/5 active:bg-primary/10 transition-all border border-transparent hover:border-primary/20">
+<span class="material-symbols-outlined text-3xl text-secondary" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+<span class="font-body-md text-body-md font-medium text-on-surface">Plumbing</span>
+</button>
+<!-- HVAC -->
+<button class="glass-panel rounded-xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-primary/5 active:bg-primary/10 transition-all border border-transparent hover:border-primary/20">
+<span class="material-symbols-outlined text-3xl text-secondary" style="font-variation-settings: 'FILL' 1;">ac_unit</span>
+<span class="font-body-md text-body-md font-medium text-on-surface">HVAC</span>
+</button>
+<!-- Other -->
+<button class="glass-panel rounded-xl p-6 flex flex-col items-center justify-center gap-3 hover:bg-primary/5 active:bg-primary/10 transition-all border border-transparent hover:border-primary/20">
+<span class="material-symbols-outlined text-3xl text-secondary" style="font-variation-settings: 'FILL' 1;">build</span>
+<span class="font-body-md text-body-md font-medium text-on-surface">Other</span>
+</button>
+</div>
+</section>
+<!-- Step 3: Photo Upload -->
+<section class="flex flex-col gap-4">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">3. Issue Evidence</h2>
+<button class="w-full h-40 glass-panel !bg-surface/40 border-2 border-dashed !border-outline/30 rounded-xl flex flex-col items-center justify-center gap-2 hover:!bg-surface-container/50 transition-colors">
+<span class="material-symbols-outlined text-4xl text-outline mb-1">add_a_photo</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Tap to capture photo</span>
+</button>
+</section>
+<!-- Step 4: Description -->
+<section class="flex flex-col gap-4">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">4. Description</h2>
+<div class="glass-panel rounded-xl p-5 shadow-sm">
+<textarea class="w-full input-underline font-body-md text-body-md text-on-surface resize-none focus:ring-0 placeholder:text-outline-variant" placeholder="Provide details about the issue observed..." rows="3"></textarea>
+</div>
+</section>
+<!-- Step 5: Priority -->
+<section class="flex flex-col gap-4">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">5. Priority Level</h2>
+<div class="flex gap-4">
+<button class="flex-1 glass-panel rounded-xl py-4 font-body-md text-body-md text-on-surface text-center hover:bg-surface-container transition-colors ring-2 ring-primary ring-inset font-medium">
+                    Routine
+                </button>
+<button class="flex-1 bg-error-container text-on-error-container border border-error-container rounded-xl py-4 font-body-md text-body-md text-center hover:opacity-90 transition-opacity">
+                    Urgent
+                </button>
+</div>
+</section>
+</main>
+<!-- Step 6: Submit Action (Fixed Bottom) -->
+<div class="fixed bottom-0 left-0 w-full p-margin-mobile glass-panel !bg-surface/90 border-t border-outline/10 z-50 shadow-[0_-4px_40px_rgba(49,75,78,0.05)]">
+<button class="w-full bg-primary text-on-primary font-label-caps text-label-caps tracking-widest py-4 rounded-lg flex items-center justify-center gap-2 hover:opacity-90 transition-opacity active:scale-[0.98]">
+<span>SUBMIT REPORT</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+</body></html>

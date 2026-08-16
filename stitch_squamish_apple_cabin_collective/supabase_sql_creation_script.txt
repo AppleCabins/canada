@@ -1,0 +1,129 @@
+-- SQL Script for Apple Cabins Canada Ltd.
+-- Target: Supabase (PostgreSQL)
+
+-- 1. Create Custom Enums
+CREATE TYPE user_role AS ENUM ('admin', 'partner', 'customer');
+CREATE TYPE cabin_series AS ENUM ('Cabin', 'Capsule', 'Home');
+CREATE TYPE property_status AS ENUM ('available', 'rented', 'maintenance', 'occupied');
+CREATE TYPE inquiry_type AS ENUM ('purchase', 'partnership');
+CREATE TYPE inquiry_status AS ENUM ('new', 'contacted', 'qualified', 'closed');
+CREATE TYPE payout_status AS ENUM ('initiated', 'processing', 'completed', 'failed');
+
+-- 2. Profiles Table (Extends Supabase Auth)
+CREATE TABLE profiles (
+  id UUID REFERENCES auth.users(id) PRIMARY KEY,
+  email TEXT UNIQUE NOT NULL,
+  full_name TEXT,
+  avatar_url TEXT,
+  role user_role DEFAULT 'customer' NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 3. Cabins Inventory
+CREATE TABLE cabins_inventory (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  model_name TEXT NOT NULL,
+  series cabin_series NOT NULL,
+  sq_ft INTEGER,
+  base_price NUMERIC,
+  csa_certified BOOLEAN DEFAULT TRUE,
+  stock_count INTEGER DEFAULT 0,
+  shipping_eta_days INTEGER,
+  specifications JSONB DEFAULT '{}',
+  image_urls TEXT[] DEFAULT '{}',
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 4. Properties (Units at resort locations)
+CREATE TABLE properties (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  owner_id UUID REFERENCES profiles(id),
+  cabin_model_id UUID REFERENCES cabins_inventory(id),
+  status property_status DEFAULT 'available',
+  location_region TEXT NOT NULL,
+  resort_name TEXT,
+  current_lease_start DATE,
+  current_lease_end DATE,
+  guest_rating NUMERIC(3,2),
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 5. Inquiries (Leads)
+CREATE TABLE inquiries (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID REFERENCES profiles(id),
+  type inquiry_type NOT NULL,
+  first_name TEXT NOT NULL,
+  last_name TEXT NOT NULL,
+  email TEXT NOT NULL,
+  phone TEXT,
+  property_location TEXT,
+  details JSONB DEFAULT '{}',
+  status inquiry_status DEFAULT 'new',
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 6. Payouts (Partner Earnings)
+CREATE TABLE payouts (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  partner_id UUID REFERENCES profiles(id),
+  property_id UUID REFERENCES properties(id),
+  amount NUMERIC NOT NULL,
+  currency TEXT DEFAULT 'CAD',
+  status payout_status DEFAULT 'initiated',
+  transaction_date TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 7. Blog Posts
+CREATE TABLE blog_posts (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  author_id UUID REFERENCES profiles(id),
+  title TEXT NOT NULL,
+  slug TEXT UNIQUE NOT NULL,
+  content TEXT, -- Markdown or HTML
+  featured_image TEXT,
+  seo_metadata JSONB DEFAULT '{}',
+  published_at TIMESTAMPTZ,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 8. Row Level Security (RLS) Enablement
+ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;
+ALTER TABLE cabins_inventory ENABLE ROW LEVEL SECURITY;
+ALTER TABLE properties ENABLE ROW LEVEL SECURITY;
+ALTER TABLE inquiries ENABLE ROW LEVEL SECURITY;
+ALTER TABLE payouts ENABLE ROW LEVEL SECURITY;
+ALTER TABLE blog_posts ENABLE ROW LEVEL SECURITY;
+
+-- 9. RLS Policies
+
+-- Profiles: Users can view/edit their own profile
+CREATE POLICY "Users can view own profile" ON profiles FOR SELECT USING (auth.uid() = id);
+CREATE POLICY "Users can update own profile" ON profiles FOR UPDATE USING (auth.uid() = id);
+
+-- Cabins Inventory: Public read, Admin write
+CREATE POLICY "Public can view inventory" ON cabins_inventory FOR SELECT USING (true);
+
+-- Properties: Partners view their own, Public views available
+CREATE POLICY "Partners can view own properties" ON properties FOR SELECT 
+USING (auth.uid() = owner_id);
+CREATE POLICY "Public can view available properties" ON properties FOR SELECT 
+USING (status = 'available');
+
+-- Inquiries: Users view own, Admin views all
+CREATE POLICY "Users can view own inquiries" ON inquiries FOR SELECT 
+USING (auth.uid() = user_id);
+CREATE POLICY "Users can insert inquiries" ON inquiries FOR INSERT WITH CHECK (true);
+
+-- Payouts: Partners view own only
+CREATE POLICY "Partners can view own payouts" ON payouts FOR SELECT 
+USING (auth.uid() = partner_id);
+
+-- Blog Posts: Public read, Admin write
+CREATE POLICY "Public can read published posts" ON blog_posts FOR SELECT 
+USING (published_at IS NOT NULL);
+
+-- Note: Admin-level write access policies would typically check the 'role' in the profiles table.
+-- Example for Admin on Inventory:
+-- CREATE POLICY "Admins can manage inventory" ON cabins_inventory ALL 
+-- USING (EXISTS (SELECT 1 FROM profiles WHERE id = auth.uid() AND role = 'admin'));

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LUMEN CABINS - Welcome to Ownership</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-primary": "#b9c9d3",
+                      "surface-variant": "#e1e3e4",
+                      "on-primary-fixed": "#0e1d25",
+                      "tertiary-container": "#003f63",
+                      "surface-container-low": "#f3f4f5",
+                      "secondary": "#496366",
+                      "surface-container-high": "#e7e8e9",
+                      "background": "#f8f9fa",
+                      "primary-fixed-dim": "#b9c9d3",
+                      "surface-bright": "#f8f9fa",
+                      "primary-container": "#2f3e46",
+                      "surface-container": "#edeeef",
+                      "on-error": "#ffffff",
+                      "inverse-surface": "#2e3132",
+                      "inverse-on-surface": "#f0f1f2",
+                      "on-secondary-fixed-variant": "#314b4e",
+                      "primary": "#192830",
+                      "tertiary": "#002842",
+                      "surface": "#f8f9fa",
+                      "on-secondary-container": "#4f696c",
+                      "surface-dim": "#d9dadb",
+                      "on-surface": "#191c1d",
+                      "surface-tint": "#516169",
+                      "error": "#ba1a1a",
+                      "surface-container-highest": "#e1e3e4",
+                      "tertiary-fixed-dim": "#94ccff",
+                      "on-primary-fixed-variant": "#3a4951",
+                      "outline": "#73787b",
+                      "secondary-fixed-dim": "#b0cccf",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed": "#cde5ff",
+                      "error-container": "#ffdad6",
+                      "on-primary": "#ffffff",
+                      "on-background": "#191c1d",
+                      "on-primary-container": "#99a9b2",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed": "#d5e5ef",
+                      "on-tertiary-container": "#59adef",
+                      "on-tertiary-fixed-variant": "#004b74",
+                      "on-secondary-fixed": "#031f22",
+                      "secondary-fixed": "#cbe8eb",
+                      "on-surface-variant": "#43474a",
+                      "outline-variant": "#c3c7ca",
+                      "secondary-container": "#cbe8eb",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed": "#001d32"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "margin-mobile": "20px",
+                      "base": "8px",
+                      "container-max": "1440px",
+                      "margin-desktop": "80px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "headline-xl": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "story-heading": [
+                              "Playfair Display"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "story-heading": [
+                              "32px",
+                              {
+                                      "lineHeight": "44px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+            },
+          }
+        }
+      </script>
+<style>
+        .glass-card {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 40px 40px rgba(25, 40, 48, 0.05);
+        }
+        .btn-primary {
+            background-color: #003f63; /* Approximation of 'Electric Blue' using tertiary-container */
+            color: #ffffff;
+            border-radius: 4px;
+        }
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid rgba(115, 120, 123, 0.2); /* outline color at 20% */
+            color: #73787b; /* outline color */
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-lowest text-on-surface antialiased min-h-screen pb-20 md:pb-0">
+<!-- TopNavBar (Web only, hidden on mobile per prompt intent, but included as Shell) -->
+<header class="bg-surface/70 dark:bg-surface-container/70 backdrop-blur-xl font-body-md text-body-md font-medium fixed top-0 w-full z-50 border-b border-outline/10 dark:border-outline-variant/10 shadow-[0_40px_40px_rgba(25,40,48,0.05)] hidden md:block">
+<div class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center h-20">
+<div class="font-headline-lg text-headline-lg font-bold tracking-tight text-primary dark:text-inverse-primary">LUMEN CABINS</div>
+<nav class="flex gap-8">
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 active:scale-95 transition-transform" href="#">Dashboard</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary-fixed transition-colors hover:bg-surface-container-high/50 dark:hover:bg-surface-container-highest/50 transition-all duration-300 px-2 py-1 rounded" href="#">Manuals</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary-fixed transition-colors hover:bg-surface-container-high/50 dark:hover:bg-surface-container-highest/50 transition-all duration-300 px-2 py-1 rounded" href="#">Specs</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary-fixed transition-colors hover:bg-surface-container-high/50 dark:hover:bg-surface-container-highest/50 transition-all duration-300 px-2 py-1 rounded" href="#">Community</a>
+</nav>
+<div class="flex items-center gap-4 text-primary dark:text-primary-fixed">
+<button class="hover:bg-surface-container-high/50 dark:hover:bg-surface-container-highest/50 transition-all duration-300 p-2 rounded-full active:scale-95 transition-transform"><span class="material-symbols-outlined">notifications</span></button>
+<button class="hover:bg-surface-container-high/50 dark:hover:bg-surface-container-highest/50 transition-all duration-300 p-2 rounded-full active:scale-95 transition-transform"><span class="material-symbols-outlined">settings</span></button>
+<img alt="Owner profile" class="w-8 h-8 rounded-full border border-outline/10" data-alt="A small circular profile image of an owner against a minimalist, high-key bright lighting background, portraying a modern industrial elegance aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeoc-DK_GVfNGWPDWPOmV1MjhCghnSoMa9lTD4E_B4oHnLPc3EwlnTKV_LRZPJIDgs5BEYeTSi4Tdu-QR_vnp25vvBG4IIjrEYc3V_qrcmr5dSwYpe3hiDUuhCT1h4Z7TWwToXAJr3moKrUx-PiXspOGldHhxIvUNkn6rUxFKKDMEioO_yzP4w-LMiy7i8zpyVZVUtwnCHGKrL-M_k0hCKFVU7raI1g4RIrtUyQqAQhNsHyK8eGtDj"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="px-margin-mobile pt-8 md:pt-32 pb-8 flex flex-col gap-6 w-full max-w-md mx-auto">
+<!-- Welcome Header -->
+<section class="text-center mb-4">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-2">Welcome Home</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Unit 04-PNW • Mount Rainier</p>
+</section>
+<!-- Primary Actions (Grid) -->
+<section class="grid grid-cols-2 gap-4">
+<!-- Checklist -->
+<button class="glass-card flex flex-col items-center justify-center p-6 rounded-lg active:scale-95 transition-transform hover:bg-surface-container-lowest/80 text-center gap-3">
+<span class="material-symbols-outlined text-tertiary-container" style="font-size: 32px; font-variation-settings: 'FILL' 1;">fact_check</span>
+<span class="font-label-caps text-label-caps text-primary">Arrival Checklist</span>
+</button>
+<!-- Wi-Fi -->
+<button class="glass-card flex flex-col items-center justify-center p-6 rounded-lg active:scale-95 transition-transform hover:bg-surface-container-lowest/80 text-center gap-3">
+<span class="material-symbols-outlined text-tertiary-container" style="font-size: 32px;">wifi</span>
+<span class="font-label-caps text-label-caps text-primary">Wi-Fi Setup</span>
+</button>
+<!-- Quick Start -->
+<button class="glass-card flex flex-col items-center justify-center p-6 rounded-lg active:scale-95 transition-transform hover:bg-surface-container-lowest/80 text-center gap-3">
+<span class="material-symbols-outlined text-tertiary-container" style="font-size: 32px;">bolt</span>
+<span class="font-label-caps text-label-caps text-primary">Quick Start</span>
+</button>
+<!-- Service Request -->
+<button class="glass-card flex flex-col items-center justify-center p-6 rounded-lg active:scale-95 transition-transform hover:bg-surface-container-lowest/80 text-center gap-3">
+<span class="material-symbols-outlined text-tertiary-container" style="font-size: 32px;">handyman</span>
+<span class="font-label-caps text-label-caps text-primary">Service Request</span>
+</button>
+</section>
+<!-- Secondary Information Card -->
+<section class="glass-card rounded-xl p-6 mt-4 flex flex-col gap-4">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant border-b border-outline/10 pb-2">Cabin Status</h2>
+<div class="flex justify-between items-center border-b border-outline/10 pb-2">
+<span class="font-label-caps text-label-caps text-outline">Climate Control</span>
+<span class="font-body-md text-body-md text-primary">72°F / Auto</span>
+</div>
+<div class="flex justify-between items-center border-b border-outline/10 pb-2">
+<span class="font-label-caps text-label-caps text-outline">Power System</span>
+<span class="font-body-md text-body-md text-primary flex items-center gap-1"><span class="material-symbols-outlined text-tertiary-container" style="font-size: 16px;">solar_power</span> Solar Optimal</span>
+</div>
+<div class="flex justify-between items-center pb-2">
+<span class="font-label-caps text-label-caps text-outline">Water Levels</span>
+<span class="font-body-md text-body-md text-primary">98% Capacity</span>
+</div>
+<button class="mt-2 text-tertiary-container font-label-caps text-label-caps w-full text-center py-2 active:scale-95 transition-transform">View Full Specs</button>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="bg-surface/80 dark:bg-surface-container/80 backdrop-blur-2xl font-label-caps text-label-caps fixed bottom-0 w-full z-50 lg:hidden shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex justify-around items-center h-16 px-margin-mobile">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed font-bold tap-highlight-transparent active:bg-surface-container-high rounded-lg p-2 transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span>Home</span>
+</a>
+<!-- Manuals -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 tap-highlight-transparent active:bg-surface-container-high rounded-lg p-2 transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">menu_book</span>
+<span>Manuals</span>
+</a>
+<!-- Specs -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 tap-highlight-transparent active:bg-surface-container-high rounded-lg p-2 transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">straighten</span>
+<span>Specs</span>
+</a>
+<!-- Help -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 tap-highlight-transparent active:bg-surface-container-high rounded-lg p-2 transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">help_outline</span>
+<span>Help</span>
+</a>
+</div>
+</nav>
+</body></html>

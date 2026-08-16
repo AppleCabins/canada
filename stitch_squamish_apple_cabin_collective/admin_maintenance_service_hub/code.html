@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Service Hub - Apple Cabins Canada Ltd.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#314b4e",
+                        "inverse-surface": "#2e3132",
+                        "outline-variant": "#c3c7ca",
+                        "background": "#f8f9fa",
+                        "secondary-container": "#cbe8eb",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#cde5ff",
+                        "tertiary": "#002842",
+                        "surface": "#f8f9fa",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#f8f9fa",
+                        "outline": "#73787b",
+                        "on-surface-variant": "#43474a",
+                        "secondary-fixed": "#cbe8eb",
+                        "surface-container-low": "#f3f4f5",
+                        "secondary-fixed-dim": "#b0cccf",
+                        "on-tertiary-fixed": "#001d32",
+                        "on-primary-fixed-variant": "#3a4951",
+                        "tertiary-container": "#003f63",
+                        "inverse-primary": "#b9c9d3",
+                        "on-secondary-container": "#4f696c",
+                        "tertiary-fixed-dim": "#94ccff",
+                        "primary-fixed": "#d5e5ef",
+                        "primary-fixed-dim": "#b9c9d3",
+                        "on-tertiary-fixed-variant": "#004b74",
+                        "primary-container": "#2f3e46",
+                        "secondary": "#496366",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#99a9b2",
+                        "surface-dim": "#d9dadb",
+                        "surface-container": "#edeeef",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-tint": "#516169",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-secondary-fixed": "#031f22",
+                        "on-tertiary-container": "#59adef",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-variant": "#e1e3e4",
+                        "on-surface": "#191c1d",
+                        "on-primary-fixed": "#0e1d25",
+                        "on-error": "#ffffff",
+                        "primary": "#192830",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#191c1d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin-desktop": "80px",
+                        "margin-mobile": "20px",
+                        "container-max": "1440px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "story-heading": ["Playfair Display"],
+                        "label-caps": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "story-heading": ["32px", { "lineHeight": "44px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-xl": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .glow-shadow {
+            box-shadow: 0 0 40px rgba(115, 120, 123, 0.05);
+        }
+        .divider {
+            border-bottom: 1px solid rgba(115, 120, 123, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md font-body-md antialiased flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<nav class="bg-surface dark:bg-surface-container-low text-primary dark:text-primary-fixed font-label-caps text-label-caps fixed left-0 top-0 h-screen w-64 border-r border-outline/10 flex flex-col h-full py-8 px-4 z-40 hidden md:flex">
+<div class="mb-12 px-4">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary dark:text-primary-fixed">Service Hub</h1>
+<p class="text-on-surface-variant dark:text-on-secondary-container mt-1">PNW Region</p>
+</div>
+<div class="flex-1 space-y-2">
+<a class="flex items-center gap-4 text-primary dark:text-primary-fixed bg-secondary-container/50 dark:bg-secondary-container/20 rounded-lg px-4 py-3 scale-95 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                Overview
+            </a>
+<a class="flex items-center gap-4 text-on-surface-variant dark:text-on-secondary-container px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-surface-container-high transition-all scale-95 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">location_on</span>
+                Locations
+            </a>
+<a class="flex items-center gap-4 text-on-surface-variant dark:text-on-secondary-container px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-surface-container-high transition-all scale-95 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">build</span>
+                Maintenance
+            </a>
+<a class="flex items-center gap-4 text-on-surface-variant dark:text-on-secondary-container px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-surface-container-high transition-all scale-95 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">engineering</span>
+                Technicians
+            </a>
+<a class="flex items-center gap-4 text-on-surface-variant dark:text-on-secondary-container px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-surface-container-high transition-all scale-95 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                Parts
+            </a>
+</div>
+<div class="mt-8 mb-8 px-4">
+<button class="w-full bg-[#192830] text-white py-3 rounded text-center transition-opacity hover:opacity-90">New Dispatch</button>
+</div>
+<div class="space-y-2 border-t border-outline/10 pt-4">
+<a class="flex items-center gap-4 text-on-surface-variant dark:text-on-secondary-container px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-surface-container-high transition-all scale-95 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">help</span>
+                Help
+            </a>
+<a class="flex items-center gap-4 text-on-surface-variant dark:text-on-secondary-container px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-surface-container-high transition-all scale-95 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">logout</span>
+                Logout
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-64 overflow-y-auto bg-surface-container-lowest">
+<!-- TopAppBar (Mobile Only) -->
+<header class="md:hidden bg-surface/70 backdrop-blur-md sticky top-0 z-50 px-margin-mobile py-4 flex justify-between items-center border-b border-outline/10">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-bold">Service Hub</h1>
+<button class="text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-12 space-y-8 md:space-y-12">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Dashboard Overview</h2>
+<p class="text-on-surface-variant mt-2 font-body-lg text-body-lg">System status across all PNW facilities.</p>
+</div>
+<div class="flex gap-4">
+<button class="bg-transparent border border-outline/20 text-on-surface-variant px-6 py-2 rounded transition-colors hover:bg-surface-container-highest">Order Parts</button>
+<button class="bg-[#192830] text-white px-6 py-2 rounded transition-opacity hover:opacity-90 shadow-sm">Dispatch Technician</button>
+</div>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Stat Card 1 -->
+<div class="glass-panel glow-shadow rounded-xl p-6 flex items-start justify-between">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-2">Active Repairs</p>
+<p class="font-headline-xl text-headline-xl text-primary">24</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined">build</span>
+</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="glass-panel glow-shadow rounded-xl p-6 flex items-start justify-between">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-2">Pending Dispatches</p>
+<p class="font-headline-xl text-headline-xl text-primary">12</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">pending_actions</span>
+</div>
+</div>
+<!-- Stat Card 3 -->
+<div class="glass-panel glow-shadow rounded-xl p-6 flex items-start justify-between">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-2">Tech Availability</p>
+<p class="font-headline-xl text-headline-xl text-primary">68%</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">engineering</span>
+</div>
+</div>
+</div>
+<!-- Complex Layout: Queue & Map -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Maintenance Queue -->
+<div class="lg:col-span-2 glass-panel glow-shadow rounded-xl overflow-hidden flex flex-col h-[600px]">
+<div class="p-6 border-b border-outline/10 flex justify-between items-center bg-surface-bright">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Maintenance Queue</h3>
+<button class="text-primary hover:text-primary-fixed transition-colors font-label-caps text-label-caps">View All</button>
+</div>
+<div class="flex-1 overflow-auto p-0">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-lowest sticky top-0 z-10 border-b border-outline/10">
+<tr>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant">Priority</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant">Unit ID</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant">Location</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant">Issue Type</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline/10">
+<tr class="hover:bg-surface-container-lowest transition-colors cursor-pointer group">
+<td class="p-4">
+<span class="inline-flex items-center gap-1 text-error bg-error-container px-2 py-1 rounded text-xs font-bold">
+<span class="material-symbols-outlined text-[14px]">warning</span> Urgent
+                                        </span>
+</td>
+<td class="p-4 font-body-md text-body-md">CAB-402</td>
+<td class="p-4 text-on-surface-variant">Squamish Resort</td>
+<td class="p-4 text-on-surface-variant">HVAC Failure</td>
+<td class="p-4"><span class="text-secondary font-medium">In Progress</span></td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors cursor-pointer group">
+<td class="p-4">
+<span class="inline-flex items-center gap-1 text-on-surface-variant bg-surface-container-highest px-2 py-1 rounded text-xs font-bold">
+                                            Routine
+                                        </span>
+</td>
+<td class="p-4 font-body-md text-body-md">CAB-118</td>
+<td class="p-4 text-on-surface-variant">Whistler Base</td>
+<td class="p-4 text-on-surface-variant">Electrical</td>
+<td class="p-4"><span class="text-tertiary font-medium">Pending</span></td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors cursor-pointer group">
+<td class="p-4">
+<span class="inline-flex items-center gap-1 text-error bg-error-container px-2 py-1 rounded text-xs font-bold">
+<span class="material-symbols-outlined text-[14px]">warning</span> Urgent
+                                        </span>
+</td>
+<td class="p-4 font-body-md text-body-md">CAB-505</td>
+<td class="p-4 text-on-surface-variant">Tofino Retreat</td>
+<td class="p-4 text-on-surface-variant">Structural</td>
+<td class="p-4"><span class="text-tertiary font-medium">Pending</span></td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors cursor-pointer group">
+<td class="p-4">
+<span class="inline-flex items-center gap-1 text-on-surface-variant bg-surface-container-highest px-2 py-1 rounded text-xs font-bold">
+                                            Routine
+                                        </span>
+</td>
+<td class="p-4 font-body-md text-body-md">CAB-201</td>
+<td class="p-4 text-on-surface-variant">Squamish Resort</td>
+<td class="p-4 text-on-surface-variant">Plumbing</td>
+<td class="p-4"><span class="text-secondary font-medium">Dispatched</span></td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors cursor-pointer group">
+<td class="p-4">
+<span class="inline-flex items-center gap-1 text-on-surface-variant bg-surface-container-highest px-2 py-1 rounded text-xs font-bold">
+                                            Routine
+                                        </span>
+</td>
+<td class="p-4 font-body-md text-body-md">CAB-089</td>
+<td class="p-4 text-on-surface-variant">Revelstoke Edge</td>
+<td class="p-4 text-on-surface-variant">Interior Fixtures</td>
+<td class="p-4"><span class="text-primary-container font-medium">Completed</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Locations & Map Panel -->
+<div class="glass-panel glow-shadow rounded-xl overflow-hidden flex flex-col h-[600px]">
+<div class="p-6 border-b border-outline/10 bg-surface-bright">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Regional Status</h3>
+</div>
+<div class="h-64 bg-surface-container relative">
+<!-- Map Placeholder -->
+<div class="bg-cover bg-center w-full h-full opacity-80" data-alt="A highly detailed, minimalist topographic map of the Pacific Northwest region, focusing on British Columbia. The map uses a sleek, light-mode palette with stark white surfaces, subtle slate grey contour lines, and soft ambient shadows. Small glowing electric blue dots indicate active resort locations. The aesthetic is clean, professional, and data-dense, evoking high-tech architectural precision." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD3dH7vNp3DSqVf7xjvoAb6SgvJ8-x0cTAj5ZhmDz79qxR5xozPUD0Erc83pECjp0d-84xrBup3zvwc8ubJbp-ilbpa2tCim62pdWUKcOqksvK1seJPBeblHmE-hhXoeBnLAc3IOiepDtqWa1Q5W659hTXNs3_PfaT9JKR53xf_ErhZ85h-aNV7EvdGEQY_U-aKNWXAqx_HRSbuBKPmx7N-Bl3WAkw4j5TQp6_XkTMwj-WiE_eZXbkU')"></div>
+<!-- Map Pins -->
+<div class="absolute top-1/4 left-1/3 w-3 h-3 bg-error rounded-full animate-pulse ring-4 ring-error/20"></div>
+<div class="absolute top-1/2 left-2/3 w-3 h-3 bg-secondary rounded-full ring-4 ring-secondary/20"></div>
+<div class="absolute bottom-1/3 left-1/2 w-3 h-3 bg-secondary rounded-full ring-4 ring-secondary/20"></div>
+</div>
+<div class="flex-1 overflow-auto p-4 space-y-4">
+<div class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-lowest transition-colors cursor-pointer border border-transparent hover:border-outline/10">
+<div>
+<p class="font-body-md text-body-md font-bold text-on-surface">Squamish Resort</p>
+<p class="font-label-caps text-label-caps text-error mt-1">2 Urgent Issues</p>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div>
+<div class="divider"></div>
+<div class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-lowest transition-colors cursor-pointer border border-transparent hover:border-outline/10">
+<div>
+<p class="font-body-md text-body-md font-bold text-on-surface">Whistler Base</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">Normal Operation</p>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div>
+<div class="divider"></div>
+<div class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-lowest transition-colors cursor-pointer border border-transparent hover:border-outline/10">
+<div>
+<p class="font-body-md text-body-md font-bold text-on-surface">Tofino Retreat</p>
+<p class="font-label-caps text-label-caps text-error mt-1">1 Urgent Issue</p>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-inverse-surface text-on-surface dark:text-inverse-on-surface font-body-md text-body-md w-full py-12 border-t border-outline/10 mt-12">
+<div class="max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-on-surface-variant text-center md:text-left">© 2024 Cabin Systems. Industrial Elegance in the PNW.</p>
+<div class="flex gap-6 font-label-caps text-label-caps">
+<a class="text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">System Status</a>
+</div>
+</div>
+</footer>
+</main>
+</body></html>

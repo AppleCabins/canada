@@ -1,0 +1,303 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Gallery &amp; Lifestyle | Squamish Cabins</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#0e1d25",
+                        "surface-variant": "#e1e3e4",
+                        "secondary-fixed": "#cbe8eb",
+                        "surface-tint": "#516169",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-surface-variant": "#43474a",
+                        "outline-variant": "#c3c7ca",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "tertiary-fixed": "#cde5ff",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#002842",
+                        "on-surface": "#191c1d",
+                        "secondary-fixed-dim": "#b0cccf",
+                        "outline": "#73787b",
+                        "surface-container-highest": "#e1e3e4",
+                        "tertiary-container": "#003f63",
+                        "primary-fixed": "#d5e5ef",
+                        "on-primary-container": "#99a9b2",
+                        "inverse-surface": "#2e3132",
+                        "primary-container": "#2f3e46",
+                        "surface": "#f8f9fa",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#b9c9d3",
+                        "on-secondary-container": "#4f696c",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#031f22",
+                        "on-tertiary-fixed-variant": "#004b74",
+                        "primary": "#192830",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#3a4951",
+                        "secondary-container": "#cbe8eb",
+                        "surface-bright": "#f8f9fa",
+                        "on-background": "#191c1d",
+                        "on-tertiary-fixed": "#001d32",
+                        "tertiary-fixed-dim": "#94ccff",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e7e8e9",
+                        "on-primary": "#ffffff",
+                        "background": "#f8f9fa",
+                        "primary-fixed-dim": "#b9c9d3",
+                        "surface-container": "#edeeef",
+                        "on-secondary-fixed-variant": "#314b4e",
+                        "on-tertiary-container": "#59adef",
+                        "secondary": "#496366",
+                        "surface-dim": "#d9dadb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin-desktop": "80px",
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "story-heading": ["Playfair Display"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "story-heading": ["32px", { "lineHeight": "44px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-xl": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass-panel {
+            background-color: rgba(25, 40, 48, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .ambient-glow {
+            box-shadow: 0 40px 40px -15px rgba(81, 97, 105, 0.08);
+        }
+        .tech-divider {
+            border-bottom: 1px solid rgba(81, 97, 105, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-white/70 dark:bg-primary/70 backdrop-blur-xl border-b border-on-surface/10 shadow-[0_40px_40px_-15px_rgba(73,99,102,0.08)] fixed top-0 left-0 w-full z-50 transition-all duration-300">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 z-50 max-w-[1440px] mx-auto">
+<a class="font-story-heading text-story-heading text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity" href="#">Apple Cabins</a>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="text-on-surface-variant dark:text-on-primary-fixed-variant font-label-caps text-label-caps hover:text-tertiary-container transition-colors duration-300" href="#">Sales</a>
+<a class="text-on-surface-variant dark:text-on-primary-fixed-variant font-label-caps text-label-caps hover:text-tertiary-container transition-colors duration-300" href="#">Rentals</a>
+<a class="text-tertiary-container dark:text-tertiary-fixed font-semibold border-b-2 border-tertiary-container font-label-caps text-label-caps hover:text-tertiary-container transition-colors duration-300 pb-1" href="#">Gallery</a>
+<a class="text-on-surface-variant dark:text-on-primary-fixed-variant font-label-caps text-label-caps hover:text-tertiary-container transition-colors duration-300" href="#">Specs</a>
+</div>
+<div class="flex items-center">
+<button class="hidden md:block bg-primary text-on-primary px-6 py-2 rounded font-label-caps text-label-caps scale-95 active:scale-90 transition-transform hover:bg-primary/90">
+                    Login
+                </button>
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-[80px]"> <!-- Offset for fixed nav -->
+<!-- Hero Section -->
+<section class="relative h-[80vh] min-h-[600px] w-full flex items-end pb-20 pt-32">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full z-0" data-alt="A breathtaking, ultra-wide architectural photograph of a sleek, modern modular cabin perched on a rocky cliff overlooking a pristine, misty fjord in the Pacific Northwest wilderness. The cabin features expansive floor-to-ceiling glass walls reflecting the surrounding dense evergreen forest and dramatic, overcast sky. The lighting is soft, diffused, and cinematic, emphasizing the striking contrast between the dark, engineered steel structure and the raw, untamed natural environment. The mood is serene, luxurious, and technologically advanced, perfectly capturing the Industrial Elegance aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCM7V2Eg0WhSQQBLnJMY5chhalpmDAhemcujUL25Y6DssImf9i5dUtYMyiZ0KF8lZRlCuwslUxMXHKc3TKmhLiGTwdKSzzGeV5Kacq38T3N8kKOP0N08ccDN7bvnvVdygb5t_1s4BKdXvubK4WDUSmfUS6iMf7sEg3RTOomlG5ih8eFoGX4HPVOWzHJc8HGlZN0WDfycVlfFrxVMALYGz1RIUQiw8-CKs52s77N5L1jMVlMVEN1m64-')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/30 to-transparent z-10"></div>
+<div class="relative z-20 w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="max-w-2xl text-on-primary">
+<span class="font-label-caps text-label-caps tracking-widest uppercase mb-4 block opacity-80">Squamish Wilderness</span>
+<h1 class="font-headline-xl text-headline-xl mb-6 text-balance text-on-primary">Living at the Edge of Possible.</h1>
+<p class="font-body-lg text-body-lg opacity-90 mb-8 max-w-lg">Precision-built structures that feel like a natural extension of the landscape. Discover the intersection of advanced engineering and raw, untamed beauty.</p>
+<button class="bg-tertiary-container text-on-tertiary-container px-8 py-4 rounded font-label-caps text-label-caps hover:bg-tertiary-container/90 transition-colors shadow-lg">
+                        Explore the Gallery
+                    </button>
+</div>
+</div>
+</section>
+<!-- SEO Content Block 1 -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-5 flex flex-col justify-center">
+<h2 class="font-story-heading text-story-heading mb-6 text-primary">Engineered for the Elements</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        Modular living in British Columbia demands resilience. Apple Cabins are engineered with aerospace-grade precision to withstand heavy snow loads, coastal winds, and dense forest humidity, all while maintaining a minimal environmental footprint. Our sustainable building practices ensure that your sanctuary in the woods preserves the very nature you seek to enjoy.
+                    </p>
+<a class="font-label-caps text-label-caps text-tertiary-container flex items-center gap-2 hover:opacity-80 transition-opacity" href="#">
+                        Read Our Sustainability Report <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<div class="md:col-span-6 md:col-start-7 mt-12 md:mt-0">
+<div class="glass-panel p-2 rounded-xl ambient-glow relative aspect-[4/3] overflow-hidden group">
+<div class="w-full h-full bg-cover bg-center rounded-lg transition-transform duration-700 group-hover:scale-105" data-alt="A highly detailed, technical rendering of a modular cabin's cross-section, revealing its advanced insulation, steel frame, and sustainable materials. The cutaway view is set against a pure, bright white background, typical of high-end architectural documentation, with subtle blueprint-style grid lines faintly visible. The aesthetic is extremely precise, minimalist, and futuristic, emphasizing the 'Techno-Nature' design philosophy through clean lines and a sterile, analytical presentation of the engineering." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBXyLQuz3zs1P26RtZeAfUDFABcWdLrHHwuhVUu7Im4nMvM9eSvb2W5LZmATGY8iDvypXBOFwcjCw4MGtE08Kpair5Y6dW_IroP4SQl1L6a-0tK6SRVRUJRRqcrwwrErKG8l5onEJRzlaKZG6mmV7reyKlDlt1EmsaPJCJ2iejdKiKwJR4UJUa7geN7lLxNt3ttrEveUNG79-KxgJ3hgI4m1QKULLD97ECYJH-aAMgm67mAACmQQ8RQ')"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Immersive Gallery Grid (Bento Style) -->
+<section class="py-24 bg-surface-container-low px-margin-mobile md:px-margin-desktop">
+<div class="max-w-[1440px] mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">Architectural Showcase</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Modern Living in the Pacific Northwest across all seasons.</p>
+</div>
+<div class="hidden md:flex gap-4">
+<button class="p-2 border border-outline-variant rounded-full text-on-surface-variant hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined">arrow_back</span></button>
+<button class="p-2 border border-outline-variant rounded-full text-on-surface-variant hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 auto-rows-[300px] gap-gutter">
+<!-- Large Feature (Coastal) -->
+<div class="md:col-span-8 md:row-span-2 glass-panel rounded-xl overflow-hidden relative group cursor-pointer ambient-glow">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="A stunning, wide-angle photograph of a glass-fronted modern cabin situated on a rugged, driftwood-strewn beach along the British Columbia coast. The ocean waves crash gently in the foreground, while a dramatic, stormy sky looms above. The cabin's warm, golden interior lighting spills out onto the cold, grey surroundings, creating a powerful visual contrast. The aesthetic is industrial elegance, showcasing the seamless integration of precise architecture within a wild, coastal environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAX7tioeYvhfjZJo8Xz6EdgfwrU01Jk7XVf6CATQGAPET-nBiqOP2kHMat0J81pS7wsktlOVZTQpEXocYW8jsWrKmkRXEwNp4haVkh8F3WKAjmGcLBh0wvlSq9O7dcbuSWSvoRue-NKAwiv7o30xfDSeIIjuA5eSl9OfXRSXVTqs4WfndajZj4ZtDsUDbgM0-CWxoDTTdacPCkoqRbw1YJ3iHe1AOAP0W6qjLTN1w1_gfTLOwlzT1zv')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="font-label-caps text-label-caps text-white/80 mb-2 block">Coastal Retreat Series</span>
+<h3 class="font-story-heading text-story-heading text-white">Howe Sound Sanctuary</h3>
+</div>
+</div>
+<!-- Small Vertical (Winter) -->
+<div class="md:col-span-4 md:row-span-2 glass-panel rounded-xl overflow-hidden relative group cursor-pointer ambient-glow">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="A vertical, high-contrast photograph of a minimalist modular cabin half-buried in deep, pristine white snow during a harsh Pacific Northwest winter. The dark slate-grey exterior of the cabin stands out starkly against the snowy landscape and towering, snow-laden pine trees. A faint wisp of smoke rises from a sleek steel chimney. The lighting is cold and crisp, emphasizing the extreme conditions and the cozy, protected sanctuary inside the high-tech structure." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDV1H5mGOlIl4jaRhsxK82kBxaiheHPFK-11plX93wXdAU9udN3R3_FoF5GsPLxNu_7I-KYvy3X4udh9SIZaQG2YhMP_gg4I7mWFwNenmvh8kIAhOGBejnhToEwFy4435XouRQ8D3OfVHXiyhBF8Kp3N2UHAtRLGoojpjzJdzPa8T5CZhaaG9Ds-mWdlSxxCb_y75Rycc9A7erwTxjBd9I4NGP8F5Thmua0E3L9yW5OwiappWn9e0d-')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<span class="font-label-caps text-label-caps text-white/80 mb-2 block">Alpine Series</span>
+<h3 class="font-story-heading text-2xl text-white">Whistler Elevation</h3>
+</div>
+</div>
+<!-- Small Horizontal 1 (Forest) -->
+<div class="md:col-span-6 md:row-span-1 glass-panel rounded-xl overflow-hidden relative group cursor-pointer ambient-glow">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="A close-up architectural detail shot of the sleek, black steel exterior paneling and a large, frameless window of a modular cabin, reflecting a dense, lush green fern forest. The geometric precision of the cabin's seams contrasts sharply with the organic chaos of the surrounding foliage. The image captures the 'Techno-Nature' aesthetic, highlighting the flawless integration of industrial materials with the natural world in soft, overcast lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBxMbIWRyttkCSsGRUxjG-7KXiHpyWM3bWpt2lY78Vh-qGNLll490kFq9jSpD4T4z7i5ZNuzqxTlguwc__aml0XG3IPjdqGT0IwyJHZXRLfwvTbhkPl0vZznTfRWQLaxcwcTOOY3OcpigqHAFAcD0SlKIqgsSw5VvIE7-otgcZrvsR8JXt2iil1HxgmywHy8z1z1BZrBgpjOkIsfWYkBQeNDJGH5DREawt8aATznAEaFaYRXQKZ_osu')"></div>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+</div>
+<!-- Small Horizontal 2 (Interior) -->
+<div class="md:col-span-6 md:row-span-1 glass-panel rounded-xl overflow-hidden relative group cursor-pointer ambient-glow">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="An interior shot of a luxury minimalist cabin, looking out through a massive floor-to-ceiling glass wall into a misty pine forest. The interior features warm, polished wood tones, stark white surfaces, and dark slate accents. A sleek, modern wood-burning stove sits in the corner. The lighting is a mix of cool natural light from the forest and warm, recessed ambient lighting inside, creating a mood of quiet luxury and high-tech sanctuary." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDLu9-mvAKNY6pUuzm18AGs3X2qxmXlcSgUvb-LR8FJnPUUDWbuCT_fyV1l1mGTUbbrODtYx2qm4iP6eobAG6CJbrRAMmlwpi3s8xjOoXyeLTVmJjEKOxyBmme3Nr9eSjIOU2ClnqZXfx0uRaBeDYhodpOz8PgU4t1QSv0glO9MoJVerLMpTr_fJ3g4qZVyQ5FktWIORCkJuL3mGfxT9-VH1Ja-yQ1Tw7gBhfyw0SX3TUX4M7C4xBim')"></div>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Squamish Lifestyle -->
+<section class="py-32 px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto relative">
+<div class="text-center mb-16 max-w-2xl mx-auto">
+<h2 class="font-story-heading text-story-heading text-primary mb-4">The Squamish Lifestyle</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Where high-performance design meets outdoor adventure.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Lifestyle Card 1 -->
+<div class="flex flex-col gap-4 group">
+<div class="glass-panel p-2 rounded-xl ambient-glow aspect-[3/4] overflow-hidden">
+<div class="w-full h-full bg-cover bg-center rounded-lg transition-transform duration-700 group-hover:scale-105" data-alt="A lifestyle photograph showing a person from behind, wearing high-end outdoor gear, standing on the sleek, composite deck of a modern cabin. They are holding a steaming mug of coffee, looking out over a breathtaking valley filled with morning fog. Next to them rests a premium mountain bike. The lighting is soft morning light, and the aesthetic conveys an active, luxurious 'Techno-Nature' lifestyle." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAdvrlodIyFbdR7kmwHwGwAqfmONbtKVfm5ly0eQeWeXyIKe2reuC26Azkj2x92yoRzslMo9_ET1fnAUlkJvZnn3PwoZnBbrzCykIXmAZy4V-pfB2oJqMiZeqz7GNjtvun4HtdGj3PYDPiMGj390rBtuR1yLLZj_2stqBjaBfCb5IdhgM-7jUsLEMkly25Ynq-UpC8ingNr-8QunGe7CTg2x4Krh_oqZB1n6xAqAg8QPNFlZms-n71L')"></div>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary tracking-widest mb-1">Morning Rituals</h4>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80">Start the day immersed in the canopy.</p>
+</div>
+</div>
+<!-- Lifestyle Card 2 (Offset) -->
+<div class="flex flex-col gap-4 group md:mt-16">
+<div class="glass-panel p-2 rounded-xl ambient-glow aspect-[3/4] overflow-hidden">
+<div class="w-full h-full bg-cover bg-center rounded-lg transition-transform duration-700 group-hover:scale-105" data-alt="An evening lifestyle shot of a sleek, modern fire pit glowing brightly on the terrace of a modular cabin. Several minimalist, dark grey lounge chairs surround the fire. The cabin's large windows glow warmly in the background against a deep, dark twilight sky. The scene is incredibly cozy yet maintains a strict, industrial elegance, with clean lines and sophisticated, subdued colors." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAMkYRsJ8qpCIJTSab4TlgaoHM7UO_qwXN54U5Hu8-8n2z1McFzGeoQ6erFRfCMMxzFjoMNo2Fky6SnMpzEVVIEK_d1CdEtL5HEwpZPDFv28iihyHnqriTS1Y2sZARuX3qZ-sCIQE86Kd-4hEvOlKOGGcCxfqPlEIggzLEgKEJza5T0Izt25LVzxoAmSE7xxdD8woqz58dxtKkHUR0mVkFuK3p9_x4LQSsdV2keudsJFHUKxlwZQXSv')"></div>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary tracking-widest mb-1">Evening Gatherings</h4>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80">Transition seamlessly from wilderness to comfort.</p>
+</div>
+</div>
+<!-- Lifestyle Card 3 -->
+<div class="flex flex-col gap-4 group">
+<div class="glass-panel p-2 rounded-xl ambient-glow aspect-[3/4] overflow-hidden">
+<div class="w-full h-full bg-cover bg-center rounded-lg transition-transform duration-700 group-hover:scale-105" data-alt="A detailed, close-up interior shot of a modular cabin's entry area, functioning as a high-tech gear room. Sleek, matte-black racks hold wet rain jackets, hiking boots, and a climbing rope. The floor is polished concrete, and a minimalist bench made of light ash wood sits against a bright white wall. The aesthetic highlights the practical, functional elegance of the space, designed for the rigorous Pacific Northwest environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCzIgUsfmMkg-kmAyoysNpuc0cMWIiWXy0tGa1d4augO8qM5gCJNB-N2SzhWMjJVhAhYsIT56_aesZ8zrFUlVwdtSM341hIHqhZH9tq9jBKGZazSXF1TuhD5zXnCqss3P6G0gXYnsED54nj3UrfT98iqFYzC2fCXX1v3X5Ubj6gOKq9mXSL4TidRuUp2w3DHekubGwgLqddwI0cSOwAocWpNed1cPIf5rlVklCrmHgbAhB5PQTUxzun')"></div>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary tracking-widest mb-1">Basecamp Ready</h4>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80">Intelligently designed gear storage for every season.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center z-0 opacity-40" data-alt="An abstract, macro photograph of a dark, textured slate stone surface, overlayed with very faint, precise geometric line drawings representing architectural blueprints. The lighting is extremely low and moody, focusing entirely on texture and the juxtaposition of rough natural stone with rigid, engineered graphics. This serves as an atmospheric, minimalist background for a call-to-action section." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDQ1llZO0mMjHAUrObTpzVIEYP5n8fvMbqUzMrkmKYuddXK-2vJnrWir7OjXuYeEqE_t79T6xWEB9zmNg2VG7IJNo93bl47juDn4Py1F7gVBLBpnWFLyL321XkGtF6IjOm2_QSX-VqXq18MTM0xEPHnRyEfG125bBZnBXmKC-7d9ppSxYHyIzCT7PgB8JL_CcSGlifd1E_2A8EvLwNKXfyjDLY468WwcWtZMbcEsray0iUeBo0bgn_Z')"></div>
+<div class="absolute inset-0 bg-primary/95 z-10"></div>
+<div class="relative z-20 max-w-3xl mx-auto text-center px-margin-mobile">
+<h2 class="font-story-heading text-headline-xl text-on-primary mb-6">Ready for the Wild?</h2>
+<p class="font-body-lg text-body-lg text-on-primary/80 mb-10">Experience the future of off-grid living. Book a trial stay in one of our showcase models, or begin the consultation process for your own modular sanctuary.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-tertiary-container text-on-tertiary-container px-8 py-4 rounded font-label-caps text-label-caps hover:bg-tertiary-container/90 transition-colors">
+                        Book a Trial Stay
+                    </button>
+<button class="bg-transparent border border-outline/30 text-on-primary px-8 py-4 rounded font-label-caps text-label-caps hover:bg-white/5 transition-colors">
+                        Start Ownership Journey
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-on-primary-fixed w-full relative bottom-0 border-t border-white/10 flat no shadows">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20 max-w-[1440px] mx-auto">
+<div class="col-span-1 md:col-span-2 mb-8 md:mb-0">
+<a class="font-story-heading text-headline-lg-mobile text-on-primary block mb-6" href="#">Apple Cabins</a>
+<p class="font-body-md text-body-md text-on-primary/60 max-w-sm">
+                    Precision-built modular sanctuaries designed for the extreme beauty of the Pacific Northwest.
+                </p>
+</div>
+<div class="col-span-1">
+<h4 class="font-label-caps text-label-caps text-on-primary mb-4 opacity-50">Information</h4>
+<ul class="space-y-3">
+<li class=""><a class="font-body-md text-body-md text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Contact</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Shipping</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Legal</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div class="col-span-1 mt-8 md:mt-0">
+<p class="font-label-caps text-label-caps text-on-primary/60 mt-auto pt-8">
+                    © 2024 Squamish Modular. CSA Certified Hub.
+                </p>
+</div>
+</div>
+</footer>
+
+
+</body></html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Apple Cabins Canada - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#002842",
+                      "on-error": "#ffffff",
+                      "inverse-on-surface": "#f0f1f2",
+                      "surface-container-lowest": "#ffffff",
+                      "background": "#f8f9fa",
+                      "primary-container": "#2f3e46",
+                      "surface-container-high": "#e7e8e9",
+                      "surface-bright": "#f8f9fa",
+                      "surface-tint": "#516169",
+                      "on-tertiary-container": "#59adef",
+                      "on-secondary-fixed": "#031f22",
+                      "primary": "#192830",
+                      "tertiary-fixed": "#cde5ff",
+                      "tertiary-container": "#003f63",
+                      "on-tertiary-fixed": "#001d32",
+                      "secondary-fixed": "#cbe8eb",
+                      "primary-fixed": "#d5e5ef",
+                      "error-container": "#ffdad6",
+                      "inverse-surface": "#2e3132",
+                      "surface": "#f8f9fa",
+                      "surface-variant": "#e1e3e4",
+                      "surface-container-low": "#f3f4f5",
+                      "on-primary": "#ffffff",
+                      "on-surface-variant": "#43474a",
+                      "on-secondary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "on-primary-fixed": "#0e1d25",
+                      "on-secondary-fixed-variant": "#314b4e",
+                      "surface-container": "#edeeef",
+                      "inverse-primary": "#b9c9d3",
+                      "on-secondary-container": "#4f696c",
+                      "on-tertiary-fixed-variant": "#004b74",
+                      "surface-container-highest": "#e1e3e4",
+                      "secondary": "#496366",
+                      "secondary-container": "#cbe8eb",
+                      "on-surface": "#191c1d",
+                      "tertiary-fixed-dim": "#94ccff",
+                      "secondary-fixed-dim": "#b0cccf",
+                      "error": "#ba1a1a",
+                      "surface-dim": "#d9dadb",
+                      "outline-variant": "#c3c7ca",
+                      "on-background": "#191c1d",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-container": "#99a9b2",
+                      "outline": "#73787b",
+                      "on-primary-fixed-variant": "#3a4951",
+                      "primary-fixed-dim": "#b9c9d3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "gutter": "24px",
+                      "margin-mobile": "20px",
+                      "container-max": "1440px",
+                      "margin-desktop": "80px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "story-heading": [
+                              "Playfair Display"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "headline-xl": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "story-heading": [
+                              "32px",
+                              {
+                                      "lineHeight": "44px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      }
+              },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar (Mobile) -->
+<header class="bg-white/70 backdrop-blur-xl border-b border-on-surface/10 shadow-[0_40px_40px_-15px_rgba(73,99,102,0.08)] fixed top-0 left-0 w-full z-50 transition-transform duration-300">
+<div class="flex justify-between items-center w-full px-margin-mobile py-4">
+<!-- Brand -->
+<a class="font-story-heading text-story-heading text-primary flex items-center gap-2" href="#"><span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">home</span>Apple Cabins</a>
+<!-- Mobile Menu Toggle -->
+<button aria-label="Toggle Menu" class="md:hidden text-primary p-2 focus:outline-none">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<!-- Desktop Nav (Hidden on Mobile) -->
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-container transition-colors duration-300" href="#">Sales</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-container transition-colors duration-300" href="#">Rentals</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-container transition-colors duration-300" href="#">Gallery</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-container transition-colors duration-300" href="#">Specs</a>
+<a class="bg-primary text-on-primary font-label-caps text-label-caps px-4 py-2 rounded scale-95 active:scale-90 transition-transform" href="#">Login</a>
+</nav>
+</div>
+</header>
+<main class="flex-grow pt-[72px]">
+<!-- Hero Section -->
+<section class="relative h-[80vh] w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full z-0" data-alt="A sweeping, drone-perspective wide shot of a modern, minimalist modular cabin situated on a rugged cliff edge overlooking a dense, misty evergreen forest in the Pacific Northwest. The sky is overcast with a soft, diffused light highlighting the cabin's large glass windows and dark metal exterior. The aesthetic is industrial elegance meets raw nature, emphasizing solitude and advanced engineering." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDkPxf6yCfhuais4s-fE4wMknwK2U52p0Qf92kggYiyoX7HF3jwsaQ4n9xliCpzJtf6pqCFIkrCJB9QIoDo1aqrMjyTpN9jiaKnHhIsE9GAMDeCV_yReAqGdO_MKtAcw-wGOiVrLbZIEIrYDNfn41WxAudMCuRtWhW2OFz8y8M7u_M5j4HyA-bnxiALSBUyS76d8U0e-B-TJ1bdmUMsG-u_j2sLcuTK-_c6I7_ye0UjZsyv3icSsz3I')"></div>
+<div class="absolute inset-0 bg-primary/40 z-10"></div>
+<div class="relative z-20 text-center px-margin-mobile flex flex-col items-center gap-6">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-primary max-w-sm">The Future of Wilderness Living</h1>
+<p class="font-body-md text-body-md text-on-primary/90 max-w-xs">Precision-built, minimalist sanctuaries designed for the Pacific Northwest.</p>
+<div class="flex flex-col gap-4 w-full max-w-[280px] mt-4">
+<button class="bg-[#59adef] text-on-primary font-label-caps text-label-caps py-4 rounded DEFAULT w-full">OWN A CABIN</button>
+<button class="bg-transparent border border-white/30 text-on-primary font-label-caps text-label-caps py-4 rounded DEFAULT w-full backdrop-blur-md">BOOK A STAY</button>
+</div>
+</div>
+</section>
+<!-- Flagship Models -->
+<section class="py-20 px-margin-mobile bg-surface-container-lowest">
+<div class="mb-12">
+<h2 class="font-story-heading text-story-heading text-primary mb-4">Flagship Models</h2>
+<div class="w-12 h-1 bg-outline-variant/30"></div>
+</div>
+<div class="flex flex-col gap-8">
+<!-- Model 1 -->
+<article class="bg-white/70 backdrop-blur-[20px] border border-white/30 rounded-xl overflow-hidden shadow-[0_40px_40px_-15px_rgba(73,99,102,0.08)]">
+<img class="w-full h-64 object-cover" data-alt="A close-up architectural photograph of the 'Aura' model modular cabin. The image focuses on a sleek, floor-to-ceiling corner window reflecting the surrounding pine trees. The exterior cladding is a dark, matte charcoal composite material. The lighting is crisp and natural, highlighting the precise seams and minimalist geometry of the structure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt_rEQX_QfvhZ5TIhtcZTZcYCNDJssRJ_uy6R7eqdPhPOoltW62hEaRPEBwToM7DwlLfLqcqq_F50BnFo9uNeAjz6PIEiNVfawDBEXcxU5oQ20ToxxuXuPrBQsWYT1H0Ly_LAdY4vOLZH0IsxVXuMNB1Dp0z6wnWjwWcyqrlEK5SqTvSRTHl2jO3k7Dpf1tVAP7xVfuuj5BrCCrFkBJmEjyVisrzP_1FRJrnFc51GB3zR4JhlHg5Wm">
+<div class="p-6 flex flex-col gap-4">
+<div class="flex justify-between items-baseline">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">The Aura</h3>
+<span class="font-label-caps text-label-caps text-tertiary-container">400 SQ FT</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Compact, efficient, and fully integrated with nature. Ideal for remote weekend retreats.</p>
+<a class="font-label-caps text-label-caps text-[#59adef] mt-2 flex items-center gap-1 group" href="#">
+                            VIEW SPECS
+                            <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Model 2 -->
+<article class="bg-white/70 backdrop-blur-[20px] border border-white/30 rounded-xl overflow-hidden shadow-[0_40px_40px_-15px_rgba(73,99,102,0.08)]">
+<img class="w-full h-64 object-cover" data-alt="A wide architectural shot of the 'Lumina' model modular cabin at twilight. The cabin is larger, featuring an expansive wooden deck that extends towards a calm lake. Warm, golden light spills from the interior through large sliding glass doors, contrasting with the cool, blue evening tones of the environment. The aesthetic is luxurious, high-tech sanctuary." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOV0nE9BKbUEo3zzAOGEPYwQwGgCHCjA9ONMAcTxBkqBBSOd29LSV26u2wiwdUDLKuBcqcNz0HqocrXxVP9ebK3ySmpFKMgtHJ0xaAgKVPbpJVnI2QGWxzYUycw19kUu9YE-RFRh52zzQDsOV7rA-kXStyY82dnfLWRVd_--O8FWo9czIawtjeuu6aDXB-z1WTqIuxHcVa5ReD36iijbgtYUsvRPRBDD_6uI9nd_r-31qLb3H5Dqcl">
+<div class="p-6 flex flex-col gap-4">
+<div class="flex justify-between items-baseline">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">The Lumina</h3>
+<span class="font-label-caps text-label-caps text-tertiary-container">800 SQ FT</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Spacious, open-plan living designed for extended stays and entertaining in the wild.</p>
+<a class="font-label-caps text-label-caps text-[#59adef] mt-2 flex items-center gap-1 group" href="#">
+                            VIEW SPECS
+                            <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full relative bottom-0 bg-primary border-t border-white/10 px-margin-mobile py-12">
+<div class="flex flex-col gap-8">
+<div>
+<a class="font-story-heading text-headline-lg-mobile text-on-primary" href="#">Apple Cabins</a>
+</div>
+<nav class="flex flex-col gap-4">
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Contact</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Shipping</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Legal</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Sustainability</a>
+</nav>
+<div class="mt-8 pt-8 border-t border-white/10">
+<p class="font-body-md text-body-md text-on-primary/60">© 2024 Squamish Modular. CSA Certified Hub.</p>
+</div>
+</div>
+</footer>
+
+
+</body></html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Booking &amp; Checkout - Squamish Cabins</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#002842",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f0f1f2",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#f8f9fa",
+                    "primary-container": "#2f3e46",
+                    "surface-container-high": "#e7e8e9",
+                    "surface-bright": "#f8f9fa",
+                    "surface-tint": "#516169",
+                    "on-tertiary-container": "#59adef",
+                    "on-secondary-fixed": "#031f22",
+                    "primary": "#192830",
+                    "tertiary-fixed": "#cde5ff",
+                    "tertiary-container": "#003f63",
+                    "on-tertiary-fixed": "#001d32",
+                    "secondary-fixed": "#cbe8eb",
+                    "primary-fixed": "#d5e5ef",
+                    "error-container": "#ffdad6",
+                    "inverse-surface": "#2e3132",
+                    "surface": "#f8f9fa",
+                    "surface-variant": "#e1e3e4",
+                    "surface-container-low": "#f3f4f5",
+                    "on-primary": "#ffffff",
+                    "on-surface-variant": "#43474a",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#0e1d25",
+                    "on-secondary-fixed-variant": "#314b4e",
+                    "surface-container": "#edeeef",
+                    "inverse-primary": "#b9c9d3",
+                    "on-secondary-container": "#4f696c",
+                    "on-tertiary-fixed-variant": "#004b74",
+                    "surface-container-highest": "#e1e3e4",
+                    "secondary": "#496366",
+                    "secondary-container": "#cbe8eb",
+                    "on-surface": "#191c1d",
+                    "tertiary-fixed-dim": "#94ccff",
+                    "secondary-fixed-dim": "#b0cccf",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#d9dadb",
+                    "outline-variant": "#c3c7ca",
+                    "on-background": "#191c1d",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-container": "#99a9b2",
+                    "outline": "#73787b",
+                    "on-primary-fixed-variant": "#3a4951",
+                    "primary-fixed-dim": "#b9c9d3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "gutter": "24px",
+                    "margin-mobile": "20px",
+                    "container-max": "1440px",
+                    "margin-desktop": "80px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": [
+                            "Inter"
+                    ],
+                    "label-caps": [
+                            "Inter"
+                    ],
+                    "story-heading": [
+                            "Playfair Display"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "headline-lg": [
+                            "Inter"
+                    ],
+                    "headline-xl": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "story-heading": [
+                            "32px",
+                            {
+                                    "lineHeight": "44px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "48px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-xl": [
+                            "64px",
+                            {
+                                    "lineHeight": "72px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+        },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .ambient-shadow {
+            box-shadow: 0 40px 40px -15px rgba(81, 97, 105, 0.08); /* surface-tint shadow */
+        }
+        .divider-glass {
+            border-bottom: 1px solid rgba(81, 97, 105, 0.1);
+        }
+        
+        /* Mobile specific adjustments */
+        body {
+            background-color: #f8f9fa; /* surface */
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased flex flex-col min-h-screen">
+<!-- Header (Simplified for transactional flow) -->
+<header class="fixed top-0 left-0 w-full glass-panel z-50 flex justify-between items-center px-margin-mobile py-4 divider-glass">
+<button aria-label="Go Back" class="text-on-surface-variant p-2 -ml-2 rounded-full hover:bg-surface-variant transition-colors" onclick="history.back()">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<div class="font-story-heading text-story-heading text-primary dark:text-primary-fixed">Apple Cabins</div>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow pt-24 pb-32 px-margin-mobile flex flex-col gap-8">
+<!-- Step Indicator -->
+<div class="flex items-center justify-between px-4 mb-4">
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-caps text-label-caps">1</div>
+<span class="font-label-caps text-label-caps text-primary mt-2">DATES</span>
+</div>
+<div class="flex-grow h-px bg-outline-variant/30 mx-2"></div>
+<div class="flex flex-col items-center opacity-50">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-label-caps text-label-caps">2</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-2">CABIN</span>
+</div>
+<div class="flex-grow h-px bg-outline-variant/30 mx-2"></div>
+<div class="flex flex-col items-center opacity-50">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-label-caps text-label-caps">3</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-2">PAY</span>
+</div>
+</div>
+<!-- Date Selection (Calendar Mockup) -->
+<section class="glass-panel rounded-xl ambient-shadow p-6 flex flex-col gap-6">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Select Dates</h2>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-center mb-2">
+<button class="p-2 text-on-surface-variant"><span class="material-symbols-outlined">chevron_left</span></button>
+<span class="font-body-md text-body-md font-semibold">October 2024</span>
+<button class="p-2 text-on-surface-variant"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center font-label-caps text-label-caps text-on-surface-variant mb-2">
+<div class="">S</div><div class="">M</div><div class="">T</div><div class="">W</div><div class="">T</div><div class="">F</div><div class="">S</div>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center font-body-md text-body-md">
+<!-- Blank days -->
+<div class="p-2 text-outline-variant">29</div>
+<div class="p-2 text-outline-variant">30</div>
+<div class="p-2 text-outline-variant">31</div>
+<!-- Days -->
+<div class="p-2">1</div>
+<div class="p-2">2</div>
+<div class="p-2">3</div>
+<div class="p-2">4</div>
+<div class="p-2">5</div>
+<div class="p-2">6</div>
+<div class="p-2">7</div>
+<div class="p-2">8</div>
+<div class="p-2">9</div>
+<div class="p-2">10</div>
+<div class="p-2">11</div>
+<div class="p-2">12</div>
+<!-- Selected Range Start -->
+<div class="p-2 bg-primary text-on-primary rounded-l-full">13</div>
+<!-- Selected Range Middle -->
+<div class="p-2 bg-primary/20 text-primary">14</div>
+<div class="p-2 bg-primary/20 text-primary">15</div>
+<!-- Selected Range End -->
+<div class="p-2 bg-primary text-on-primary rounded-r-full">16</div>
+<div class="p-2">17</div>
+<div class="p-2">18</div>
+<div class="p-2">19</div>
+<div class="p-2">20</div>
+<div class="p-2">21</div>
+<div class="p-2">22</div>
+<div class="p-2">23</div>
+<div class="p-2">24</div>
+<div class="p-2">25</div>
+<div class="p-2">26</div>
+<div class="p-2">27</div>
+<div class="p-2">28</div>
+<div class="p-2">29</div>
+<div class="p-2">30</div>
+<div class="p-2">31</div>
+</div>
+</div>
+<div class="flex justify-between items-center pt-4 divider-glass">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">CHECK-IN</span>
+<span class="font-body-md text-body-md font-semibold">Oct 13, 2024</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant">arrow_forward</span>
+<div class="flex flex-col text-right">
+<span class="font-label-caps text-label-caps text-on-surface-variant">CHECK-OUT</span>
+<span class="font-body-md text-body-md font-semibold">Oct 16, 2024</span>
+</div>
+</div>
+</section>
+<!-- Cabin Selection (Simplified Card) -->
+<section class="glass-panel rounded-xl ambient-shadow p-4 flex flex-col gap-4 opacity-50 relative pointer-events-none">
+<div class="absolute inset-0 z-10 flex items-center justify-center">
+<span class="bg-surface/90 px-4 py-2 rounded-full font-label-caps text-label-caps text-on-surface backdrop-blur-md">COMPLETE DATES FIRST</span>
+</div>
+<div class="flex gap-4 items-center">
+<div class="w-24 h-24 rounded-lg bg-surface-variant overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A detailed wide shot of a modern, minimalist modular cabin set in a lush Pacific Northwest forest. The cabin features extensive glass windows reflecting the surrounding tall pine trees and soft, overcast natural lighting. The overall mood is serene and luxurious, with a subtle high-tech architectural edge." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7rW2OOd9tqVide4v3ViVCNmgEAPnyGDugAKIqHb9kvugqqrxYdGJubKrRJKmGbx_xLstEPE1F8UYzN4hQJJzXqY3A1j13mL0qpcoV2T9S95RrJAMnaJDGBZqcYcA38rc9_WTRV7wNsbkwXe_Rk0e_jnw_Pix_jefwtkAe2fTq26hgxu6smKAQ3P73EB8aHPVca3_7rq-C0C3EnlVmr3a651NwKHOIpW4XPAG7XlqyXbyO1T83_VG2">
+</div>
+<div class="flex flex-col flex-grow justify-center">
+<h3 class="font-body-lg text-body-lg font-semibold text-primary">The Alpine Suite</h3>
+<span class="font-body-md text-body-md text-on-surface-variant">2 Guests • 1 Bed • 1 Bath</span>
+<span class="font-body-md text-body-md font-semibold text-primary mt-2">$250 / night</span>
+</div>
+<div class="shrink-0 p-2 text-outline-variant">
+<span class="material-symbols-outlined">radio_button_unchecked</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 w-full glass-panel border-t border-outline-variant/20 p-4 px-margin-mobile z-50 flex gap-4">
+<button class="flex-1 bg-surface-variant text-on-surface-variant font-label-caps text-label-caps py-4 rounded-lg tracking-wider font-semibold">
+            CLEAR
+        </button>
+<button class="flex-[2] bg-primary text-on-primary font-label-caps text-label-caps py-4 rounded-lg tracking-wider font-semibold shadow-lg shadow-primary/20">
+            CONTINUE
+        </button>
+</div>
+
+
+</body></html>

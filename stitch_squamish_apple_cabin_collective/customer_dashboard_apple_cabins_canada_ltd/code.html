@@ -1,0 +1,332 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Customer Dashboard - Squamish Cabins</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "tertiary": "#002842",
+                            "on-error": "#ffffff",
+                            "inverse-on-surface": "#f0f1f2",
+                            "surface-container-lowest": "#ffffff",
+                            "background": "#f8f9fa",
+                            "primary-container": "#2f3e46",
+                            "surface-container-high": "#e7e8e9",
+                            "surface-bright": "#f8f9fa",
+                            "surface-tint": "#516169",
+                            "on-tertiary-container": "#59adef",
+                            "on-secondary-fixed": "#031f22",
+                            "primary": "#192830",
+                            "tertiary-fixed": "#cde5ff",
+                            "tertiary-container": "#003f63",
+                            "on-tertiary-fixed": "#001d32",
+                            "secondary-fixed": "#cbe8eb",
+                            "primary-fixed": "#d5e5ef",
+                            "error-container": "#ffdad6",
+                            "inverse-surface": "#2e3132",
+                            "surface": "#f8f9fa",
+                            "surface-variant": "#e1e3e4",
+                            "surface-container-low": "#f3f4f5",
+                            "on-primary": "#ffffff",
+                            "on-surface-variant": "#43474a",
+                            "on-secondary": "#ffffff",
+                            "on-error-container": "#93000a",
+                            "on-primary-fixed": "#0e1d25",
+                            "on-secondary-fixed-variant": "#314b4e",
+                            "surface-container": "#edeeef",
+                            "inverse-primary": "#b9c9d3",
+                            "on-secondary-container": "#4f696c",
+                            "on-tertiary-fixed-variant": "#004b74",
+                            "surface-container-highest": "#e1e3e4",
+                            "secondary": "#496366",
+                            "secondary-container": "#cbe8eb",
+                            "on-surface": "#191c1d",
+                            "tertiary-fixed-dim": "#94ccff",
+                            "secondary-fixed-dim": "#b0cccf",
+                            "error": "#ba1a1a",
+                            "surface-dim": "#d9dadb",
+                            "outline-variant": "#c3c7ca",
+                            "on-background": "#191c1d",
+                            "on-tertiary": "#ffffff",
+                            "on-primary-container": "#99a9b2",
+                            "outline": "#73787b",
+                            "on-primary-fixed-variant": "#3a4951",
+                            "primary-fixed-dim": "#b9c9d3"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.125rem",
+                            "lg": "0.25rem",
+                            "xl": "0.5rem",
+                            "full": "0.75rem"
+                    },
+                    "spacing": {
+                            "base": "8px",
+                            "gutter": "24px",
+                            "margin-mobile": "20px",
+                            "container-max": "1440px",
+                            "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                            "headline-lg-mobile": ["Inter"],
+                            "label-caps": ["Inter"],
+                            "story-heading": ["Playfair Display"],
+                            "body-md": ["Inter"],
+                            "body-lg": ["Inter"],
+                            "headline-lg": ["Inter"],
+                            "headline-xl": ["Inter"]
+                    },
+                    "fontSize": {
+                            "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                            "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                            "story-heading": ["32px", {"lineHeight": "44px", "fontWeight": "400"}],
+                            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                            "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                            "headline-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Custom Ambient Glow Shadow */
+        .shadow-ambient {
+            box-shadow: 0 40px 40px -15px rgba(81, 97, 105, 0.08);
+        }
+        
+        /* Glassmorphism utilities */
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased relative min-h-screen flex flex-col">
+<!-- Ambient Background Element -->
+<div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+<div class="absolute inset-0 bg-cover bg-center opacity-30" data-alt="A highly abstract, out-of-focus background representing a misty Pacific Northwest morning. Extremely bright, high-key lighting with subtle gradients of pristine white, very pale slate grey, and a hint of atmospheric depth. Minimalist, serene, light-mode aesthetic, providing a calm technological sanctuary feel." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-1Lqqoe0c7psjLyFc77bo1CYAJc1Yi1WYmorPZjqErPS81fOzJlE8UsqSv9er32bgLw39pP1EvwB1UXjoZrDbVwbk4c__Zs1YQsgOn4Mht2z0EGkcQyzYW1X_bb-cfZkEoJrV8fDNCrSdguSzZJmAKVNUnY3vn5iNPGiMddQkT-XmtnrWmfN3UhF4u4zm3nHJiKZb1rHZ-XvF5przG5WpLS-4k-po-qglKyD4BmPeBi0VrVXKWk2o')"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-surface-container-lowest/80 to-surface/90 backdrop-blur-[100px]"></div>
+</div>
+<!-- TopNavBar (Shared Component) -->
+<header class="bg-white/70 dark:bg-primary/70 backdrop-blur-xl border-b border-on-surface/10 shadow-[0_40px_40px_-15px_rgba(73,99,102,0.08)] fixed top-0 left-0 w-full z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 z-50 max-w-[1440px] mx-auto">
+<!-- Brand -->
+<div class="font-story-heading text-story-heading text-primary dark:text-primary-fixed">Apple Cabins</div>
+<!-- Desktop Nav Links -->
+<nav class="hidden md:flex items-center space-x-8">
+<!-- All inactive as this is a dashboard/profile destination -->
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-tertiary-container transition-colors duration-300" href="#">Sales</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-tertiary-container transition-colors duration-300" href="#">Rentals</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-tertiary-container transition-colors duration-300" href="#">Gallery</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-tertiary-container transition-colors duration-300" href="#">Specs</a>
+</nav>
+<!-- Trailing Action -->
+<button class="font-label-caps text-label-caps text-primary border border-outline-variant/30 px-6 py-2 rounded-lg hover:bg-surface-container-low transition-colors scale-95 active:scale-90 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">account_circle</span>
+                Login
+            </button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto w-full flex flex-col gap-12">
+<!-- Welcome Section -->
+<header class="flex flex-col gap-2">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary">
+                Client Portal
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Manage your active cabin orders, download technical documentation, and review upcoming resort reservations.
+            </p>
+</header>
+<!-- Dashboard Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- SECTION 1: Buyer Focus - Order Tracking (Spans 8 cols on desktop) -->
+<section class="md:col-span-8 glass-panel rounded-xl p-8 flex flex-col gap-8 shadow-ambient">
+<div class="flex justify-between items-end border-b border-outline-variant/20 pb-4">
+<div>
+<h2 class="font-body-lg text-body-lg font-semibold text-primary">Active Manufacturing</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Order #SQ-8842-A • Model: The Alpine Ridge</p>
+</div>
+<span class="font-label-caps text-label-caps bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full">
+                        In Progress
+                    </span>
+</div>
+<!-- Stepper Component -->
+<div class="relative w-full py-4">
+<!-- Connecting Line Background -->
+<div class="absolute top-1/2 left-0 w-full h-[1px] bg-outline-variant/30 -translate-y-1/2 z-0"></div>
+<!-- Active Connecting Line (Progress up to step 3) -->
+<div class="absolute top-1/2 left-0 w-2/5 h-[2px] bg-on-tertiary-container -translate-y-1/2 z-0"></div>
+<div class="relative z-10 flex justify-between items-start">
+<!-- Step 1: Completed -->
+<div class="flex flex-col items-center gap-3 w-16 group">
+<div class="w-4 h-4 rounded-full bg-on-tertiary-container shadow-[0_0_10px_rgba(89,173,239,0.5)] flex items-center justify-center"></div>
+<span class="font-label-caps text-label-caps text-center text-primary leading-tight">Order<br>Placed</span>
+</div>
+<!-- Step 2: Completed -->
+<div class="flex flex-col items-center gap-3 w-16 group">
+<div class="w-4 h-4 rounded-full bg-on-tertiary-container shadow-[0_0_10px_rgba(89,173,239,0.5)] flex items-center justify-center"></div>
+<span class="font-label-caps text-label-caps text-center text-primary leading-tight">Assembly<br>Plant</span>
+</div>
+<!-- Step 3: Current -->
+<div class="flex flex-col items-center gap-3 w-16 group">
+<div class="w-6 h-6 rounded-full bg-surface border-2 border-on-tertiary-container flex items-center justify-center translate-y-[-4px]">
+<div class="w-2 h-2 rounded-full bg-on-tertiary-container"></div>
+</div>
+<span class="font-label-caps text-label-caps text-center text-on-tertiary-container leading-tight font-bold">Sea<br>Freight</span>
+</div>
+<!-- Step 4: Pending -->
+<div class="flex flex-col items-center gap-3 w-16 group opacity-50">
+<div class="w-4 h-4 rounded-full bg-surface-variant border border-outline-variant"></div>
+<span class="font-label-caps text-label-caps text-center text-on-surface-variant leading-tight">Customs</span>
+</div>
+<!-- Step 5: Pending -->
+<div class="flex flex-col items-center gap-3 w-16 group opacity-50">
+<div class="w-4 h-4 rounded-full bg-surface-variant border border-outline-variant"></div>
+<span class="font-label-caps text-label-caps text-center text-on-surface-variant leading-tight">Local<br>Delivery</span>
+</div>
+<!-- Step 6: Pending -->
+<div class="flex flex-col items-center gap-3 w-16 group opacity-50">
+<div class="w-4 h-4 rounded-full bg-surface-variant border border-outline-variant"></div>
+<span class="font-label-caps text-label-caps text-center text-on-surface-variant leading-tight">Site<br>Install</span>
+</div>
+</div>
+</div>
+<div class="mt-4 bg-surface-container-low p-4 rounded-lg border border-outline-variant/10 flex items-start gap-4">
+<span class="material-symbols-outlined text-on-tertiary-container mt-1">directions_boat</span>
+<div>
+<p class="font-body-md text-body-md text-primary font-semibold">Current Status: Vessel in Transit</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Your modular unit has departed the manufacturing facility and is currently in transit across the Pacific. Estimated arrival at Port of Vancouver is 14 days.</p>
+</div>
+</div>
+</section>
+<!-- SECTION 2: Buyer Focus - Documents (Spans 4 cols on desktop) -->
+<aside class="md:col-span-4 glass-panel rounded-xl p-8 flex flex-col gap-6 shadow-ambient">
+<div class="border-b border-outline-variant/20 pb-4">
+<h2 class="font-body-lg text-body-lg font-semibold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">folder</span>
+                        Technical Documents
+                    </h2>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Doc Item -->
+<a class="group flex items-center justify-between p-4 rounded-lg bg-surface border border-outline-variant/10 hover:border-on-tertiary-container/30 transition-colors" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline group-hover:text-on-tertiary-container transition-colors">architecture</span>
+<div>
+<p class="font-body-md text-body-md text-primary group-hover:text-on-tertiary-container transition-colors">Site Prep Guidelines</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">PDF • 4.2 MB</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-tertiary-container transition-colors">download</span>
+</a>
+<!-- Doc Item -->
+<a class="group flex items-center justify-between p-4 rounded-lg bg-surface border border-outline-variant/10 hover:border-on-tertiary-container/30 transition-colors" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline group-hover:text-on-tertiary-container transition-colors">verified</span>
+<div>
+<p class="font-body-md text-body-md text-primary group-hover:text-on-tertiary-container transition-colors">CSA Certification</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">PDF • 1.1 MB</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-tertiary-container transition-colors">download</span>
+</a>
+</div>
+<div class="mt-auto pt-4">
+<button class="w-full py-3 px-4 bg-transparent border border-outline-variant/30 text-primary font-label-caps text-label-caps rounded flex items-center justify-center gap-2 hover:bg-surface-container-low transition-colors">
+                        View All Files
+                    </button>
+</div>
+</aside>
+<!-- SECTION 3: Guest Focus - Upcoming Stays (Spans 12 cols, wide layout) -->
+<section class="md:col-span-12 glass-panel rounded-xl overflow-hidden shadow-ambient mt-8">
+<div class="grid grid-cols-1 md:grid-cols-3">
+<!-- Image Area -->
+<div class="relative h-64 md:h-auto border-r border-outline-variant/10">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A stunning exterior shot of a sleek, modernist glass and steel modular cabin nestled in a dense, lush green forest of the Pacific Northwest. High-end architectural photography, bright overcast light creating soft shadows. The cabin features large floor-to-ceiling windows reflecting the surrounding evergreen trees. Techno-nature aesthetic, luxurious and calm." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuChCaTqZs8l5onJ8bAVF2RdxV6nKL9ZzyTRpg4bokRWT4kzqWutzL3DXH6RBp0-lHeXtEP_JsWmTJ9glLO3ppUwDVYbftHk0oHkkxyfuogjZwMAHChFSSEWVa7xYzPvHTl8qwntjdnwvuRdT2nn8QecZxykqPb4wgMUNZdoNb6meIYJbgy-ru0UtJmJDfF3q-cM419IolX_tR-xrQgX9Qpwxhh1crYdIK-7hHxEhWtX7XDM2Fb_8KSL')"></div>
+<div class="absolute top-4 left-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded font-label-caps text-label-caps text-primary shadow-sm">
+                            Upcoming Stay
+                        </div>
+</div>
+<!-- Content Area -->
+<div class="md:col-span-2 p-8 flex flex-col justify-between gap-6 bg-surface-container-lowest/50">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">The Canopy Unit</h3>
+<span class="bg-surface-container-high text-on-surface px-2 py-1 rounded text-sm font-medium border border-outline-variant/20">Ref: #R-992-B</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                                Oct 12 – Oct 16, 2024 (4 Nights)
+                            </p>
+</div>
+<div class="grid grid-cols-2 gap-4 border-y border-outline-variant/10 py-4">
+<div>
+<p class="font-label-caps text-label-caps text-outline mb-1">Guests</p>
+<p class="font-body-md text-body-md text-primary">2 Adults</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-outline mb-1">Location</p>
+<p class="font-body-md text-body-md text-primary flex items-center gap-1">
+                                    Whistler Base <span class="material-symbols-outlined text-[16px] text-on-tertiary-container">location_on</span>
+</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 pt-2">
+<button class="bg-on-tertiary-container text-white px-6 py-3 rounded font-label-caps text-label-caps hover:bg-tertiary-container transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">map</span>
+                                Get Directions
+                            </button>
+<button class="bg-transparent border border-outline-variant/30 text-primary px-6 py-3 rounded font-label-caps text-label-caps hover:bg-surface-container-low transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+                                View Receipt
+                            </button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-primary dark:bg-on-primary-fixed w-full relative bottom-0 border-t border-white/10 mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20 max-w-[1440px] mx-auto">
+<!-- Brand Column -->
+<div class="flex flex-col gap-4">
+<div class="font-story-heading text-headline-lg-mobile text-on-primary">Apple Cabins</div>
+<p class="font-body-md text-body-md text-on-primary/60 mt-4">
+                    © 2024 Squamish Modular. CSA Certified Hub.
+                </p>
+</div>
+<!-- Links Column (Spanning remaining columns) -->
+<div class="md:col-span-3 flex flex-wrap gap-x-12 gap-y-6 md:justify-end items-start mt-8 md:mt-0">
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100" href="#">Contact</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100" href="#">Shipping</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100" href="#">Legal</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100" href="#">Sustainability</a>
+</div>
+</div>
+</footer>
+
+
+</body></html>

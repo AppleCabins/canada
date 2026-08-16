@@ -1,0 +1,370 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Configure &amp; Inquire - Squamish Cabins</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-bright": "#f8f9fa",
+                      "on-surface": "#191c1d",
+                      "on-secondary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "surface-container-low": "#f3f4f5",
+                      "on-primary": "#ffffff",
+                      "surface": "#f8f9fa",
+                      "on-primary-fixed-variant": "#3a4951",
+                      "surface-container": "#edeeef",
+                      "tertiary-container": "#003f63",
+                      "on-tertiary-fixed-variant": "#004b74",
+                      "surface-variant": "#e1e3e4",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed": "#031f22",
+                      "tertiary-fixed": "#cde5ff",
+                      "outline": "#73787b",
+                      "on-tertiary-container": "#59adef",
+                      "tertiary-fixed-dim": "#94ccff",
+                      "primary-container": "#2f3e46",
+                      "on-tertiary-fixed": "#001d32",
+                      "surface-tint": "#516169",
+                      "secondary": "#496366",
+                      "surface-dim": "#d9dadb",
+                      "on-primary-container": "#99a9b2",
+                      "outline-variant": "#c3c7ca",
+                      "inverse-surface": "#2e3132",
+                      "on-secondary-container": "#4f696c",
+                      "surface-container-highest": "#e1e3e4",
+                      "primary-fixed-dim": "#b9c9d3",
+                      "secondary-container": "#cbe8eb",
+                      "on-tertiary": "#ffffff",
+                      "tertiary": "#002842",
+                      "inverse-primary": "#b9c9d3",
+                      "background": "#f8f9fa",
+                      "primary": "#192830",
+                      "on-error": "#ffffff",
+                      "on-secondary-fixed-variant": "#314b4e",
+                      "primary-fixed": "#d5e5ef",
+                      "surface-container-high": "#e7e8e9",
+                      "on-error-container": "#93000a",
+                      "error-container": "#ffdad6",
+                      "inverse-on-surface": "#f0f1f2",
+                      "secondary-fixed-dim": "#b0cccf",
+                      "secondary-fixed": "#cbe8eb",
+                      "on-surface-variant": "#43474a",
+                      "on-primary-fixed": "#0e1d25",
+                      "on-background": "#191c1d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-desktop": "80px",
+                      "margin-mobile": "20px",
+                      "base": "8px",
+                      "gutter": "24px",
+                      "container-max": "1440px"
+              },
+              "fontFamily": {
+                      "headline-xl": [
+                              "Inter"
+                      ],
+                      "story-heading": [
+                              "Playfair Display"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-xl": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "story-heading": [
+                              "32px",
+                              {
+                                      "lineHeight": "44px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 40px 40px -15px rgba(73, 99, 102, 0.08);
+        }
+        
+        .ambient-shadow {
+            box-shadow: 0 40px 40px -15px rgba(73, 99, 102, 0.08);
+        }
+
+        .input-engineered {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(115, 120, 123, 0.3);
+            border-radius: 0;
+            padding: 8px 0;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-engineered:focus {
+            outline: none;
+            box-shadow: none;
+            border-bottom-color: #003f63; /* Electric Blue/Tertiary Container approx */
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col pt-24">
+<!-- TopNavBar -->
+<nav class="hidden md:flex justify-between items-center w-full px-margin-desktop py-4 z-50 fixed top-0 left-0 bg-white/70 backdrop-blur-xl border-b border-on-surface/10 shadow-[0_40px_40px_-15px_rgba(73,99,102,0.08)]">
+<div class="font-story-heading text-story-heading text-primary font-bold">Apple Cabins</div>
+<div class="flex gap-8">
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-tertiary-container transition-colors duration-300" href="#">Sales</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-tertiary-container transition-colors duration-300" href="#">Rentals</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-tertiary-container transition-colors duration-300" href="#">Gallery</a>
+<a class="text-tertiary-container font-label-caps text-label-caps font-semibold border-b-2 border-tertiary-container" href="#">Specs</a>
+</div>
+<button class="font-label-caps text-label-caps bg-transparent border border-outline-variant/20 text-on-surface px-6 py-2 rounded scale-95 active:scale-90 transition-transform">Login</button>
+</nav>
+<!-- Mobile TopNavBar (Simplified) -->
+<nav class="flex md:hidden justify-between items-center w-full px-margin-mobile py-4 z-50 fixed top-0 left-0 bg-white/70 backdrop-blur-xl shadow-[0_40px_40px_-15px_rgba(73,99,102,0.08)]">
+<div class="font-story-heading text-[24px] text-primary font-bold">Apple Cabins</div>
+<span class="material-symbols-outlined text-on-surface">menu</span>
+</nav>
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-10 md:py-20 flex flex-col lg:flex-row gap-gutter">
+<!-- Left Column: Configurator Canvas -->
+<div class="flex-1 flex flex-col gap-8">
+<div class="mb-4">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">Configure Your Cabin</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Design a precision-built sanctuary tailored to your landscape.</p>
+</div>
+<!-- Visualization Area -->
+<div class="w-full aspect-video rounded-xl overflow-hidden glass-panel relative group">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A breathtaking, hyper-realistic architectural render of a minimalist modular cabin nestled in a dense, misty Pacific Northwest pine forest. The scene uses a 'Techno-Nature' aesthetic, featuring expansive floor-to-ceiling glass windows that reflect the surrounding greenery. The lighting is soft, natural daylight piercing through the canopy, creating a serene, luxurious light-mode atmosphere. Sleek, industrial dark metal framing contrasts beautifully with natural wood accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCZ5i1CPm6kAi-FHD8WTS354ZaLgMv1odpkcCC4s1p-C99bbQ7Ut9OIsMGXuq3wB_BBy4iYK34EEgIhFY2ZuRf2HufB2WEhJj-cjsJmWADaSbZVBQcSXjQMO_j2p1Xcihc9aOqwVzWL6yPccxQHIfU5xy_zv8wNOOP7Fc9AoL8Cge0f4J0IfejeVIe-4_mMDjH9QALNAsatMST0dcCgOzY8J-HKxbhfBTot8CWoVEoobeaRxtIffzIn')"></div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+<div class="bg-surface/90 backdrop-blur-md px-4 py-2 rounded-lg border border-outline/20">
+<span class="font-label-caps text-label-caps text-on-surface block mb-1">Current View</span>
+<span class="font-body-md text-body-md text-primary font-semibold">Exterior - Alpine Z</span>
+</div>
+</div>
+</div>
+<!-- Configuration Steps -->
+<div class="flex flex-col gap-6">
+<!-- Model Selection -->
+<div class="glass-panel rounded-xl p-6">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-4 tracking-widest border-b border-outline/10 pb-2">1. BASE MODEL</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<label class="cursor-pointer border border-outline-variant/50 rounded-lg p-4 hover:border-tertiary-container transition-colors relative overflow-hidden bg-surface-bright shadow-sm">
+<input checked="" class="peer sr-only" name="base_model" type="radio" value="spacepod">
+<div class="peer-checked:ring-2 ring-tertiary-container absolute inset-0 rounded-lg pointer-events-none"></div>
+<div class="peer-checked:bg-tertiary-fixed/20 absolute inset-0 transition-colors pointer-events-none"></div>
+<div class="relative z-10">
+<h4 class="font-body-lg text-body-lg text-primary font-semibold mb-1">SpacePod V1</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-2">Compact, aerodynamic, ultra-modern.</p>
+<span class="font-label-caps text-label-caps text-tertiary-container">From $85,000</span>
+</div>
+</label>
+<label class="cursor-pointer border border-outline-variant/50 rounded-lg p-4 hover:border-tertiary-container transition-colors relative overflow-hidden bg-surface-bright shadow-sm">
+<input class="peer sr-only" name="base_model" type="radio" value="alpinez">
+<div class="peer-checked:ring-2 ring-tertiary-container absolute inset-0 rounded-lg pointer-events-none"></div>
+<div class="peer-checked:bg-tertiary-fixed/20 absolute inset-0 transition-colors pointer-events-none"></div>
+<div class="relative z-10">
+<h4 class="font-body-lg text-body-lg text-primary font-semibold mb-1">Alpine Z</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-2">A-frame inspired, spacious, rugged.</p>
+<span class="font-label-caps text-label-caps text-tertiary-container">From $120,000</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Package Options -->
+<div class="glass-panel rounded-xl p-6">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-4 tracking-widest border-b border-outline/10 pb-2">2. OFF-GRID PACKAGE</h3>
+<div class="space-y-4">
+<label class="flex items-start gap-4 p-3 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer">
+<div class="flex-shrink-0 mt-1">
+<input class="w-5 h-5 rounded border-outline text-tertiary-container focus:ring-tertiary-container bg-surface-bright" type="checkbox">
+</div>
+<div class="flex-grow">
+<div class="flex justify-between">
+<h4 class="font-body-md text-body-md text-on-surface font-semibold">Solar &amp; Battery Array</h4>
+<span class="font-label-caps text-label-caps text-tertiary-container">+$15,000</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">5kW roof-integrated solar tiles with 10kWh Powerwall setup.</p>
+</div>
+</label>
+<label class="flex items-start gap-4 p-3 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer border-t border-outline/10">
+<div class="flex-shrink-0 mt-1">
+<input class="w-5 h-5 rounded border-outline text-tertiary-container focus:ring-tertiary-container bg-surface-bright" type="checkbox">
+</div>
+<div class="flex-grow">
+<div class="flex justify-between">
+<h4 class="font-body-md text-body-md text-on-surface font-semibold">Water Reclamation System</h4>
+<span class="font-label-caps text-label-caps text-tertiary-container">+$8,500</span>
+</div>
+<p class="text-sm text-on-surface-variant mt-1">Advanced greywater filtration and rainwater harvesting tank.</p>
+</div>
+</label>
+</div>
+</div>
+<!-- Trust Signals -->
+<div class="grid grid-cols-2 gap-4 mt-4">
+<div class="flex items-center gap-3 p-4 glass-panel rounded-lg">
+<span class="material-symbols-outlined text-secondary text-3xl">verified</span>
+<div>
+<span class="block font-label-caps text-label-caps text-primary">CSA Certified</span>
+<span class="text-xs text-on-surface-variant">Built to standard</span>
+</div>
+</div>
+<div class="flex items-center gap-3 p-4 glass-panel rounded-lg">
+<span class="material-symbols-outlined text-secondary text-3xl">local_shipping</span>
+<div>
+<span class="block font-label-caps text-label-caps text-primary">Logistics Support</span>
+<span class="text-xs text-on-surface-variant">Site delivery prep</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Form & Summary -->
+<div class="w-full lg:w-[400px] flex-shrink-0 flex flex-col gap-6">
+<!-- Price Summary Sticky Card -->
+<div class="glass-panel rounded-xl p-6 lg:sticky lg:top-28">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-6 tracking-widest border-b border-outline/10 pb-2">ESTIMATED INVESTMENT</h3>
+<div class="space-y-3 mb-6">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface">Base Model (SpacePod)</span>
+<span class="font-body-md text-body-md text-primary">$85,000</span>
+</div>
+<div class="flex justify-between items-center text-sm text-on-surface-variant">
+<span class="">Off-Grid Solar</span>
+<span class="">$0</span>
+</div>
+<div class="flex justify-between items-center text-sm text-on-surface-variant">
+<span class="">Interior Finish</span>
+<span class="">Included</span>
+</div>
+</div>
+<div class="border-t border-outline/20 pt-4 mb-8">
+<div class="flex justify-between items-end">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Total Estimate</span>
+<span class="font-story-heading text-story-heading text-primary font-bold">$85,000</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-2 text-right">*Excludes delivery, foundation, and local taxes.</p>
+</div>
+<!-- Inquiry Form -->
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-4 tracking-widest">FORMAL INQUIRY</h3>
+<form class="space-y-5">
+<div class="flex flex-col">
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-1">Full Name</label>
+<input class="input-engineered w-full font-body-md text-on-surface" placeholder="Jane Doe" type="text">
+</div>
+<div class="flex flex-col">
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-1">Email Address</label>
+<input class="input-engineered w-full font-body-md text-on-surface" placeholder="jane@example.com" type="email">
+</div>
+<div class="flex flex-col">
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-1">Installation Location</label>
+<input class="input-engineered w-full font-body-md text-on-surface" placeholder="City, Province" type="text">
+</div>
+<div class="flex flex-col mt-4">
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-2">Estimated Timeline</label>
+<select class="input-engineered w-full font-body-md text-on-surface bg-transparent appearance-none">
+<option>ASAP (Within 3 months)</option>
+<option>3 - 6 Months</option>
+<option>6+ Months</option>
+<option>Just browsing</option>
+</select>
+</div>
+<button class="w-full bg-tertiary-container hover:bg-tertiary text-on-tertiary-container py-4 rounded-lg font-label-caps text-label-caps tracking-widest transition-colors mt-6 shadow-sm" type="button">
+                        REQUEST DETAILED QUOTE
+                    </button>
+<p class="text-xs text-center text-on-surface-variant mt-3">A design consultant will contact you within 24 hours.</p>
+</form>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full relative bottom-0 bg-primary dark:bg-on-primary-fixed border-t border-white/10 grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20">
+<div class="md:col-span-1 flex flex-col gap-4 opacity-80 hover:opacity-100 transition-opacity">
+<span class="font-story-heading text-headline-lg-mobile text-on-primary">Squamish Cabins</span>
+<p class="text-on-primary/60 font-body-md text-body-md mt-2">© 2024 Squamish Modular. CSA Certified Hub.</p>
+</div>
+<div class="md:col-span-3 flex flex-wrap gap-8 justify-start md:justify-end">
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors" href="#">Contact</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors" href="#">Shipping</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors" href="#">Legal</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors" href="#">Sustainability</a>
+</div>
+</footer>
+
+
+</body></html>

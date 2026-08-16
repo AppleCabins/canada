@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services Marketplace - PNW Modular Living</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#003f63",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#3a4951",
+                        "outline-variant": "#c3c7ca",
+                        "surface": "#f8f9fa",
+                        "surface-dim": "#d9dadb",
+                        "tertiary": "#002842",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#001d32",
+                        "on-background": "#191c1d",
+                        "secondary-fixed-dim": "#b0cccf",
+                        "on-primary-container": "#99a9b2",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-surface": "#191c1d",
+                        "on-tertiary-fixed-variant": "#004b74",
+                        "secondary": "#496366",
+                        "on-surface-variant": "#43474a",
+                        "background": "#f8f9fa",
+                        "outline": "#73787b",
+                        "surface-tint": "#516169",
+                        "secondary-container": "#cbe8eb",
+                        "surface-bright": "#f8f9fa",
+                        "on-primary-fixed": "#0e1d25",
+                        "surface-container": "#edeeef",
+                        "surface-container-low": "#f3f4f5",
+                        "on-secondary-container": "#4f696c",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#d5e5ef",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-secondary-fixed-variant": "#314b4e",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#2e3132",
+                        "primary-fixed-dim": "#b9c9d3",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#b9c9d3",
+                        "on-secondary-fixed": "#031f22",
+                        "surface-variant": "#e1e3e4",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#59adef",
+                        "tertiary-fixed-dim": "#94ccff",
+                        "tertiary-fixed": "#cde5ff",
+                        "primary": "#192830",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#cbe8eb",
+                        "primary-container": "#2f3e46"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "base": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "story-heading": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-xl": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "story-heading": ["32px", {"lineHeight": "44px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .ambient-shadow {
+            box-shadow: 0 10px 40px rgba(115, 120, 123, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopNavBar (Desktop) -->
+<nav class="hidden md:flex bg-surface/70 dark:bg-surface-container/70 backdrop-blur-xl font-body-md text-body-md uppercase tracking-wider fixed top-0 w-full z-50 border-b border-outline/10 shadow-sm flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<div class="font-headline-lg-mobile text-headline-lg-mobile tracking-tighter text-primary dark:text-primary-fixed">PNW MODULAR</div>
+<div class="flex items-center gap-6">
+<a class="text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary-fixed transition-colors cursor-pointer active:opacity-70 transition-opacity" href="#">Forum</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary-fixed transition-colors cursor-pointer active:opacity-70 transition-opacity" href="#">Events</a>
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 hover:text-primary dark:hover:text-primary-fixed transition-colors cursor-pointer active:opacity-70 transition-opacity" href="#">Services</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary-fixed transition-colors cursor-pointer active:opacity-70 transition-opacity" href="#">Stories</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="bg-primary text-on-primary px-6 py-2 rounded font-label-caps text-label-caps hover:opacity-90 transition-opacity">My Cabin</button>
+<div class="flex items-center gap-4 text-primary dark:text-primary-fixed">
+<span class="material-symbols-outlined cursor-pointer hover:opacity-70 transition-opacity" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:opacity-70 transition-opacity" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</nav>
+<div class="flex flex-1 pt-[88px] md:pt-[104px]"> <!-- Offset for fixed navs -->
+<!-- SideNavBar (Desktop & Mobile, assumed to represent the portal context if not suppressed) -->
+<!-- Suppressing SideNavBar on Desktop to focus on marketplace grid, keeping bottom nav for mobile -->
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden bg-surface-container-low dark:bg-surface-container-high font-label-caps text-label-caps fixed bottom-0 w-full z-40 border-t border-outline/10 p-2 flex justify-around items-center">
+<a class="flex flex-col items-center p-2 text-on-surface-variant dark:text-on-surface-variant/80 hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+                Home
+            </a>
+<a class="flex flex-col items-center p-2 text-on-surface-variant dark:text-on-surface-variant/80 hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="forum">forum</span>
+                Forum
+            </a>
+<a class="flex flex-col items-center p-2 text-on-surface-variant dark:text-on-surface-variant/80 hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="event">event</span>
+                Events
+            </a>
+<a class="flex flex-col items-center p-2 bg-secondary-container dark:bg-tertiary-container text-on-secondary-container dark:text-on-tertiary-container rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="build">build</span>
+                Marketplace
+            </a>
+<a class="flex flex-col items-center p-2 text-on-surface-variant dark:text-on-surface-variant/80 hover:bg-surface-container-highest dark:hover:bg-surface-dim transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="auto_stories">auto_stories</span>
+                Stories
+            </a>
+</nav>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-10 md:py-20 mb-20 md:mb-0">
+<!-- Header Section -->
+<div class="mb-12 md:mb-20">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4">Vetted Services</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Expert professionals to maintain, enhance, and optimize your modular sanctuary. Curated for the Pacific Northwest.</p>
+</div>
+<!-- Filters -->
+<div class="flex flex-col md:flex-row gap-4 mb-10 pb-6 border-b border-outline/10">
+<div class="flex flex-wrap gap-2 flex-1">
+<button class="bg-primary text-on-primary px-4 py-2 rounded font-label-caps text-label-caps">All Services</button>
+<button class="bg-transparent text-secondary border border-outline/20 px-4 py-2 rounded font-label-caps text-label-caps hover:bg-surface-container transition-colors">Maintenance &amp; Cleaning</button>
+<button class="bg-transparent text-secondary border border-outline/20 px-4 py-2 rounded font-label-caps text-label-caps hover:bg-surface-container transition-colors">Landscape Design</button>
+<button class="bg-transparent text-secondary border border-outline/20 px-4 py-2 rounded font-label-caps text-label-caps hover:bg-surface-container transition-colors">Interior Styling</button>
+<button class="bg-transparent text-secondary border border-outline/20 px-4 py-2 rounded font-label-caps text-label-caps hover:bg-surface-container transition-colors">Tech Support</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Region:</span>
+<select class="bg-transparent border-b border-outline/30 focus:border-primary focus:ring-0 py-1 font-body-md text-body-md text-primary outline-none">
+<option>All Regions</option>
+<option>Squamish</option>
+<option>Vancouver</option>
+<option>Whistler</option>
+<option>Pemberton</option>
+</select>
+</div>
+</div>
+<!-- Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="glass-card rounded-xl overflow-hidden ambient-shadow flex flex-col">
+<div class="h-48 relative">
+<img class="w-full h-full object-cover" data-alt="A rugged, bearded landscaper in high-end outdoor gear standing next to a modern, geometric garden bed designed for a minimalist modular cabin in a misty Pacific Northwest forest setting. Soft, diffused lighting highlights the precise engineering of the retaining walls." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMg73UEkxNH6mOiyUPi8ChtV2LFCrXS8W3YyILuUEnr8RX9TYNrM57oypslUKbgvgUc1FsWaYsq3RlKt0aQ10WY9iCBdlsrJjMHp3540JrzG3PqywcnGn786kCF-fQZW-WhMhHJcmrndHUr2lkH6rkr5UMh-vizb5Qx8a6zRR3DcGQJCc9K6az-bspdItFKcoQYK13qeNOuOxOfTfSYU0JOtud8DXXw1KslAljycTK7shJaiTHG8vv"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-tertiary-container text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="font-label-caps text-label-caps text-primary">4.9</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="font-label-caps text-label-caps text-secondary mb-2 uppercase tracking-widest">Landscape Design</div>
+<h3 class="font-body-lg text-body-lg font-semibold text-primary mb-1">Alpine Flora Curators</h3>
+<p class="text-on-surface-variant text-sm mb-4">Squamish &amp; Whistler</p>
+<div class="mt-auto pt-4 border-t border-outline/10 flex justify-between items-center">
+<button class="text-primary font-label-caps text-label-caps hover:opacity-70 transition-opacity">View Profile</button>
+<button class="bg-transparent text-secondary border border-outline/20 px-4 py-2 rounded font-label-caps text-label-caps hover:bg-surface-container transition-colors">Book Service</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-card rounded-xl overflow-hidden ambient-shadow flex flex-col">
+<div class="h-48 relative">
+<img class="w-full h-full object-cover" data-alt="A meticulous interior stylist arranging minimalist decor on a sleek, matte black kitchen island inside a bright, glass-walled modular cabin. The scene is illuminated by natural light filtering through tall pine trees outside. A pristine, high-end architectural aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJmvVoaVyfwjde0VdLhqEzMbG9CypaQ14svWYUE_TaM3jLbSa9m2IN3ZH7uPd_yzrQPXUkLidZup5Gb000rk5jaHlLrn_wYj39RrhIwL7kdgvxpKplKP7yvWVmmQxbDCUZCqLS-QMTBuwelS4_OSLuZjPolBNO7jc0TJsYFubkOrnvcZTZoQFZHdRX_I5bcHse9bJCeadbLOBY7KDj_LIYkYZB7YmuPT2k7fbdKFpBgz65NhMjovjF"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-tertiary-container text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="font-label-caps text-label-caps text-primary">5.0</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="font-label-caps text-label-caps text-secondary mb-2 uppercase tracking-widest">Interior Styling</div>
+<h3 class="font-body-lg text-body-lg font-semibold text-primary mb-1">Cove &amp; Canopy Interiors</h3>
+<p class="text-on-surface-variant text-sm mb-4">Vancouver Area</p>
+<div class="mt-auto pt-4 border-t border-outline/10 flex justify-between items-center">
+<button class="text-primary font-label-caps text-label-caps hover:opacity-70 transition-opacity">View Profile</button>
+<button class="bg-transparent text-secondary border border-outline/20 px-4 py-2 rounded font-label-caps text-label-caps hover:bg-surface-container transition-colors">Book Service</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-card rounded-xl overflow-hidden ambient-shadow flex flex-col">
+<div class="h-48 relative">
+<img class="w-full h-full object-cover" data-alt="A technician in a clean, minimalist uniform inspecting a smart-home control panel seamlessly integrated into a wood-paneled wall inside a modern cabin. The lighting is crisp and cool, emphasizing the advanced technology amidst the natural materials. Industrial elegance style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn5x1kwd6usU-o2AvdeYsuzzYtQ3AEmlgo_WJO_WbiM4kFyNuCkbDt6JHOahTEtK23PNnCan7qxGkVqIwhrhLronOawOG1U1t4vmwg7nw1oJHQMBE09cijo-LNY2mEX1haYGGBDr130i7uEnvB9z5Gpxnv-oqUCN7cyd7teRSYmqFJtxykBF2H-Hix0MJ3H1tmTsx5cznA1zuUbmwSTfhSzmtb4FjaQpoIcfn-ib1_KFMTYNxr6_4f"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-tertiary-container text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="font-label-caps text-label-caps text-primary">4.8</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="font-label-caps text-label-caps text-secondary mb-2 uppercase tracking-widest">Tech Support</div>
+<h3 class="font-body-lg text-body-lg font-semibold text-primary mb-1">Nexus Integration Systems</h3>
+<p class="text-on-surface-variant text-sm mb-4">All Regions (Remote/On-site)</p>
+<div class="mt-auto pt-4 border-t border-outline/10 flex justify-between items-center">
+<button class="text-primary font-label-caps text-label-caps hover:opacity-70 transition-opacity">View Profile</button>
+<button class="bg-transparent text-secondary border border-outline/20 px-4 py-2 rounded font-label-caps text-label-caps hover:bg-surface-container transition-colors">Book Service</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="glass-card rounded-xl overflow-hidden ambient-shadow flex flex-col">
+<div class="h-48 relative">
+<img class="w-full h-full object-cover" data-alt="A professional cleaning team using eco-friendly, high-end equipment to clean the massive floor-to-ceiling glass windows of a modular cabin nestled on a rocky cliff. The scene conveys pristine cleanliness and respect for the natural environment. Bright, clear daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdpXu8YhJuzYGwaxMYx2HGDGXUA0ApU_x2RsxAns8bK25AI25BWo5e0j3Hnk2KKuvegEz2d13NCI-Eo7O8jY53yP_vFSVGVcdyqVYgWE0KpkBO5aEjGejlb_FZRxESnfO7GAjefjbWag2JT2ApG9KcSubkM6w_aD874YR-VVtaIaJzLdu7SkhHt-AxmqQ65_zETggwdb2YoLTdYY50qwO7F-sgBwwPEZ0mzXJn6YtIl6XTpelaaJkk"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-tertiary-container text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="font-label-caps text-label-caps text-primary">4.7</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="font-label-caps text-label-caps text-secondary mb-2 uppercase tracking-widest">Maintenance &amp; Cleaning</div>
+<h3 class="font-body-lg text-body-lg font-semibold text-primary mb-1">ClearView Sanctuary Upkeep</h3>
+<p class="text-on-surface-variant text-sm mb-4">Pemberton &amp; Surrounds</p>
+<div class="mt-auto pt-4 border-t border-outline/10 flex justify-between items-center">
+<button class="text-primary font-label-caps text-label-caps hover:opacity-70 transition-opacity">View Profile</button>
+<button class="bg-transparent text-secondary border border-outline/20 px-4 py-2 rounded font-label-caps text-label-caps hover:bg-surface-container transition-colors">Book Service</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-surface-container-lowest w-full py-20 border-t border-outline/10 flex flex-col items-center justify-center space-y-8 px-margin-desktop">
+<div class="font-label-caps text-label-caps text-primary dark:text-primary-fixed">PNW MODULAR</div>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Sustainability Report</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Contact Support</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 PNW Modular Living. Engineered for the Wild.</p>
+</footer>
+</body></html>

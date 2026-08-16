@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Apple Cabins - Admin Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#73787b",
+                      "secondary-fixed": "#cbe8eb",
+                      "on-surface-variant": "#43474a",
+                      "inverse-on-surface": "#f0f1f2",
+                      "on-primary-fixed": "#0e1d25",
+                      "on-error": "#ffffff",
+                      "primary-fixed": "#d5e5ef",
+                      "primary-container": "#2f3e46",
+                      "surface-variant": "#e1e3e4",
+                      "surface-tint": "#516169",
+                      "tertiary-fixed-dim": "#94ccff",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed": "#001d32",
+                      "on-tertiary-container": "#59adef",
+                      "on-secondary-fixed-variant": "#314b4e",
+                      "surface-container-highest": "#e1e3e4",
+                      "on-background": "#191c1d",
+                      "error-container": "#ffdad6",
+                      "inverse-primary": "#b9c9d3",
+                      "surface-dim": "#d9dadb",
+                      "on-secondary-fixed": "#031f22",
+                      "surface-container": "#edeeef",
+                      "background": "#f8f9fa",
+                      "secondary-container": "#cbe8eb",
+                      "surface-container-lowest": "#ffffff",
+                      "surface": "#f8f9fa",
+                      "on-secondary-container": "#4f696c",
+                      "on-secondary": "#ffffff",
+                      "primary": "#192830",
+                      "tertiary-fixed": "#cde5ff",
+                      "outline-variant": "#c3c7ca",
+                      "secondary": "#496366",
+                      "tertiary": "#002842",
+                      "surface-bright": "#f8f9fa",
+                      "on-error-container": "#93000a",
+                      "tertiary-container": "#003f63",
+                      "inverse-surface": "#2e3132",
+                      "error": "#ba1a1a",
+                      "secondary-fixed-dim": "#b0cccf",
+                      "on-primary-container": "#99a9b2",
+                      "on-primary-fixed-variant": "#3a4951",
+                      "surface-container-low": "#f3f4f5",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-high": "#e7e8e9",
+                      "on-surface": "#191c1d",
+                      "on-tertiary-fixed-variant": "#004b74",
+                      "primary-fixed-dim": "#b9c9d3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "margin-mobile": "20px",
+                      "base": "8px",
+                      "margin-desktop": "80px",
+                      "container-max": "1440px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-xl": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "story-heading": [
+                              "Playfair Display"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-xl": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "story-heading": [
+                              "32px",
+                              {
+                                      "lineHeight": "44px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 40px rgba(81, 97, 105, 0.05);
+        }
+
+        .ambient-glow {
+            box-shadow: 0 10px 40px -10px rgba(81, 97, 105, 0.08);
+        }
+        
+        .subtle-border-b {
+            border-bottom: 1px solid rgba(115, 120, 123, 0.1);
+        }
+        
+        .subtle-border {
+            border: 1px solid rgba(115, 120, 123, 0.1);
+        }
+
+        /* Input styling */
+        .input-minimalist {
+            border: none;
+            border-bottom: 1px solid rgba(115, 120, 123, 0.3);
+            background: transparent;
+            border-radius: 0;
+            padding-left: 0;
+            padding-right: 0;
+            transition: border-color 0.3s;
+        }
+        .input-minimalist:focus {
+            outline: none;
+            box-shadow: none;
+            border-bottom-color: #2f3e46;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col md:flex-row">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col h-full py-base bg-surface-container-low border-r border-outline border-opacity-10 shadow-sm fixed left-0 top-0 h-full w-64 z-50">
+<div class="px-margin-desktop py-8 subtle-border-b mb-6 px-4">
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary">Apple Cabins</h1>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-2">Admin Dashboard</p>
+</div>
+<div class="flex-1 px-2 space-y-2">
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant duration-200 cursor-pointer active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Inventory</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant duration-200 cursor-pointer active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Clients</span>
+</a>
+<!-- Dashboard isn't explicitly in the JSON, but it's the current context. Assuming Settings is closest or we just leave them all inactive as none perfectly match 'Dashboard' in the strict sense, but let's highlight Inventory as a fallback or leave all inactive. Let's leave all inactive as none perfectly map to 'Analytics Dashboard' based on the strict hierarchy rule, but typically dashboards sit above these. Wait, the prompt says "Admin Dashboard", we will assume it's the main view. Let's highlight 'Inventory' as it's the closest to sales data. Actually, rule says "ONLY use semantic intent... PROHIBIT lazy defaulting". We will leave them inactive. -->
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant duration-200 cursor-pointer active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant duration-200 cursor-pointer active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+<span>Legal</span>
+</a>
+</div>
+<div class="px-4 py-6 subtle-border-t">
+<button class="w-full text-left flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant duration-200 cursor-pointer active:scale-95 rounded-lg">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span>Support</span>
+</button>
+<button class="w-full text-left flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant duration-200 cursor-pointer active:scale-95 rounded-lg">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Log Out</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<div class="flex-1 flex flex-col md:ml-64 min-h-screen">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full z-40 bg-white/70 backdrop-blur-md border-b border-outline border-opacity-10 shadow-sm flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20">
+<div class="font-story-heading text-story-heading text-primary md:hidden">Apple Cabins</div>
+<div class="hidden md:block font-story-heading text-[24px] text-primary">Analytics Overview</div>
+<div class="flex items-center gap-6">
+<!-- Search -->
+<div class="hidden md:flex items-center border-b border-outline/30 pb-1">
+<span class="material-symbols-outlined text-on-surface-variant mr-2 text-sm" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md text-on-surface-variant placeholder-outline w-48 p-0" placeholder="Search..." type="text"/>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-300 ease-in-out">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-300 ease-in-out">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Dashboard Content -->
+<main class="flex-1 p-margin-mobile md:p-margin-desktop pb-24 max-w-container-max mx-auto w-full space-y-12">
+<!-- Header & Filters -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-2">Performance</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">YTD Overview &amp; Analytics</p>
+</div>
+<div class="flex flex-wrap items-center gap-4 w-full md:w-auto">
+<!-- Filters -->
+<div class="flex items-center gap-4 flex-1 md:flex-none">
+<div class="flex flex-col w-full md:w-32">
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-1">Date Range</label>
+<select class="input-minimalist text-body-md w-full">
+<option>Last 12 Months</option>
+<option>YTD</option>
+<option>Q3 2024</option>
+</select>
+</div>
+<div class="flex flex-col w-full md:w-32">
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-1">Region</label>
+<select class="input-minimalist text-body-md w-full">
+<option>All Regions</option>
+<option>Squamish</option>
+<option>Ontario</option>
+</select>
+</div>
+</div>
+<button class="bg-primary-container text-on-primary font-body-md py-2 px-6 rounded flex items-center gap-2 hover:bg-primary transition-colors w-full md:w-auto justify-center mt-4 md:mt-0">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                        Download Report
+                    </button>
+</div>
+</div>
+<!-- Metrics Row (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Metric 1 -->
+<div class="glass-card rounded-lg p-6 flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-4">Total Revenue (YTD)</span>
+<div class="font-headline-xl text-headline-xl text-primary mb-2">$4.2M</div>
+<div class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-[#314b4e] text-sm" data-icon="trending_up">trending_up</span>
+<span class="text-[#314b4e] font-semibold">+12.5%</span>
+<span class="text-on-surface-variant">vs last year</span>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="glass-card rounded-lg p-6 flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-4">Active Listings</span>
+<div class="font-headline-xl text-headline-xl text-primary mb-2">84</div>
+<div class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="horizontal_rule">horizontal_rule</span>
+<span class="text-on-surface-variant font-semibold">0%</span>
+<span class="text-on-surface-variant">vs last month</span>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="glass-card rounded-lg p-6 flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-4">Avg Occupancy</span>
+<div class="font-headline-xl text-headline-xl text-primary mb-2">78%</div>
+<div class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-[#314b4e] text-sm" data-icon="trending_up">trending_up</span>
+<span class="text-[#314b4e] font-semibold">+5.2%</span>
+<span class="text-on-surface-variant">vs last month</span>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="glass-card rounded-lg p-6 flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-4">Cabins Sold</span>
+<div class="font-headline-xl text-headline-xl text-primary mb-2">126</div>
+<div class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-error text-sm" data-icon="trending_down">trending_down</span>
+<span class="text-error font-semibold">-2.1%</span>
+<span class="text-on-surface-variant">vs last quarter</span>
+</div>
+</div>
+</div>
+<!-- Charts Row -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Line Chart -->
+<div class="glass-card rounded-lg p-6 lg:col-span-2 flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-body-lg text-body-lg text-primary font-semibold">Sales Performance</h3>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_horiz">more_horiz</span>
+</div>
+<div class="flex-1 w-full relative min-h-[300px]">
+<canvas id="salesChart"></canvas>
+</div>
+</div>
+<!-- Bar Chart -->
+<div class="glass-card rounded-lg p-6 flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-body-lg text-body-lg text-primary font-semibold">Resort Occupancy</h3>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_horiz">more_horiz</span>
+</div>
+<div class="flex-1 w-full relative min-h-[300px]">
+<canvas id="occupancyChart"></canvas>
+</div>
+</div>
+</div>
+<!-- Table Section -->
+<div class="glass-card rounded-lg p-6">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-body-lg text-body-lg text-primary font-semibold">Top Performing Models</h3>
+<button class="text-primary-container font-label-caps text-label-caps hover:underline">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="subtle-border-b">
+<th class="font-label-caps text-label-caps text-on-surface-variant py-3 pr-4 font-normal">Model Name</th>
+<th class="font-label-caps text-label-caps text-on-surface-variant py-3 px-4 font-normal">Series</th>
+<th class="font-label-caps text-label-caps text-on-surface-variant py-3 px-4 font-normal text-right">Units Sold</th>
+<th class="font-label-caps text-label-caps text-on-surface-variant py-3 px-4 font-normal text-right">Revenue</th>
+<th class="font-label-caps text-label-caps text-on-surface-variant py-3 pl-4 font-normal text-right">Trend</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-on-background">
+<tr class="subtle-border-b hover:bg-surface/50 transition-colors">
+<td class="py-4 pr-4 font-semibold">Alpine Vista 40</td>
+<td class="py-4 px-4 text-on-surface-variant">Cabin</td>
+<td class="py-4 px-4 text-right">42</td>
+<td class="py-4 px-4 text-right">$1.8M</td>
+<td class="py-4 pl-4 text-right flex justify-end items-center gap-1">
+<span class="material-symbols-outlined text-[#314b4e] text-sm" data-icon="trending_up">trending_up</span>
+<span class="text-[#314b4e] text-sm">+8%</span>
+</td>
+</tr>
+<tr class="subtle-border-b hover:bg-surface/50 transition-colors">
+<td class="py-4 pr-4 font-semibold">Nomad Micro</td>
+<td class="py-4 px-4 text-on-surface-variant">Capsule</td>
+<td class="py-4 px-4 text-right">38</td>
+<td class="py-4 px-4 text-right">$850K</td>
+<td class="py-4 pl-4 text-right flex justify-end items-center gap-1">
+<span class="material-symbols-outlined text-[#314b4e] text-sm" data-icon="trending_up">trending_up</span>
+<span class="text-[#314b4e] text-sm">+12%</span>
+</td>
+</tr>
+<tr class="subtle-border-b hover:bg-surface/50 transition-colors">
+<td class="py-4 pr-4 font-semibold">Timberline Estate</td>
+<td class="py-4 px-4 text-on-surface-variant">Home</td>
+<td class="py-4 px-4 text-right">15</td>
+<td class="py-4 px-4 text-right">$1.2M</td>
+<td class="py-4 pl-4 text-right flex justify-end items-center gap-1">
+<span class="material-symbols-outlined text-error text-sm" data-icon="trending_down">trending_down</span>
+<span class="text-error text-sm">-3%</span>
+</td>
+</tr>
+<tr class="hover:bg-surface/50 transition-colors">
+<td class="py-4 pr-4 font-semibold">Eco Pod</td>
+<td class="py-4 px-4 text-on-surface-variant">Capsule</td>
+<td class="py-4 px-4 text-right">31</td>
+<td class="py-4 px-4 text-right">$350K</td>
+<td class="py-4 pl-4 text-right flex justify-end items-center gap-1">
+<span class="material-symbols-outlined text-[#314b4e] text-sm" data-icon="trending_up">trending_up</span>
+<span class="text-[#314b4e] text-sm">+21%</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-8 bg-surface border-t border-outline border-opacity-10 flex flex-col md:flex-row justify-between items-center px-margin-desktop mt-auto">
+<div class="font-label-caps text-label-caps text-primary mb-4 md:mb-0">
+                © 2024 Apple Cabins Canada Ltd. Modular Excellence.
+            </div>
+<div class="flex gap-6">
+<a class="font-label-caps text-label-caps text-secondary opacity-80 hover:opacity-100 hover:text-primary transition-opacity" href="#">Privacy Policy</a>
+<a class="font-label-caps text-label-caps text-secondary opacity-80 hover:opacity-100 hover:text-primary transition-opacity" href="#">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-secondary opacity-80 hover:opacity-100 hover:text-primary transition-opacity" href="#">Compliance</a>
+</div>
+</footer>
+</div>
+<!-- Chart Initializations -->
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Shared styling for charts
+            const chartFontFamily = "'Inter', sans-serif";
+            const gridColor = "rgba(115, 120, 123, 0.1)";
+            const textColor = "#73787b"; // outline color
+
+            // Sales Chart (Line)
+            const ctxSales = document.getElementById('salesChart').getContext('2d');
+            
+            // Gradients for lines to give that modern techno look
+            const gradCabin = ctxSales.createLinearGradient(0, 0, 0, 400);
+            gradCabin.addColorStop(0, 'rgba(47, 62, 70, 0.8)'); // primary-container
+            gradCabin.addColorStop(1, 'rgba(47, 62, 70, 0)');
+            
+            new Chart(ctxSales, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    datasets: [
+                        {
+                            label: 'Cabin Series',
+                            data: [65, 59, 80, 81, 56, 55, 40, 60, 75, 85, 90, 110],
+                            borderColor: '#2f3e46',
+                            backgroundColor: gradCabin,
+                            borderWidth: 2,
+                            tension: 0.4,
+                            fill: true,
+                            pointBackgroundColor: '#ffffff',
+                            pointBorderColor: '#2f3e46',
+                            pointRadius: 3
+                        },
+                        {
+                            label: 'Capsule Series',
+                            data: [28, 48, 40, 19, 86, 27, 90, 100, 110, 105, 120, 130],
+                            borderColor: '#b0cccf', // secondary-fixed-dim
+                            borderWidth: 2,
+                            borderDash: [5, 5],
+                            tension: 0.4,
+                            fill: false,
+                            pointRadius: 0
+                        },
+                        {
+                            label: 'Home Series',
+                            data: [18, 48, 77, 9, 100, 27, 40, 30, 45, 50, 60, 80],
+                            borderColor: '#94ccff', // tertiary-fixed-dim
+                            borderWidth: 2,
+                            tension: 0.4,
+                            fill: false,
+                            pointRadius: 0
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            align: 'end',
+                            labels: {
+                                usePointStyle: true,
+                                boxWidth: 6,
+                                font: { family: chartFontFamily, size: 12 },
+                                color: textColor
+                            }
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                            backgroundColor: 'rgba(25, 28, 29, 0.9)', // on-background
+                            titleFont: { family: chartFontFamily, size: 12 },
+                            bodyFont: { family: chartFontFamily, size: 12 },
+                            padding: 12,
+                            cornerRadius: 4
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false, drawBorder: false },
+                            ticks: { font: { family: chartFontFamily }, color: textColor }
+                        },
+                        y: {
+                            grid: { color: gridColor, drawBorder: false },
+                            ticks: { font: { family: chartFontFamily }, color: textColor, padding: 10 }
+                        }
+                    },
+                    interaction: {
+                        mode: 'nearest',
+                        axis: 'x',
+                        intersect: false
+                    }
+                }
+            });
+
+            // Occupancy Chart (Bar)
+            const ctxOccupancy = document.getElementById('occupancyChart').getContext('2d');
+            new Chart(ctxOccupancy, {
+                type: 'bar',
+                data: {
+                    labels: ['Squamish', 'G. Van', 'Ontario', 'Whistler'],
+                    datasets: [{
+                        label: 'Occupancy %',
+                        data: [85, 72, 68, 92],
+                        backgroundColor: '#2f3e46',
+                        borderRadius: 4,
+                        barThickness: 24
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: 'rgba(25, 28, 29, 0.9)',
+                            titleFont: { family: chartFontFamily, size: 12 },
+                            bodyFont: { family: chartFontFamily, size: 12 },
+                            callbacks: {
+                                label: function(context) {
+                                    return context.parsed.y + '%';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false, drawBorder: false },
+                            ticks: { font: { family: chartFontFamily }, color: textColor }
+                        },
+                        y: {
+                            grid: { color: gridColor, drawBorder: false },
+                            ticks: { font: { family: chartFontFamily }, color: textColor },
+                            max: 100
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body></html>

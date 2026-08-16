@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Apple Cabins - Community Hub</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-container": "#003f63",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed-variant": "#3a4951",
+                      "outline-variant": "#c3c7ca",
+                      "surface": "#f8f9fa",
+                      "surface-dim": "#d9dadb",
+                      "tertiary": "#002842",
+                      "on-error": "#ffffff",
+                      "on-tertiary-fixed": "#001d32",
+                      "on-background": "#191c1d",
+                      "secondary-fixed-dim": "#b0cccf",
+                      "on-primary-container": "#99a9b2",
+                      "surface-container-high": "#e7e8e9",
+                      "surface-container-highest": "#e1e3e4",
+                      "on-surface": "#191c1d",
+                      "on-tertiary-fixed-variant": "#004b74",
+                      "secondary": "#496366",
+                      "on-surface-variant": "#43474a",
+                      "background": "#f8f9fa",
+                      "outline": "#73787b",
+                      "surface-tint": "#516169",
+                      "secondary-container": "#cbe8eb",
+                      "surface-bright": "#f8f9fa",
+                      "on-primary-fixed": "#0e1d25",
+                      "surface-container": "#edeeef",
+                      "surface-container-low": "#f3f4f5",
+                      "on-secondary-container": "#4f696c",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed": "#d5e5ef",
+                      "inverse-on-surface": "#f0f1f2",
+                      "on-secondary-fixed-variant": "#314b4e",
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#2e3132",
+                      "primary-fixed-dim": "#b9c9d3",
+                      "error-container": "#ffdad6",
+                      "on-primary": "#ffffff",
+                      "inverse-primary": "#b9c9d3",
+                      "on-secondary-fixed": "#031f22",
+                      "surface-variant": "#e1e3e4",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-container": "#59adef",
+                      "tertiary-fixed-dim": "#94ccff",
+                      "tertiary-fixed": "#cde5ff",
+                      "primary": "#192830",
+                      "error": "#ba1a1a",
+                      "secondary-fixed": "#cbe8eb",
+                      "primary-container": "#2f3e46"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1440px",
+                      "base": "8px",
+                      "margin-mobile": "20px",
+                      "gutter": "24px",
+                      "margin-desktop": "80px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "story-heading": [
+                              "Playfair Display"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "headline-xl": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "story-heading": [
+                              "32px",
+                              {
+                                      "lineHeight": "44px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-container/70 backdrop-blur-xl flex justify-between items-center px-margin-mobile h-16 shadow-none">
+<button class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity active:scale-95 flex items-center justify-center p-2">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+<h1 class="font-story-heading text-story-heading text-primary dark:text-primary-fixed truncate px-4">
+            Apple Cabins
+        </h1>
+<button class="hover:opacity-80 transition-opacity active:scale-95 flex items-center justify-center">
+<img alt="Resident Profile" class="w-8 h-8 rounded-full object-cover border border-outline/10" data-alt="A small, minimalist circular avatar portrait of a person in a bright, modern setting, fitting a sleek industrial elegance aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZpWZgfPknE9P6ybvydbJCTsgcZTaZz9DQS6A7Zny_wcs9avVmoqkH4GiwqOuEtnXYCXsJK7Zm7APLAzkiTbetOQ8QGiEBH-DnISc6KBKl99e6Bo5nKaztej7n3PhajYd_lm1ogG4mjoMIdBNmcYZocqzIj5W7mMdbXEi6D8FyjYCHErmmchCY6MHI-sgNzbwuVuGbd2gZGMgCW5FZleSUmiP0nRWbD8mKGIp46wEcNrneGlgn6WNu"/>
+</button>
+</header>
+<!-- Main Content -->
+<main class="pt-24 pb-32 px-margin-mobile flex flex-col gap-[40px]">
+<!-- Featured Story Section -->
+<section class="flex flex-col gap-base">
+<h2 class="font-label-caps text-label-caps text-outline uppercase">Featured Story</h2>
+<div class="relative w-full rounded-xl overflow-hidden shadow-sm h-80 group cursor-pointer" data-alt="A breathtaking view from inside a sleek, futuristic modular cabin in the Pacific Northwest. Expansive floor-to-ceiling windows reveal a misty pine forest and rugged mountain peaks. The interior features minimalist, industrial elegance with slate grey metal accents and pale wood. The lighting is soft, natural, high-key daytime illumination, creating a bright, airy, light-mode aesthetic. A quiet, luxurious sanctuary." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA7qohqEJmivnLrCiP5NWtC-E088sg5s9GnIS85MgdCA-YzeN5-hO58WlGKOQBu7oMPIiiHEIboWU0gwdqbpmcxumkrwZ7wJDa9KSHHJmhoqhTfOTE2I3w_wI71PMx1qQyW7UNZ-M0tAEV-lSQyqAi32E6PLPYXggJt7JmgE724HxEv6apHLLxPbwCG8r547dAeghEC-rdE7AfN7jcm3c8xopyKMTotFxHxsq5Br7v_yTbaqsMrwaZT')">
+<!-- Glassmorphic Text overlay -->
+<div class="absolute bottom-0 w-full p-4 bg-surface/70 backdrop-blur-xl border-t border-outline/10 flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-primary tracking-widest">Architecture</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface line-clamp-2 leading-tight">Integration with the Alpine Edge</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-1 mt-1">Exploring the engineering behind our cantilevered foundations.</p>
+</div>
+</div>
+</section>
+<!-- Quick Links (Bento Style) -->
+<section class="grid grid-cols-2 gap-4">
+<button class="flex flex-col items-center justify-center gap-3 p-6 bg-surface/70 backdrop-blur-xl border border-outline/10 rounded-xl hover:bg-surface transition-colors">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">forum</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Community Forum</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-3 p-6 bg-surface/70 backdrop-blur-xl border border-outline/10 rounded-xl hover:bg-surface transition-colors">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">storefront</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Marketplace</span>
+</button>
+</section>
+<!-- Today's Events -->
+<section class="flex flex-col gap-base">
+<div class="flex justify-between items-end mb-2">
+<h2 class="font-label-caps text-label-caps text-outline uppercase">Today's Events</h2>
+<a class="font-label-caps text-label-caps text-primary flex items-center hover:opacity-80" href="#">View All <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span></a>
+</div>
+<div class="bg-surface/70 backdrop-blur-xl border border-outline/10 rounded-xl p-5 flex items-center gap-4 shadow-sm">
+<div class="flex flex-col items-center justify-center w-16 h-16 rounded-lg bg-surface-container border border-outline/10">
+<span class="font-label-caps text-label-caps text-secondary uppercase">Oct</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface leading-none">24</span>
+</div>
+<div class="flex-1 flex flex-col gap-1">
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold">Firepit Social &amp; Star Gazing</h3>
+<div class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>8:00 PM - 10:00 PM</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Service Providers (Horizontal Scroll) -->
+<section class="flex flex-col gap-base">
+<h2 class="font-label-caps text-label-caps text-outline uppercase">Verified Services</h2>
+<div class="flex overflow-x-auto gap-4 pb-4 snap-x hide-scrollbar" style="margin-left: -20px; padding-left: 20px; margin-right: -20px; padding-right: 20px;">
+<!-- Service Card 1 -->
+<div class="min-w-[200px] flex flex-col gap-3 p-4 bg-surface/70 backdrop-blur-xl border border-outline/10 rounded-xl snap-start">
+<img alt="Provider Avatar" class="w-12 h-12 rounded-full object-cover border border-outline/10" data-alt="A portrait of a professional service provider in a bright, modern setting. They are wearing a clean, minimalist uniform in slate grey tones. The background hints at a pristine, futuristic modular cabin interior with expansive glass and bright natural light. The mood is friendly yet highly efficient and precise, fitting an industrial elegance aesthetic. Light mode color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCySOY4kHexw70T786N6QO-yJSB4iuTJKcf0W07s8xirvp7nlSEvuxxUIp_eREpI_lhSrgy8gOZaytOjtmBfmS-Amb7xez6pjJO3VdEAzBPru78Cq5jDiHqFjkWkjM5wKpcfAsN23-E-r4ZPhBSG_EKWjqo4HdSt8Kv6GPnBe1gpk2Zw4Xq3RQx_0Td1NPZ--_yX5D7jwiEhiAZSvozafEfOfNvnFkZwxASAm2juNMxGtoKdr-keSb9"/>
+<div class="flex flex-col">
+<h4 class="font-body-md text-body-md text-on-surface font-semibold">Alpine Cleaners</h4>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Housekeeping</p>
+</div>
+<button class="mt-2 w-full py-2 border border-outline/20 rounded text-secondary font-label-caps text-label-caps hover:bg-surface-container transition-colors">Book</button>
+</div>
+<!-- Service Card 2 -->
+<div class="min-w-[200px] flex flex-col gap-3 p-4 bg-surface/70 backdrop-blur-xl border border-outline/10 rounded-xl snap-start">
+<img alt="Provider Avatar" class="w-12 h-12 rounded-full object-cover border border-outline/10" data-alt="A close up of hands using a high-tech, precision tool on a sleek metal structural joint of a modular cabin. The setting is bright and clean, emphasizing engineering excellence and industrial elegance. The materials are crisp aluminum and slate grey composites. Soft, natural daylight illuminates the scene, maintaining a bright, minimalist, high-end light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNYbd-sb4yI0vkdVHWRcyXhL0WIH21XjGo1PcSB0s-InvY7voRHMDHoUdMzSa_GRMEYqJslWNFimpQmKP12dZz3G0ClU9pp6Nvx2Zktwo9T1ylMKXPj5UlgtmVVKXq3Vr5KL17i8Lb0NgDIE51IfDxlXZmnNTPOi0N_GbmV5VjRQSssHAZoIhooTeYRQ_YJPIRgQfAb8EJuThQybdmO4XZR43A02Zb4NBmlGpHZqJsVhn-jrtRTMfq"/>
+<div class="flex flex-col">
+<h4 class="font-body-md text-body-md text-on-surface font-semibold">Peak Maintenance</h4>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Repairs &amp; Tech</p>
+</div>
+<button class="mt-2 w-full py-2 border border-outline/20 rounded text-secondary font-label-caps text-label-caps hover:bg-surface-container transition-colors">Request</button>
+</div>
+<!-- Service Card 3 -->
+<div class="min-w-[200px] flex flex-col gap-3 p-4 bg-surface/70 backdrop-blur-xl border border-outline/10 rounded-xl snap-start">
+<div class="w-12 h-12 rounded-full bg-surface-container border border-outline/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">local_dining</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-body-md text-body-md text-on-surface font-semibold">Private Chef</h4>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Culinary</p>
+</div>
+<button class="mt-2 w-full py-2 border border-outline/20 rounded text-secondary font-label-caps text-label-caps hover:bg-surface-container transition-colors">Explore</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-full bg-surface/70 dark:bg-surface-container/70 backdrop-blur-xl flex justify-around items-center h-20 px-4 pb-2 shadow-sm border-t border-outline/10">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed active:scale-90 transition-all duration-200 w-16">
+<span class="material-symbols-outlined mb-1">forum</span>
+<span class="font-label-caps text-label-caps">Forum</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed active:scale-90 transition-all duration-200 w-16">
+<span class="material-symbols-outlined mb-1">event</span>
+<span class="font-label-caps text-label-caps">Events</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed active:scale-90 transition-all duration-200 w-16">
+<span class="material-symbols-outlined mb-1">animated_images</span>
+<span class="font-label-caps text-label-caps">Services</span>
+</button>
+<!-- Active Tab: Stories (matches featured content at top) -->
+<button class="flex flex-col items-center justify-center bg-tertiary-container text-on-tertiary-container rounded-full px-4 py-1 active:scale-90 transition-all duration-200 w-16">
+<span class="material-symbols-outlined mb-1">auto_stories</span>
+<span class="font-label-caps text-label-caps">Stories</span>
+</button>
+</nav>
+<style>
+        /* Utility to hide scrollbar for horizontal scroll area but keep functionality */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

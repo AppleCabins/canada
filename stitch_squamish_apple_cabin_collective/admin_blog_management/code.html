@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Squamish Cabins - Admin Blog Management</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#edeeef",
+                        "on-primary-fixed": "#0e1d25",
+                        "on-secondary-container": "#4f696c",
+                        "surface-dim": "#d9dadb",
+                        "outline-variant": "#c3c7ca",
+                        "on-surface": "#191c1d",
+                        "primary": "#192830",
+                        "tertiary-container": "#003f63",
+                        "on-secondary-fixed": "#031f22",
+                        "surface-tint": "#516169",
+                        "on-background": "#191c1d",
+                        "primary-fixed-dim": "#b9c9d3",
+                        "surface": "#f8f9fa",
+                        "surface-bright": "#f8f9fa",
+                        "inverse-primary": "#b9c9d3",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-fixed": "#cde5ff",
+                        "on-primary-fixed-variant": "#3a4951",
+                        "primary-container": "#2f3e46",
+                        "surface-variant": "#e1e3e4",
+                        "surface-container-low": "#f3f4f5",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#314b4e",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#2e3132",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#cbe8eb",
+                        "tertiary-fixed-dim": "#94ccff",
+                        "secondary-fixed-dim": "#b0cccf",
+                        "surface-container-high": "#e7e8e9",
+                        "background": "#f8f9fa",
+                        "on-primary-container": "#99a9b2",
+                        "error": "#ba1a1a",
+                        "secondary": "#496366",
+                        "on-tertiary-fixed-variant": "#004b74",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-tertiary-container": "#59adef",
+                        "on-tertiary-fixed": "#001d32",
+                        "secondary-container": "#cbe8eb",
+                        "primary-fixed": "#d5e5ef",
+                        "tertiary": "#002842",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "outline": "#73787b",
+                        "on-surface-variant": "#43474a",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "base": "8px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "story-heading": ["Playfair Display"],
+                        "headline-lg-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-xl": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "story-heading": ["32px", { "lineHeight": "44px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .ambient-shadow {
+            box-shadow: 0 40px 40px -15px rgba(25, 40, 48, 0.05);
+        }
+        /* Custom scrollbar for editor */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c3c7ca;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md flex overflow-hidden">
+<!-- SideNavBar (Shared Component) -->
+<nav class="hidden md:flex flex-col bg-surface-container-low h-full w-64 fixed left-0 top-0 border-r border-outline-variant/20 p-4 space-y-4 z-50">
+<!-- Brand -->
+<div class="px-4 py-6 mb-4">
+<h1 class="font-story-heading text-body-lg font-bold text-primary">Squamish Hub</h1>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">Admin Panel</p>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 space-y-2">
+<!-- Active State Logic: 'Inventory' best represents managing blog 'inventory' -->
+<a class="flex items-center space-x-3 px-4 py-3 bg-tertiary-container text-on-tertiary-container rounded-lg font-semibold transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+<span class="font-label-caps text-label-caps">Inventory</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:bg-secondary-container/50 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="font-label-caps text-label-caps">Clients</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:bg-secondary-container/50 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="font-label-caps text-label-caps">Settings</span>
+</a>
+</div>
+<!-- CTA -->
+<div class="px-4 py-4">
+<button class="w-full py-2 bg-primary text-on-primary rounded font-label-caps text-label-caps hover:bg-primary-container transition-colors">
+                Add Cabin
+            </button>
+</div>
+<!-- Footer Links -->
+<div class="border-t border-outline-variant/20 pt-4 space-y-2">
+<a class="flex items-center space-x-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">help</span>
+<span class="font-label-caps text-label-caps">Support</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span class="font-label-caps text-label-caps">Logout</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="w-full md:ml-64 h-screen overflow-y-auto custom-scrollbar bg-surface relative">
+<!-- Background texture/gradient hint -->
+<div class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-surface-container-high/40 via-transparent to-transparent"></div>
+<div class="px-margin-mobile md:px-margin-desktop py-12 md:py-20 max-w-container-max mx-auto relative z-10">
+<header class="mb-12 flex justify-between items-end">
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Content Hub</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Manage journal entries, architectural deep-dives, and news.</p>
+</div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Editor (8 cols) -->
+<div class="lg:col-span-8 space-y-gutter">
+<div class="glass-panel rounded-xl p-8 ambient-shadow relative overflow-hidden">
+<!-- Decorative corner element -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container/20 rounded-bl-[100px] pointer-events-none"></div>
+<div class="flex items-center justify-between border-b border-outline-variant/20 pb-4 mb-8">
+<h3 class="font-story-heading text-story-heading text-primary">Draft New Entry</h3>
+<button class="font-label-caps text-label-caps text-tertiary-container hover:text-primary transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">save</span>
+                                Save Draft
+                            </button>
+</div>
+<form class="space-y-8">
+<!-- Title -->
+<div class="relative group">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/30 px-0 py-2 font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary focus:ring-0 focus:border-tertiary-container transition-colors placeholder-on-surface-variant/30" id="post-title" placeholder="A Resonant Title..." type="text"/>
+<label class="absolute -top-4 left-0 font-label-caps text-label-caps text-on-surface-variant group-focus-within:text-tertiary-container transition-colors" for="post-title">SEO Title</label>
+</div>
+<!-- Meta Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Category -->
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-4">Classification</label>
+<div class="flex flex-wrap gap-3">
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="category" type="radio"/>
+<div class="px-4 py-2 rounded-full border border-outline-variant/40 font-label-caps text-label-caps text-on-surface-variant peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">Lifestyle</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="category" type="radio"/>
+<div class="px-4 py-2 rounded-full border border-outline-variant/40 font-label-caps text-label-caps text-on-surface-variant peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">Technical</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="category" type="radio"/>
+<div class="px-4 py-2 rounded-full border border-outline-variant/40 font-label-caps text-label-caps text-on-surface-variant peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">News</div>
+</label>
+</div>
+</div>
+<!-- Meta Desc -->
+<div class="relative group">
+<textarea class="w-full bg-transparent border-0 border-b border-outline-variant/30 px-0 py-2 font-body-md text-body-md text-primary focus:ring-0 focus:border-tertiary-container transition-colors resize-none custom-scrollbar placeholder-on-surface-variant/30" id="meta-desc" placeholder="Brief summary for search engines..." rows="2"></textarea>
+<label class="absolute -top-4 left-0 font-label-caps text-label-caps text-on-surface-variant group-focus-within:text-tertiary-container transition-colors" for="meta-desc">Meta Description</label>
+</div>
+</div>
+<!-- Featured Image Upload -->
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-4">Hero Imagery</label>
+<div class="border-2 border-dashed border-outline-variant/30 rounded-xl p-8 flex flex-col items-center justify-center text-center hover:bg-surface-container-low/50 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-[32px] text-on-surface-variant/50 group-hover:text-tertiary-container transition-colors mb-2">add_photo_alternate</span>
+<p class="font-body-md text-body-md text-on-surface-variant">Drag high-resolution asset here</p>
+<p class="font-label-caps text-label-caps text-outline mt-1">PNG, JPG up to 10MB</p>
+</div>
+</div>
+<!-- Rich Text Editor Mockup -->
+<div class="border border-outline-variant/20 rounded-xl bg-surface-container-lowest overflow-hidden">
+<div class="bg-surface-container-low border-b border-outline-variant/20 px-4 py-2 flex items-center gap-4 overflow-x-auto custom-scrollbar">
+<button class="text-on-surface-variant hover:text-primary" type="button"><span class="material-symbols-outlined text-[18px]">format_bold</span></button>
+<button class="text-on-surface-variant hover:text-primary" type="button"><span class="material-symbols-outlined text-[18px]">format_italic</span></button>
+<div class="w-[1px] h-4 bg-outline-variant/40"></div>
+<button class="text-on-surface-variant hover:text-primary" type="button"><span class="material-symbols-outlined text-[18px]">format_h1</span></button>
+<button class="text-on-surface-variant hover:text-primary" type="button"><span class="material-symbols-outlined text-[18px]">format_h2</span></button>
+<div class="w-[1px] h-4 bg-outline-variant/40"></div>
+<button class="text-on-surface-variant hover:text-primary" type="button"><span class="material-symbols-outlined text-[18px]">format_list_bulleted</span></button>
+<button class="text-on-surface-variant hover:text-primary" type="button"><span class="material-symbols-outlined text-[18px]">link</span></button>
+</div>
+<div class="p-6 min-h-[300px]">
+<p class="font-body-lg text-body-lg text-on-surface-variant/50">Begin formulating narrative...</p>
+</div>
+</div>
+<div class="flex justify-end pt-4">
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-8 py-3 rounded hover:bg-primary-container transition-colors" type="button">
+                                    Publish Entry
+                                </button>
+</div>
+</form>
+</div>
+</div>
+<!-- Right Column: Lists (4 cols) -->
+<div class="lg:col-span-4 space-y-gutter">
+<!-- Published Articles -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/20 overflow-hidden ambient-shadow flex flex-col">
+<div class="p-6 border-b border-outline-variant/20 bg-surface-bright flex items-center justify-between">
+<h3 class="font-story-heading text-body-lg font-bold text-primary">Live Inventory</h3>
+<span class="px-2 py-1 bg-secondary-container/30 text-on-secondary-container font-label-caps text-label-caps rounded">4 Active</span>
+</div>
+<div class="divide-y divide-outline-variant/10 flex-1 overflow-y-auto custom-scrollbar max-h-[400px]">
+<!-- Item 1 -->
+<div class="p-6 hover:bg-surface-container-low/50 transition-colors group cursor-pointer">
+<p class="font-label-caps text-label-caps text-tertiary-container mb-2">Technical</p>
+<h4 class="font-body-md text-body-md font-semibold text-primary mb-3 line-clamp-2 group-hover:text-tertiary-container transition-colors">The Thermal Efficiency of Modular Glass Facades</h4>
+<div class="flex items-center gap-6 text-on-surface-variant font-label-caps text-label-caps">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">visibility</span> 12.4k
+                                    </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">share</span> 842
+                                    </div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-6 hover:bg-surface-container-low/50 transition-colors group cursor-pointer">
+<p class="font-label-caps text-label-caps text-tertiary-container mb-2">Lifestyle</p>
+<h4 class="font-body-md text-body-md font-semibold text-primary mb-3 line-clamp-2 group-hover:text-tertiary-container transition-colors">Integrating with the Pacific Northwest Canopy</h4>
+<div class="flex items-center gap-6 text-on-surface-variant font-label-caps text-label-caps">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">visibility</span> 8.1k
+                                    </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">share</span> 320
+                                    </div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="p-6 hover:bg-surface-container-low/50 transition-colors group cursor-pointer">
+<p class="font-label-caps text-label-caps text-tertiary-container mb-2">News</p>
+<h4 class="font-body-md text-body-md font-semibold text-primary mb-3 line-clamp-2 group-hover:text-tertiary-container transition-colors">CSA Certification Expansion for 2025 Models</h4>
+<div class="flex items-center gap-6 text-on-surface-variant font-label-caps text-label-caps">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">visibility</span> 3.2k
+                                    </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">share</span> 45
+                                    </div>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-outline-variant/10 text-center">
+<button class="font-label-caps text-label-caps text-primary hover:text-tertiary-container transition-colors">View All Analytics</button>
+</div>
+</div>
+<!-- Drafts -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/20 p-6 ambient-shadow">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-story-heading text-body-lg font-bold text-primary">Pending Reviews</h3>
+<span class="material-symbols-outlined text-outline-variant">edit_document</span>
+</div>
+<div class="space-y-4">
+<div class="group cursor-pointer flex justify-between items-center border-b border-outline-variant/10 pb-4">
+<div>
+<h4 class="font-body-md text-body-md text-primary group-hover:text-tertiary-container transition-colors">Winter Insulation Guide</h4>
+<p class="font-label-caps text-label-caps text-outline mt-1">Last edited 2 days ago</p>
+</div>
+<span class="material-symbols-outlined text-[20px] text-outline-variant group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+<div class="group cursor-pointer flex justify-between items-center pb-2">
+<div>
+<h4 class="font-body-md text-body-md text-primary group-hover:text-tertiary-container transition-colors">Client Spotlight: Whistler Ridge</h4>
+<p class="font-label-caps text-label-caps text-outline mt-1">Last edited today</p>
+</div>
+<span class="material-symbols-outlined text-[20px] text-outline-variant group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

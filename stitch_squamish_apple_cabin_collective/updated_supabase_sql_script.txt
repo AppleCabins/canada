@@ -1,0 +1,194 @@
+-- SQL Script for Apple Cabins Canada Ltd. (Updated)
+-- Target: Supabase (PostgreSQL)
+
+-- 1. Create Custom Enums
+DO $$ BEGIN
+    CREATE TYPE user_role AS ENUM ('admin', 'partner', 'customer');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
+
+DO $$ BEGIN
+    CREATE TYPE cabin_series AS ENUM ('Cabin', 'Capsule', 'Home');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
+
+DO $$ BEGIN
+    CREATE TYPE property_status AS ENUM ('available', 'rented', 'maintenance', 'occupied');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
+
+DO $$ BEGIN
+    CREATE TYPE inquiry_type AS ENUM ('purchase', 'partnership');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
+
+DO $$ BEGIN
+    CREATE TYPE inquiry_status AS ENUM ('new', 'contacted', 'qualified', 'closed');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
+
+DO $$ BEGIN
+    CREATE TYPE payout_status AS ENUM ('initiated', 'processing', 'completed', 'failed');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
+
+DO $$ BEGIN
+    CREATE TYPE service_category AS ENUM ('maintenance', 'cleaning', 'landscape', 'interior', 'tech');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
+
+DO $$ BEGIN
+    CREATE TYPE maintenance_priority AS ENUM ('routine', 'urgent', 'emergency');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
+
+-- 2. Profiles Table (Extends Supabase Auth)
+CREATE TABLE IF NOT EXISTS profiles (
+  id UUID REFERENCES auth.users(id) PRIMARY KEY,
+  email TEXT UNIQUE NOT NULL,
+  full_name TEXT,
+  avatar_url TEXT,
+  role user_role DEFAULT 'customer' NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 3. Cabins Inventory
+CREATE TABLE IF NOT EXISTS cabins_inventory (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  model_name TEXT NOT NULL,
+  series cabin_series NOT NULL,
+  sq_ft INTEGER,
+  base_price NUMERIC,
+  csa_certified BOOLEAN DEFAULT TRUE,
+  stock_count INTEGER DEFAULT 0,
+  shipping_eta_days INTEGER,
+  specifications JSONB DEFAULT '{}',
+  image_urls TEXT[] DEFAULT '{}',
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 4. Properties (Units at resort locations)
+CREATE TABLE IF NOT EXISTS properties (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  owner_id UUID REFERENCES profiles(id),
+  cabin_model_id UUID REFERENCES cabins_inventory(id),
+  status property_status DEFAULT 'available',
+  location_region TEXT NOT NULL,
+  resort_name TEXT,
+  current_lease_start DATE,
+  current_lease_end DATE,
+  guest_rating NUMERIC(3,2),
+  system_health INTEGER DEFAULT 100, -- New: for Maintenance Dashboard
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 5. Service Providers (Marketplace)
+CREATE TABLE IF NOT EXISTS service_providers (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  name TEXT NOT NULL,
+  category service_category NOT NULL,
+  region TEXT[],
+  description TEXT,
+  avatar_url TEXT,
+  rating NUMERIC(3,2),
+  contact_info JSONB,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 6. Maintenance Tickets
+CREATE TABLE IF NOT EXISTS maintenance_tickets (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  property_id UUID REFERENCES properties(id),
+  reporter_id UUID REFERENCES profiles(id),
+  category service_category NOT NULL,
+  priority maintenance_priority DEFAULT 'routine',
+  description TEXT,
+  evidence_urls TEXT[], -- For issue photos
+  status TEXT DEFAULT 'pending', -- pending, dispatched, in_progress, completed
+  technician_name TEXT,
+  scheduled_date TIMESTAMPTZ,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 7. Forum Content
+CREATE TABLE IF NOT EXISTS forum_posts (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  author_id UUID REFERENCES profiles(id),
+  category TEXT NOT NULL, -- e.g., 'Technical Q&A', 'Rental Strategies'
+  title TEXT NOT NULL,
+  content TEXT NOT NULL,
+  tags TEXT[],
+  likes_count INTEGER DEFAULT 0,
+  replies_count INTEGER DEFAULT 0,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS forum_replies (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  post_id UUID REFERENCES forum_posts(id) ON DELETE CASCADE,
+  author_id UUID REFERENCES profiles(id),
+  content TEXT NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 8. Inquiries (Leads)
+CREATE TABLE IF NOT EXISTS inquiries (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID REFERENCES profiles(id),
+  type inquiry_type NOT NULL,
+  first_name TEXT NOT NULL,
+  last_name TEXT NOT NULL,
+  email TEXT NOT NULL,
+  phone TEXT,
+  property_location TEXT,
+  details JSONB DEFAULT '{}',
+  status inquiry_status DEFAULT 'new',
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 9. Blog Posts
+CREATE TABLE IF NOT EXISTS blog_posts (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  author_id UUID REFERENCES profiles(id),
+  title TEXT NOT NULL,
+  slug TEXT UNIQUE NOT NULL,
+  content TEXT, 
+  featured_image TEXT,
+  published_at TIMESTAMPTZ,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 10. Enable RLS
+ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;
+ALTER TABLE cabins_inventory ENABLE ROW LEVEL SECURITY;
+ALTER TABLE properties ENABLE ROW LEVEL SECURITY;
+ALTER TABLE service_providers ENABLE ROW LEVEL SECURITY;
+ALTER TABLE maintenance_tickets ENABLE ROW LEVEL SECURITY;
+ALTER TABLE forum_posts ENABLE ROW LEVEL SECURITY;
+ALTER TABLE forum_replies ENABLE ROW LEVEL SECURITY;
+ALTER TABLE inquiries ENABLE ROW LEVEL SECURITY;
+ALTER TABLE blog_posts ENABLE ROW LEVEL SECURITY;
+
+-- 11. RLS Policies (Examples)
+
+-- Profiles: Users manage their own
+CREATE POLICY "Users can manage own profile" ON profiles FOR ALL USING (auth.uid() = id);
+
+-- Forum: Public read, Authenticated write
+CREATE POLICY "Anyone can read posts" ON forum_posts FOR SELECT USING (true);
+CREATE POLICY "Authenticated users can create posts" ON forum_posts FOR INSERT WITH CHECK (auth.role() = 'authenticated');
+
+-- Maintenance: Owners see their own properties' tickets
+CREATE POLICY "Owners see their tickets" ON maintenance_tickets FOR SELECT 
+USING (EXISTS (SELECT 1 FROM properties WHERE properties.id = property_id AND properties.owner_id = auth.uid()));
+
+-- Marketplace: Public read
+CREATE POLICY "Public can view providers" ON service_providers FOR SELECT USING (true);

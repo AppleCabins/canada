@@ -1,0 +1,262 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Apple Cabins Canada Ltd - Book Your Stay</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#0e1d25",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#2f3e46",
+                        "secondary-fixed-dim": "#b0cccf",
+                        "tertiary-fixed-dim": "#94ccff",
+                        "outline": "#73787b",
+                        "secondary-container": "#cbe8eb",
+                        "surface-tint": "#516169",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#b9c9d3",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "primary": "#192830",
+                        "surface-variant": "#e1e3e4",
+                        "tertiary-container": "#003f63",
+                        "background": "#f8f9fa",
+                        "surface-container": "#edeeef",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#43474a",
+                        "tertiary-fixed": "#cde5ff",
+                        "on-secondary-fixed-variant": "#314b4e",
+                        "on-secondary-container": "#4f696c",
+                        "surface-container-high": "#e7e8e9",
+                        "on-surface": "#191c1d",
+                        "on-tertiary-fixed": "#001d32",
+                        "inverse-on-surface": "#f0f1f2",
+                        "primary-fixed": "#d5e5ef",
+                        "error-container": "#ffdad6",
+                        "secondary": "#496366",
+                        "surface-bright": "#f8f9fa",
+                        "on-primary-container": "#99a9b2",
+                        "inverse-surface": "#2e3132",
+                        "outline-variant": "#c3c7ca",
+                        "on-tertiary-container": "#59adef",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "on-secondary-fixed": "#031f22",
+                        "on-primary-fixed-variant": "#3a4951",
+                        "tertiary": "#002842",
+                        "secondary-fixed": "#cbe8eb",
+                        "primary-fixed-dim": "#b9c9d3",
+                        "on-tertiary-fixed-variant": "#004b74",
+                        "on-background": "#191c1d",
+                        "surface": "#f8f9fa",
+                        "surface-dim": "#d9dadb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "story-heading": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "story-heading": ["32px", { "lineHeight": "44px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-xl": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .bg-mountain {
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<!-- Background Image Container -->
+<div class="fixed inset-0 z-0 bg-mountain" data-alt="A breathtaking view of the Squamish mountains at dawn, seen through expansive glass windows of a modern modular cabin. The scene is illuminated by soft, natural morning light, creating a serene and luxurious atmosphere. The minimalist-futuristic design of the cabin features clean lines and large glass panes that perfectly frame the majestic, untamed wilderness outside." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJj8NPICcDjY-2Yv6CxHmgGYttkLZd0vuaxXT2znY5HPCTcO-RcjpFhPedIGpJsMoLMc0MHPNWFLw92ouoVUDJUjx0Bzfn1ZRz-kGmdAxv68OXhXUWPQkuM8lj2h8QkQRfJgxEFQjfJxzSO3l7O3sHpgVTB1n-_8ikgDqhcWWbEBDevh1B2SvqbRy5FSAVDFhAVE-f6EDk0A656zPEkJe4g-bbiHB7R1hKjBwFnxv_xWeML4osCvux')"></div>
+<div class="fixed inset-0 z-0 bg-primary/20 backdrop-blur-[2px]"></div> <!-- Subtle overlay for readability -->
+<!-- TopNavBar -->
+<nav class="bg-white/70 backdrop-blur-xl fixed top-0 left-0 w-full border-b border-on-surface/10 shadow-[0_40px_40px_-15px_rgba(73,99,102,0.08)] flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 z-50">
+<div class="font-story-heading text-story-heading text-primary font-bold">Apple Cabins</div>
+<div class="hidden md:flex space-x-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-container transition-colors duration-300" href="#">Sales</a>
+<a class="font-label-caps text-label-caps text-tertiary-container font-semibold border-b-2 border-tertiary-container pb-1" href="#">Rentals</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-container transition-colors duration-300" href="#">Gallery</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-container transition-colors duration-300" href="#">Specs</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded font-label-caps text-label-caps hover:bg-primary/90 transition-colors scale-95 active:scale-90 hidden md:block">
+            Login
+        </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<!-- Main Content Canvas -->
+<main class="relative z-10 flex-grow pt-32 pb-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full flex items-center justify-center">
+<div class="w-full max-w-4xl glass-panel rounded-xl shadow-[0_10px_40px_-15px_rgba(25,40,48,0.2)] p-6 md:p-12">
+<header class="mb-10 text-center md:text-left border-b border-outline-variant/30 pb-6">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">Book Your Sanctuary</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Select your dates and cabin model to experience the ultimate fusion of engineering and nature.</p>
+</header>
+<form class="space-y-8">
+<!-- Dates & Guests Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Check-in -->
+<div class="relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">Check-in</label>
+<div class="relative border-b border-outline-variant/30 focus-within:border-tertiary-container transition-colors pb-2 flex items-center">
+<span class="material-symbols-outlined text-outline mr-2" style="font-variation-settings: 'FILL' 0;">calendar_month</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-primary font-body-md p-0 cursor-pointer" type="date" value="2024-05-15">
+</div>
+</div>
+<!-- Check-out -->
+<div class="relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">Check-out</label>
+<div class="relative border-b border-outline-variant/30 focus-within:border-tertiary-container transition-colors pb-2 flex items-center">
+<span class="material-symbols-outlined text-outline mr-2" style="font-variation-settings: 'FILL' 0;">calendar_month</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-primary font-body-md p-0 cursor-pointer" type="date" value="2024-05-20">
+</div>
+</div>
+<!-- Guests -->
+<div class="relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">Guests</label>
+<div class="relative border-b border-outline-variant/30 focus-within:border-tertiary-container transition-colors pb-2 flex items-center">
+<span class="material-symbols-outlined text-outline mr-2" style="font-variation-settings: 'FILL' 0;">person</span>
+<select class="w-full bg-transparent border-none focus:ring-0 text-primary font-body-md p-0 appearance-none cursor-pointer">
+<option>1 Guest</option>
+<option selected="">2 Guests</option>
+<option>3 Guests</option>
+<option>4 Guests</option>
+</select>
+<span class="material-symbols-outlined text-outline absolute right-0 pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Cabin Selection -->
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-4">Select Model</label>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- SpacePod V1 -->
+<label class="cursor-pointer group">
+<input checked="" class="peer sr-only" name="cabin_model" type="radio">
+<div class="glass-panel border-2 border-transparent peer-checked:border-tertiary-container rounded-lg p-4 transition-all hover:bg-white/80">
+<div class="w-full h-48 bg-surface-container-high rounded mb-4 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A sleek, compact modular cabin named SpacePod V1, featuring rounded edges and large panoramic windows, set against a dense forest backdrop. The design is minimalist and futuristic, blending seamlessly with the natural environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfdnWilPUFJevQ-8pv_lzz34YUHvZYw2vRpTxM8EzpMHNVn_RwlT3gxTe3G2RLqV3pizb5oQuMKC_UXVoctCfWg4gbh4irFUi0ZR_PIo4LasnSlM0Qj4CLcasCuqhnXPp_OQGnE00v22t4INqomIKbv3MR3CQ2oo3kk4sMTUeiZelrXNvDUzhsldl07xfyhmsOrBxXKnzCpaWvVLmvuesp_89SzVQUN8bXcY_JT11Tl1ChiaUD3O4Z">
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-body-lg text-body-lg font-semibold text-primary">SpacePod V1</h3>
+<span class="font-label-caps text-label-caps bg-secondary-container text-on-secondary-container px-2 py-1 rounded">Popular</span>
+</div>
+<ul class="space-y-1 mb-4">
+<li class="flex items-center text-on-surface-variant font-body-md text-sm">
+<span class="material-symbols-outlined text-[16px] mr-2">square_foot</span> 450 sq ft
+                                    </li>
+<li class="flex items-center text-on-surface-variant font-body-md text-sm">
+<span class="material-symbols-outlined text-[16px] mr-2">bed</span> 1 King Bed
+                                    </li>
+</ul>
+<div class="flex items-center justify-between border-t border-outline-variant/20 pt-4">
+<span class="font-body-lg text-body-lg text-primary">$350<span class="text-sm text-on-surface-variant">/night</span></span>
+<div class="w-5 h-5 rounded-full border border-outline flex items-center justify-center peer-checked:bg-tertiary-container peer-checked:border-tertiary-container transition-colors">
+<div class="w-2.5 h-2.5 bg-white rounded-full opacity-0 peer-checked:opacity-100"></div>
+</div>
+</div>
+</div>
+</label>
+<!-- Alpine Z -->
+<label class="cursor-pointer group">
+<input class="peer sr-only" name="cabin_model" type="radio">
+<div class="glass-panel border-2 border-transparent peer-checked:border-tertiary-container rounded-lg p-4 transition-all hover:bg-white/80">
+<div class="w-full h-48 bg-surface-container-high rounded mb-4 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A larger, angular modular cabin named Alpine Z with a striking geometric roofline and floor-to-ceiling glass facades, situated on an elevated rocky terrain. The architecture is sharp and modern, contrasting elegantly with the rugged mountain landscape." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu9G0o6u_o841A1O_24QXtBwX-xrlXJGGo6PxSQO9mlHw_YrGENDzq1SwQIEA9SR_Ft_brHxSjAi8T49DIlJ8rbUq5eplcy2Lf-kQ9FlcdgxJfonVamS6Gjdw6-fwetQb9kSBOgdxkzfucduh0LvVTfA3MS4m7eyee9dCNyxjtHputcIBM9XDS7XpmC9yBPRdnHCRUwJrFRwmz5t9sI6E_sgahO_amxSXE9mWv8G1PeFeVUofebjBk">
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-body-lg text-body-lg font-semibold text-primary">Alpine Z</h3>
+<span class="font-label-caps text-label-caps bg-surface-container-high text-on-surface px-2 py-1 rounded">Premium</span>
+</div>
+<ul class="space-y-1 mb-4">
+<li class="flex items-center text-on-surface-variant font-body-md text-sm">
+<span class="material-symbols-outlined text-[16px] mr-2">square_foot</span> 800 sq ft
+                                    </li>
+<li class="flex items-center text-on-surface-variant font-body-md text-sm">
+<span class="material-symbols-outlined text-[16px] mr-2">bed</span> 2 Queen Beds
+                                    </li>
+</ul>
+<div class="flex items-center justify-between border-t border-outline-variant/20 pt-4">
+<span class="font-body-lg text-body-lg text-primary">$550<span class="text-sm text-on-surface-variant">/night</span></span>
+<div class="w-5 h-5 rounded-full border border-outline flex items-center justify-center peer-checked:bg-tertiary-container peer-checked:border-tertiary-container transition-colors">
+<div class="w-2.5 h-2.5 bg-white rounded-full opacity-0 peer-checked:opacity-100"></div>
+</div>
+</div>
+</div>
+</label>
+</div>
+</div>
+<!-- Price Summary & Action -->
+<div class="bg-surface-container-lowest/50 rounded p-6 flex flex-col md:flex-row justify-between items-center border border-outline-variant/20">
+<div class="mb-4 md:mb-0">
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">Total for 5 nights</div>
+<div class="font-headline-lg-mobile text-headline-lg-mobile text-primary">$1,750 CAD</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Includes taxes and cleaning fees.</div>
+</div>
+<button class="w-full md:w-auto bg-tertiary-container text-on-tertiary-container px-8 py-4 rounded font-label-caps text-label-caps hover:bg-tertiary transition-colors shadow-[0_4px_14px_0_rgba(0,63,99,0.39)]" type="button">
+                        Check Availability
+                    </button>
+</div>
+</form>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary w-full relative bottom-0 border-t border-white/10 grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20 z-10 mt-auto">
+<div class="col-span-1 md:col-span-1 flex flex-col space-y-4">
+<span class="font-story-heading text-headline-lg-mobile text-on-primary">Apple Cabins</span>
+<span class="font-body-md text-body-md opacity-80 hover:opacity-100 transition-opacity">© 2024 Squamish Modular. CSA Certified Hub.</span>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-wrap gap-8 justify-start md:justify-end">
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors" href="#">Contact</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors" href="#">Shipping</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors" href="#">Legal</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors" href="#">Sustainability</a>
+</div>
+</footer>
+
+
+</body></html>

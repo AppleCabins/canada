@@ -1,0 +1,229 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Experience Squamish - Seasonal Escape</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#edeeef",
+                        "on-primary-fixed": "#0e1d25",
+                        "on-secondary-container": "#4f696c",
+                        "surface-dim": "#d9dadb",
+                        "outline-variant": "#c3c7ca",
+                        "on-surface": "#191c1d",
+                        "primary": "#192830",
+                        "tertiary-container": "#003f63",
+                        "on-secondary-fixed": "#031f22",
+                        "surface-tint": "#516169",
+                        "on-background": "#191c1d",
+                        "primary-fixed-dim": "#b9c9d3",
+                        "surface": "#f8f9fa",
+                        "surface-bright": "#f8f9fa",
+                        "inverse-primary": "#b9c9d3",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-fixed": "#cde5ff",
+                        "on-primary-fixed-variant": "#3a4951",
+                        "primary-container": "#2f3e46",
+                        "surface-variant": "#e1e3e4",
+                        "surface-container-low": "#f3f4f5",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#314b4e",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#2e3132",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#cbe8eb",
+                        "tertiary-fixed-dim": "#94ccff",
+                        "secondary-fixed-dim": "#b0cccf",
+                        "surface-container-high": "#e7e8e9",
+                        "background": "#f8f9fa",
+                        "on-primary-container": "#99a9b2",
+                        "error": "#ba1a1a",
+                        "secondary": "#496366",
+                        "on-tertiary-fixed-variant": "#004b74",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-tertiary-container": "#59adef",
+                        "on-tertiary-fixed": "#001d32",
+                        "secondary-container": "#cbe8eb",
+                        "primary-fixed": "#d5e5ef",
+                        "tertiary": "#002842",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "outline": "#73787b",
+                        "on-surface-variant": "#43474a",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "base": "8px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "story-heading": ["Playfair Display"],
+                        "headline-lg-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-xl": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "story-heading": ["32px", { "lineHeight": "44px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .text-glow {
+            text-shadow: 0 0 40px rgba(25, 40, 48, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<nav class="bg-white/70 dark:bg-primary/70 backdrop-blur-xl border-b border-on-surface/10 fixed top-0 left-0 w-full shadow-[0_40px_40px_-15px_rgba(73,99,102,0.08)] z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-story-heading text-story-heading text-primary dark:text-primary-fixed">Apple Cabins</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-tertiary-container transition-colors duration-300" href="#">Sales</a>
+<a class="font-label-caps text-label-caps text-tertiary-container dark:text-tertiary-fixed font-semibold border-b-2 border-tertiary-container hover:text-tertiary-container transition-colors duration-300" href="#">Rentals</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-tertiary-container transition-colors duration-300" href="#">Gallery</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-tertiary-container transition-colors duration-300" href="#">Specs</a>
+</div>
+<button class="bg-tertiary-container text-on-tertiary-container px-6 py-2 rounded font-label-caps text-label-caps scale-95 active:scale-90 transition-transform">
+                Login
+            </button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-[100px] pb-32 max-w-[800px] mx-auto w-full px-margin-mobile">
+<!-- Email Container -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_40px_40px_-15px_rgba(73,99,102,0.08)] overflow-hidden border border-outline-variant/20">
+<!-- Hero Image -->
+<div class="relative h-[400px] w-full">
+<img class="w-full h-full object-cover" data-alt="A breathtaking wide shot of a modern, minimalist glass and steel modular cabin nestled in a dense, misty Pacific Northwest pine forest at dawn. Soft, cool morning light filters through the trees, illuminating the cabin's warm, glowing interior. High-end architectural photography style, serene and luxurious mood, emphasizing the contrast between the raw wilderness and precise engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhjMjvDswtNDXpzpQhNhPaNUkezWSm40jwOX0WtkRdV_dHbUBPKD18yDoF5YGtTEcUHwC4FyL0mMIrMSeOXtclpw69vhdh8M8NSl_2Sc-4vI7nkb0LG0Avu4LP1yvCxPH-OUysNbX23qXCBTR5YYjiARc9nIOu70hdIsgG-kKgdPHM6wKVI4mcrdZQYQnHcoUBKrzlLAMbX2DZ2on1cjhTn-jcwCT-BFPNSc5cOUbaq81Xrm_JQPPt">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8 text-on-primary">
+<h1 class="font-story-heading text-headline-xl mb-2 text-glow">Experience Apple Cabins</h1>
+<p class="font-body-lg text-body-lg opacity-90">Your engineered sanctuary in the wild.</p>
+</div>
+</div>
+<!-- Intro Text -->
+<div class="p-8 md:p-12 text-center">
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-2xl mx-auto">
+                    Discover the perfect balance of rugged nature and refined comfort. Our CSA Certified modular hubs offer an unparalleled retreat, designed with precision to blend seamlessly into the stunning landscapes of the Pacific Northwest.
+                </p>
+<!-- Seasonal Offer Banner -->
+<div class="bg-tertiary-container/10 border border-tertiary-container/20 rounded-lg p-6 mb-12">
+<div class="flex items-center justify-center gap-2 mb-2">
+<span class="material-symbols-outlined text-tertiary-container" data-icon="local_offer">local_offer</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-tertiary-container">Seasonal Escape Offer</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-6">Book now and receive 20% off your autumn stay, plus a complimentary locally-sourced welcome basket.</p>
+<button class="bg-tertiary-container text-on-tertiary-container px-8 py-3 rounded font-label-caps text-label-caps hover:bg-tertiary transition-colors">
+                        Claim Offer
+                    </button>
+</div>
+</div>
+<!-- Bento Gallery -->
+<div class="px-8 md:px-12 pb-12">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile mb-6 border-b border-outline-variant/20 pb-4">The Experience</h3>
+<div class="grid grid-cols-2 gap-4 md:gap-6">
+<!-- Large Feature Image -->
+<div class="col-span-2 relative h-64 rounded-lg overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A close-up view of a sleek, modern outdoor fire pit on the deck of a modular cabin. Warm, glowing embers contrast with the cool, misty mountain backdrop of the Pacific Northwest. The scene evokes a cozy, luxurious evening outdoors. High-resolution, cinematic lighting, emphasizing texture and warmth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa_8hc2hszBzyM_S8D_CXFCd6XBLCJlAoPxeVpmsPqdn5FB3UiniOqkT0jM3kNNmRnm6-Pb3owMW5tv7wLau47SqTEtjX3C62YdZcz8Ggc4NWDa_o4Wx9n3ZbtRtyg9LaxLtkuUAWGj1xi-PN22h48aUYfT5ieJ6n8WAOTd3IeKH7EL4LWw560v-0holjtgDBAW0wg8HmhQViE9fdqYKvnnXdIbBduYxmjjVzLfpoLfWHkidtWLVsu">
+<div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/60 to-transparent">
+<span class="font-label-caps text-label-caps text-white">Evening Warmth</span>
+</div>
+</div>
+<!-- Small Feature Image 1 -->
+<div class="relative h-48 rounded-lg overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Interior view of a minimalist, high-tech modular cabin. Floor-to-ceiling windows reveal a stunning mountain vista. The interior features clean lines, sleek slate grey finishes, and a cozy seating area. Bright, airy light-mode aesthetic, emphasizing the connection between indoor luxury and outdoor wilderness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj8tyZnlgalUJ3j24JqCR_kLYla0Li62Pf3z8ybSqxpIk_dazdAvUO-G6vpdnw8ZZB2iJ_UXSGl5fEdC6f5ekf3V23wYXQ3rUFCxIuDbKPQyaN2_1Rvdl2H8anmKFj-2KgePjwJKQ_bHJtS-p3jH3mRG-BpNICWidBZVzWNW1zhAUlQMcaJltM9nxrrv16S4oah-tPPhPhVRBzioSCDSuGbyxlgRGXFlg86VooKVOJ6hkGgMcHxNJ3">
+<div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/60 to-transparent">
+<span class="font-label-caps text-label-caps text-white">Expansive Views</span>
+</div>
+</div>
+<!-- Small Feature Image 2 -->
+<div class="relative h-48 rounded-lg overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A detail shot of a premium, engineered kitchenette inside a modern cabin. Matte black fixtures, smooth slate surfaces, and subtle, precise lighting. The design is highly efficient and industrial-elegant, reflecting a futuristic yet grounded aesthetic. Crisp, high-contrast photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfCHw1iYEpLc7-XKrJOAmXTo3StUyMsIVFt_RzruvwtfZ-1QhGMu4_wKqA6rN-bx5PG-P_RhzHvp0H8m4mdfDoNo4Aviu1ekstyRCtlmHL-Rq2mNbYLs-gDcRL-ShXAw-oQU-8pOYNb0394VVzGE1KjhLfkIhETBFlHaCQb5SyVe7S4Yf5rvM6HxCezyeXOKewF5qIiwrxN7Z5AX45aaPGlB7dkf67mlTty90eI29LBkiXpmhpZIiw">
+<div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/60 to-transparent">
+<span class="font-label-caps text-label-caps text-white">Engineered Comfort</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Guest Favorites List -->
+<div class="px-8 md:px-12 pb-12">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile mb-6 border-b border-outline-variant/20 pb-4">Guest Favorites</h3>
+<ul class="space-y-4">
+<li class="flex items-center justify-between border-b border-outline-variant/10 pb-4">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Panoramic Glass</span>
+<span class="font-body-md text-body-md text-on-surface text-right max-w-[200px]">Uninterrupted wilderness views</span>
+</li>
+<li class="flex items-center justify-between border-b border-outline-variant/10 pb-4">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Climate Control</span>
+<span class="font-body-md text-body-md text-on-surface text-right max-w-[200px]">Smart thermal regulation</span>
+</li>
+<li class="flex items-center justify-between border-b border-outline-variant/10 pb-4">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Local Trails</span>
+<span class="font-body-md text-body-md text-on-surface text-right max-w-[200px]">Direct access to hiking paths</span>
+</li>
+</ul>
+</div>
+<!-- Call to Action -->
+<div class="bg-surface-container-low p-8 text-center border-t border-outline-variant/20">
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Ready to secure your spot in the wild?</p>
+<button class="bg-tertiary-container text-on-tertiary-container px-12 py-4 rounded font-label-caps text-label-caps hover:bg-tertiary transition-colors shadow-sm">
+                    View Availability
+                </button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-on-primary-fixed w-full relative bottom-0 border-t border-white/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20 max-w-container-max mx-auto text-on-primary dark:text-primary-fixed opacity-80 hover:opacity-100 transition-opacity">
+<div class="col-span-1 md:col-span-2">
+<div class="font-story-heading text-headline-lg-mobile text-on-primary mb-4">Apple Cabins</div>
+<p class="font-body-md text-body-md">© 2024 Apple Cabins Canada Ltd. CSA Certified Hub.</p>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors" href="#">Contact</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors" href="#">Shipping</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors" href="#">Legal</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors" href="#">Sustainability</a>
+</div>
+</div>
+</footer>
+
+
+</body></html>

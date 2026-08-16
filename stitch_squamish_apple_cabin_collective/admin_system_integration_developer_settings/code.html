@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>System Integration - Apple Cabins</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#0e1d25",
+                        "tertiary-fixed-dim": "#94ccff",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#99a9b2",
+                        "surface-container-high": "#e7e8e9",
+                        "outline-variant": "#c3c7ca",
+                        "on-secondary-container": "#4f696c",
+                        "inverse-surface": "#2e3132",
+                        "on-tertiary-fixed": "#001d32",
+                        "tertiary": "#002842",
+                        "secondary-container": "#cbe8eb",
+                        "primary-fixed": "#d5e5ef",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d9dadb",
+                        "secondary-fixed": "#cbe8eb",
+                        "surface-tint": "#516169",
+                        "secondary-fixed-dim": "#b0cccf",
+                        "primary-fixed-dim": "#b9c9d3",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#43474a",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#191c1d",
+                        "tertiary-container": "#003f63",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "on-background": "#191c1d",
+                        "surface": "#f8f9fa",
+                        "surface-bright": "#f8f9fa",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-secondary-fixed-variant": "#314b4e",
+                        "primary-container": "#2f3e46",
+                        "inverse-primary": "#b9c9d3",
+                        "surface-variant": "#e1e3e4",
+                        "on-primary-fixed-variant": "#3a4951",
+                        "on-error": "#ffffff",
+                        "background": "#f8f9fa",
+                        "on-tertiary-fixed-variant": "#004b74",
+                        "outline": "#73787b",
+                        "tertiary-fixed": "#cde5ff",
+                        "primary": "#192830",
+                        "surface-container-low": "#f3f4f5",
+                        "secondary": "#496366",
+                        "on-secondary-fixed": "#031f22",
+                        "on-tertiary-container": "#59adef",
+                        "surface-container": "#edeeef",
+                        // Custom Brand Colors
+                        "electric-blue": "#007BFF",
+                        "slate-grey": "#6c757d",
+                        "arctic-white": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "base": "8px",
+                        "container-max": "1440px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "story-heading": ["Playfair Display", "serif"],
+                        "headline-lg": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "headline-lg-mobile": ["Inter", "sans-serif"],
+                        "headline-xl": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "story-heading": ["32px", { "lineHeight": "44px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-xl": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Glassmorphism Classes */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .input-line {
+            border-bottom: 1px solid rgba(108, 117, 125, 0.3);
+            transition: border-color 0.3s ease;
+        }
+        .input-line:focus {
+            border-bottom-color: #007BFF;
+            outline: none;
+        }
+        .divider-line {
+            border-bottom: 1px solid rgba(108, 117, 125, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex antialiased">
+<!-- SideNavBar (from JSON) -->
+<nav class="hidden md:flex flex-col h-full py-base bg-surface-container-low dark:bg-surface-container-lowest fixed left-0 top-0 h-full w-64 border-r border-outline dark:border-outline-variant border-opacity-10 shadow-sm dark:shadow-none z-50">
+<div class="px-4 py-6">
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed tracking-tight">Apple Cabins</h1>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">Admin Dashboard</p>
+</div>
+<div class="flex-grow mt-8 px-2 space-y-2">
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant dark:hover:bg-primary-container transition-all duration-200 rounded-lg cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-body-md text-body-md">Inventory</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant dark:hover:bg-primary-container transition-all duration-200 rounded-lg cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-body-md text-body-md">Clients</span>
+</a>
+<!-- Active State determined by user intent: Settings/System Integration -->
+<a class="flex items-center gap-3 bg-secondary-container text-on-secondary-container font-semibold rounded-lg px-4 py-3 cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined fill-icon" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant dark:hover:bg-primary-container transition-all duration-200 rounded-lg cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+<span class="font-body-md text-body-md">Legal</span>
+</a>
+</div>
+<div class="px-2 pb-4 space-y-2 mt-auto">
+<button class="w-full mb-6 font-label-caps text-label-caps text-electric-blue border-none bg-transparent hover:opacity-80 transition-opacity">
+                View Specs
+            </button>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant dark:hover:bg-primary-container transition-all duration-200 rounded-lg cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant dark:hover:bg-primary-container transition-all duration-200 rounded-lg cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-body-md text-body-md">Log Out</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-0 md:ml-64 p-margin-mobile md:p-margin-desktop bg-surface-bright min-h-screen">
+<div class="max-w-container-max mx-auto">
+<!-- Header Section -->
+<header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">System Integration</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage backend connections and environment synchronizations.</p>
+</div>
+<div class="flex items-center gap-3 bg-white/50 backdrop-blur-md px-4 py-2 rounded-full border border-outline-variant/30 shadow-[0_4px_40px_rgba(108,117,125,0.05)]">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+</span>
+<span class="font-label-caps text-label-caps text-primary">API Status: Operational</span>
+</div>
+</header>
+<!-- Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Main Configuration Column (8 cols) -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Supabase Config Card -->
+<section class="glass-card rounded-xl p-8 shadow-[0_4px_40px_rgba(108,117,125,0.05)]">
+<div class="flex items-center gap-3 mb-6 divider-line pb-4">
+<span class="material-symbols-outlined text-primary" data-icon="database">database</span>
+<h3 class="font-story-heading text-story-heading text-primary">Supabase Configuration</h3>
+</div>
+<div class="space-y-6">
+<!-- URL Input -->
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">SUPABASE_URL</label>
+<div class="flex gap-4">
+<input class="w-full bg-transparent input-line font-body-md text-body-md text-primary pb-2 px-0 focus:ring-0" readonly="" type="text" value="https://xyz123.supabase.co"/>
+<button class="font-label-caps text-label-caps text-electric-blue hover:opacity-80 transition-opacity">Copy</button>
+<button class="bg-electric-blue text-white font-label-caps text-label-caps px-4 py-2 rounded shadow-sm hover:opacity-90 transition-opacity whitespace-nowrap">Test Connection</button>
+</div>
+</div>
+<!-- Anon Key Input -->
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">SUPABASE_ANON_KEY</label>
+<div class="flex gap-4">
+<input class="w-full bg-transparent input-line font-body-md text-body-md text-primary pb-2 px-0 focus:ring-0" readonly="" type="password" value="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."/>
+<button class="font-label-caps text-label-caps text-electric-blue hover:opacity-80 transition-opacity">Copy</button>
+<button class="bg-transparent border border-slate-grey/20 text-slate-grey font-label-caps text-label-caps px-4 py-2 rounded hover:bg-surface-variant transition-colors whitespace-nowrap">Regenerate</button>
+</div>
+</div>
+<!-- Service Role Key Input -->
+<div>
+<label class="block font-label-caps text-label-caps text-error mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="warning">warning</span>
+                                    SUPABASE_SERVICE_ROLE_KEY
+                                </label>
+<div class="flex gap-4">
+<input class="w-full bg-transparent input-line font-body-md text-body-md text-primary pb-2 px-0 focus:ring-0" readonly="" type="password" value="****************************************"/>
+<button class="font-label-caps text-label-caps text-electric-blue hover:opacity-80 transition-opacity">Reveal</button>
+<button class="font-label-caps text-label-caps text-electric-blue hover:opacity-80 transition-opacity">Copy</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Security Warning Callout -->
+<div class="bg-error-container/50 border border-error/20 rounded-xl p-6 flex items-start gap-4 backdrop-blur-sm">
+<span class="material-symbols-outlined text-error mt-1" data-icon="security">security</span>
+<div>
+<h4 class="font-label-caps text-label-caps text-error mb-1">Critical Security Warning</h4>
+<p class="font-body-md text-body-md text-on-error-container">The Service Role Key bypasses all Row Level Security (RLS) policies. NEVER expose this key in client-side code. It must only be used in secure backend environments.</p>
+</div>
+</div>
+</div>
+<!-- Secondary Column (4 cols) -->
+<div class="lg:col-span-4 space-y-8">
+<!-- Vercel Sync Card -->
+<section class="glass-card rounded-xl p-6 shadow-[0_4px_40px_rgba(108,117,125,0.05)]">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="sync">sync</span>
+<h3 class="font-label-caps text-label-caps text-primary">Vercel Deployment Sync</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Environment variables are automatically synchronized with the production deployment.</p>
+<div class="flex items-center justify-between divider-line pb-4 mb-4">
+<span class="font-body-md text-body-md text-primary">Last synced</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">2 hours ago</span>
+</div>
+<button class="w-full bg-transparent border border-slate-grey/20 text-slate-grey font-label-caps text-label-caps px-4 py-3 rounded hover:bg-surface-variant transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="refresh">refresh</span>
+                            Force Sync Now
+                        </button>
+</section>
+<!-- SDK Reference -->
+<section class="glass-card rounded-xl p-6 shadow-[0_4px_40px_rgba(108,117,125,0.05)]">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="code">code</span>
+<h3 class="font-label-caps text-label-caps text-primary">SDK Initialization</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 text-sm">Use this snippet to initialize the Supabase client in your frontend.</p>
+<div class="bg-inverse-surface rounded-lg p-4 overflow-x-auto">
+<pre class="text-[13px] leading-relaxed font-mono text-inverse-on-surface"><code>import { createClient } from '@supabase/supabase-js'
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+export const supabase = createClient(
+  supabaseUrl, 
+  supabaseKey
+)</code></pre>
+</div>
+</section>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Simple micro-interaction for testing connection
+        document.querySelectorAll('button').forEach(btn => {
+            if(btn.innerText.includes('Test Connection')) {
+                btn.addEventListener('click', function() {
+                    const originalText = this.innerText;
+                    this.innerText = 'Testing...';
+                    this.classList.add('opacity-70');
+                    setTimeout(() => {
+                        this.innerText = 'Success';
+                        this.classList.remove('bg-electric-blue');
+                        this.classList.add('bg-emerald-500');
+                        setTimeout(() => {
+                            this.innerText = originalText;
+                            this.classList.add('bg-electric-blue');
+                            this.classList.remove('bg-emerald-500', 'opacity-70');
+                        }, 2000);
+                    }, 1000);
+                });
+            }
+        });
+    </script>
+</body></html>

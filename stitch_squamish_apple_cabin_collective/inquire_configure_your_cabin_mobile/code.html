@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Squamish Cabins - Configure</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#002842",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#f8f9fa",
+                        "primary-container": "#2f3e46",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-bright": "#f8f9fa",
+                        "surface-tint": "#516169",
+                        "on-tertiary-container": "#59adef",
+                        "on-secondary-fixed": "#031f22",
+                        "primary": "#192830",
+                        "tertiary-fixed": "#cde5ff",
+                        "tertiary-container": "#003f63",
+                        "on-tertiary-fixed": "#001d32",
+                        "secondary-fixed": "#cbe8eb",
+                        "primary-fixed": "#d5e5ef",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#2e3132",
+                        "surface": "#f8f9fa",
+                        "surface-variant": "#e1e3e4",
+                        "surface-container-low": "#f3f4f5",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#43474a",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#0e1d25",
+                        "on-secondary-fixed-variant": "#314b4e",
+                        "surface-container": "#edeeef",
+                        "inverse-primary": "#b9c9d3",
+                        "on-secondary-container": "#4f696c",
+                        "on-tertiary-fixed-variant": "#004b74",
+                        "surface-container-highest": "#e1e3e4",
+                        "secondary": "#496366",
+                        "secondary-container": "#cbe8eb",
+                        "on-surface": "#191c1d",
+                        "tertiary-fixed-dim": "#94ccff",
+                        "secondary-fixed-dim": "#b0cccf",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#d9dadb",
+                        "outline-variant": "#c3c7ca",
+                        "on-background": "#191c1d",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#99a9b2",
+                        "outline": "#73787b",
+                        "on-primary-fixed-variant": "#3a4951",
+                        "primary-fixed-dim": "#b9c9d3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "container-max": "1440px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "story-heading": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-xl": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "story-heading": ["32px", { "lineHeight": "44px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-xl": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); border-top: 1px solid rgba(115, 120, 123, 0.1); }
+        .selected-ring { outline: 2px solid theme('colors.primary'); outline-offset: 2px; }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen flex flex-col pb-[120px]">
+<!-- Header (Transactional Intent - Suppressing Global Nav) -->
+<header class="w-full px-margin-mobile py-4 flex justify-between items-center z-50 sticky top-0 bg-background/90 backdrop-blur-md border-b border-outline-variant/20">
+<button class="text-on-surface hover:text-primary transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined">close</span>
+</button>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Configure Cabin</span>
+<div class="w-6"></div> <!-- Spacer for centering -->
+</header>
+<main class="flex-grow px-margin-mobile py-8 flex flex-col gap-8">
+<!-- Progress Indicator -->
+<div class="flex items-center justify-between gap-2">
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+<div class="h-1 flex-1 bg-outline-variant/30 rounded-full"></div>
+<div class="h-1 flex-1 bg-outline-variant/30 rounded-full"></div>
+<div class="h-1 flex-1 bg-outline-variant/30 rounded-full"></div>
+</div>
+<div class="flex flex-col gap-2">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Select Model</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Choose the base footprint for your modular retreat.</p>
+</div>
+<!-- Model Selection Cards -->
+<div class="flex flex-col gap-4">
+<!-- Selected Card -->
+<button class="glass-card rounded-xl p-4 flex flex-col gap-4 text-left selected-ring transition-all relative overflow-hidden group">
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full h-40 rounded-lg overflow-hidden relative">
+<img alt="The A-Frame" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A high-quality architectural render of a compact, minimalist modular cabin in a lush Pacific Northwest forest setting. The cabin features large glass windows, dark wood siding, and a flat roof. Soft natural light filtering through the trees. The overall style is modern, industrial elegance, with a serene and peaceful mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNHnheRIL6FQgHTusuR0Ojy8VbcR-8W2pM1_X-_zbNDdDuAo_N50L0R9C1hR7qps_DIZDjNN7tlw_Xj3soHpwMjwC2pv2C98xdqi7KGledgo3oVmEJklN2uFJOTVUTImQ6xcK0c5S_COtDhq1RfLq3KwtmKB9y5fqOhIcrrIHqmyWahWXFeRrLkx96jVpPABJ3jcMlu7h4bk_1e_vEvoqiiUa2awlyYiV5rDBq4diY5nu1J87-QIRZ"/>
+</div>
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-story-heading text-[24px] leading-8 text-on-surface">The A-Frame</h3>
+<span class="font-label-caps text-label-caps text-primary bg-primary-container/10 px-2 py-1 rounded">POPULAR</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">A classic silhouette optimized for snow loads and dramatic views. Perfect for alpine environments.</p>
+<div class="flex flex-col gap-2 border-t border-outline-variant/20 pt-4">
+<div class="flex justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant">FOOTPRINT</span>
+<span class="font-body-md text-body-md text-on-surface">450 sq ft</span>
+</div>
+<div class="flex justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant">BED/BATH</span>
+<span class="font-body-md text-body-md text-on-surface">1 / 1</span>
+</div>
+</div>
+</div>
+</button>
+<!-- Unselected Card -->
+<button class="glass-card rounded-xl p-4 flex flex-col gap-4 text-left hover:border-primary/50 transition-all relative overflow-hidden group">
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-full h-40 rounded-lg overflow-hidden relative">
+<img alt="The Linear" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sleek, single-story rectangular modular cabin situated on a rocky bluff overlooking the ocean. The design is ultra-minimalist with expansive floor-to-ceiling glass on one side, surrounded by a harsh but beautiful coastal landscape. Overcast, moody lighting typical of the Pacific Northwest. Industrial elegance aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwYFlraTX2wknfVHj5QR0Xe85lep7w7EGz5nm32OcXL5_2ULhmlfgJrm-LwG6XulcT15jhG23_DELzCg24XbCsarwlCMtxf1-i6EOD3uds1dL2UPd1o4s759-i7JPRql0vuIXB-jxJcV40qW_nHPuyBNBqZn8wfFGPXshRw31wluBLC8J1s_waG4y4fQySIUvsxgCj3Gf8LLXAXoCW0AEg42mnBuUelG_lp86Jq1Ot1sxCJlH1MNHf"/>
+</div>
+<div>
+<h3 class="font-story-heading text-[24px] leading-8 text-on-surface mb-2">The Linear</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Sleek, single-story design maximizing panoramic frontage. Ideal for coastal bluffs or open plains.</p>
+<div class="flex flex-col gap-2 border-t border-outline-variant/20 pt-4">
+<div class="flex justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant">FOOTPRINT</span>
+<span class="font-body-md text-body-md text-on-surface">600 sq ft</span>
+</div>
+<div class="flex justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant">BED/BATH</span>
+<span class="font-body-md text-body-md text-on-surface">2 / 1</span>
+</div>
+</div>
+</div>
+</button>
+</div>
+</main>
+<!-- Sticky Bottom Summary & CTA -->
+<div class="fixed bottom-0 left-0 w-full glass-nav p-margin-mobile flex flex-col gap-4 z-50">
+<div class="flex justify-between items-center cursor-pointer" onclick="document.getElementById('summary-details').classList.toggle('hidden')">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant block mb-1">ESTIMATED INVESTMENT</span>
+<span class="font-headline-lg-mobile text-[24px] leading-8 font-semibold text-on-surface">$145,000</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">expand_less</span>
+</div>
+<!-- Collapsible Details -->
+<div class="hidden flex flex-col gap-2 border-t border-outline-variant/20 pt-4" id="summary-details">
+<div class="flex justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">Base Model (The A-Frame)</span>
+<span class="font-body-md text-body-md text-on-surface">$120,000</span>
+</div>
+<div class="flex justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">Est. Delivery &amp; Setup</span>
+<span class="font-body-md text-body-md text-on-surface">$25,000</span>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary font-body-md text-body-md font-semibold py-4 rounded-xl flex justify-center items-center gap-2 hover:bg-primary/90 transition-colors">
+            Next Step: Exterior Finish
+            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</body></html>

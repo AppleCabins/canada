@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Document Signing - Squamish Cabins</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed": "#031f22",
+                      "primary-fixed": "#d5e5ef",
+                      "secondary-fixed-dim": "#b0cccf",
+                      "surface-container-highest": "#e1e3e4",
+                      "surface-container-high": "#e7e8e9",
+                      "secondary-container": "#cbe8eb",
+                      "inverse-on-surface": "#f0f1f2",
+                      "surface-tint": "#516169",
+                      "inverse-surface": "#2e3132",
+                      "primary": "#192830",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "outline-variant": "#c3c7ca",
+                      "inverse-primary": "#b9c9d3",
+                      "primary-container": "#2f3e46",
+                      "tertiary-fixed-dim": "#94ccff",
+                      "background": "#f8f9fa",
+                      "tertiary-fixed": "#cde5ff",
+                      "surface-container": "#edeeef",
+                      "primary-fixed-dim": "#b9c9d3",
+                      "error-container": "#ffdad6",
+                      "surface-variant": "#e1e3e4",
+                      "on-secondary-fixed-variant": "#314b4e",
+                      "on-primary-container": "#99a9b2",
+                      "on-surface-variant": "#43474a",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-container": "#59adef",
+                      "surface-container-low": "#f3f4f5",
+                      "surface": "#f8f9fa",
+                      "surface-bright": "#f8f9fa",
+                      "error": "#ba1a1a",
+                      "on-error": "#ffffff",
+                      "on-background": "#191c1d",
+                      "surface-dim": "#d9dadb",
+                      "on-tertiary-fixed-variant": "#004b74",
+                      "on-tertiary-fixed": "#001d32",
+                      "on-surface": "#191c1d",
+                      "tertiary": "#002842",
+                      "tertiary-container": "#003f63",
+                      "secondary-fixed": "#cbe8eb",
+                      "on-error-container": "#93000a",
+                      "on-primary-fixed": "#0e1d25",
+                      "outline": "#73787b",
+                      "on-secondary-container": "#4f696c",
+                      "on-secondary": "#ffffff",
+                      "secondary": "#496366",
+                      "on-primary-fixed-variant": "#3a4951"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "gutter": "24px",
+                      "margin-desktop": "80px",
+                      "margin-mobile": "20px",
+                      "container-max": "1440px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "label-caps": ["Inter"],
+                      "headline-xl": ["Inter"],
+                      "story-heading": ["Playfair Display"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                      "headline-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "story-heading": ["32px", {"lineHeight": "44px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body { touch-action: none; overflow: hidden; } /* Prevent zooming/scrolling on mobile */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .signature-canvas { touch-action: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface h-screen flex flex-col antialiased">
+<!-- Top App Bar (Simplified for focused flow) -->
+<header class="flex-none bg-white/70 backdrop-blur-xl border-b border-on-surface/10 flex justify-between items-center w-full px-margin-mobile py-4 z-50">
+<button aria-label="Cancel" class="text-on-surface-variant p-2 -ml-2">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary text-center flex-grow truncate px-4 text-xl">Purchase Agreement</h1>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- Document Preview Area (Top Half) -->
+<main class="flex-1 overflow-y-auto bg-surface p-margin-mobile relative">
+<div class="max-w-2xl mx-auto glass-panel rounded-xl shadow-[0_40px_40px_-15px_rgba(73,99,102,0.08)] overflow-hidden">
+<!-- Simulated Document Content -->
+<div class="p-6">
+<h2 class="font-story-heading text-story-heading text-primary mb-6">Modular Unit Purchase Agreement</h2>
+<div class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+<p>This agreement is made on <span class="font-semibold text-on-surface">October 26, 2024</span>, between Squamish Cabins ("Seller") and the undersigned buyer.</p>
+<div class="border-t border-outline-variant/20 pt-4">
+<div class="flex justify-between py-2 border-b border-outline-variant/10">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Unit Model</span>
+<span class="font-body-md text-body-md text-on-surface">The Alpine X</span>
+</div>
+<div class="flex justify-between py-2 border-b border-outline-variant/10">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Base Price</span>
+<span class="font-body-md text-body-md text-on-surface">$145,000 USD</span>
+</div>
+<div class="flex justify-between py-2 border-b border-outline-variant/10">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Delivery Date</span>
+<span class="font-body-md text-body-md text-on-surface">March 15, 2025</span>
+</div>
+</div>
+<p class="text-sm mt-6">By signing below, you acknowledge that you have read, understood, and agree to the Terms and Conditions specified in Appendix A.</p>
+<div class="h-16"></div> <!-- Scroll spacer -->
+</div>
+</div>
+<!-- Document Image/Watermark -->
+<img alt="" class="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none mix-blend-multiply" data-alt="A subtle, high-key, minimalist watermark or background graphic showing abstract architectural lines and mountain silhouettes in soft whites and very light greys, conveying a clean, modern, and trustworthy aesthetic suitable for a legal document background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWYs79MOUi4PaIkJxKpgMtt3ResJ_kdSq4JjcVivs2Sm7zw6jW-FWN9UJRE8OfiLH7Pg_418TsVt4FNpnc_hRBWzHd0lKpf4cYWmbmoy2zLBPrFSzOAN-mB7cigguGemWR5cwdqT-hJy2PefBm5cShP4LLLpGxASX2bdgaBiDhZHAffqhGcbgfuzFdFrG3CcrscyW19u4ULVMPOaPSVu_ChzWZPyYmj_DUvm4Zc6McSfuM3f7mnrKF"/>
+</div>
+</main>
+<!-- Signature Pad Area (Bottom Half) -->
+<section class="flex-none h-[397px] bg-surface-container-lowest border-t border-outline-variant/20 rounded-t-3xl shadow-[0_-20px_40px_-15px_rgba(73,99,102,0.1)] flex flex-col z-10">
+<div class="px-margin-mobile py-4 flex justify-between items-center border-b border-outline-variant/10">
+<h3 class="font-label-caps text-label-caps text-primary">Sign Here</h3>
+<button class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors" id="clear-btn">Clear</button>
+</div>
+<div class="flex-1 relative bg-white m-4 rounded-xl border border-outline-variant/30 overflow-hidden cursor-crosshair touch-none">
+<!-- Canvas for drawing -->
+<canvas class="signature-canvas w-full h-full absolute inset-0" id="sig-canvas"></canvas>
+<!-- Baseline indicator -->
+<div class="absolute bottom-1/4 left-8 right-8 border-b-2 border-dashed border-outline-variant/30 pointer-events-none"></div>
+<span class="absolute bottom-1/4 left-8 translate-y-6 font-label-caps text-[10px] text-outline pointer-events-none">X</span>
+</div>
+<div class="px-margin-mobile pb-margin-mobile pt-2">
+<button class="w-full bg-tertiary-container text-on-tertiary-container font-headline-lg-mobile text-body-md py-4 rounded-lg flex items-center justify-center space-x-2 shadow-md hover:bg-tertiary-container/90 transition-all opacity-50 cursor-not-allowed" id="finish-btn">
+<span class="material-symbols-outlined text-[20px]" data-icon="check_circle">check_circle</span>
+<span>Finish Signing</span>
+</button>
+</div>
+</section>
+<script>
+        // Simple Signature Canvas Logic
+        const canvas = document.getElementById('sig-canvas');
+        const ctx = canvas.getContext('2d');
+        const clearBtn = document.getElementById('clear-btn');
+        const finishBtn = document.getElementById('finish-btn');
+        
+        let isDrawing = false;
+        let hasDrawn = false;
+
+        function resizeCanvas() {
+            const rect = canvas.parentElement.getBoundingClientRect();
+            canvas.width = rect.width;
+            canvas.height = rect.height;
+            // Retain styling
+            ctx.lineWidth = 3;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.strokeStyle = '#003f63'; // tertiary-container
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        // Initial setup timeout to ensure DOM is fully rendered
+        setTimeout(resizeCanvas, 100);
+
+        function startDrawing(e) {
+            isDrawing = true;
+            hasDrawn = true;
+            enableFinish();
+            draw(e);
+        }
+
+        function stopDrawing() {
+            isDrawing = false;
+            ctx.beginPath();
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+            
+            e.preventDefault(); // Prevent scrolling
+
+            let clientX, clientY;
+            if (e.type.includes('touch')) {
+                const rect = canvas.getBoundingClientRect();
+                clientX = e.touches[0].clientX - rect.left;
+                clientY = e.touches[0].clientY - rect.top;
+            } else {
+                clientX = e.offsetX;
+                clientY = e.offsetY;
+            }
+
+            ctx.lineTo(clientX, clientY);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(clientX, clientY);
+        }
+
+        // Mouse events
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseout', stopDrawing);
+
+        // Touch events
+        canvas.addEventListener('touchstart', startDrawing, { passive: false });
+        canvas.addEventListener('touchmove', draw, { passive: false });
+        canvas.addEventListener('touchend', stopDrawing);
+
+        clearBtn.addEventListener('click', () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            hasDrawn = false;
+            disableFinish();
+        });
+
+        function enableFinish() {
+            finishBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+        }
+
+        function disableFinish() {
+            finishBtn.classList.add('opacity-50', 'cursor-not-allowed');
+        }
+        
+        finishBtn.addEventListener('click', () => {
+            if(hasDrawn) {
+                // Simulate action
+                finishBtn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">sync</span><span>Processing...</span>';
+                setTimeout(() => {
+                    finishBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">done_all</span><span>Document Signed</span>';
+                    finishBtn.classList.add('bg-secondary', 'text-on-secondary');
+                    finishBtn.classList.remove('bg-tertiary-container', 'text-on-tertiary-container');
+                }, 1000);
+            }
+        });
+
+    </script>
+</body></html>

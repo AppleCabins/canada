@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Project Update - Apple Cabins</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#edeeef",
+                    "on-primary-fixed": "#0e1d25",
+                    "on-secondary-container": "#4f696c",
+                    "surface-dim": "#d9dadb",
+                    "outline-variant": "#c3c7ca",
+                    "on-surface": "#191c1d",
+                    "primary": "#192830",
+                    "tertiary-container": "#003f63",
+                    "on-secondary-fixed": "#031f22",
+                    "surface-tint": "#516169",
+                    "on-background": "#191c1d",
+                    "primary-fixed-dim": "#b9c9d3",
+                    "surface": "#f8f9fa",
+                    "surface-bright": "#f8f9fa",
+                    "inverse-primary": "#b9c9d3",
+                    "inverse-on-surface": "#f0f1f2",
+                    "tertiary-fixed": "#cde5ff",
+                    "on-primary-fixed-variant": "#3a4951",
+                    "primary-container": "#2f3e46",
+                    "surface-variant": "#e1e3e4",
+                    "surface-container-low": "#f3f4f5",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#314b4e",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#2e3132",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#cbe8eb",
+                    "tertiary-fixed-dim": "#94ccff",
+                    "secondary-fixed-dim": "#b0cccf",
+                    "surface-container-high": "#e7e8e9",
+                    "background": "#f8f9fa",
+                    "on-primary-container": "#99a9b2",
+                    "error": "#ba1a1a",
+                    "secondary": "#496366",
+                    "on-tertiary-fixed-variant": "#004b74",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-tertiary-container": "#59adef",
+                    "on-tertiary-fixed": "#001d32",
+                    "secondary-container": "#cbe8eb",
+                    "primary-fixed": "#d5e5ef",
+                    "tertiary": "#002842",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "outline": "#73787b",
+                    "on-surface-variant": "#43474a",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "container-max": "1440px",
+                    "base": "8px",
+                    "margin-desktop": "80px"
+            },
+            "fontFamily": {
+                    "label-caps": [
+                            "Inter"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "headline-lg": [
+                            "Inter"
+                    ],
+                    "headline-xl": [
+                            "Inter"
+                    ],
+                    "story-heading": [
+                            "Playfair Display"
+                    ],
+                    "headline-lg-mobile": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "48px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-xl": [
+                            "64px",
+                            {
+                                    "lineHeight": "72px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "story-heading": [
+                            "32px",
+                            {
+                                    "lineHeight": "44px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen pt-[100px] md:pt-[120px]">
+<!-- Navbar: Suppressed for Email Template Intent, but providing a simplified header for the preview canvas -->
+<header class="fixed top-0 left-0 w-full bg-white/70 backdrop-blur-xl border-b border-outline-variant/10 shadow-[0_40px_40px_-15px_rgba(73,99,102,0.08)] z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4">
+<div class="font-story-heading text-story-heading text-primary">Apple Cabins</div>
+</div>
+</header>
+<main class="max-w-[800px] mx-auto px-margin-mobile md:px-margin-desktop pb-[160px]">
+<!-- Email Header -->
+<section class="mb-[80px] text-center">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-base">Project Update</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">The Summit - Build #4092</p>
+</section>
+<!-- Progress Tracker -->
+<section class="mb-[120px] bg-white/70 backdrop-blur-xl border border-white/30 rounded-xl p-[40px] shadow-[0_40px_40px_-15px_rgba(73,99,102,0.05)] relative overflow-hidden">
+<!-- Ambient Glow -->
+<div class="absolute inset-0 bg-surface-tint/5 blur-[40px] z-0 pointer-events-none"></div>
+<div class="relative z-10">
+<h2 class="font-label-caps text-label-caps text-primary mb-[40px]">Current Status</h2>
+<div class="relative flex justify-between items-center w-full">
+<!-- Track Line -->
+<div class="absolute top-1/2 left-0 w-full h-[2px] bg-surface-variant -translate-y-1/2 z-0"></div>
+<!-- Active Track Line -->
+<div class="absolute top-1/2 left-0 w-1/2 h-[2px] bg-tertiary-container -translate-y-1/2 z-0"></div>
+<!-- Steps -->
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary mt-2">Design</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">engineering</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary mt-2">Manufacturing</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-variant border-2 border-white flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">local_shipping</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-2">Shipping</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-variant border-2 border-white flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">foundation</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-2">Installation</span>
+</div>
+</div>
+</div>
+</section>
+<!-- What's New & Documents -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-[120px]">
+<!-- What's New -->
+<section class="md:col-span-8 space-y-[40px]">
+<h2 class="font-story-heading text-story-heading text-primary border-b border-outline-variant/20 pb-4">Latest Developments</h2>
+<div class="bg-white/70 backdrop-blur-xl border border-white/30 rounded-xl p-[32px]">
+<div class="w-full h-48 mb-6 rounded-lg overflow-hidden bg-surface-variant relative">
+<img class="w-full h-full object-cover" data-alt="A detailed view of modern modular cabin framing in a pristine, bright manufacturing facility. High-key lighting, industrial elegance, clean lines, minimalist techno-nature aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaZ0KZsEyvT0lVyvwf-yP5QmlaIufhoxLn3fBToej1tiWFmT2GrFHAknI5vNT8ubd3-4pdo3nfpZcQ1yC0NopGbqirkR762eYlXuS5DeurKx75nD7nI8btyjQVSTTNnLq6ld7N0OEHMPSwTac7_HQU6A58xRJTlXge1FHQ3rvsXv5FfqVOrAztyy_IIa-VZ7dcLL1nMJcIO7qX8YcFsta7hnJwPlGGmCZSZ6ZTYn2h7VL7oVOTKIMj">
+</div>
+<h3 class="font-body-lg text-body-lg font-semibold text-primary mb-2">Structural Framing Complete</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                        The primary steel and timber framing for your cabin is now complete. Our engineering team has conducted the secondary stress tests, ensuring the structure meets all extreme-weather specifications for its final destination. Next week, we begin the integration of the panoramic glass panels.
+                    </p>
+</div>
+</section>
+<!-- Technical Documents -->
+<aside class="md:col-span-4 space-y-[40px]">
+<h2 class="font-story-heading text-story-heading text-primary border-b border-outline-variant/20 pb-4">Resources</h2>
+<div class="bg-white/70 backdrop-blur-xl border border-white/30 rounded-xl p-[32px] flex flex-col gap-4">
+<a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-colors group border-b border-outline-variant/10 last:border-0" href="#">
+<span class="material-symbols-outlined text-secondary group-hover:text-tertiary-container">description</span>
+<span class="font-label-caps text-label-caps text-on-surface group-hover:text-tertiary-container">Site Prep Guide v2</span>
+</a>
+<a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-colors group border-b border-outline-variant/10 last:border-0" href="#">
+<span class="material-symbols-outlined text-secondary group-hover:text-tertiary-container">architecture</span>
+<span class="font-label-caps text-label-caps text-on-surface group-hover:text-tertiary-container">Foundation Specs</span>
+</a>
+<a class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-colors group border-b border-outline-variant/10 last:border-0" href="#">
+<span class="material-symbols-outlined text-secondary group-hover:text-tertiary-container">fact_check</span>
+<span class="font-label-caps text-label-caps text-on-surface group-hover:text-tertiary-container">Inspection Log</span>
+</a>
+</div>
+<!-- Contact PM -->
+<div class="bg-surface-container-low rounded-xl p-[32px] text-center border border-outline-variant/10">
+<div class="w-16 h-16 rounded-full bg-surface-variant mx-auto mb-4 overflow-hidden border-2 border-white">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a female project manager in a bright, modern architectural office setting. Clean, minimalist lighting, approachable yet engineered aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzcIIOa8m0XkfneomKijA-NPPt7wVZjB0HW4mNFg28QFSIP-gf6nDyfHyIyazzK-ptRJ3JpLNWFro-SjVx3HauyimljoKxmBFtFitms4m5NGNVHlhec_Y3Cix8cKwJNaZPMgviS0-pSV5XpiM312CvSZNpLEs20PsbJoOO2-8NtaCqFSgHHW-tfS38P-cTGMnD5ocYOKZjH-TtJFEKeEpNPt1oBxl33CY-QDvJFAUzMZmgxzWFede2">
+</div>
+<h4 class="font-body-md text-body-md font-semibold text-primary mb-1">Sarah Jenkins</h4>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-6">Project Manager</p>
+<button class="w-full bg-tertiary-container text-white font-label-caps text-label-caps py-3 px-6 rounded-lg hover:bg-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">mail</span>
+                         Contact Sarah
+                     </button>
+</div>
+</aside>
+</div>
+</main>
+
+
+</body></html>

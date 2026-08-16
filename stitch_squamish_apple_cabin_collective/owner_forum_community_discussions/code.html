@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Forum | PNW Modular Living</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#003f63",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#3a4951",
+                        "outline-variant": "#c3c7ca",
+                        "surface": "#f8f9fa",
+                        "surface-dim": "#d9dadb",
+                        "tertiary": "#002842",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#001d32",
+                        "on-background": "#191c1d",
+                        "secondary-fixed-dim": "#b0cccf",
+                        "on-primary-container": "#99a9b2",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-surface": "#191c1d",
+                        "on-tertiary-fixed-variant": "#004b74",
+                        "secondary": "#496366",
+                        "on-surface-variant": "#43474a",
+                        "background": "#f8f9fa",
+                        "outline": "#73787b",
+                        "surface-tint": "#516169",
+                        "secondary-container": "#cbe8eb",
+                        "surface-bright": "#f8f9fa",
+                        "on-primary-fixed": "#0e1d25",
+                        "surface-container": "#edeeef",
+                        "surface-container-low": "#f3f4f5",
+                        "on-secondary-container": "#4f696c",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#d5e5ef",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-secondary-fixed-variant": "#314b4e",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#2e3132",
+                        "primary-fixed-dim": "#b9c9d3",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#b9c9d3",
+                        "on-secondary-fixed": "#031f22",
+                        "surface-variant": "#e1e3e4",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#59adef",
+                        "tertiary-fixed-dim": "#94ccff",
+                        "tertiary-fixed": "#cde5ff",
+                        "primary": "#192830",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#cbe8eb",
+                        "primary-container": "#2f3e46"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "base": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "story-heading": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-xl": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "story-heading": ["32px", { "lineHeight": "44px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-xl": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .glass-card {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .ambient-shadow {
+            box-shadow: 0 10px 40px -10px rgba(115, 120, 123, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Top Navigation Bar -->
+<nav class="hidden md:flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto bg-surface/70 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-outline/10 shadow-sm">
+<div class="flex items-center space-x-12">
+<span class="font-headline-lg text-headline-lg tracking-tighter text-primary">PNW MODULAR</span>
+<div class="flex space-x-8">
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1 cursor-pointer transition-opacity" href="#">Forum</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer transition-opacity" href="#">Events</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer transition-opacity" href="#">Services</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer transition-opacity" href="#">Stories</a>
+</div>
+</div>
+<div class="flex items-center space-x-6">
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined" data-icon="search">search</span></button>
+<div class="flex space-x-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined" data-icon="notifications">notifications</span></button>
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined" data-icon="account_circle">account_circle</span></button>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded font-body-md text-body-md hover:opacity-90 transition-opacity">My Cabin</button>
+</div>
+</nav>
+<!-- Side Navigation Bar (Mobile) -->
+<nav class="md:hidden h-full w-64 fixed left-0 top-0 z-40 bg-surface-container-low border-r border-outline/10 flex flex-col p-4">
+<div class="mb-8">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Cabin Owner Portal</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Alpine Ridge Estate</p>
+</div>
+<div class="flex-grow space-y-2">
+<a class="flex items-center space-x-3 p-3 font-label-caps text-label-caps text-on-surface-variant hover:bg-surface-container-highest transition-all rounded-lg scale-95 active:scale-90" href="#"><span class="material-symbols-outlined" data-icon="home">home</span><span>Home</span></a>
+<a class="flex items-center space-x-3 p-3 font-label-caps text-label-caps bg-secondary-container text-on-secondary-container rounded-lg scale-95 active:scale-90" href="#"><span class="material-symbols-outlined" data-icon="forum">forum</span><span>Forum</span></a>
+<a class="flex items-center space-x-3 p-3 font-label-caps text-label-caps text-on-surface-variant hover:bg-surface-container-highest transition-all rounded-lg scale-95 active:scale-90" href="#"><span class="material-symbols-outlined" data-icon="event">event</span><span>Events</span></a>
+<a class="flex items-center space-x-3 p-3 font-label-caps text-label-caps text-on-surface-variant hover:bg-surface-container-highest transition-all rounded-lg scale-95 active:scale-90" href="#"><span class="material-symbols-outlined" data-icon="build">build</span><span>Marketplace</span></a>
+<a class="flex items-center space-x-3 p-3 font-label-caps text-label-caps text-on-surface-variant hover:bg-surface-container-highest transition-all rounded-lg scale-95 active:scale-90" href="#"><span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span><span>Stories</span></a>
+</div>
+<div class="mt-auto space-y-2 pt-4 border-t border-outline/10">
+<button class="w-full bg-primary text-on-primary py-2 rounded-lg font-label-caps text-label-caps hover:opacity-90 mb-4">Book Service</button>
+<a class="flex items-center space-x-3 p-2 font-label-caps text-label-caps text-on-surface-variant hover:bg-surface-container-highest transition-all rounded-lg scale-95" href="#"><span class="material-symbols-outlined" data-icon="settings">settings</span><span>Settings</span></a>
+<a class="flex items-center space-x-3 p-2 font-label-caps text-label-caps text-on-surface-variant hover:bg-surface-container-highest transition-all rounded-lg scale-95" href="#"><span class="material-symbols-outlined" data-icon="help">help</span><span>Support</span></a>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-24 md:pt-32 pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto md:ml-0 transition-all duration-300">
+<!-- Header Section -->
+<header class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div>
+<h1 class="font-headline-xl text-headline-xl text-primary mb-4">Owner's Forum</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Connect with fellow PNW Modular owners. Share strategies, technical insights, and design inspiration for your off-grid sanctuary.</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative w-full md:w-64">
+<input class="w-full bg-transparent border-0 border-b border-outline/30 focus:border-primary focus:ring-0 py-2 pl-8 font-body-md text-body-md text-on-surface placeholder:text-outline-variant transition-colors" placeholder="Search topics..." type="text"/>
+<span class="material-symbols-outlined absolute left-0 top-2 text-outline-variant" data-icon="search">search</span>
+</div>
+<button class="shrink-0 bg-[#0055FF] text-white px-6 py-2 rounded font-body-md text-body-md hover:opacity-90 transition-opacity">New Post</button>
+</div>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Sidebar: Categories -->
+<aside class="lg:col-span-3 space-y-8">
+<div class="glass-card ambient-shadow rounded-xl p-6">
+<h2 class="font-label-caps text-label-caps text-outline mb-6">Categories</h2>
+<ul class="space-y-4">
+<li>
+<a class="group flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors" href="#">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]" data-icon="trending_up">trending_up</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Rental Strategies</span>
+</div>
+<span class="font-label-caps text-label-caps text-outline-variant">142</span>
+</a>
+</li>
+<li>
+<a class="group flex items-center justify-between p-2 rounded-lg bg-surface-container-low transition-colors border-l-2 border-primary" href="#">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-tertiary-container text-on-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]" data-icon="build">build</span>
+</div>
+<span class="font-body-md text-body-md text-primary font-semibold">Technical Q&amp;A</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary">89</span>
+</a>
+</li>
+<li>
+<a class="group flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors" href="#">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-variant text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]" data-icon="chair">chair</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Lifestyle &amp; Design</span>
+</div>
+<span class="font-label-caps text-label-caps text-outline-variant">215</span>
+</a>
+</li>
+<li>
+<a class="group flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors" href="#">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary-fixed text-on-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]" data-icon="map">map</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Region Specific</span>
+</div>
+<span class="font-label-caps text-label-caps text-outline-variant">64</span>
+</a>
+</li>
+</ul>
+</div>
+</aside>
+<!-- Main Feed -->
+<div class="lg:col-span-9 space-y-6">
+<!-- Filters -->
+<div class="flex items-center justify-between border-b border-outline/10 pb-4">
+<div class="flex gap-6">
+<button class="font-body-md text-body-md text-primary font-semibold border-b-2 border-primary pb-4 -mb-[17px]">Latest</button>
+<button class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors pb-4 -mb-[17px]">Top Rated</button>
+<button class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors pb-4 -mb-[17px]">Unanswered</button>
+</div>
+<button class="flex items-center gap-2 text-outline hover:text-primary transition-colors">
+<span class="font-label-caps text-label-caps">Filter</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+<!-- Thread Cards -->
+<article class="glass-card ambient-shadow rounded-xl p-6 transition-transform hover:-translate-y-1 duration-300">
+<div class="flex items-start gap-4">
+<img class="w-10 h-10 rounded-full object-cover shrink-0" data-alt="Close up portrait of a middle aged man with a beard wearing a plaid shirt, soft natural lighting, set against a blurred background of a modern minimal interior. The style is clean and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP8qDA94rfL6c4xLHseiixfJiFb-02VD1gIkNnLSp-cXhY2jvRfw-6ygQeUBntngW6y3MWOHOc5bPn4v2MTCkoBqr8YHNQx6YaNWitU3nl2kkMsROD4i_KwlVgnOk43oXNoYnkAgvz7sabCHHGc1KpukE5ywbfUwtTnqVInKFVmXnGRnAj74q5_jiv9pHy16nFRDeaPYq-7EB_RsZPSFHyz6-W2lwYWgQrlS1SG_be_1239-uCwdK7"/>
+<div class="flex-grow">
+<div class="flex items-center gap-2 mb-1">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Elias Thorne</span>
+<span class="font-label-caps text-label-caps text-outline-variant">• 2h ago</span>
+<span class="px-2 py-1 bg-surface-container rounded text-[10px] uppercase tracking-wider text-on-surface-variant ml-auto">Technical Q&amp;A</span>
+</div>
+<h3 class="font-body-lg text-body-lg text-primary mb-2 cursor-pointer hover:underline">Winterizing the M-Series Water System: Best Practices?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-2">Heading into my first winter with the M-Series in the Cascades. I've read the manual on draining the external lines, but looking for practical tips from those who experience deep freezes. Do you run the ambient heat trace constantly or put it on a timer?</p>
+<div class="flex items-center gap-6 border-t border-outline/10 pt-4">
+<button class="flex items-center gap-2 text-outline-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="thumb_up">thumb_up</span>
+<span class="font-label-caps text-label-caps">24</span>
+</button>
+<button class="flex items-center gap-2 text-outline-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="chat_bubble_outline">chat_bubble_outline</span>
+<span class="font-label-caps text-label-caps">12 Replies</span>
+</button>
+<button class="flex items-center gap-2 text-outline-variant hover:text-primary transition-colors ml-auto">
+<span class="material-symbols-outlined text-[18px]" data-icon="bookmark_border">bookmark_border</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<article class="glass-card ambient-shadow rounded-xl p-6 transition-transform hover:-translate-y-1 duration-300">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-headline-lg-mobile text-[16px] shrink-0">S</div>
+<div class="flex-grow">
+<div class="flex items-center gap-2 mb-1">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Sarah Jenkins</span>
+<span class="font-label-caps text-label-caps text-outline-variant">• 5h ago</span>
+<span class="px-2 py-1 bg-surface-container rounded text-[10px] uppercase tracking-wider text-on-surface-variant ml-auto">Rental Strategies</span>
+</div>
+<h3 class="font-body-lg text-body-lg text-primary mb-2 cursor-pointer hover:underline">Setting Premium Rates for Remote Locations</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-2">Our cabin is 45 minutes from the nearest paved road. Initially, we priced lower to compensate for the drive, but recently bumped rates by 30% positioning it as an "exclusive retreat." Occupancy actually went up. Curious if others have experienced this reverse price sensitivity?</p>
+<div class="flex items-center gap-6 border-t border-outline/10 pt-4">
+<button class="flex items-center gap-2 text-outline-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="thumb_up">thumb_up</span>
+<span class="font-label-caps text-label-caps">56</span>
+</button>
+<button class="flex items-center gap-2 text-outline-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="chat_bubble_outline">chat_bubble_outline</span>
+<span class="font-label-caps text-label-caps">38 Replies</span>
+</button>
+<button class="flex items-center gap-2 text-outline-variant hover:text-primary transition-colors ml-auto">
+<span class="material-symbols-outlined text-[18px]" data-icon="bookmark_border">bookmark_border</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface w-full py-20 border-t border-outline/10 flex flex-col items-center justify-center space-y-8 px-margin-desktop md:ml-0">
+<div class="flex space-x-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Sustainability Report</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Support</a>
+</div>
+<p class="font-label-caps text-label-caps text-primary">© 2024 PNW Modular Living. Engineered for the Wild.</p>
+</footer>
+</body></html>

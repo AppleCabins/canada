@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Legal Template Management | Apple Cabins</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#2f3e46",
+                    "on-surface": "#191c1d",
+                    "on-tertiary-fixed": "#001d32",
+                    "primary": "#192830",
+                    "background": "#f8f9fa",
+                    "secondary": "#496366",
+                    "on-secondary-fixed-variant": "#314b4e",
+                    "tertiary": "#002842",
+                    "inverse-surface": "#2e3132",
+                    "on-primary-fixed": "#0e1d25",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#94ccff",
+                    "secondary-container": "#cbe8eb",
+                    "primary-fixed-dim": "#b9c9d3",
+                    "surface-variant": "#e1e3e4",
+                    "on-tertiary-container": "#59adef",
+                    "surface-container": "#edeeef",
+                    "primary-fixed": "#d5e5ef",
+                    "outline": "#73787b",
+                    "secondary-fixed": "#cbe8eb",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-secondary": "#ffffff",
+                    "surface-bright": "#f8f9fa",
+                    "surface-tint": "#516169",
+                    "surface": "#f8f9fa",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#e7e8e9",
+                    "on-tertiary-fixed-variant": "#004b74",
+                    "inverse-on-surface": "#f0f1f2",
+                    "on-primary-fixed-variant": "#3a4951",
+                    "surface-container-low": "#f3f4f5",
+                    "on-secondary-fixed": "#031f22",
+                    "on-background": "#191c1d",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#43474a",
+                    "tertiary-container": "#003f63",
+                    "secondary-fixed-dim": "#b0cccf",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#99a9b2",
+                    "surface-dim": "#d9dadb",
+                    "inverse-primary": "#b9c9d3",
+                    "on-secondary-container": "#4f696c",
+                    "outline-variant": "#c3c7ca",
+                    "tertiary-fixed": "#cde5ff",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-mobile": "20px",
+                    "base": "8px",
+                    "margin-desktop": "80px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "headline-xl": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "story-heading": ["Playfair Display"],
+                    "label-caps": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "story-heading": ["32px", {"lineHeight": "44px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 40px rgba(73, 99, 102, 0.05); /* Tinted with secondary Slate Grey */
+        }
+        .ambient-glow {
+            box-shadow: 0 8px 40px rgba(73, 99, 102, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low dark:bg-surface-container-lowest border-r border-outline dark:border-outline-variant border-opacity-10 shadow-sm dark:shadow-none flex flex-col h-full py-base z-30 hidden md:flex">
+<!-- Header -->
+<div class="px-4 py-6 mb-4">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover border border-outline/20" data-alt="A minimalist, professional avatar profile picture representing an admin user in a corporate setting. Clean white background, modern soft lighting, evoking a sense of trust and precision engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOBCG_UsmclUISN4J4SEdnpj6XFDeoTiqG27y-IImGMxZpAhvdOEZlVof12GH89c9GD9OO2IypaCVTCNlLknkrNoE6SZk_vnAQkDe4uM7YACoAHIBzMXHWW5Fzs5Hx3zqGQ52LY-elpdlWie3puU7ZFE_zU2-o2vEv2ksgNexAyDIkq5ZDoHzQFy_AjQssAtMzVySlfmxGVFuSgv4E_CcrA6Zn9iulPmEPAmvP3QwgcGfoZ4Zqld7p"/>
+<div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed leading-none text-xl">Apple Cabins</h1>
+<span class="font-label-caps text-label-caps text-secondary">Admin Dashboard</span>
+</div>
+</div>
+</div>
+<!-- Navigation Tabs -->
+<nav class="flex-1 px-2 space-y-1">
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant dark:hover:bg-primary-container transition-all duration-200 cursor-pointer active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">inventory_2</span>
+<span class="font-body-md text-body-md">Inventory</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant dark:hover:bg-primary-container transition-all duration-200 cursor-pointer active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">group</span>
+<span class="font-body-md text-body-md">Clients</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant dark:hover:bg-primary-container transition-all duration-200 cursor-pointer active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+<!-- Active Tab -->
+<a class="flex items-center gap-3 bg-secondary-container text-on-secondary-container font-semibold rounded-lg px-4 py-3 cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">gavel</span>
+<span class="font-body-md text-body-md">Legal</span>
+</a>
+</nav>
+<!-- CTA -->
+<div class="px-4 py-4">
+<button class="w-full py-2 px-4 bg-transparent border border-outline border-opacity-20 text-secondary font-label-caps text-label-caps rounded-DEFAULT hover:bg-surface-variant transition-colors cursor-pointer active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">visibility</span>
+                View Specs
+            </button>
+</div>
+<!-- Footer Tabs -->
+<div class="px-2 mt-auto border-t border-outline/10 pt-4 space-y-1">
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant dark:hover:bg-primary-container transition-all duration-200 cursor-pointer active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">help_outline</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant dark:hover:bg-primary-container transition-all duration-200 cursor-pointer active:scale-95 rounded-lg text-error" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">logout</span>
+<span class="font-body-md text-body-md">Log Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-64 flex flex-col min-h-screen">
+<!-- TopAppBar (Mobile Only - simplified for context) -->
+<header class="md:hidden sticky top-0 w-full z-40 bg-white/70 dark:bg-primary/70 backdrop-blur-md border-b border-outline border-opacity-10 shadow-sm flex justify-between items-center px-margin-mobile h-16">
+<span class="font-story-heading text-xl text-primary font-bold">Apple Cabins</span>
+<button class="material-symbols-outlined text-primary">menu</button>
+</header>
+<!-- Canvas -->
+<div class="flex-1 p-margin-mobile md:p-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Page Header & Actions -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">Legal Templates</h2>
+<p class="font-body-lg text-body-lg text-secondary">Manage and update standardized contract modules.</p>
+</div>
+<button class="bg-[#2f3e46] hover:bg-primary text-white font-label-caps text-label-caps px-6 py-3 rounded-DEFAULT transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Create New Template
+                </button>
+</div>
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Summary/Stats Card (Spans 4) -->
+<div class="lg:col-span-4 glass-panel rounded-xl p-6 flex flex-col justify-between ambient-glow">
+<div>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-secondary bg-surface-container-high p-2 rounded-lg" style="font-variation-settings: 'FILL' 0;">description</span>
+<h3 class="font-body-lg text-body-lg text-primary font-semibold">Active Templates</h3>
+</div>
+<p class="font-headline-xl text-headline-xl text-primary">24</p>
+<p class="font-body-md text-body-md text-secondary mt-2">Up to date with current regulations.</p>
+</div>
+<div class="mt-8 pt-6 border-t border-outline/10">
+<a class="font-label-caps text-label-caps text-[#2f3e46] hover:text-primary transition-colors flex items-center gap-1" href="#">
+                            Review Compliance Log <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Template List (Spans 8) -->
+<div class="lg:col-span-8 space-y-4">
+<!-- Template Card 1 -->
+<div class="glass-panel rounded-xl p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 group hover:border-outline/50 transition-colors">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-2">
+<h4 class="font-body-lg text-body-lg text-primary font-semibold">Partnership Agreement</h4>
+<span class="bg-secondary-container text-on-secondary-container font-label-caps text-[10px] px-2 py-1 rounded-sm">V.3.2</span>
+</div>
+<p class="font-body-md text-body-md text-secondary line-clamp-2">Standard modular structure partnership contract detailing equity split, liabilities, and construction phases.</p>
+<div class="mt-4 flex gap-4 text-sm text-outline">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">update</span> Last edited: 2 days ago</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">person</span> By: Sarah J.</span>
+</div>
+</div>
+<div class="flex flex-row md:flex-col gap-3 w-full md:w-auto">
+<button class="flex-1 md:flex-none bg-transparent border border-outline/20 text-secondary hover:text-primary hover:border-outline/50 font-label-caps text-[10px] px-4 py-2 rounded-DEFAULT transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">edit</span> Edit
+                            </button>
+<button class="flex-1 md:flex-none bg-transparent border border-outline/20 text-secondary hover:text-primary hover:border-outline/50 font-label-caps text-[10px] px-4 py-2 rounded-DEFAULT transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Preview
+                            </button>
+<button class="flex-1 md:flex-none text-[#2f3e46] hover:text-primary font-label-caps text-[10px] px-4 py-2 rounded-DEFAULT transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">history</span> History
+                            </button>
+</div>
+</div>
+<!-- Template Card 2 -->
+<div class="glass-panel rounded-xl p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 group hover:border-outline/50 transition-colors">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-2">
+<h4 class="font-body-lg text-body-lg text-primary font-semibold">Sales Agreement (B2C)</h4>
+<span class="bg-secondary-container text-on-secondary-container font-label-caps text-[10px] px-2 py-1 rounded-sm">V.4.0</span>
+</div>
+<p class="font-body-md text-body-md text-secondary line-clamp-2">Consumer purchase agreement covering deposit structure, delivery timelines, and modular warranty terms.</p>
+<div class="mt-4 flex gap-4 text-sm text-outline">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">update</span> Last edited: 1 week ago</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">person</span> By: Admin</span>
+</div>
+</div>
+<div class="flex flex-row md:flex-col gap-3 w-full md:w-auto">
+<button class="flex-1 md:flex-none bg-transparent border border-outline/20 text-secondary hover:text-primary hover:border-outline/50 font-label-caps text-[10px] px-4 py-2 rounded-DEFAULT transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">edit</span> Edit
+                            </button>
+<button class="flex-1 md:flex-none bg-transparent border border-outline/20 text-secondary hover:text-primary hover:border-outline/50 font-label-caps text-[10px] px-4 py-2 rounded-DEFAULT transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Preview
+                            </button>
+<button class="flex-1 md:flex-none text-[#2f3e46] hover:text-primary font-label-caps text-[10px] px-4 py-2 rounded-DEFAULT transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">history</span> History
+                            </button>
+</div>
+</div>
+<!-- Template Card 3 -->
+<div class="glass-panel rounded-xl p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 group hover:border-outline/50 transition-colors">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-2">
+<h4 class="font-body-lg text-body-lg text-primary font-semibold">Short-Term Rental Agreement</h4>
+<span class="bg-surface-variant text-on-surface-variant font-label-caps text-[10px] px-2 py-1 rounded-sm">Draft</span>
+</div>
+<p class="font-body-md text-body-md text-secondary line-clamp-2">Terms and conditions for leasing modular cabins on a short-term basis, including liability waivers.</p>
+<div class="mt-4 flex gap-4 text-sm text-outline">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">update</span> Last edited: 2 weeks ago</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">person</span> By: Legal Team</span>
+</div>
+</div>
+<div class="flex flex-row md:flex-col gap-3 w-full md:w-auto">
+<button class="flex-1 md:flex-none bg-[#2f3e46] text-white hover:bg-primary font-label-caps text-[10px] px-4 py-2 rounded-DEFAULT transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">edit</span> Continue Editing
+                            </button>
+<button class="flex-1 md:flex-none bg-transparent border border-outline/20 text-secondary hover:text-primary hover:border-outline/50 font-label-caps text-[10px] px-4 py-2 rounded-DEFAULT transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Preview
+                            </button>
+<button class="flex-1 md:flex-none text-[#2f3e46] hover:text-primary font-label-caps text-[10px] px-4 py-2 rounded-DEFAULT transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">history</span> History
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

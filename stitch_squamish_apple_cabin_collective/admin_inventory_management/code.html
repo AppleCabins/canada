@@ -1,0 +1,367 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Admin Dashboard - Squamish Cabins</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-container": "#cbe8eb",
+                      "on-primary-fixed": "#0e1d25",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed-dim": "#b9c9d3",
+                      "surface": "#f8f9fa",
+                      "on-surface": "#191c1d",
+                      "surface-container-high": "#e7e8e9",
+                      "on-secondary-fixed": "#031f22",
+                      "error-container": "#ffdad6",
+                      "primary": "#192830",
+                      "on-primary-container": "#99a9b2",
+                      "secondary-fixed-dim": "#b0cccf",
+                      "primary-container": "#2f3e46",
+                      "surface-container-highest": "#e1e3e4",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#004b74",
+                      "on-secondary": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed": "#cde5ff",
+                      "surface-container": "#edeeef",
+                      "tertiary-container": "#003f63",
+                      "tertiary-fixed-dim": "#94ccff",
+                      "surface-tint": "#516169",
+                      "on-tertiary-fixed": "#001d32",
+                      "inverse-primary": "#b9c9d3",
+                      "on-error": "#ffffff",
+                      "surface-variant": "#e1e3e4",
+                      "secondary-fixed": "#cbe8eb",
+                      "background": "#f8f9fa",
+                      "primary-fixed": "#d5e5ef",
+                      "inverse-surface": "#2e3132",
+                      "on-secondary-fixed-variant": "#314b4e",
+                      "on-tertiary-container": "#59adef",
+                      "secondary": "#496366",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed-variant": "#3a4951",
+                      "on-surface-variant": "#43474a",
+                      "tertiary": "#002842",
+                      "outline-variant": "#c3c7ca",
+                      "surface-dim": "#d9dadb",
+                      "inverse-on-surface": "#f0f1f2",
+                      "on-error-container": "#93000a",
+                      "on-secondary-container": "#4f696c",
+                      "outline": "#73787b",
+                      "surface-bright": "#f8f9fa",
+                      "on-background": "#191c1d",
+                      "surface-container-low": "#f3f4f5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-desktop": "80px",
+                      "base": "8px",
+                      "margin-mobile": "20px",
+                      "gutter": "24px",
+                      "container-max": "1440px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-xl": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "story-heading": [
+                              "Playfair Display"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-xl": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "story-heading": [
+                              "32px",
+                              {
+                                      "lineHeight": "44px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant/20 p-4 space-y-4 z-40">
+<!-- Brand -->
+<div class="mb-8 px-2 pt-4">
+<h1 class="font-story-heading text-body-lg font-bold text-primary">Apple Cabins Canada Ltd.</h1>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">Apple Cabins Canada Ltd.</p>
+</div>
+<!-- Admin Profile -->
+<div class="flex items-center space-x-3 px-2 mb-8">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A small, professional portrait photograph of an administrative user, suitable for a dashboard avatar. Minimalist aesthetic, soft lighting, slate grey background to match the tech-nature UI. The image is cropped to a perfect circle, showing just the head and shoulders in a clean, modern corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwEPUD-PCPuviXlMA58W29Sm5ZhBUduvh9Kczu8Z5pggD8tw2snXo5dQXnMsGhhjKvGdaWR72wIVR81KPFtTgCMjEUFec3B9GMNwRl8xvil8UiCaCbBb2aZq7aysuUYZb20g0-vUGMEA-0awx6zCt6_PVAojukO9xiOS9mUEM0NqkBgqu-3dzraQiHNQkp5ysG7vaTwiEyl_t-UfP3Oqhg6t7-eQDgRVrBjWmXRCZqyUI5FoAH-APZ">
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-primary">Admin User</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Manager</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 space-y-2">
+<!-- Active: Inventory -->
+<a class="flex items-center space-x-3 px-3 py-2 bg-tertiary-container text-on-tertiary-container rounded-lg font-semibold translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-caps text-label-caps">Inventory</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center space-x-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:bg-secondary-container/50 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-caps text-label-caps">Clients</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:bg-secondary-container/50 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-caps text-label-caps">Settings</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:bg-secondary-container/50 transition-all duration-200" href="#"><span class="material-symbols-outlined">location_on</span><span class="font-label-caps text-label-caps">Resorts</span></a></nav>
+<!-- Primary CTA -->
+<div class="mt-auto pt-4 border-t border-outline-variant/20">
+<button class="w-full bg-[#192830] text-white py-2 rounded-DEFAULT font-label-caps text-label-caps hover:bg-[#2f3e46] transition-colors flex items-center justify-center space-x-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span class="">Add Cabin</span>
+</button>
+</div>
+<!-- Footer Links -->
+<div class="space-y-2 mt-4 pt-4">
+<a class="flex items-center space-x-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:bg-secondary-container/50 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-[18px]">help</span>
+<span class="font-label-caps text-label-caps">Support</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:bg-secondary-container/50 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+<span class="font-label-caps text-label-caps">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 p-margin-mobile md:p-margin-desktop bg-background min-h-screen">
+<!-- Header Section -->
+<header class="flex justify-between items-center mb-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Inventory Overview</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Manage your modular cabin catalog and track stock levels.</p>
+</div>
+<!-- Mobile Menu Toggle (Visible only on mobile) -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</header>
+<!-- Stats Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-12">
+<!-- Stat Card 1 -->
+<div class="bg-surface-container-lowest/70 backdrop-blur-[20px] border border-white/30 rounded-xl p-6 shadow-[0_40px_40px_-15px_rgba(73,99,102,0.08)]">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Total Cabins</span>
+<span class="material-symbols-outlined text-secondary">domain</span>
+</div>
+<div class="flex items-baseline space-x-2">
+<span class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">142</span>
+<span class="font-label-caps text-label-caps text-tertiary-container">+12 this month</span>
+</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-surface-container-lowest/70 backdrop-blur-[20px] border border-white/30 rounded-xl p-6 shadow-[0_40px_40px_-15px_rgba(73,99,102,0.08)]">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Pending Deliveries</span>
+<span class="material-symbols-outlined text-secondary">local_shipping</span>
+</div>
+<div class="flex items-baseline space-x-2">
+<span class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">28</span>
+<span class="font-label-caps text-label-caps text-tertiary-container">In transit</span>
+</div>
+</div>
+<!-- Stat Card 3 (Alert) -->
+<div class="bg-surface-container-lowest/70 backdrop-blur-[20px] border border-white/30 rounded-xl p-6 shadow-[0_40px_40px_-15px_rgba(73,99,102,0.08)]">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Low Stock Alerts</span>
+<span class="material-symbols-outlined text-error">warning</span>
+</div>
+<div class="flex items-baseline space-x-2">
+<span class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-error">3</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Models require attention</span>
+</div>
+</div>
+</section>
+<!-- Inventory Table Section -->
+<section class="bg-surface-container-lowest/70 backdrop-blur-[20px] border border-white/30 rounded-xl shadow-[0_40px_40px_-15px_rgba(73,99,102,0.08)] overflow-hidden">
+<!-- Table Header / Toolbar -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-6 border-b border-outline-variant/20 gap-4">
+<h3 class="font-body-lg text-body-lg font-semibold text-primary">Cabin Listing</h3>
+<div class="flex space-x-4 w-full sm:w-auto">
+<!-- Search Input -->
+<div class="relative w-full sm:w-64">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/30 focus:border-primary focus:ring-0 px-0 py-2 font-body-md text-body-md text-primary placeholder:text-on-surface-variant" placeholder="Search models..." type="text">
+<span class="material-symbols-outlined absolute right-0 top-2 text-on-surface-variant">search</span>
+</div>
+</div>
+</div>
+<!-- Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant/20 bg-surface/50">
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant font-medium">Model</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant font-medium">Image</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant font-medium">Base Price</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant font-medium">Status</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant font-medium">Lead Time</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant font-medium text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md">
+<!-- Row 1 -->
+<tr class="border-b border-outline-variant/10 hover:bg-surface/30 transition-colors">
+<td class="p-4 font-semibold text-primary">The Alpine Studio</td>
+<td class="p-4">
+<div class="w-16 h-12 rounded-DEFAULT overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A small thumbnail image of a sleek, modern modular cabin set against a minimalist white background. The cabin features dark wood cladding and large glass windows, reflecting an industrial elegance suitable for an admin dashboard inventory list." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGcADsSPq7_8IKh8Lcs7iQoFXy65kzdfXlGnOFmYdsyMrgeKSBMZxHIAz0kewSxHipMfih39u7Ehg_l19RRrU8QJkv1VcUWt5pKEq_SLqQIHK4vsDDMi_BkmuRxzoxK18yJMKNjfCQ68wsHExJaRGzp3fwJVzNddCAO5142pabk_Eyg6GfIt-u23j9GjMLIco7-15OydwFfVLqbXeYMjlN7EhaAccsZS_SYDG3mta3a0inYiMyyLb-">
+</div>
+</td>
+<td class="p-4 text-on-surface">$124,000</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full font-label-caps text-label-caps bg-secondary-container text-on-secondary-fixed">In Stock (12)</span>
+</td>
+<td class="p-4 text-on-surface-variant">4-6 Weeks</td>
+<td class="p-4 text-right">
+<button class="text-tertiary hover:text-tertiary-container transition-colors p-1">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="border-b border-outline-variant/10 hover:bg-surface/30 transition-colors">
+<td class="p-4 font-semibold text-primary">Cascadia Retreat</td>
+<td class="p-4">
+<div class="w-16 h-12 rounded-DEFAULT overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A crisp, high-resolution thumbnail of a two-story modular home with a frosted glass aesthetic and slate grey metallic accents. Displayed on a clean white background, designed for a professional inventory management table in a dark-mode-ready UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyP5PXRmn3K6hPehbzakEPRrb_UYDyUxXIqxx5Eh7V9VM8zars2fTKC0JnpC4UXJaQHAai5gKcm2KiExXSGK0EAJfFhIYvdXtrsbaOoR3h6ThuT2HhVVt_8E3su9ctDqITRjT_mgmxATW92nyIevBBML4DNLA74Q1BYXayveGYMHNHh_glAov0uPMLxEXY46_fFKE_8E7cHbGZB0qw0Jw9K5w0jTsPynYC8wI6UL84JmnFkE4w-3Pr">
+</div>
+</td>
+<td class="p-4 text-on-surface">$285,000</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full font-label-caps text-label-caps bg-surface-container-highest text-on-surface">Low Stock (2)</span>
+</td>
+<td class="p-4 text-on-surface-variant">8-10 Weeks</td>
+<td class="p-4 text-right">
+<button class="text-tertiary hover:text-tertiary-container transition-colors p-1">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="border-b border-outline-variant/10 hover:bg-surface/30 transition-colors">
+<td class="p-4 font-semibold text-primary">Summit Bunkhouse</td>
+<td class="p-4">
+<div class="w-16 h-12 rounded-DEFAULT overflow-hidden bg-surface-container">
+<!-- No image placeholder example -->
+<div class="w-full h-full flex items-center justify-center text-on-surface-variant/50">
+<span class="material-symbols-outlined">image_not_supported</span>
+</div>
+</div>
+</td>
+<td class="p-4 text-on-surface">$89,000</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full font-label-caps text-label-caps bg-error-container text-on-error-container">Out of Stock</span>
+</td>
+<td class="p-4 text-on-surface-variant">12+ Weeks</td>
+<td class="p-4 text-right">
+<button class="text-tertiary hover:text-tertiary-container transition-colors p-1">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="p-4 border-t border-outline-variant/20 flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps">Showing 1-3 of 142</span>
+<div class="flex space-x-2">
+<button class="p-1 hover:bg-surface rounded transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-1 hover:bg-surface rounded transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<section class="mt-12 bg-surface-container-lowest/70 backdrop-blur-[20px] border border-white/30 rounded-xl shadow-[0_40px_40px_-15px_rgba(73,99,102,0.08)] overflow-hidden"><div class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-6 border-b border-outline-variant/20 gap-4"><h3 class="font-body-lg text-body-lg font-semibold text-primary">Resort Locations</h3><button class="bg-[#192830] text-white px-4 py-2 rounded-DEFAULT font-label-caps text-label-caps hover:bg-[#2f3e46] transition-colors flex items-center space-x-2"><span class="material-symbols-outlined text-[18px]">add</span><span class="">Add Resort</span></button></div><div class="overflow-x-auto"><table class="w-full text-left border-collapse"><thead><tr class="border-b border-outline-variant/20 bg-surface/50"><th class="p-4 font-label-caps text-label-caps text-on-surface-variant font-medium">Resort Name</th><th class="p-4 font-label-caps text-label-caps text-on-surface-variant font-medium">Type</th><th class="p-4 font-label-caps text-label-caps text-on-surface-variant font-medium">Status</th><th class="p-4 font-label-caps text-label-caps text-on-surface-variant font-medium text-right">Actions</th></tr></thead><tbody class="font-body-md text-body-md"><tr class="border-b border-outline-variant/10 hover:bg-surface/30 transition-colors"><td class="p-4 font-semibold text-primary">Whistler Peak Resort</td><td class="p-4 text-on-surface-variant">Company Owned</td><td class="p-4"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full font-label-caps text-label-caps bg-secondary-container text-on-secondary-fixed">Active</span></td><td class="p-4 text-right"><button class="text-tertiary hover:text-tertiary-container transition-colors p-1"><span class="material-symbols-outlined text-[20px]">edit</span></button></td></tr><tr class="border-b border-outline-variant/10 hover:bg-surface/30 transition-colors"><td class="p-4 font-semibold text-primary">Blue Mountain Lodge</td><td class="p-4 text-on-surface-variant">3rd Party</td><td class="p-4"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full font-label-caps text-label-caps bg-surface-container-highest text-on-surface">Maintenance</span></td><td class="p-4 text-right"><button class="text-tertiary hover:text-tertiary-container transition-colors p-1"><span class="material-symbols-outlined text-[20px]">edit</span></button></td></tr></tbody></table></div></section></main>
+
+
+</body></html>

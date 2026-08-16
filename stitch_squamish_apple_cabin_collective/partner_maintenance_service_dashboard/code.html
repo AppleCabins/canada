@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cabin Systems - Maintenance Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed-variant": "#314b4e",
+                      "inverse-surface": "#2e3132",
+                      "outline-variant": "#c3c7ca",
+                      "background": "#f8f9fa",
+                      "secondary-container": "#cbe8eb",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed": "#cde5ff",
+                      "tertiary": "#002842",
+                      "surface": "#f8f9fa",
+                      "error-container": "#ffdad6",
+                      "surface-bright": "#f8f9fa",
+                      "outline": "#73787b",
+                      "on-surface-variant": "#43474a",
+                      "secondary-fixed": "#cbe8eb",
+                      "surface-container-low": "#f3f4f5",
+                      "secondary-fixed-dim": "#b0cccf",
+                      "on-tertiary-fixed": "#001d32",
+                      "on-primary-fixed-variant": "#3a4951",
+                      "tertiary-container": "#003f63",
+                      "inverse-primary": "#b9c9d3",
+                      "on-secondary-container": "#4f696c",
+                      "tertiary-fixed-dim": "#94ccff",
+                      "primary-fixed": "#d5e5ef",
+                      "primary-fixed-dim": "#b9c9d3",
+                      "on-tertiary-fixed-variant": "#004b74",
+                      "primary-container": "#2f3e46",
+                      "secondary": "#496366",
+                      "on-error-container": "#93000a",
+                      "on-primary-container": "#99a9b2",
+                      "surface-dim": "#d9dadb",
+                      "surface-container": "#edeeef",
+                      "on-primary": "#ffffff",
+                      "surface-container-highest": "#e1e3e4",
+                      "surface-tint": "#516169",
+                      "on-secondary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "inverse-on-surface": "#f0f1f2",
+                      "on-secondary-fixed": "#031f22",
+                      "on-tertiary-container": "#59adef",
+                      "surface-container-high": "#e7e8e9",
+                      "surface-variant": "#e1e3e4",
+                      "on-surface": "#191c1d",
+                      "on-primary-fixed": "#0e1d25",
+                      "on-error": "#ffffff",
+                      "primary": "#192830",
+                      "surface-container-lowest": "#ffffff",
+                      "on-background": "#191c1d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "margin-desktop": "80px",
+                      "margin-mobile": "20px",
+                      "container-max": "1440px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "story-heading": [
+                              "Playfair Display"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "headline-xl": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "story-heading": [
+                              "32px",
+                              {
+                                      "lineHeight": "44px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.outline-variant');
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.outline');
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen font-body-lg flex">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-container/70 backdrop-blur-md shadow-sm border-b border-outline/10">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<span class="font-headline-lg text-headline-lg tracking-tighter text-primary dark:text-primary-fixed">CABIN CARE</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary dark:border-primary-fixed pb-2 font-body-md text-body-md duration-300 ease-in-out hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Dashboard</a>
+<a class="text-on-surface-variant dark:text-on-secondary-container font-body-md text-body-md duration-300 ease-in-out hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Inventory</a>
+<a class="text-on-surface-variant dark:text-on-secondary-container font-body-md text-body-md duration-300 ease-in-out hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Dispatch</a>
+<a class="text-on-surface-variant dark:text-on-secondary-container font-body-md text-body-md duration-300 ease-in-out hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Schedules</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<!-- Search Bar Placeholder (on_right) -->
+<div class="hidden md:flex items-center bg-surface-container rounded-full px-4 py-2 border border-outline/10 focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md font-body-md w-48 text-on-surface outline-none ml-2" placeholder="Search..." type="text"/>
+</div>
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-6 py-2.5 rounded hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 ease-in-out shadow-sm">
+                    Report Issue
+                </button>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<button class="hover:text-primary transition-colors duration-300 ease-in-out">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="hover:text-primary transition-colors duration-300 ease-in-out">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<img alt="User profile" class="w-10 h-10 rounded-full border border-outline/10 object-cover" data-alt="A small circular avatar image of a professional user, light background, minimalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABZGvXEJHrwUU8jbJixU_T9fWvTLIHa0ERL32RpUt1olyUTrBj4pXAezUbvMcDfkuAYFz821dmctZ1x704ke5lcLUw5Nhr4VkIg435ssjnxxAF7VEYiIkwO3GpaSqFXc-SYUdkNGj2I8atF3wljPeh3BjwRn4EvgQ1uGKweLZgajho-ZnJUU0-lmBsAL7bLJKx6AkIkicYM-zMhAJyCJVzH780SJI0HcEWjlzJwJsSk5V0XiwWi6MF"/>
+</div>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-screen w-64 bg-surface dark:bg-surface-container-low border-r border-outline/10 flat no shadows z-40 hidden md:flex flex-col pt-24">
+<div class="flex flex-col h-full py-8 px-4">
+<div class="mb-10 px-4">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 rounded bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">hub</span>
+</div>
+<div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary dark:text-primary-fixed leading-tight">Service Hub</h2>
+<p class="font-label-caps text-label-caps text-on-surface-variant">PNW Region</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-2">
+<a class="flex items-center gap-4 text-on-surface-variant dark:text-on-secondary-container px-4 py-3 font-label-caps text-label-caps hover:bg-surface-container-highest dark:hover:bg-surface-container-high transition-all scale-95 active:scale-90 duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Overview
+                </a>
+<a class="flex items-center gap-4 text-on-surface-variant dark:text-on-secondary-container px-4 py-3 font-label-caps text-label-caps hover:bg-surface-container-highest dark:hover:bg-surface-container-high transition-all scale-95 active:scale-90 duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">location_on</span>
+                    Locations
+                </a>
+<a class="flex items-center gap-4 text-primary dark:text-primary-fixed bg-secondary-container/50 dark:bg-secondary-container/20 rounded-lg px-4 py-3 font-label-caps text-label-caps hover:bg-surface-container-highest dark:hover:bg-surface-container-high transition-all scale-95 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">build</span>
+                    Maintenance
+                </a>
+<a class="flex items-center gap-4 text-on-surface-variant dark:text-on-secondary-container px-4 py-3 font-label-caps text-label-caps hover:bg-surface-container-highest dark:hover:bg-surface-container-high transition-all scale-95 active:scale-90 duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">engineering</span>
+                    Technicians
+                </a>
+<a class="flex items-center gap-4 text-on-surface-variant dark:text-on-secondary-container px-4 py-3 font-label-caps text-label-caps hover:bg-surface-container-highest dark:hover:bg-surface-container-high transition-all scale-95 active:scale-90 duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                    Parts
+                </a>
+</nav>
+<div class="mt-8 px-4">
+<button class="w-full bg-surface-container border border-outline/20 text-on-surface font-label-caps text-label-caps py-3 rounded-lg hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    New Dispatch
+                </button>
+</div>
+<div class="mt-auto pt-8 border-t border-outline/10 flex flex-col gap-2">
+<a class="flex items-center gap-4 text-on-surface-variant dark:text-on-secondary-container px-4 py-3 font-label-caps text-label-caps hover:bg-surface-container-highest dark:hover:bg-surface-container-high transition-all scale-95 active:scale-90 duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">help</span>
+                    Help
+                </a>
+<a class="flex items-center gap-4 text-on-surface-variant dark:text-on-secondary-container px-4 py-3 font-label-caps text-label-caps hover:bg-surface-container-highest dark:hover:bg-surface-container-high transition-all scale-95 active:scale-90 duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">logout</span>
+                    Logout
+                </a>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 pt-28 px-margin-mobile md:px-margin-desktop pb-24 w-full">
+<!-- Page Header -->
+<header class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="font-headline-xl text-headline-xl text-primary mb-2">Partner Dashboard</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Manage your portfolio health, schedule maintenance, and track operational status.</p>
+</div>
+<div class="flex gap-4">
+<button class="bg-transparent border border-outline/20 text-secondary font-label-caps text-label-caps px-6 py-3 rounded hover:bg-surface-container transition-colors duration-300 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                    Export Log
+                </button>
+</div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Section: My Cabin Status (Spans full width top) -->
+<section class="col-span-1 md:col-span-12 mb-8">
+<div class="flex items-center justify-between mb-6 border-b border-outline/10 pb-4">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">My Cabin Status</h2>
+<a class="font-label-caps text-label-caps text-tertiary-container hover:text-primary transition-colors flex items-center gap-1" href="#">
+                        View Map <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Status Card 1 -->
+<article class="bg-surface/70 backdrop-blur-md border border-outline/10 rounded-xl overflow-hidden hover:shadow-sm transition-shadow duration-300 flex flex-col">
+<div class="relative h-48 w-full bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A pristine modular cabin nestled in a lush Pacific Northwest pine forest. Light mode aesthetics, morning sunlight, architectural photography, hyper-detailed. Slate grey metal framing with large glass windows reflecting the trees." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7qFI1ZOb1F5T-78zDHGSwHRgxyxv3IUacAZY5mkbq9H4H18XcDn2h18r_9dhZJfcd8RMhQaeTiUrDJSFmv-s2B3Bjfmr6BFcK1r8DgMzB2IM64B3-2DeJq7YgVuhiZGMYMh86k7J_VeHHrTgqgrH6om_czO8L_RIQ22mW7UPLngXA8N29beyAXDUgd02wXCgB9kFX_PkgrWr9VpuUfWqQ325wtOQB8EFti5zDlEWJBHwFaH8iE2ac"/>
+<div class="absolute top-4 left-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded font-label-caps text-label-caps text-primary flex items-center gap-2 border border-outline/10">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span> Online
+                            </div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface">SpacePod #104</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">Olympic Peninsula Site</p>
+</div>
+</div>
+<div class="mt-auto space-y-3 pt-4 border-t border-outline/10">
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-outline">System Health</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">98% Optimal</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-outline">Next Service</span>
+<span class="font-body-md text-body-md text-on-surface">Oct 12 - Winterization</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Status Card 2 -->
+<article class="bg-surface/70 backdrop-blur-md border border-outline/10 rounded-xl overflow-hidden hover:shadow-sm transition-shadow duration-300 flex flex-col">
+<div class="relative h-48 w-full bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A sleek modular cabin situated on a rocky cliff overlooking a misty mountain valley. Light mode, bright overcast sky, minimalist architecture, highly detailed. Large glass facades." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDssw-B4E_a5H_N6dxYNWGT1R2hCOOlWJdi8-C6JyDdOfTcStb8JUklafyJ4LhNlEZxPljL_PCOaxlE7vmzEahCfyfslqY9QOOP2AW_FHplqTDDZtztxDc3Q_-AiZ2Y54DTca_3UN5Uy_eEunnqXCePFT5MyKqkKOg_F2GsVZaAnO4812jWxVA1_EfiGUtv0x6pJ-bR_F4SgoG4kzsZ7zb9-WDpPWQz2cN5XU_E-hpfS7yHJVQnMZk-"/>
+<div class="absolute top-4 left-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded font-label-caps text-label-caps text-primary flex items-center gap-2 border border-outline/10">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span> Attention
+                            </div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface">Alpine Unit #042</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">Mt. Rainier Base</p>
+</div>
+</div>
+<div class="mt-auto space-y-3 pt-4 border-t border-outline/10">
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-outline">HVAC Filter</span>
+<span class="font-body-md text-body-md text-error font-semibold">Replacement Due</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-outline">Next Service</span>
+<span class="font-body-md text-body-md text-on-surface">Pending Schedule</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Status Card 3 (Action Card) -->
+<article class="bg-surface-container-lowest border border-outline/10 border-dashed rounded-xl overflow-hidden hover:bg-surface/50 transition-colors duration-300 flex flex-col items-center justify-center p-8 text-center h-full min-h-[300px]">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container mb-4">
+<span class="material-symbols-outlined text-[32px]">add_home</span>
+</div>
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface mb-2">Register New Unit</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 max-w-[200px]">Add another Cabin Systems modular unit to your portfolio.</p>
+<button class="bg-transparent border border-outline/20 text-primary font-label-caps text-label-caps px-6 py-2 rounded hover:border-primary transition-colors duration-300">
+                            Begin Onboarding
+                        </button>
+</article>
+</div>
+</section>
+<!-- Section: Maintenance History (Left Column) -->
+<section class="col-span-1 md:col-span-8 flex flex-col gap-6">
+<div class="bg-surface/70 backdrop-blur-md border border-outline/10 rounded-xl p-8 flex-1">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Maintenance Log</h2>
+<div class="flex gap-2">
+<button class="p-2 border border-outline/10 rounded hover:bg-surface-container transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+</button>
+</div>
+</div>
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr>
+<th class="font-label-caps text-label-caps text-outline pb-4 border-b border-outline/10 font-normal">Date</th>
+<th class="font-label-caps text-label-caps text-outline pb-4 border-b border-outline/10 font-normal">Unit</th>
+<th class="font-label-caps text-label-caps text-outline pb-4 border-b border-outline/10 font-normal">Service Type</th>
+<th class="font-label-caps text-label-caps text-outline pb-4 border-b border-outline/10 font-normal">Technician</th>
+<th class="font-label-caps text-label-caps text-outline pb-4 border-b border-outline/10 font-normal text-right">Status</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface">
+<tr class="group">
+<td class="py-4 border-b border-outline/5">Sep 15, 2024</td>
+<td class="py-4 border-b border-outline/5 font-semibold">SpacePod #104</td>
+<td class="py-4 border-b border-outline/5">Quarterly Deep Clean</td>
+<td class="py-4 border-b border-outline/5 text-on-surface-variant">Sarah J.</td>
+<td class="py-4 border-b border-outline/5 text-right"><span class="inline-block px-2 py-1 bg-surface-container-highest rounded text-sm">Completed</span></td>
+</tr>
+<tr class="group">
+<td class="py-4 border-b border-outline/5">Aug 02, 2024</td>
+<td class="py-4 border-b border-outline/5 font-semibold">Alpine Unit #042</td>
+<td class="py-4 border-b border-outline/5">Solar Array Inspection</td>
+<td class="py-4 border-b border-outline/5 text-on-surface-variant">Mike T.</td>
+<td class="py-4 border-b border-outline/5 text-right"><span class="inline-block px-2 py-1 bg-surface-container-highest rounded text-sm">Completed</span></td>
+</tr>
+<tr class="group">
+<td class="py-4 border-b border-outline/5">Jun 10, 2024</td>
+<td class="py-4 border-b border-outline/5 font-semibold">SpacePod #104</td>
+<td class="py-4 border-b border-outline/5">Water System Flush</td>
+<td class="py-4 border-b border-outline/5 text-on-surface-variant">David K.</td>
+<td class="py-4 border-b border-outline/5 text-right"><span class="inline-block px-2 py-1 bg-surface-container-highest rounded text-sm">Completed</span></td>
+</tr>
+<tr class="group">
+<td class="py-4 border-b border-outline/5">May 22, 2024</td>
+<td class="py-4 border-b border-outline/5 font-semibold">Alpine Unit #042</td>
+<td class="py-4 border-b border-outline/5">Emergency: Window Seal</td>
+<td class="py-4 border-b border-outline/5 text-on-surface-variant">Sarah J.</td>
+<td class="py-4 border-b border-outline/5 text-right"><span class="inline-block px-2 py-1 bg-error-container text-on-error-container rounded text-sm">Resolved</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-6 text-center">
+<button class="text-tertiary-container font-label-caps text-label-caps hover:text-primary transition-colors">
+                            Load More Records
+                        </button>
+</div>
+</div>
+</section>
+<!-- Section: Schedule & Active Tickets (Right Column) -->
+<aside class="col-span-1 md:col-span-4 flex flex-col gap-6">
+<!-- Book Routine Service Widget -->
+<div class="bg-surface-container-lowest border border-outline/10 rounded-xl p-6 shadow-[0_0_40px_rgba(115,120,123,0.05)]">
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-container">calendar_month</span>
+                        Book Routine Service
+                    </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Schedule seasonal winterization or deep cleaning for your units.</p>
+<div class="space-y-4 mb-6">
+<div class="relative">
+<label class="font-label-caps text-label-caps text-outline block mb-1">Select Unit</label>
+<select class="w-full bg-transparent border-0 border-b border-outline/30 font-body-md text-body-md text-on-surface py-2 focus:ring-0 focus:border-primary transition-colors appearance-none">
+<option>Alpine Unit #042</option>
+<option>SpacePod #104</option>
+</select>
+</div>
+<div class="relative">
+<label class="font-label-caps text-label-caps text-outline block mb-1">Service Type</label>
+<select class="w-full bg-transparent border-0 border-b border-outline/30 font-body-md text-body-md text-on-surface py-2 focus:ring-0 focus:border-primary transition-colors appearance-none">
+<option>Winterization Prep</option>
+<option>Spring Refresh</option>
+<option>Comprehensive Inspection</option>
+</select>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-caps text-label-caps px-6 py-3 rounded hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 ease-in-out">
+                        View Availability
+                    </button>
+</div>
+<!-- Active Tickets / Live Chat Snippet -->
+<div class="bg-surface/70 backdrop-blur-md border border-outline/10 rounded-xl p-6 flex-1 flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-body-lg text-body-lg font-bold text-on-surface">Active Tickets</h3>
+<span class="bg-secondary-container text-on-secondary-container font-label-caps text-label-caps px-2 py-0.5 rounded">1 Open</span>
+</div>
+<div class="flex-1 space-y-4">
+<div class="p-4 border border-outline/10 rounded-lg bg-surface hover:border-outline/30 transition-colors cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-caps text-label-caps text-primary">TKT-8902</span>
+<span class="text-xs text-outline">2h ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-semibold mb-1">HVAC Strange Noise</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm truncate">Unit #042 reporting loud humming from external unit...</p>
+<div class="mt-3 flex items-center gap-2 text-sm text-tertiary-container">
+<span class="material-symbols-outlined text-[16px]">support_agent</span>
+                                Tech dispatched for tomorrow
+                            </div>
+</div>
+</div>
+<button class="mt-6 w-full bg-transparent border border-outline/20 text-on-surface font-label-caps text-label-caps px-6 py-3 rounded hover:bg-surface-container transition-colors duration-300 flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+                        Live Support Chat
+                    </button>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="md:ml-64 w-full py-12 bg-surface dark:bg-inverse-surface border-t border-outline/10 flat no shadows mt-auto">
+<div class="max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-6">
+<span class="font-body-md text-body-md text-on-surface dark:text-inverse-on-surface">© 2024 Cabin Systems. Industrial Elegance in the PNW.</span>
+<div class="flex gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">System Status</a>
+</div>
+<span class="font-label-caps text-label-caps text-primary dark:text-primary-fixed">CABIN CARE</span>
+</div>
+</footer>
+</body></html>

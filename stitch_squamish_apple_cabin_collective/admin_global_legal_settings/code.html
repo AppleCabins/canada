@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Apple Cabins - Legal Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#2f3e46",
+                    "on-surface": "#191c1d",
+                    "on-tertiary-fixed": "#001d32",
+                    "primary": "#192830",
+                    "background": "#f8f9fa",
+                    "secondary": "#496366",
+                    "on-secondary-fixed-variant": "#314b4e",
+                    "tertiary": "#002842",
+                    "inverse-surface": "#2e3132",
+                    "on-primary-fixed": "#0e1d25",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#94ccff",
+                    "secondary-container": "#cbe8eb",
+                    "primary-fixed-dim": "#b9c9d3",
+                    "surface-variant": "#e1e3e4",
+                    "on-tertiary-container": "#59adef",
+                    "surface-container": "#edeeef",
+                    "primary-fixed": "#d5e5ef",
+                    "outline": "#73787b",
+                    "secondary-fixed": "#cbe8eb",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-secondary": "#ffffff",
+                    "surface-bright": "#f8f9fa",
+                    "surface-tint": "#516169",
+                    "surface": "#f8f9fa",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#e7e8e9",
+                    "on-tertiary-fixed-variant": "#004b74",
+                    "inverse-on-surface": "#f0f1f2",
+                    "on-primary-fixed-variant": "#3a4951",
+                    "surface-container-low": "#f3f4f5",
+                    "on-secondary-fixed": "#031f22",
+                    "on-background": "#191c1d",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#43474a",
+                    "tertiary-container": "#003f63",
+                    "secondary-fixed-dim": "#b0cccf",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#99a9b2",
+                    "surface-dim": "#d9dadb",
+                    "inverse-primary": "#b9c9d3",
+                    "on-secondary-container": "#4f696c",
+                    "outline-variant": "#c3c7ca",
+                    "tertiary-fixed": "#cde5ff",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-mobile": "20px",
+                    "base": "8px",
+                    "margin-desktop": "80px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "headline-xl": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "story-heading": ["Playfair Display"],
+                    "label-caps": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "story-heading": ["32px", {"lineHeight": "44px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-surface'); }
+        
+        /* Toggle Switch Styles */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: theme('colors.secondary-container');
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: theme('colors.primary');
+        }
+        .toggle-checkbox {
+            right: 0;
+            z-index: 1;
+            border-color: #e2e8f0;
+            transition: all 0.3s;
+        }
+        .toggle-label {
+            width: 3rem;
+            height: 1.5rem;
+            background-color: theme('colors.outline-variant');
+            border-radius: 9999px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .toggle-label::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 1.25rem;
+            height: 1.25rem;
+            background-color: white;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        .toggle-checkbox:checked + .toggle-label::after {
+            transform: translateX(1.5rem);
+        }
+
+        /* Glassmorphism Card */
+        .glass-card {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 40px rgba(25, 40, 48, 0.05); /* Tinted Ambient Glow */
+        }
+
+        /* Form Input styling */
+        .form-input {
+            border: none;
+            border-bottom: 1px solid rgba(115, 120, 123, 0.3); /* Slate Grey 30% */
+            background: transparent;
+            padding: 8px 0;
+            width: 100%;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: theme('colors.on-surface');
+            transition: border-color 0.3s ease;
+        }
+        .form-input:focus {
+            outline: none;
+            border-bottom-color: theme('colors.primary');
+            box-shadow: none;
+        }
+        .form-textarea {
+            border: 1px solid rgba(115, 120, 123, 0.3);
+            background: transparent;
+            padding: 12px;
+            width: 100%;
+            border-radius: 4px;
+            resize: vertical;
+            min-height: 120px;
+            transition: border-color 0.3s ease;
+        }
+        .form-textarea:focus {
+            outline: none;
+            border-color: theme('colors.primary');
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body class="flex min-h-screen">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-full py-base bg-surface-container-low fixed left-0 top-0 h-full w-64 border-r border-outline border-opacity-10 shadow-sm z-50">
+<div class="px-6 py-8">
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary">Apple Cabins</h1>
+<p class="text-on-surface-variant font-body-md text-body-md mt-1">Admin Dashboard</p>
+</div>
+<div class="flex-1 px-4 mt-8 space-y-2">
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant transition-all duration-200 cursor-pointer active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-body-md text-body-md">Inventory</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant transition-all duration-200 cursor-pointer active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-body-md text-body-md">Clients</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant transition-all duration-200 cursor-pointer active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+<!-- Active Tab -->
+<a class="flex items-center gap-3 bg-secondary-container text-on-secondary-container font-semibold rounded-lg px-4 py-3 cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="gavel" style="font-variation-settings: 'FILL' 1;">gavel</span>
+<span class="font-body-md text-body-md">Legal</span>
+</a>
+</div>
+<div class="px-4 py-6 border-t border-outline border-opacity-10 space-y-2">
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant transition-all duration-200 cursor-pointer active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant transition-all duration-200 cursor-pointer active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-body-md text-body-md">Log Out</span>
+</a>
+<div class="mt-6 px-4">
+<button class="w-full text-primary font-label-caps text-label-caps tracking-wider hover:opacity-80 transition-opacity flex justify-center items-center py-2">
+                    View Specs
+                </button>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-64 w-full flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full z-40 bg-white/70 backdrop-blur-md border-b border-outline border-opacity-10 shadow-sm flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 transition-all duration-300 ease-in-out">
+<div class="flex items-center">
+<!-- Mobile Menu Button -->
+<button class="md:hidden mr-4 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="font-story-heading text-story-heading text-primary">Apple Cabins Canada Ltd.</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="flex-1 px-margin-mobile md:px-margin-desktop py-12 md:py-20 max-w-container-max mx-auto w-full">
+<div class="mb-12">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">Global Legal Settings</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage compliance, disclosures, and automated legal triggers.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Disclosures & Compliance -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Company Disclosures Section -->
+<section class="glass-card rounded-lg p-8">
+<div class="flex items-center gap-3 mb-6 border-b border-outline border-opacity-10 pb-4">
+<span class="material-symbols-outlined text-primary" data-icon="description">description</span>
+<h3 class="font-story-heading text-story-heading text-primary text-2xl">Company Disclosures</h3>
+</div>
+<div class="space-y-6">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Standard Footer Fine Print</label>
+<textarea class="form-textarea font-body-md text-body-md text-on-surface" placeholder="Enter standard legal footer text applied to all generated documents...">All structures are designed to meet or exceed CSA A277 standard. Local site permits are the responsibility of the purchaser.</textarea>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Warranty Disclaimer</label>
+<textarea class="form-textarea font-body-md text-body-md text-on-surface" placeholder="Enter warranty terms...">Apple Cabins provides a 1-year comprehensive warranty and a 10-year structural warranty, subject to standard wear and tear.</textarea>
+</div>
+</div>
+</section>
+<!-- CSA Compliance Parameters -->
+<section class="glass-card rounded-lg p-8">
+<div class="flex items-center gap-3 mb-6 border-b border-outline border-opacity-10 pb-4">
+<span class="material-symbols-outlined text-primary" data-icon="verified">verified</span>
+<h3 class="font-story-heading text-story-heading text-primary text-2xl">CSA Compliance Parameters</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">These values are automatically injected into compliance certificates and spec sheets.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Primary Certification Body</label>
+<input class="form-input" type="text" value="Canadian Standards Association (CSA)"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Standard Code</label>
+<input class="form-input" type="text" value="CSA A277-16"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Plant Certification Number</label>
+<input class="form-input" type="text" value="PLT-88902-BC"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Audit Frequency</label>
+<input class="form-input" type="text" value="Bi-Annual"/>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Integrations & Triggers -->
+<div class="lg:col-span-4 space-y-8">
+<!-- Digital Signature Providers -->
+<section class="glass-card rounded-lg p-8">
+<div class="flex items-center gap-3 mb-6 border-b border-outline border-opacity-10 pb-4">
+<span class="material-symbols-outlined text-primary" data-icon="draw">draw</span>
+<h3 class="font-story-heading text-story-heading text-primary text-xl">Digital Signature</h3>
+</div>
+<div class="space-y-6">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Active Provider</label>
+<select class="w-full bg-transparent border-b border-outline border-opacity-30 py-2 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary">
+<option>DocuSign API</option>
+<option>Adobe Sign</option>
+<option>HelloSign</option>
+</select>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">API Key</label>
+<input class="form-input" type="password" value="************************"/>
+</div>
+<div class="pt-4 flex justify-end">
+<button class="text-primary font-label-caps text-label-caps hover:opacity-80 transition-opacity">Test Connection</button>
+</div>
+</div>
+</section>
+<!-- Automated Trigger Settings -->
+<section class="glass-card rounded-lg p-8">
+<div class="flex items-center gap-3 mb-6 border-b border-outline border-opacity-10 pb-4">
+<span class="material-symbols-outlined text-primary" data-icon="bolt">bolt</span>
+<h3 class="font-story-heading text-story-heading text-primary text-xl">Automated Triggers</h3>
+</div>
+<div class="space-y-6">
+<!-- Trigger 1 -->
+<div class="flex items-start justify-between gap-4">
+<div>
+<h4 class="font-body-md text-body-md font-semibold text-on-surface mb-1">Pre-Sale Agreement</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Email contract 5 mins after formal inquiry submission.</p>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in mt-1">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" id="toggle1" name="toggle1" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer" for="toggle1"></label>
+</div>
+</div>
+<div class="border-t border-outline border-opacity-10 pt-4"></div>
+<!-- Trigger 2 -->
+<div class="flex items-start justify-between gap-4">
+<div>
+<h4 class="font-body-md text-body-md font-semibold text-on-surface mb-1">Deposit Receipt</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Auto-send countersigned receipt upon fund clearance.</p>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in mt-1">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" id="toggle2" name="toggle2" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer" for="toggle2"></label>
+</div>
+</div>
+<div class="border-t border-outline border-opacity-10 pt-4"></div>
+<!-- Trigger 3 -->
+<div class="flex items-start justify-between gap-4">
+<div>
+<h4 class="font-body-md text-body-md font-semibold text-on-surface mb-1">Final Sign-off</h4>
+<p class="font-body-md text-sm text-on-surface-variant">Require manual approval before sending final delivery docs.</p>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in mt-1">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" id="toggle3" name="toggle3" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer" for="toggle3"></label>
+</div>
+</div>
+</div>
+</section>
+<div class="pt-6 flex justify-end gap-4">
+<button class="bg-transparent border border-outline border-opacity-20 text-on-surface font-label-caps text-label-caps px-6 py-3 rounded hover:bg-surface-variant transition-colors">Discard Changes</button>
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-6 py-3 rounded hover:opacity-90 transition-opacity">Save Legal Settings</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-8 bg-surface mt-auto border-t border-outline border-opacity-10 flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop transition-all">
+<div class="font-label-caps text-label-caps text-primary mb-4 md:mb-0">
+                © 2024 Apple Cabins Canada Ltd. Modular Excellence.
+            </div>
+<div class="flex gap-6">
+<a class="font-label-caps text-label-caps text-secondary opacity-80 hover:opacity-100 hover:text-primary transition-opacity" href="#">Privacy Policy</a>
+<a class="font-label-caps text-label-caps text-secondary opacity-80 hover:opacity-100 hover:text-primary transition-opacity" href="#">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-primary underline" href="#">Compliance</a>
+</div>
+</footer>
+</main>
+</body></html>

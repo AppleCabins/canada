@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edit Contract Template - Apple Cabins Canada Ltd.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#2f3e46",
+                        "on-surface": "#191c1d",
+                        "on-tertiary-fixed": "#001d32",
+                        "primary": "#192830",
+                        "background": "#f8f9fa",
+                        "secondary": "#496366",
+                        "on-secondary-fixed-variant": "#314b4e",
+                        "tertiary": "#002842",
+                        "inverse-surface": "#2e3132",
+                        "on-primary-fixed": "#0e1d25",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#94ccff",
+                        "secondary-container": "#cbe8eb",
+                        "primary-fixed-dim": "#b9c9d3",
+                        "surface-variant": "#e1e3e4",
+                        "on-tertiary-container": "#59adef",
+                        "surface-container": "#edeeef",
+                        "primary-fixed": "#d5e5ef",
+                        "outline": "#73787b",
+                        "secondary-fixed": "#cbe8eb",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f8f9fa",
+                        "surface-tint": "#516169",
+                        "surface": "#f8f9fa",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e7e8e9",
+                        "on-tertiary-fixed-variant": "#004b74",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-primary-fixed-variant": "#3a4951",
+                        "surface-container-low": "#f3f4f5",
+                        "on-secondary-fixed": "#031f22",
+                        "on-background": "#191c1d",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#43474a",
+                        "tertiary-container": "#003f63",
+                        "secondary-fixed-dim": "#b0cccf",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#99a9b2",
+                        "surface-dim": "#d9dadb",
+                        "inverse-primary": "#b9c9d3",
+                        "on-secondary-container": "#4f696c",
+                        "outline-variant": "#c3c7ca",
+                        "tertiary-fixed": "#cde5ff",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "base": "8px",
+                        "margin-desktop": "80px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "story-heading": ["Playfair Display"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-xl": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "story-heading": ["32px", { "lineHeight": "44px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .ambient-glow {
+            box-shadow: 0 0 40px 0 rgba(73, 99, 102, 0.08); /* secondary color tint */
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-primary selection:text-white">
+<!-- TopAppBar -->
+<header class="bg-white/70 backdrop-blur-md sticky top-0 w-full z-40 border-b border-outline border-opacity-10 shadow-sm flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 transition-all duration-300 ease-in-out">
+<div class="flex items-center gap-4">
+<span class="font-story-heading text-story-heading text-primary">Apple Cabins Canada Ltd.</span>
+</div>
+<div class="flex items-center gap-6">
+<span class="text-on-surface-variant font-bold border-b-2 border-primary pb-1">Legal</span>
+<div class="flex gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined hover:text-primary transition-colors duration-300 ease-in-out cursor-pointer" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined hover:text-primary transition-colors duration-300 ease-in-out cursor-pointer" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- SideNavBar (Desktop Only for focus context) -->
+<nav class="hidden md:flex flex-col h-full py-base bg-surface-container-low text-primary font-body-md text-body-md fixed left-0 top-0 w-64 border-r border-outline border-opacity-10 shadow-sm z-30 pt-24">
+<div class="px-6 pb-6 border-b border-outline border-opacity-10 mb-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container mb-3 font-bold">AU</div>
+<h2 class="font-bold text-primary text-lg">Apple Cabins</h2>
+<p class="text-sm text-on-surface-variant">Admin Dashboard</p>
+</div>
+<ul class="flex-1 space-y-2 px-4">
+<li><a class="flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant duration-200 cursor-pointer active:scale-95 rounded-lg" href="#"><span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span> Inventory</a></li>
+<li><a class="flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant duration-200 cursor-pointer active:scale-95 rounded-lg" href="#"><span class="material-symbols-outlined" data-icon="group">group</span> Clients</a></li>
+<li><a class="flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant duration-200 cursor-pointer active:scale-95 rounded-lg" href="#"><span class="material-symbols-outlined" data-icon="settings">settings</span> Settings</a></li>
+<li><a class="flex items-center gap-3 bg-secondary-container text-on-secondary-container font-semibold rounded-lg px-4 py-3 cursor-pointer active:scale-95 transition-all duration-200" href="#"><span class="material-symbols-outlined" data-icon="gavel">gavel</span> Legal</a></li>
+</ul>
+<div class="p-4">
+<button class="w-full py-2 bg-transparent border border-outline border-opacity-20 text-on-surface-variant rounded hover:bg-surface-variant transition-colors text-sm font-label-caps tracking-widest">View Specs</button>
+</div>
+<ul class="mt-auto px-4 pb-6 space-y-2 border-t border-outline border-opacity-10 pt-4">
+<li><a class="flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant duration-200 cursor-pointer active:scale-95 rounded-lg text-sm" href="#"><span class="material-symbols-outlined" data-icon="help_outline">help_outline</span> Support</a></li>
+<li><a class="flex items-center gap-3 text-on-surface-variant hover:text-primary px-4 py-3 transition-colors hover:bg-surface-variant duration-200 cursor-pointer active:scale-95 rounded-lg text-sm" href="#"><span class="material-symbols-outlined" data-icon="logout">logout</span> Log Out</a></li>
+</ul>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 p-margin-mobile md:p-margin-desktop overflow-y-auto w-full h-[calc(100vh-80px)]">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
+<div>
+<p class="font-label-caps text-label-caps text-secondary mb-2">Legal &gt; Templates</p>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Standard Purchase Agreement</h1>
+<p class="text-body-md text-on-surface-variant mt-2 max-w-2xl">Edit the master template for modular cabin sales. Variables inserted will dynamically populate upon contract generation.</p>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-3 rounded text-secondary font-label-caps border border-secondary border-opacity-20 hover:bg-surface-variant transition-colors">Save Draft</button>
+<button class="px-6 py-3 rounded bg-[#0055FF] text-white font-label-caps shadow-sm hover:opacity-90 transition-opacity">Publish Version</button>
+</div>
+</div>
+<!-- Split View Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter h-[800px]">
+<!-- Editor Canvas (Left / Main) -->
+<div class="lg:col-span-8 glass-panel rounded-xl ambient-glow flex flex-col h-full overflow-hidden">
+<div class="bg-surface-container-low border-b border-outline border-opacity-10 p-4 flex gap-2 overflow-x-auto">
+<!-- Formatting Toolbar Fake -->
+<button class="p-2 text-on-surface-variant hover:bg-surface-variant rounded"><span class="material-symbols-outlined text-[20px]" data-icon="format_bold">format_bold</span></button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-variant rounded"><span class="material-symbols-outlined text-[20px]" data-icon="format_italic">format_italic</span></button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-variant rounded"><span class="material-symbols-outlined text-[20px]" data-icon="format_underlined">format_underlined</span></button>
+<div class="w-px h-6 bg-outline opacity-20 my-auto mx-2"></div>
+<button class="p-2 text-on-surface-variant hover:bg-surface-variant rounded"><span class="material-symbols-outlined text-[20px]" data-icon="format_list_bulleted">format_list_bulleted</span></button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-variant rounded"><span class="material-symbols-outlined text-[20px]" data-icon="format_list_numbered">format_list_numbered</span></button>
+</div>
+<div class="flex-1 p-8 overflow-y-auto bg-white">
+<div class="max-w-[8.5in] mx-auto prose prose-slate">
+<h2 class="text-center font-story-heading text-2xl text-primary mb-8 border-b pb-4">MODULAR CABIN PURCHASE AGREEMENT</h2>
+<p class="mb-4 text-on-surface">This Modular Cabin Purchase Agreement (the "Agreement") is entered into as of <strong>{{current_date}}</strong>, by and between:</p>
+<div class="pl-8 mb-6 border-l-2 border-secondary-container">
+<p class="mb-2"><strong>SELLER:</strong> Apple Cabins Canada Ltd.</p>
+<p><strong>BUYER:</strong> <span class="bg-secondary-container/50 text-tertiary-container px-2 py-0.5 rounded border border-secondary border-opacity-20 font-mono text-sm inline-flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">data_object</span>{{buyer_name}}</span></p>
+</div>
+<h3 class="font-bold text-lg text-primary mt-8 mb-4">1. PRODUCT SPECIFICATIONS</h3>
+<p class="mb-4">The Seller agrees to manufacture, deliver, and sell, and the Buyer agrees to purchase, the following modular structure:</p>
+<ul class="list-disc pl-6 mb-6 text-on-surface space-y-2">
+<li><strong>Model:</strong> <span class="bg-secondary-container/50 text-tertiary-container px-2 py-0.5 rounded border border-secondary border-opacity-20 font-mono text-sm inline-flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">data_object</span>{{unit_model}}</span></li>
+<li><strong>Custom Upgrades:</strong> <span class="bg-secondary-container/50 text-tertiary-container px-2 py-0.5 rounded border border-secondary border-opacity-20 font-mono text-sm inline-flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">data_object</span>{{upgrade_list}}</span></li>
+</ul>
+<h3 class="font-bold text-lg text-primary mt-8 mb-4">2. PURCHASE PRICE &amp; PAYMENT TERMS</h3>
+<p class="mb-4">The total purchase price for the modular structure, inclusive of base model and agreed-upon upgrades, is <strong><span class="bg-secondary-container/50 text-tertiary-container px-2 py-0.5 rounded border border-secondary border-opacity-20 font-mono text-sm inline-flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">data_object</span>{{total_price}}</span></strong>.</p>
+<p class="mb-4">A non-refundable deposit of 30% is due upon signing. Final payment is due prior to dispatch.</p>
+<h3 class="font-bold text-lg text-primary mt-8 mb-4">3. DELIVERY &amp; INSTALLATION</h3>
+<p class="mb-4">Estimated delivery date is <strong><span class="bg-secondary-container/50 text-tertiary-container px-2 py-0.5 rounded border border-secondary border-opacity-20 font-mono text-sm inline-flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">data_object</span>{{delivery_date}}</span></strong> to the site located at <strong><span class="bg-secondary-container/50 text-tertiary-container px-2 py-0.5 rounded border border-secondary border-opacity-20 font-mono text-sm inline-flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">data_object</span>{{installation_address}}</span></strong>. Buyer is responsible for all site preparation and foundation work prior to delivery.</p>
+<!-- Add more mock text to force scroll -->
+<div class="h-64"></div>
+</div>
+</div>
+</div>
+<!-- Variables Panel (Right) -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<div class="glass-panel rounded-xl ambient-glow p-6 flex-1 flex flex-col">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-bold text-primary flex items-center gap-2"><span class="material-symbols-outlined" data-icon="data_object">data_object</span> Template Variables</h3>
+<span class="text-xs bg-surface-variant px-2 py-1 rounded text-on-surface-variant font-label-caps">Drag or Click</span>
+</div>
+<div class="relative mb-6">
+<input class="w-full bg-surface-container-low border-b border-outline border-opacity-30 border-t-0 border-x-0 focus:border-primary focus:ring-0 text-sm py-3 pl-10 transition-colors" placeholder="Search variables..." type="text"/>
+<span class="material-symbols-outlined absolute left-2 top-3 text-on-surface-variant" data-icon="search">search</span>
+</div>
+<div class="overflow-y-auto pr-2 space-y-6 flex-1">
+<!-- Category: Client -->
+<div>
+<h4 class="font-label-caps text-secondary text-[10px] mb-3 uppercase tracking-widest border-b border-outline border-opacity-10 pb-1">Client Details</h4>
+<div class="space-y-2">
+<div class="group flex items-center justify-between p-3 rounded-lg border border-outline border-opacity-10 bg-white hover:border-primary cursor-pointer transition-all hover:shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-variant flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[16px]" data-icon="person">person</span></div>
+<div>
+<p class="font-mono text-xs text-primary font-bold">{{buyer_name}}</p>
+<p class="text-[11px] text-on-surface-variant">Full legal name of client</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary opacity-0 group-hover:opacity-100 transition-opacity" data-icon="add_circle">add_circle</span>
+</div>
+<div class="group flex items-center justify-between p-3 rounded-lg border border-outline border-opacity-10 bg-white hover:border-primary cursor-pointer transition-all hover:shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-variant flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[16px]" data-icon="mail">mail</span></div>
+<div>
+<p class="font-mono text-xs text-primary font-bold">{{buyer_email}}</p>
+<p class="text-[11px] text-on-surface-variant">Primary contact email</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary opacity-0 group-hover:opacity-100 transition-opacity" data-icon="add_circle">add_circle</span>
+</div>
+</div>
+</div>
+<!-- Category: Product -->
+<div>
+<h4 class="font-label-caps text-secondary text-[10px] mb-3 uppercase tracking-widest border-b border-outline border-opacity-10 pb-1">Product Details</h4>
+<div class="space-y-2">
+<div class="group flex items-center justify-between p-3 rounded-lg border border-outline border-opacity-10 bg-white hover:border-primary cursor-pointer transition-all hover:shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-variant flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[16px]" data-icon="home_work">home_work</span></div>
+<div>
+<p class="font-mono text-xs text-primary font-bold">{{unit_model}}</p>
+<p class="text-[11px] text-on-surface-variant">Cabin model name (e.g. Alpine 40)</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary opacity-0 group-hover:opacity-100 transition-opacity" data-icon="add_circle">add_circle</span>
+</div>
+<div class="group flex items-center justify-between p-3 rounded-lg border border-outline border-opacity-10 bg-white hover:border-primary cursor-pointer transition-all hover:shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-variant flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[16px]" data-icon="list_alt">list_alt</span></div>
+<div>
+<p class="font-mono text-xs text-primary font-bold">{{upgrade_list}}</p>
+<p class="text-[11px] text-on-surface-variant">Comma separated list of upgrades</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary opacity-0 group-hover:opacity-100 transition-opacity" data-icon="add_circle">add_circle</span>
+</div>
+</div>
+</div>
+<!-- Category: Financial -->
+<div>
+<h4 class="font-label-caps text-secondary text-[10px] mb-3 uppercase tracking-widest border-b border-outline border-opacity-10 pb-1">Financial &amp; Logistics</h4>
+<div class="space-y-2">
+<div class="group flex items-center justify-between p-3 rounded-lg border border-outline border-opacity-10 bg-white hover:border-primary cursor-pointer transition-all hover:shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-variant flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[16px]" data-icon="payments">payments</span></div>
+<div>
+<p class="font-mono text-xs text-primary font-bold">{{total_price}}</p>
+<p class="text-[11px] text-on-surface-variant">Formatted total CAD amount</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary opacity-0 group-hover:opacity-100 transition-opacity" data-icon="add_circle">add_circle</span>
+</div>
+<div class="group flex items-center justify-between p-3 rounded-lg border border-outline border-opacity-10 bg-white hover:border-primary cursor-pointer transition-all hover:shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-variant flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[16px]" data-icon="local_shipping">local_shipping</span></div>
+<div>
+<p class="font-mono text-xs text-primary font-bold">{{delivery_date}}</p>
+<p class="text-[11px] text-on-surface-variant">Estimated delivery window</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary opacity-0 group-hover:opacity-100 transition-opacity" data-icon="add_circle">add_circle</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-8 border-t border-outline border-opacity-10 mt-12 bg-surface text-secondary font-label-caps text-label-caps flex flex-col md:flex-row justify-between items-center flat no shadows">
+<span class="mb-4 md:mb-0">© 2024 Apple Cabins Canada Ltd. Modular Excellence.</span>
+<div class="flex gap-6">
+<a class="text-secondary opacity-80 hover:opacity-100 hover:text-primary transition-opacity transition-all" href="#">Privacy Policy</a>
+<a class="text-secondary opacity-80 hover:opacity-100 hover:text-primary transition-opacity transition-all" href="#">Terms of Service</a>
+<a class="text-secondary opacity-80 hover:opacity-100 hover:text-primary transition-opacity transition-all" href="#">Compliance</a>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

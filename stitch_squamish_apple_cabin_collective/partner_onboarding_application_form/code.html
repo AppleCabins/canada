@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Squamish Cabins - Partner Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#43474a",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#e1e3e4",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-tertiary-fixed": "#001d32",
+                        "primary": "#192830",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#4f696c",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#002842",
+                        "tertiary-fixed-dim": "#94ccff",
+                        "primary-fixed-dim": "#b9c9d3",
+                        "error": "#ba1a1a",
+                        "surface-container": "#edeeef",
+                        "surface-container-high": "#e7e8e9",
+                        "primary-container": "#2f3e46",
+                        "on-tertiary-container": "#59adef",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f8f9fa",
+                        "surface-dim": "#d9dadb",
+                        "on-primary-fixed-variant": "#3a4951",
+                        "secondary-fixed-dim": "#b0cccf",
+                        "surface-bright": "#f8f9fa",
+                        "on-secondary-fixed": "#031f22",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#0e1d25",
+                        "secondary-fixed": "#cbe8eb",
+                        "inverse-surface": "#2e3132",
+                        "surface-container-low": "#f3f4f5",
+                        "on-surface": "#191c1d",
+                        "inverse-primary": "#b9c9d3",
+                        "on-background": "#191c1d",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#cde5ff",
+                        "primary-fixed": "#d5e5ef",
+                        "on-primary-container": "#99a9b2",
+                        "on-secondary-fixed-variant": "#314b4e",
+                        "on-tertiary-fixed-variant": "#004b74",
+                        "outline-variant": "#c3c7ca",
+                        "secondary-container": "#cbe8eb",
+                        "tertiary-container": "#003f63",
+                        "secondary": "#496366",
+                        "outline": "#73787b",
+                        "background": "#f8f9fa",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-tint": "#516169"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "margin-mobile": "20px",
+                        "base": "8px",
+                        "margin-desktop": "80px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "story-heading": ["Playfair Display", "serif"],
+                        "headline-xl": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "label-caps": ["Inter", "sans-serif"],
+                        "headline-lg": ["Inter", "sans-serif"],
+                        "headline-lg-mobile": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "story-heading": ["32px", { "lineHeight": "44px", "fontWeight": "400" }],
+                        "headline-xl": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 40px 40px -15px rgba(73, 99, 102, 0.08);
+        }
+        .form-input-minimal {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(115, 120, 123, 0.3);
+            border-radius: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .form-input-minimal:focus {
+            box-shadow: none;
+            border-color: #59adef;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md overflow-x-hidden">
+<!-- TopNavBar (Suppressed for transactional onboarding flow, but retaining minimal brand header) -->
+<header class="w-full px-margin-mobile md:px-margin-desktop py-6 flex justify-center items-center z-50">
+<a class="font-story-heading text-story-heading text-primary flex items-center gap-2" href="#">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">landscape</span>
+            Squamish Cabins
+        </a>
+</header>
+<main class="flex-grow flex flex-col items-center justify-start pt-10 pb-20 px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto relative">
+<!-- Background Ambient Effect -->
+<div class="fixed inset-0 pointer-events-none -z-10">
+<div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-tertiary-fixed rounded-full blur-[120px] opacity-20"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-secondary-fixed rounded-full blur-[120px] opacity-20"></div>
+<!-- Background Image Placeholder -->
+<div class="absolute inset-0 bg-cover bg-center w-full h-full opacity-10 mix-blend-multiply" data-alt="A serene, minimalist view of a misty pine forest in the Pacific Northwest at dawn. The scene is rendered in high-key lighting with soft, diffused atmospheric haze. The color palette is restricted to cool slate greys, muted forest greens, and stark whites, fitting perfectly with an industrial-elegance aesthetic. The mood is tranquil and expansive, suggesting pristine natural beauty waiting to be inhabited." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAKDazNDS3GSLxHZgXNhYAbQVtMwTGt1_fNaAC3to7Mgie4vskVtVA5uo8d3rt3maZOFnB1Qj-38ljnbo7BeQdNK9-I-B2PcsC5lTxFrQzklEfJLLERtqIrB22qlt_QLZnG0nvPZ_N0ltPzWdhxz3-ShW8YvDuAWnPnTsJ73yelP8NVgEkpClqe0VeJfiEeZs5sO8SIMHR9-3BaCYFmq4AwTRbI3jM_00B5Gg85J7_YvSj7F0cv58Wu')"></div>
+</div>
+<!-- Progress Header -->
+<div class="w-full max-w-3xl mb-12 text-center">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4">Partner With Us</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Begin the journey to host a Squamish Cabin. Our vetting process ensures alignment with our sustainability and architectural standards.
+            </p>
+<!-- Progress Bar -->
+<div class="mt-12 flex items-center justify-between relative max-w-xl mx-auto">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-[1px] bg-outline-variant/30 -z-10"></div>
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1/3 h-[1px] bg-tertiary-container -z-10 transition-all duration-500" id="progress-line"></div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-8 h-8 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-label-caps text-label-caps shadow-[0_0_15px_rgba(0,63,99,0.3)] transition-colors" id="step-1-marker">1</div>
+<span class="font-label-caps text-label-caps text-primary uppercase">Property</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-outline flex items-center justify-center font-label-caps text-label-caps transition-colors" id="step-2-marker">2</div>
+<span class="font-label-caps text-label-caps text-outline uppercase transition-colors" id="step-2-label">Goals</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-outline flex items-center justify-center font-label-caps text-label-caps transition-colors" id="step-3-marker">3</div>
+<span class="font-label-caps text-label-caps text-outline uppercase transition-colors" id="step-3-label">Details</span>
+</div>
+</div>
+</div>
+<!-- Form Container -->
+<div class="w-full max-w-3xl glass-panel rounded-xl p-8 md:p-12 relative overflow-hidden">
+<!-- Step 1: Property Details -->
+<form class="space-y-10 relative" id="onboarding-form">
+<div class="space-y-8 transition-all duration-500 opacity-100 translate-x-0" id="step-1">
+<div class="mb-8 border-b border-outline-variant/20 pb-4">
+<h2 class="font-body-lg text-body-lg text-primary font-semibold mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-container">location_on</span>
+                            Property Details
+                        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Tell us about the land where you envision your cabin.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="flex flex-col space-y-2">
+<label class="font-label-caps text-label-caps text-primary uppercase tracking-widest" for="location">Location (City, Region)</label>
+<input class="form-input-minimal w-full font-body-md text-primary py-2 focus:ring-0" id="location" placeholder="e.g. Whistler, BC" type="text"/>
+</div>
+<div class="flex flex-col space-y-2">
+<label class="font-label-caps text-label-caps text-primary uppercase tracking-widest" for="zoning">Zoning Type</label>
+<select class="form-input-minimal w-full font-body-md text-primary py-2 focus:ring-0 appearance-none bg-transparent cursor-pointer" id="zoning">
+<option disabled="" selected="" value="">Select zoning...</option>
+<option value="residential">Residential</option>
+<option value="commercial">Commercial</option>
+<option value="agricultural">Agricultural</option>
+<option value="recreational">Recreational</option>
+<option value="unsure">Unsure / Need Assistance</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="flex flex-col space-y-2">
+<label class="font-label-caps text-label-caps text-primary uppercase tracking-widest" for="size">Acreage / Lot Size</label>
+<input class="form-input-minimal w-full font-body-md text-primary py-2 focus:ring-0" id="size" placeholder="e.g. 5 acres" type="text"/>
+</div>
+<div class="flex flex-col space-y-2">
+<label class="font-label-caps text-label-caps text-primary uppercase tracking-widest" for="structures">Existing Structures</label>
+<select class="form-input-minimal w-full font-body-md text-primary py-2 focus:ring-0 appearance-none bg-transparent cursor-pointer" id="structures">
+<option value="none">Raw Land (None)</option>
+<option value="primary">Primary Residence</option>
+<option value="outbuildings">Outbuildings / Sheds</option>
+<option value="other">Other</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col space-y-2">
+<label class="font-label-caps text-label-caps text-primary uppercase tracking-widest">Terrain Overview</label>
+<textarea class="form-input-minimal w-full font-body-md text-primary py-2 focus:ring-0 resize-none" id="terrain" placeholder="Briefly describe the topography (e.g. sloped, waterfront, heavily forested)..." rows="3"></textarea>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="flex justify-end pt-8 border-t border-outline-variant/20">
+<button class="bg-on-tertiary-container hover:bg-tertiary-container text-on-primary font-label-caps text-label-caps uppercase px-8 py-3 rounded-DEFAULT transition-colors duration-300 flex items-center gap-2" type="button">
+                        Continue
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Reassurance Snippet -->
+<div class="mt-12 max-w-lg text-center flex flex-col items-center opacity-80">
+<span class="material-symbols-outlined text-outline mb-2">verified_user</span>
+<p class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Secure &amp; Confidential</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-2">
+                Your details are strictly used to assess site feasibility. Our engineering team reviews submissions within 48 hours.
+            </p>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-on-primary-fixed w-full relative bottom-0 border-t border-white/10 grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20 mt-auto">
+<div class="col-span-1 md:col-span-1 flex flex-col justify-between">
+<span class="font-story-heading text-headline-lg-mobile text-on-primary mb-8 md:mb-0">Squamish Cabins</span>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-col md:flex-row justify-between items-start md:items-end gap-8 md:gap-0">
+<nav class="flex flex-col md:flex-row gap-6 md:gap-12 w-full md:w-auto">
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100" href="#">Contact</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100" href="#">Shipping</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100" href="#">Legal</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100" href="#">Sustainability</a>
+</nav>
+<p class="font-body-md text-body-md text-on-primary/60 mt-8 md:mt-0 opacity-80">© 2024 Squamish Modular. CSA Certified Hub.</p>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Alpine Z | Apple Cabins</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container-highest": "#e1e3e4",
+                        "inverse-primary": "#b9c9d3",
+                        "primary": "#192830",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#b9c9d3",
+                        "outline-variant": "#c3c7ca",
+                        "on-tertiary-fixed": "#001d32",
+                        "tertiary-fixed": "#cde5ff",
+                        "surface-container-high": "#e7e8e9",
+                        "on-tertiary-fixed-variant": "#004b74",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#2e3132",
+                        "secondary-fixed": "#cbe8eb",
+                        "on-tertiary-container": "#59adef",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#314b4e",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-tint": "#516169",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#0e1d25",
+                        "on-secondary-fixed": "#031f22",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#edeeef",
+                        "surface": "#f8f9fa",
+                        "surface-bright": "#f8f9fa",
+                        "tertiary-container": "#003f63",
+                        "outline": "#73787b",
+                        "primary-fixed": "#d5e5ef",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#3a4951",
+                        "background": "#f8f9fa",
+                        "surface-variant": "#e1e3e4",
+                        "on-surface": "#191c1d",
+                        "primary-container": "#2f3e46",
+                        "surface-dim": "#d9dadb",
+                        "on-background": "#191c1d",
+                        "on-surface-variant": "#43474a",
+                        "on-secondary-container": "#4f696c",
+                        "on-error-container": "#93000a",
+                        "secondary": "#496366",
+                        "on-primary-container": "#99a9b2",
+                        "secondary-container": "#cbe8eb",
+                        "tertiary-fixed-dim": "#94ccff",
+                        "secondary-fixed-dim": "#b0cccf",
+                        "tertiary": "#002842"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "container-max": "1440px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "story-heading": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "story-heading": ["32px", {"lineHeight": "44px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/70 backdrop-blur-xl border-b border-outline-variant/10 shadow-[0_40px_40px_-15px_rgba(25,40,48,0.05)] transition-all duration-300">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<!-- Brand -->
+<a class="font-story-heading text-story-heading text-primary flex items-center gap-2" href="#"><span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">landscape</span> Apple Cabins Canada Ltd.</a>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-container transition-colors duration-300" href="#">Sales</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-container transition-colors duration-300" href="#">Rentals</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-container transition-colors duration-300" href="#">Gallery</a>
+<!-- Active State: Specs -->
+<a class="font-label-caps text-label-caps text-tertiary-container font-semibold border-b-2 border-tertiary-container pb-1 hover:text-tertiary-container transition-colors duration-300" href="#">Specs</a>
+</nav>
+<!-- Trailing Action -->
+<div class="flex items-center gap-4">
+<a class="hidden md:block font-label-caps text-label-caps text-primary hover:text-tertiary-container transition-colors duration-300" href="#">Login</a>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="w-full">
+<!-- 1. Hero Section -->
+<section class="relative w-full h-[90vh] min-h-[600px] flex items-end pb-20 md:pb-32 px-margin-mobile md:px-margin-desktop">
+<!-- Background Image -->
+<div class="absolute inset-0 w-full h-full z-0">
+<div class="absolute inset-0 bg-primary/30 z-10"></div> <!-- Subtle overlay for text readability -->
+<div class="w-full h-full bg-cover bg-center" data-alt="A breathtaking, large-scale wide-angle architectural photograph of a luxurious two-story modern modular cabin, the Alpine Z, perched on a rugged cliff edge overlooking a vast, mist-covered mountain vista in the Pacific Northwest. The cabin features expansive floor-to-ceiling glass walls reflecting the surrounding pine forests and overcast sky. The exterior is clad in sleek, dark metallic panels that contrast elegantly with warm interior lighting glowing from within. The scene is shot at twilight, emphasizing a 'Techno-Nature' aesthetic, minimalist-futuristic design, and industrial elegance. High-resolution, photorealistic, atmospheric lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBVNl50bWRkWnYRyKXDPlZo7fSBERpzrbO7WoVfNqEIvFHk8s5KqZGoJRt0GKFjDjlgeNeKqxcX24hLzWGGflrepyWmZUK4wUtrDIzfXoIrO6QUzg4wzy0DVrA6nhyGvHkR-ieXIlRF87ioRZefIMxwaqxE0qzW75_xiF5HQV7QoeNhJd6AfUfVzibA_yoCMQ7vzk7l5Dk7SxuBREjiZzSl4Cl6NjNwfyxWU5es8c5jQC_EhF_gf0pG')"></div>
+</div>
+<!-- Content -->
+<div class="relative z-20 max-w-3xl glass-panel bg-surface-container-lowest/50 backdrop-blur-[20px] border border-surface-container-lowest/30 p-8 md:p-12 rounded-xl shadow-[0_40px_40px_-15px_rgba(25,40,48,0.1)]">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-xl md:text-headline-xl text-primary mb-4 tracking-tight">
+                    Alpine Z: Elevate Your Wild.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-2xl">
+                    Dual-level luxury designed for the rugged PNW terrain. Precision-engineered to dissolve the boundary between advanced shelter and untamed wilderness.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="px-8 py-4 bg-tertiary-container text-on-tertiary rounded DEFAULT font-label-caps text-label-caps hover:bg-tertiary transition-colors text-center">
+                        Get a Quote
+                    </button>
+<button class="px-8 py-4 bg-transparent border border-outline-variant/50 text-primary rounded DEFAULT font-label-caps text-label-caps hover:bg-surface-container-low transition-colors text-center">
+                        View Gallery
+                    </button>
+</div>
+</div>
+</section>
+<!-- 2. Interior Spotlight (Bento Layout) -->
+<section class="py-24 md:py-40 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 order-2 md:order-1 flex flex-col gap-8">
+<div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-4">Vertical Sanctuary</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                            The Alpine Z redefines the compact footprint with a sweeping two-story volume. Full-height structural glass walls invite the outside in, while the engineered spiral staircase acts as a functional centerpiece, maximizing living space without compromising on architectural drama.
+                        </p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-6 bg-surface-container-lowest border border-outline-variant/20 rounded-lg shadow-[0_10px_30px_-10px_rgba(25,40,48,0.05)]">
+<span class="material-symbols-outlined text-tertiary-container mb-2" style="font-variation-settings: 'FILL' 1;">stairs</span>
+<h3 class="font-label-caps text-label-caps text-primary mb-1">Access</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Steel Spiral Staircase</p>
+</div>
+<div class="p-6 bg-surface-container-lowest border border-outline-variant/20 rounded-lg shadow-[0_10px_30px_-10px_rgba(25,40,48,0.05)]">
+<span class="material-symbols-outlined text-tertiary-container mb-2" style="font-variation-settings: 'FILL' 1;">panorama</span>
+<h3 class="font-label-caps text-label-caps text-primary mb-1">Visibility</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">18ft Glazing Facade</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-7 order-1 md:order-2">
+<div class="relative w-full aspect-[4/5] md:aspect-square rounded-xl overflow-hidden shadow-[0_40px_40px_-15px_rgba(25,40,48,0.08)]">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A high-end interior architectural photograph of a luxurious two-story modular cabin living space. The focal point is a sleek, minimalist metal spiral staircase ascending to a lofted second floor. The room is bathed in natural light streaming through massive, double-height, floor-to-ceiling glass walls that frame a dense, misty evergreen forest outside. The interior styling is 'Industrial Elegance' with clean lines, light wood floors, and modern, low-profile furniture in slate grey tones. The atmosphere is airy, serene, and technologically advanced, reflecting a light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgJpgOqvTw7njKnH7FP68LoxbFDp1wMUsHZIlJ_1tlsUOOdPMs3bHvcE9zSf8_nFlxg1bBx8pRc2VdiZ49SBFhhjZP-t0nUrNsf_BLH-4ens3vdttW6lLvRKfg0P7bWP-gOPOeJXGNSbaXJozqyL5VT7JkhGKHq8Ia6hnQzsw0AqrtuY-VILYaXQGPJUubVDVxHEJCysG3QQ37ZIMtswPUMA1XWs3Ec_4ZN6hMPXE1zn6jaMXKnO9U">
+</div>
+</div>
+</div>
+</section>
+<!-- 3 & 4. Performance Data & Layout (Split Screen) -->
+<section class="bg-surface-container-low py-24 md:py-40">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+<!-- Layout Schematic -->
+<div class="flex flex-col">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-8">Schematic Footprint</h2>
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_20px_40px_-10px_rgba(25,40,48,0.05)] border border-outline-variant/10 aspect-[4/3] flex items-center justify-center relative overflow-hidden">
+<img class="w-full h-full object-contain mix-blend-darken opacity-80" data-alt="A highly detailed, minimalist architectural floorplan schematic of a two-story modular cabin, 320 square feet total. The diagram is rendered in clean, precise technical lines on a crisp white background, typical of a high-end engineering blueprint but styled for modern UI. It clearly delineates a lower level living area and an upper loft bedroom accessible via a spiral staircase. The graphic uses subtle slate grey and electric blue accents to highlight key structural elements and dimensions. Minimalist, technical, engineered aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3rR22D05IYSjxLozrXAQlnCTPcsDVcYcgMZEblh2XB20njMiiZr-zhw9DEsu3O11BMindb7O3wWymM94KVGfTcHpSu7V8AWLwynrRoXwNLC6OUcs60l4xRh4dJddG4nNw7hkMP5GO3QRKg5xX-19eudkiN9zgydR36vJHvK7OuD3MUpbIe4V59BF3NOdb-YYIu5kuC8b44RLXsPmNmpzffJ1wdPMZb1U1ec07Z5Aj4mv_Fqt4C4t2">
+<!-- Contextual overlay -->
+<div class="absolute bottom-6 right-6 bg-surface-container-lowest/90 backdrop-blur-md px-4 py-2 rounded shadow-sm border border-outline-variant/20">
+<span class="font-label-caps text-label-caps text-primary">Total Area: 320 SQ FT</span>
+</div>
+</div>
+</div>
+<!-- Performance Specs List -->
+<div class="flex flex-col justify-center">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-8">Engineering Data</h2>
+<div class="flex flex-col">
+<!-- Spec Item -->
+<div class="flex justify-between items-end py-4 border-b border-outline-variant/30">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Thermal Efficiency</span>
+<span class="font-body-md text-body-md text-primary font-medium">R-45 Rated Insulation</span>
+</div>
+<!-- Spec Item -->
+<div class="flex justify-between items-end py-4 border-b border-outline-variant/30">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Snow Load Capacity</span>
+<span class="font-body-md text-body-md text-primary font-medium">150 PSF (Squamish Certified)</span>
+</div>
+<!-- Spec Item -->
+<div class="flex justify-between items-end py-4 border-b border-outline-variant/30">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Structural Frame</span>
+<span class="font-body-md text-body-md text-primary font-medium">A36 Grade Structural Steel</span>
+</div>
+<!-- Spec Item -->
+<div class="flex justify-between items-end py-4 border-b border-outline-variant/30">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Wind Resistance</span>
+<span class="font-body-md text-body-md text-primary font-medium">Up to 130 MPH</span>
+</div>
+<!-- Spec Item -->
+<div class="flex justify-between items-end py-4 border-b border-outline-variant/30">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Assembly Time</span>
+<span class="font-body-md text-body-md text-primary font-medium">Under 48 Hours On-Site</span>
+</div>
+</div>
+<div class="mt-12">
+<button class="flex items-center gap-2 font-label-caps text-label-caps text-tertiary-container hover:text-primary transition-colors">
+                                Download Full Spec Sheet
+                                <span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Upgrade Options (Glassmorphism Cards) -->
+<section class="py-24 md:py-40 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative">
+<!-- Decorative background element -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-secondary-fixed/20 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+<div class="text-center mb-16">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-4">Modular Expansions</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Customize the Alpine Z to meet the specific demands of your environment and aesthetic preferences.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest/70 backdrop-blur-[20px] border border-surface-container-lowest/50 rounded-xl overflow-hidden shadow-[0_40px_40px_-15px_rgba(25,40,48,0.05)] group hover:-translate-y-2 transition-transform duration-300">
+<div class="h-48 w-full relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A close-up, photorealistic detail shot of advanced electrochromic 'smart glass' installed in a modern modular cabin window. The image shows the glass partially transitioning from transparent to an opaque, frosted state, demonstrating its technological capability. Through the transparent section, a blurred view of a bright, snowy mountain landscape is visible. The frame is sleek, dark anodized aluminum. The aesthetic is high-tech, minimalist, and focuses on the intersection of advanced engineering and nature." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2ew7FxlE28Qdb4KImk6L7iNKoyEp-BdPQzf6sW-_qjUCSOxInOhr9G4Di410i58I157ffCjohvJzf4buY9aZ2jnLfEYER2kD1oEPI4jp4nSRcEt5gmhg9NfrxvLcMEHIK7YDj3a0D_-TdHegCepGVRviqjS3M6lYWzStwq-hIqi07qlF7L8jGG5xmFhwXMYfBipMwCqA7VICnR4cI509PaHSvaxGgkRz0VP1oJAsWjCjzhZMlwYV0">
+</div>
+<div class="p-8">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile !text-[24px] !line-height-[32px] text-primary mb-2">Smart Glass Matrix</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Electrochromic glazing allows instant transition from transparent to opaque for privacy and thermal regulation.</p>
+<a class="font-label-caps text-label-caps text-tertiary-container flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                            Explore Option <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest/70 backdrop-blur-[20px] border border-surface-container-lowest/50 rounded-xl overflow-hidden shadow-[0_40px_40px_-15px_rgba(25,40,48,0.05)] group hover:-translate-y-2 transition-transform duration-300">
+<div class="h-48 w-full relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A high-resolution texture shot showcasing premium, custom exterior cladding on a modern modular structure. The material is a sophisticated, matte-finish composite that mimics the organic texture of charred wood or dark stone, yet retains perfectly straight, engineered seams. The lighting highlights the subtle grain and the precision of the minimalist panel joints. The color palette is dark slate grey, conveying durability, industrial elegance, and harsh-weather resistance typical of Pacific Northwest architecture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXfp8yKuDNCH1b1eH6qnMH7GkQWp7JPd4kr0rsKDInVj1OqhAJfhbbg5f5EGWgxAeKNtrf9nN9ckpPEcD4R_MwpSqo5Cp1Oz_9Fo3dtCcG8buMdSGjqTPZAlbgN5ZB4FKB2qmqzOrSuTRBYmWU_0uuSXp2mlCEhF1kEfWJwhtb4UQIJV_vZbCUAOWqJwlk7mSfzDy3dGNb7pXxj8kL5APH5xqXma8wjw0WMxrCjlSEQtYsYXH1fmhI">
+</div>
+<div class="p-8">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile !text-[24px] !line-height-[32px] text-primary mb-2">Armored Cladding</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Upgrade to hyper-durable, weather-resistant composite panels designed to withstand extreme coastal conditions.</p>
+<a class="font-label-caps text-label-caps text-tertiary-container flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                            Explore Option <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest/70 backdrop-blur-[20px] border border-surface-container-lowest/50 rounded-xl overflow-hidden shadow-[0_40px_40px_-15px_rgba(25,40,48,0.05)] group hover:-translate-y-2 transition-transform duration-300">
+<div class="h-48 w-full relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A sleek, low-angle architectural photograph of a minimalist flat roof on a modern modular cabin, featuring an integrated, low-profile solar panel array. The panels seamlessly blend into the dark roofline, reflecting the bright, overcast sky above. In the background, rugged mountain peaks are visible. The image highlights advanced off-grid technology, sustainability, and clean energy solutions integrated into high-end, minimalist futuristic architecture. Bright, light-mode aesthetic with crisp details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHpLbKd6xdOvPjY0ZP8PEI9oZfyuDZ6l20qXNh8iaf2kviDDCNafEXWR1rAcaj_3nB8rkyJX1nZ9abAiv4crplppoP8Zqg2M_qTHanwh5eBG96viCLmOCemxQBKZvSYVxFPbj-BKu-lzxk5oeddKnH43bMFn7WmUQHevFEB9TKgAfpqJyHzckCiAEm1gDKGDOWop36KcBFP6RmHnUqeDuyxtW-6ZreI9U4FAkpuUvx9ZJwRG4MWU2K">
+</div>
+<div class="p-8">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile !text-[24px] !line-height-[32px] text-primary mb-2">Off-Grid Solar Array</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Integrated high-efficiency solar roof tiles paired with a high-capacity solid-state battery system.</p>
+<a class="font-label-caps text-label-caps text-tertiary-container flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                            Explore Option <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full relative bottom-0 bg-primary border-t border-white/10 text-on-primary">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20 max-w-container-max mx-auto">
+<!-- Brand -->
+<div class="col-span-1 md:col-span-1 flex flex-col gap-4">
+<span class="font-story-heading text-headline-lg-mobile text-on-primary flex items-center gap-2"><span class="material-symbols-outlined text-[32px]" style="font-variation-settings: &quot;FILL&quot; 1;">landscape</span> Apple Cabins Canada Ltd.</span>
+<p class="font-body-md text-body-md text-on-primary/60 mt-4">© 2024 Apple Cabins Canada Ltd. CSA Certified Hub.</p>
+</div>
+<!-- Empty Column for Spacing -->
+<div class="hidden md:block col-span-1"></div>
+<!-- Links -->
+<div class="col-span-1 md:col-span-2 flex flex-wrap gap-x-12 gap-y-6 md:justify-end">
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100" href="#">Contact</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100" href="#">Shipping</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100" href="#">Legal</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100" href="#">Sustainability</a>
+</div>
+</div>
+</footer>
+
+
+</body></html>

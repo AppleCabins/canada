@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quick Start Guide - Lumen Cabins</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-primary": "#b9c9d3",
+                      "surface-variant": "#e1e3e4",
+                      "on-primary-fixed": "#0e1d25",
+                      "tertiary-container": "#003f63",
+                      "surface-container-low": "#f3f4f5",
+                      "secondary": "#496366",
+                      "surface-container-high": "#e7e8e9",
+                      "background": "#f8f9fa",
+                      "primary-fixed-dim": "#b9c9d3",
+                      "surface-bright": "#f8f9fa",
+                      "primary-container": "#2f3e46",
+                      "surface-container": "#edeeef",
+                      "on-error": "#ffffff",
+                      "inverse-surface": "#2e3132",
+                      "inverse-on-surface": "#f0f1f2",
+                      "on-secondary-fixed-variant": "#314b4e",
+                      "primary": "#192830",
+                      "tertiary": "#002842",
+                      "surface": "#f8f9fa",
+                      "on-secondary-container": "#4f696c",
+                      "surface-dim": "#d9dadb",
+                      "on-surface": "#191c1d",
+                      "surface-tint": "#516169",
+                      "error": "#ba1a1a",
+                      "surface-container-highest": "#e1e3e4",
+                      "tertiary-fixed-dim": "#94ccff",
+                      "on-primary-fixed-variant": "#3a4951",
+                      "outline": "#73787b",
+                      "secondary-fixed-dim": "#b0cccf",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed": "#cde5ff",
+                      "error-container": "#ffdad6",
+                      "on-primary": "#ffffff",
+                      "on-background": "#191c1d",
+                      "on-primary-container": "#99a9b2",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed": "#d5e5ef",
+                      "on-tertiary-container": "#59adef",
+                      "on-tertiary-fixed-variant": "#004b74",
+                      "on-secondary-fixed": "#031f22",
+                      "secondary-fixed": "#cbe8eb",
+                      "on-surface-variant": "#43474a",
+                      "outline-variant": "#c3c7ca",
+                      "secondary-container": "#cbe8eb",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed": "#001d32"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "margin-mobile": "20px",
+                      "base": "8px",
+                      "container-max": "1440px",
+                      "margin-desktop": "80px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "headline-xl": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "story-heading": [
+                              "Playfair Display"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "story-heading": [
+                              "32px",
+                              {
+                                      "lineHeight": "44px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+            },
+          }
+        }
+      </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* Glassmorphism utility classes based on design system */
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .ambient-shadow {
+            box-shadow: 0 40px 40px rgba(25, 40, 48, 0.05);
+        }
+        
+        .tech-line {
+            height: 1px;
+            background-color: rgba(115, 120, 123, 0.1);
+        }
+
+        /* Carousel snap scrolling */
+        .snap-x-mandatory {
+            scroll-snap-type: x mandatory;
+        }
+        .snap-center {
+            scroll-snap-align: center;
+        }
+        
+        /* Hide scrollbar for carousel */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md h-screen flex flex-col overflow-hidden">
+<!-- Top Navigation App Bar (Suppressed for transactional/task flow per rules, using a simplified Header instead) -->
+<header class="w-full px-margin-mobile pt-12 pb-6 flex items-center justify-between z-10">
+<button class="p-2 -ml-2 rounded-full hover:bg-surface-container-high transition-colors" onclick="window.history.back()">
+<span class="material-symbols-outlined text-on-surface-variant">arrow_back</span>
+</button>
+<h1 class="font-label-caps text-label-caps text-primary tracking-widest uppercase">Quick Start</h1>
+<button class="p-2 -mr-2 rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">help_outline</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto px-margin-mobile pb-24 relative">
+<!-- Hero Section -->
+<div class="mb-10 text-center pt-4">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-3">HVAC &amp; Solar Systems</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm mx-auto">
+                Follow these simple steps to initialize your cabin's core climate and power systems. Designed for one-handed operation.
+            </p>
+</div>
+<!-- Progress Indicator -->
+<div class="flex justify-center items-center gap-2 mb-8" id="carousel-dots">
+<div class="w-8 h-1 rounded-full bg-primary transition-all duration-300"></div>
+<div class="w-2 h-1 rounded-full bg-outline-variant transition-all duration-300"></div>
+<div class="w-2 h-1 rounded-full bg-outline-variant transition-all duration-300"></div>
+<div class="w-2 h-1 rounded-full bg-outline-variant transition-all duration-300"></div>
+</div>
+<!-- Interactive Carousel -->
+<div class="flex overflow-x-auto snap-x-mandatory no-scrollbar -mx-margin-mobile px-margin-mobile gap-4 pb-8" id="step-carousel">
+<!-- Step 1 -->
+<div class="snap-center shrink-0 w-full glass-panel rounded-xl ambient-shadow flex flex-col h-[530px] max-h-[500px] relative overflow-hidden">
+<div class="h-1/2 w-full relative">
+<div class="bg-cover bg-center w-full h-full absolute inset-0" data-alt="A close-up, highly detailed shot of a sleek, minimalist main electrical panel in an industrial-elegant cabin. The panel is brushed steel against a smooth white wall, bathed in soft, natural light from a nearby window. The aesthetic is clean, modern, and perfectly organized, reflecting precision engineering. A subtle blue glow emanates from a primary switch." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCu6eJK7I66rMLo_4eDgyDcRalT2JU6aiNvWJrcdVwnhe-Xujkb8QxY3PRnkdT_Tl398oWWYDtFKHyudm3bjaUNm0Laf_9A6U2cr2yiV276qE2h55n72oSaM7gy3AdZfqHmvQguxzRA5Uu2FluWbJs2BrpL6QQJD8oE_RMpSUzOsDteilIjFVKsJW4fzNhUBgGvBODxZbyhLUjOljvquqv8wWy-PL0hhs7-oqeH6viudt9e6YAFyCrd')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent"></div>
+<div class="absolute bottom-4 left-6 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full border border-outline/10">
+<span class="font-label-caps text-label-caps text-primary">Step 1 of 4</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">electric_meter</span>
+</div>
+<h3 class="font-headline-lg-mobile text-[24px] leading-8 font-semibold text-primary">Locate Main Panel</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        Find the sleek, brushed steel utility panel located in the entry vestibule, behind the primary access door.
+                    </p>
+<div class="mt-auto">
+<button class="w-full py-4 bg-tertiary-container text-white rounded-lg font-label-caps text-label-caps tracking-widest hover:bg-tertiary transition-colors" onclick="nextSlide(1)">
+                            NEXT STEP
+                        </button>
+</div>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="snap-center shrink-0 w-full glass-panel rounded-xl ambient-shadow flex flex-col h-[530px] max-h-[500px] relative overflow-hidden">
+<div class="h-1/2 w-full relative bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-[80px] text-tertiary-container opacity-20 absolute">solar_power</span>
+<div class="bg-cover bg-center w-full h-full absolute inset-0 opacity-80 mix-blend-multiply" data-alt="A minimalist, futuristic view of a digital touchscreen interface displaying solar array metrics. The screen is embedded in a pristine white surface, showing glowing blue data visualizations and a prominent 'Initialize Array' button. The lighting is crisp and cool, highlighting the industrial elegance and high-tech sanctuary vibe of the modular cabin design." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA3GQfqniQ67TPqHurwmRJUCLv4U_H7kIXZMUIvwZ4KBuuHLRau4_xFnmNP-CCOz15pzhej15SCFJpsXiOQGLrcWfhryXb4XBKH9tlOOKAZDmizH0S_Z58493PtCFgv2NBhw1wnaHMfcHAvnUJsGVo5O0UFiwMYSMSDQOYPHpD4zlQyCgSooH8uorhXkrkMBm8C_Z-6dXQgKbgBEl3H4abJHbRZ87QoaUIKH_c--zfZFcknRwDUG41X')"></div>
+<div class="absolute bottom-4 left-6 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full border border-outline/10">
+<span class="font-label-caps text-label-caps text-primary">Step 2 of 4</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">wb_sunny</span>
+</div>
+<h3 class="font-headline-lg-mobile text-[24px] leading-8 font-semibold text-primary">Initialize Solar Array</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        Press and hold the primary 'Array Engaged' button on the touch panel for 3 seconds until the indicator glows solid blue.
+                    </p>
+<div class="mt-auto">
+<button class="w-full py-4 bg-tertiary-container text-white rounded-lg font-label-caps text-label-caps tracking-widest hover:bg-tertiary transition-colors" onclick="nextSlide(2)">
+                            NEXT STEP
+                        </button>
+</div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="snap-center shrink-0 w-full glass-panel rounded-xl ambient-shadow flex flex-col h-[530px] max-h-[500px] relative overflow-hidden">
+<div class="h-1/2 w-full relative bg-surface-container">
+<div class="bg-cover bg-center w-full h-full absolute inset-0" data-alt="A close-up of a modern, minimalist HVAC vent integrated seamlessly into a wooden ceiling panel within a sleek cabin interior. The vent features precise, straight lines and is blowing a subtle, conceptual breeze, indicated by gentle atmospheric lighting. The mood is calm and engineered, reflecting superior climate control technology in a natural setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBnrsy0qx_1y3ERta3jy4eeDCTpO0hCmgXcLydmhSP5XVcXPhhk6iCCSyOEMjxZOEDCnV8_4y0Zuq6qB3xA1-eUNxG7X33StuD3KKN2DbklxRzlsobJpcxZll3_gJ99NnhV0icvuqumYCcYDzirafOy6N7cHSGdqywEZzfKyx2EvgQtnREwdM0YemuAU6-Gi6Z7oJ47_Fxnx-RXAirIyetmUhVb4G9X2c7vDjzN_3-jv8QT7rvcNQc9')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent"></div>
+<div class="absolute bottom-4 left-6 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full border border-outline/10">
+<span class="font-label-caps text-label-caps text-primary">Step 3 of 4</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">air</span>
+</div>
+<h3 class="font-headline-lg-mobile text-[24px] leading-8 font-semibold text-primary">Set Baseline Climate</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        Navigate to the 'Climate' tab. The system will automatically calibrate to the ambient external temperature to optimize efficiency.
+                    </p>
+<div class="mt-auto">
+<button class="w-full py-4 bg-tertiary-container text-white rounded-lg font-label-caps text-label-caps tracking-widest hover:bg-tertiary transition-colors" onclick="nextSlide(3)">
+                            NEXT STEP
+                        </button>
+</div>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="snap-center shrink-0 w-full glass-panel rounded-xl ambient-shadow flex flex-col h-[530px] max-h-[500px] relative overflow-hidden">
+<div class="h-1/2 w-full relative bg-surface-variant flex items-center justify-center">
+<div class="bg-cover bg-center w-full h-full absolute inset-0 mix-blend-overlay opacity-60" data-alt="A person holding a sleek smartphone displaying a minimalist app interface, syncing with a modern smart home system in the background. The scene is brightly lit with natural light, highlighting the crisp, clean lines of the device and the elegant, industrial aesthetic of the cabin's interior. The mood is connected, seamless, and technologically advanced." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAAEeYrATmVdFXH7yEQV5nqtzNMRKR-jvVWASFDY3NFbC9TlfQ0TV1BE1MNj4u95WzcHiZGZ13Ho6vTohx21KgP66f0pVCKgoa5YJhOE3KcSCzcEJALH4YVRGzE750QjteEeoBcq1BZ5_ZuGF-wgD-6QiCcehURU3NEhjH12He7ImApPXZ1zOUNH5Zz3cyiG09fyw_eAwHZKnUrpqMY415kGllvIr7aM6jPOO0StKfBOHc0ebfR7M8O')"></div>
+<span class="material-symbols-outlined text-[64px] text-primary relative z-10 drop-shadow-md">sync</span>
+<div class="absolute bottom-4 left-6 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full border border-outline/10 z-10">
+<span class="font-label-caps text-label-caps text-primary">Step 4 of 4</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">smartphone</span>
+</div>
+<h3 class="font-headline-lg-mobile text-[24px] leading-8 font-semibold text-primary">Sync with App</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        Open the Lumen Cabins app on your device to complete the handshake protocol and gain remote access to all systems.
+                    </p>
+<div class="mt-auto">
+<button class="w-full py-4 bg-primary text-on-primary rounded-lg font-label-caps text-label-caps tracking-widest hover:bg-tertiary transition-colors" onclick="completeGuide()">
+                            FINISH SETUP
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Suppressed due to transactional task flow) -->
+<script>
+        const carousel = document.getElementById('step-carousel');
+        const dots = document.getElementById('carousel-dots').children;
+        const totalSlides = 4;
+
+        // Update dots on scroll
+        carousel.addEventListener('scroll', () => {
+            const scrollPosition = carousel.scrollLeft;
+            const slideWidth = carousel.offsetWidth;
+            // Calculate active index, round to nearest whole slide
+            let activeIndex = Math.round(scrollPosition / slideWidth);
+            
+            // Ensure bounds
+            if(activeIndex < 0) activeIndex = 0;
+            if(activeIndex >= totalSlides) activeIndex = totalSlides - 1;
+
+            updateDots(activeIndex);
+        });
+
+        function updateDots(index) {
+            Array.from(dots).forEach((dot, i) => {
+                if (i === index) {
+                    dot.className = "w-8 h-1 rounded-full bg-primary transition-all duration-300";
+                } else {
+                    dot.className = "w-2 h-1 rounded-full bg-outline-variant transition-all duration-300";
+                }
+            });
+        }
+
+        function nextSlide(currentIndex) {
+            const slideWidth = carousel.offsetWidth;
+            carousel.scrollTo({
+                left: slideWidth * currentIndex,
+                behavior: 'smooth'
+            });
+        }
+
+        function completeGuide() {
+            // Provide simple feedback before "returning"
+            const btn = event.currentTarget;
+            const originalText = btn.innerText;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span>';
+            
+            setTimeout(() => {
+                btn.innerHTML = 'SYSTEMS SYNCED';
+                btn.classList.add('bg-secondary');
+                btn.classList.remove('bg-primary');
+                
+                setTimeout(() => {
+                    // Simulate returning to previous screen
+                    window.history.back();
+                }, 1000);
+            }, 1500);
+        }
+    </script>
+</body></html>

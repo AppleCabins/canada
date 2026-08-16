@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Community Hub - PNW Modular</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#003f63",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#3a4951",
+                        "outline-variant": "#c3c7ca",
+                        "surface": "#f8f9fa",
+                        "surface-dim": "#d9dadb",
+                        "tertiary": "#002842",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#001d32",
+                        "on-background": "#191c1d",
+                        "secondary-fixed-dim": "#b0cccf",
+                        "on-primary-container": "#99a9b2",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-surface": "#191c1d",
+                        "on-tertiary-fixed-variant": "#004b74",
+                        "secondary": "#496366",
+                        "on-surface-variant": "#43474a",
+                        "background": "#f8f9fa",
+                        "outline": "#73787b",
+                        "surface-tint": "#516169",
+                        "secondary-container": "#cbe8eb",
+                        "surface-bright": "#f8f9fa",
+                        "on-primary-fixed": "#0e1d25",
+                        "surface-container": "#edeeef",
+                        "surface-container-low": "#f3f4f5",
+                        "on-secondary-container": "#4f696c",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#d5e5ef",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-secondary-fixed-variant": "#314b4e",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#2e3132",
+                        "primary-fixed-dim": "#b9c9d3",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#b9c9d3",
+                        "on-secondary-fixed": "#031f22",
+                        "surface-variant": "#e1e3e4",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#59adef",
+                        "tertiary-fixed-dim": "#94ccff",
+                        "tertiary-fixed": "#cde5ff",
+                        "primary": "#192830",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#cbe8eb",
+                        "primary-container": "#2f3e46"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "base": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "story-heading": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-xl": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "story-heading": ["32px", { "lineHeight": "44px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-xl": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Ambient Glow Shadow Utility */
+        .shadow-ambient {
+            box-shadow: 0 10px 40px -10px rgba(25, 40, 48, 0.08); /* Using primary color #192830 */
+        }
+        /* Custom Scrollbar for carousel */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:flex-row antialiased">
+<!-- Mobile Top Navigation (Hidden on Desktop) -->
+<header class="md:hidden bg-surface/70 backdrop-blur-xl text-primary font-body-md text-body-md uppercase tracking-wider fixed top-0 w-full z-50 border-b border-outline/10 shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile py-4 max-w-container-max mx-auto">
+<div class="font-headline-lg-mobile text-headline-lg-mobile tracking-tighter text-primary">PNW MODULAR</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer active:opacity-70 transition-opacity" data-icon="search">search</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer active:opacity-70 transition-opacity" data-icon="menu">menu</span>
+</div>
+</div>
+</header>
+<!-- Desktop Side Navigation -->
+<aside class="hidden md:flex flex-col h-full w-64 fixed left-0 top-0 z-40 bg-surface-container-low border-r border-outline/10 p-4">
+<div class="mb-12 mt-4 px-2">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tighter">PNW MODULAR</h1>
+</div>
+<div class="flex items-center gap-4 mb-8 px-2">
+<img class="w-12 h-12 rounded-full object-cover border border-outline-variant/30" data-alt="A minimalist, high-tech circular profile avatar depicting a subtle geometric mountain icon in a clean light mode aesthetic. The icon uses sharp vectors in slate grey against a pristine arctic white background, embodying industrial elegance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFGluBI41RriMXMA3M_QpFpTfSVi28dgZx6q1toHBjK_L3tJfWtYJtG-tMLiCEKqUhgYIg-0VpAu5nHmdQDISUGE6UvMci8f5HOS5bXD__JVdyvwzVI1XAL1MfUHWB2FNh3rupgZQJ1Dao6FhRhCH1e_RM_7PaEX-PvzTUssCnDo1Zr-EN2-zbtr6fihQKM_Obe_Hi9zatbT8GN5i0LAABgBCn0JeoS-lFSKJqDhAJzLglWEFDYr8T"/>
+<div>
+<div class="font-label-caps text-label-caps text-on-surface">Cabin Owner Portal</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-sm">Alpine Ridge Estate</div>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<!-- Active Tab: Home -->
+<a class="flex items-center gap-3 px-4 py-3 bg-secondary-container text-on-secondary-container rounded-lg font-label-caps text-label-caps scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
+                Home
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant/80 hover:bg-surface-container-highest transition-all rounded-lg font-label-caps text-label-caps scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">forum</span>
+                Forum
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant/80 hover:bg-surface-container-highest transition-all rounded-lg font-label-caps text-label-caps scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">event</span>
+                Events
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant/80 hover:bg-surface-container-highest transition-all rounded-lg font-label-caps text-label-caps scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">build</span>
+                Marketplace
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant/80 hover:bg-surface-container-highest transition-all rounded-lg font-label-caps text-label-caps scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+                Stories
+            </a>
+</nav>
+<div class="mt-auto pt-8 border-t border-outline/10 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant/80 hover:bg-surface-container-highest transition-all rounded-lg font-label-caps text-label-caps scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant/80 hover:bg-surface-container-highest transition-all rounded-lg font-label-caps text-label-caps scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">help</span>
+                Support
+            </a>
+<button class="w-full mt-4 bg-tertiary-container text-on-secondary py-3 rounded font-label-caps text-label-caps hover:bg-primary transition-colors">
+                Book Service
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 w-full min-h-screen pt-[72px] md:pt-0 pb-20">
+<!-- Hero Section -->
+<section class="relative w-full h-[500px] md:h-[600px] bg-surface-container flex items-end p-margin-mobile md:p-margin-desktop">
+<div class="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full" data-alt="A breathtaking ultra-wide shot of a sleek, minimalist modular cabin set against a dramatic Pacific Northwest mountainous backdrop at dawn. The architecture features expansive glass panels and matte slate grey steel frames, blending seamlessly with the surrounding towering evergreens. The lighting is soft, cool, and highly cinematic, emphasizing industrial elegance and modern sanctuary aesthetics." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCf6nTVeoDMfK5ULeO6PqzlpXZh89GQTvGhpIAWe8Q5EqgPtctxtOOxE5wBnaVKUKyJjpdJ88lQOYV0ATEqRGb4bxaE8cR9TAUkWGPdKWRAPqWDBBwoqHhPVrLNY2D9ySXPABylEGItdvabGJ6GdE0CSELDloDFQPc6fUi20nFxgmLZFbpp9ab0yp8cMG4L-TVxjN82pBx7RFzSGsVgBavpKO0btBWtQsOhUjjMpBE7IP_B-vbH8p3Z')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+<div class="relative z-10 w-full max-w-3xl bg-surface-container-lowest/50 backdrop-blur-[20px] border border-surface-container-lowest/30 p-8 rounded-xl shadow-ambient">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-4 block">Apple Cabins Life</span>
+<h2 class="font-headline-lg-mobile md:font-headline-xl text-headline-lg-mobile md:text-headline-xl text-primary font-bold mb-4 leading-tight">Elevate Your Altitude.</h2>
+<p class="font-body-lg text-body-lg text-primary-container max-w-xl">Join the network of modular pioneers. Discuss optimizations, plan regional meetups, and upgrade your high-tech sanctuary.</p>
+</div>
+</section>
+<!-- Dashboard Layout Container -->
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Column: Forums & Marketplace -->
+<div class="md:col-span-8 flex flex-col gap-16">
+<!-- Forum Highlights -->
+<section>
+<div class="flex justify-between items-end mb-8 border-b border-outline/10 pb-4">
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tight">Forum Highlights</h3>
+<button class="font-label-caps text-label-caps text-tertiary-container hover:text-primary transition-colors flex items-center gap-1">View All <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest/70 backdrop-blur-[20px] border border-outline-variant/30 rounded-xl p-6 shadow-ambient hover:-translate-y-1 transition-transform cursor-pointer group">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-tertiary-container bg-secondary-container/50 p-2 rounded-lg" data-weight="fill">ac_unit</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Maintenance</span>
+</div>
+<h4 class="font-body-lg text-body-lg font-semibold text-primary mb-2 group-hover:text-tertiary-container transition-colors">Winterizing in Squamish: Essential Steps</h4>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-6">A detailed checklist for preparing your modular foundation and smart climate systems for sub-zero alpine conditions.</p>
+<div class="flex items-center gap-3 border-t border-outline/10 pt-4">
+<div class="w-8 h-8 rounded-full bg-surface-dim flex items-center justify-center font-label-caps text-label-caps text-primary">JD</div>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">42 Replies • 2 hrs ago</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest/70 backdrop-blur-[20px] border border-outline-variant/30 rounded-xl p-6 shadow-ambient hover:-translate-y-1 transition-transform cursor-pointer group">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-tertiary-container bg-secondary-container/50 p-2 rounded-lg" data-weight="fill">solar_power</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Energy</span>
+</div>
+<h4 class="font-body-lg text-body-lg font-semibold text-primary mb-2 group-hover:text-tertiary-container transition-colors">Solar Optimization Tips for Canopy Lots</h4>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-6">Maximizing yield from your roof arrays when surrounded by old-growth forest. Panel angle adjustments and battery storage tactics.</p>
+<div class="flex items-center gap-3 border-t border-outline/10 pt-4">
+<div class="w-8 h-8 rounded-full bg-surface-dim flex items-center justify-center font-label-caps text-label-caps text-primary">AK</div>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">18 Replies • 5 hrs ago</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Services Carousel -->
+<section>
+<div class="flex justify-between items-end mb-8 border-b border-outline/10 pb-4">
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tight">Marketplace Services</h3>
+<div class="flex gap-2">
+<button class="w-8 h-8 rounded-full border border-outline/20 flex items-center justify-center text-on-surface hover:bg-surface-dim transition-colors"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<button class="w-8 h-8 rounded-full border border-outline/20 flex items-center justify-center text-on-surface hover:bg-surface-dim transition-colors"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+</div>
+<div class="flex overflow-x-auto gap-6 pb-8 no-scrollbar snap-x snap-mandatory">
+<!-- Service 1 -->
+<div class="min-w-[280px] w-[280px] snap-start bg-surface-container-lowest/70 backdrop-blur-[20px] border border-outline-variant/30 rounded-xl shadow-ambient flex flex-col overflow-hidden">
+<div class="h-32 bg-cover bg-center" data-alt="A macro shot of a highly polished, futuristic glass window pane on a minimalist modular cabin reflecting a crisp, bright blue sky and distant snowy peaks. The image emphasizes cleanliness, high-tech surface materials, and industrial precision in a bright light-mode aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCjzoDF6PkRIUayPUMl4RN5MrnUQcIt3XX77z6uNK5XtCdw3AZigWx-Ur-BN2uMqccvCSxc4o5aWzDKJIFoez4PQgPweDttom1Nz55gPAP6PEHFikDP5skCs96vTqf9iIcPqSJPu_Jxl7hZBMnZBhu7hChZqATE129zT_ZCd6pcPv7N5gGEYYBu7mFeED4blh3x1IaohKxFsfp-AY7kCmKVerjmPRr8RuPOqn7P8CLS_XhhnySgwo6Z')"></div>
+<div class="p-6 flex-1 flex flex-col">
+<h4 class="font-label-caps text-label-caps font-bold text-primary mb-1">Exterior Glass Detailing</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4">Professional high-altitude cleaning for expansive modular windows.</p>
+<div class="mt-auto">
+<button class="text-tertiary-container font-label-caps text-label-caps hover:text-primary transition-colors uppercase tracking-widest">Book Now</button>
+</div>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="min-w-[280px] w-[280px] snap-start bg-surface-container-lowest/70 backdrop-blur-[20px] border border-outline-variant/30 rounded-xl shadow-ambient flex flex-col overflow-hidden">
+<div class="h-32 bg-cover bg-center" data-alt="A beautifully engineered modern terraced landscaping setup around a steel foundation of a modular home. The scene features precise geometric planters with native Pacific Northwest ferns and grey river rock, showcasing an elegant intersection of nature and industrial design under soft daylight." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBlYUGH18nc9Ogh8AX9WCyxQ0R5Wz-DUWzhHe3rxRxBJixaPbRQPBgFggRnXwko6Pj26sCSYfYxSrTH0sMvCy7ohLZB28XNUyHfzFPWKYxLczV9M6GdHe3qqZKUtPvq0lS4THsTJ1xyfaxDm3kFzBo7Ql9BViZam7f6gxx5u5gAiIy1pkoDw__LMKBFFq-iVTnlymwA2kMS19a4K_9UQQDs_zxXvt16fWfTFI2UaPpX1pyaVMqdgtAS')"></div>
+<div class="p-6 flex-1 flex flex-col">
+<h4 class="font-label-caps text-label-caps font-bold text-primary mb-1">Native Landscaping</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4">Zero-maintenance flora integration around your cabin footprint.</p>
+<div class="mt-auto">
+<button class="text-tertiary-container font-label-caps text-label-caps hover:text-primary transition-colors uppercase tracking-widest">Book Now</button>
+</div>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="min-w-[280px] w-[280px] snap-start bg-surface-container-lowest/70 backdrop-blur-[20px] border border-outline-variant/30 rounded-xl shadow-ambient flex flex-col overflow-hidden">
+<div class="h-32 bg-cover bg-center" data-alt="A close up of a sleek, minimalist smart home control panel mounted on a matte slate grey interior wall. The panel displays crisp, high-tech geometric interfaces in bright electric blue and white, perfectly integrated into a modern luxury cabin environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCdKUtVjm4CrjdOAEd4WvlrtWsXjigjcG-ZHMcNVh-1IdLngpgzdn1bjbzvhAPFIQbddaKqN_8QuFV-B9yndh7DRTjkow3q8fabskB66UcPtG6kc32DVEEI3qhfBHTe2gzU0mcB11-RtWuODstvgWTp8HPNEEdiKL96zKjGiN7JWFSYoW-Ope606AqhNRKe_th10ZDgnCRNSvHGq0eUdorOHsUWb8Scb8zZkQ1feVvQ_vdp3fqQpuMy')"></div>
+<div class="p-6 flex-1 flex flex-col">
+<h4 class="font-label-caps text-label-caps font-bold text-primary mb-1">Smart Hub Upgrade</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4">Latest firmware and hardware swap for climate &amp; security systems.</p>
+<div class="mt-auto">
+<button class="text-tertiary-container font-label-caps text-label-caps hover:text-primary transition-colors uppercase tracking-widest">Book Now</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Events Sidebar -->
+<div class="md:col-span-4">
+<div class="bg-surface-container-low rounded-xl p-6 border border-outline/10 h-full sticky top-[100px]">
+<div class="flex items-center gap-2 mb-8 pb-4 border-b border-outline/10">
+<span class="material-symbols-outlined text-primary" data-weight="fill">calendar_month</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">Upcoming Events</h3>
+</div>
+<div class="space-y-6">
+<!-- Event 1 -->
+<div class="group cursor-pointer">
+<div class="flex gap-4">
+<div class="flex flex-col items-center justify-center min-w-[50px] bg-secondary-container/50 rounded p-2 text-primary">
+<span class="font-label-caps text-label-caps block text-center uppercase">Nov</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold block text-center leading-none mt-1">12</span>
+</div>
+<div>
+<h4 class="font-body-lg text-body-lg font-semibold text-primary group-hover:text-tertiary-container transition-colors leading-tight">Whistler Owner's Summit</h4>
+<div class="flex items-center gap-1 mt-2 text-on-surface-variant text-sm font-body-md">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Basecamp Hub, Whistler BC</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="group cursor-pointer">
+<div class="flex gap-4">
+<div class="flex flex-col items-center justify-center min-w-[50px] bg-secondary-container/50 rounded p-2 text-primary">
+<span class="font-label-caps text-label-caps block text-center uppercase">Dec</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold block text-center leading-none mt-1">05</span>
+</div>
+<div>
+<h4 class="font-body-lg text-body-lg font-semibold text-primary group-hover:text-tertiary-container transition-colors leading-tight">Virtual Tech Seminar: Battery Banks</h4>
+<div class="flex items-center gap-1 mt-2 text-on-surface-variant text-sm font-body-md">
+<span class="material-symbols-outlined text-[16px]">videocam</span>
+<span>Online Event</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="group cursor-pointer">
+<div class="flex gap-4">
+<div class="flex flex-col items-center justify-center min-w-[50px] bg-secondary-container/50 rounded p-2 text-primary">
+<span class="font-label-caps text-label-caps block text-center uppercase">Jan</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold block text-center leading-none mt-1">18</span>
+</div>
+<div>
+<h4 class="font-body-lg text-body-lg font-semibold text-primary group-hover:text-tertiary-container transition-colors leading-tight">Cascadia Regional Meetup</h4>
+<div class="flex items-center gap-1 mt-2 text-on-surface-variant text-sm font-body-md">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Bend, OR</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 bg-transparent border border-outline-variant/30 text-on-surface-variant py-3 rounded font-label-caps text-label-caps hover:bg-surface-container-highest transition-colors">
+                        View Full Calendar
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Component from JSON -->
+<footer class="bg-surface text-on-surface font-body-md text-body-md w-full py-20 border-t border-outline/10 flex flex-col items-center justify-center space-y-8 px-margin-desktop md:ml-64 relative z-10">
+<div class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-4">PNW MODULAR</div>
+<nav class="flex flex-wrap justify-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors uppercase font-label-caps text-label-caps" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors uppercase font-label-caps text-label-caps" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors uppercase font-label-caps text-label-caps" href="#">Sustainability Report</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors uppercase font-label-caps text-label-caps" href="#">Contact Support</a>
+</nav>
+<div class="text-on-surface-variant text-sm mt-8">
+            © 2024 PNW Modular Living. Engineered for the Wild.
+        </div>
+</footer>
+</body></html>

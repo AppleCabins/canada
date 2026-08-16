@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout - Apple Cabins Canada Ltd.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#0e1d25",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#2f3e46",
+                        "secondary-fixed-dim": "#b0cccf",
+                        "tertiary-fixed-dim": "#94ccff",
+                        "outline": "#73787b",
+                        "secondary-container": "#cbe8eb",
+                        "surface-tint": "#516169",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#b9c9d3",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "primary": "#192830",
+                        "surface-variant": "#e1e3e4",
+                        "tertiary-container": "#003f63",
+                        "background": "#f8f9fa",
+                        "surface-container": "#edeeef",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#43474a",
+                        "tertiary-fixed": "#cde5ff",
+                        "on-secondary-fixed-variant": "#314b4e",
+                        "on-secondary-container": "#4f696c",
+                        "surface-container-high": "#e7e8e9",
+                        "on-surface": "#191c1d",
+                        "on-tertiary-fixed": "#001d32",
+                        "inverse-on-surface": "#f0f1f2",
+                        "primary-fixed": "#d5e5ef",
+                        "error-container": "#ffdad6",
+                        "secondary": "#496366",
+                        "surface-bright": "#f8f9fa",
+                        "on-primary-container": "#99a9b2",
+                        "inverse-surface": "#2e3132",
+                        "outline-variant": "#c3c7ca",
+                        "on-tertiary-container": "#59adef",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "on-secondary-fixed": "#031f22",
+                        "on-primary-fixed-variant": "#3a4951",
+                        "tertiary": "#002842",
+                        "secondary-fixed": "#cbe8eb",
+                        "primary-fixed-dim": "#b9c9d3",
+                        "on-tertiary-fixed-variant": "#004b74",
+                        "on-background": "#191c1d",
+                        "surface": "#f8f9fa",
+                        "surface-dim": "#d9dadb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "story-heading": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "story-heading": ["32px", {"lineHeight": "44px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "headline-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 40px 40px -15px rgba(73, 99, 102, 0.08);
+        }
+        
+        .input-minimal {
+            border: none;
+            border-bottom: 1px solid rgba(115, 120, 123, 0.3);
+            background: transparent;
+            border-radius: 0;
+            padding: 8px 0;
+            width: 100%;
+            transition: border-color 0.3s;
+        }
+        
+        .input-minimal:focus {
+            outline: none;
+            box-shadow: none;
+            border-bottom-color: #003f63; /* tertiary-container roughly acting as electric blue */
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased">
+<!-- TopNavBar (Nav suppressed due to transactional intent, keeping brand header only) -->
+<header class="bg-white/70 dark:bg-primary/70 backdrop-blur-xl border-b border-on-surface/10 shadow-[0_40px_40px_-15px_rgba(73,99,102,0.08)] fixed top-0 left-0 w-full z-50 px-margin-mobile md:px-margin-desktop py-4 flex justify-between items-center">
+<a class="font-story-heading text-story-heading text-primary dark:text-primary-fixed" href="#">Apple Cabins</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant flex items-center gap-2 hover:text-tertiary-container transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 16px;">close</span>
+            Cancel
+        </a>
+</header>
+<main class="flex-grow pt-[100px] pb-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="mb-12">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mb-2">Checkout</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Complete your reservation for the Squamish Alpine Unit.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Forms -->
+<div class="lg:col-span-7 space-y-12">
+<!-- Guest Information -->
+<section class="glass-card rounded-xl p-6 md:p-8">
+<h2 class="font-story-heading text-story-heading text-on-surface mb-6">Guest Information</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="flex flex-col">
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-1">First Name</label>
+<input class="input-minimal font-body-md text-body-md text-on-surface" placeholder="Jane" type="text"/>
+</div>
+<div class="flex flex-col">
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-1">Last Name</label>
+<input class="input-minimal font-body-md text-body-md text-on-surface" placeholder="Doe" type="text"/>
+</div>
+<div class="flex flex-col md:col-span-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-1">Email Address</label>
+<input class="input-minimal font-body-md text-body-md text-on-surface" placeholder="jane.doe@example.com" type="email"/>
+</div>
+<div class="flex flex-col md:col-span-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-1">Phone Number</label>
+<input class="input-minimal font-body-md text-body-md text-on-surface" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+</div>
+</section>
+<!-- Payment Method -->
+<section class="glass-card rounded-xl p-6 md:p-8">
+<h2 class="font-story-heading text-story-heading text-on-surface mb-6">Payment</h2>
+<div class="space-y-6">
+<!-- Payment Options -->
+<div class="flex gap-4 mb-8">
+<label class="flex-1 border border-outline-variant rounded-lg p-4 cursor-pointer flex flex-col items-center justify-center gap-2 bg-surface-container-lowest hover:bg-surface-container-low transition-colors relative">
+<input checked="" class="absolute top-4 left-4 text-tertiary-container focus:ring-tertiary-container" name="payment" type="radio"/>
+<span class="material-symbols-outlined text-on-surface-variant">credit_card</span>
+<span class="font-label-caps text-label-caps text-on-surface">Credit Card</span>
+</label>
+<label class="flex-1 border border-outline-variant/30 rounded-lg p-4 cursor-pointer flex flex-col items-center justify-center gap-2 bg-surface-container-lowest hover:bg-surface-container-low transition-colors relative opacity-60">
+<input class="absolute top-4 left-4 text-tertiary-container focus:ring-tertiary-container" name="payment" type="radio"/>
+<span class="material-symbols-outlined text-on-surface-variant">account_balance_wallet</span>
+<span class="font-label-caps text-label-caps text-on-surface">Apple Pay</span>
+</label>
+</div>
+<!-- Card Details -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="flex flex-col md:col-span-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-1">Card Number</label>
+<div class="relative">
+<input class="input-minimal font-body-md text-body-md text-on-surface pr-10" placeholder="0000 0000 0000 0000" type="text"/>
+<span class="material-symbols-outlined absolute right-0 top-2 text-on-surface-variant" style="font-size: 20px;">credit_card</span>
+</div>
+</div>
+<div class="flex flex-col">
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-1">Expiration</label>
+<input class="input-minimal font-body-md text-body-md text-on-surface" placeholder="MM/YY" type="text"/>
+</div>
+<div class="flex flex-col">
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-1">CVC</label>
+<input class="input-minimal font-body-md text-body-md text-on-surface" placeholder="123" type="text"/>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Order Summary -->
+<div class="lg:col-span-5">
+<div class="glass-card rounded-xl overflow-hidden sticky top-[120px]">
+<!-- Image Header -->
+<div class="h-48 relative">
+<img class="w-full h-full object-cover" data-alt="A sleek, modern modular cabin nestled in a dense, misty Pacific Northwest pine forest. The structure features expansive floor-to-ceiling glass windows glowing warmly from within against the cool twilight. The exterior is clad in dark, minimalist materials, blending seamlessly with nature. High-end architectural photography, dramatic lighting, minimalist-futuristic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh1E5kgMXg3UbjfiLQ0PAFiQ-OCx5IrsfG-Lddjj_1rDUjqSpXIL5uwEPq1mrC2PGmHyovJtIC7dk70VnU3XPslYuRQLgel0XjIS21AcHsSU-wlmLZlM5m4rE6TNe6-kDIIDbK63VwA_a21l1CA2z46gZ65oep2sDjvP8y5tcryaUvYHzajl9RiOK3HD-FB3cXICqzlZlDuzy35Wes1MssScMJm_x97yguwGVhEPmGYxLTG5SA-u63"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<h3 class="font-story-heading text-body-lg text-on-primary mb-1">Alpine Unit A</h3>
+<p class="font-label-caps text-label-caps text-on-primary-container">Squamish Valley Resort</p>
+</div>
+</div>
+<div class="p-6 md:p-8 space-y-6">
+<!-- Dates -->
+<div class="flex justify-between items-center pb-4 border-b border-outline-variant/20">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Check-in</p>
+<p class="font-body-md text-body-md text-on-surface">Oct 12, 2024</p>
+</div>
+<span class="material-symbols-outlined text-outline">arrow_forward</span>
+<div class="text-right">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Check-out</p>
+<p class="font-body-md text-body-md text-on-surface">Oct 15, 2024</p>
+</div>
+</div>
+<!-- Specs / Details -->
+<div class="space-y-3 pb-6 border-b border-outline-variant/20">
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Guests</span>
+<span class="font-body-md text-body-md text-on-surface">2 Adults</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Configuration</span>
+<span class="font-body-md text-body-md text-on-surface">1 Bed, 1 Bath</span>
+</div>
+</div>
+<!-- Price Breakdown -->
+<div class="space-y-3 pb-6 border-b border-outline-variant/20">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">$450 x 3 nights</span>
+<span class="font-body-md text-body-md text-on-surface">$1,350.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Cleaning fee</span>
+<span class="font-body-md text-body-md text-on-surface">$120.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Taxes &amp; Fees</span>
+<span class="font-body-md text-body-md text-on-surface">$205.80</span>
+</div>
+</div>
+<!-- Total -->
+<div class="flex justify-between items-center pt-2 mb-8">
+<span class="font-headline-lg-mobile text-body-lg text-on-surface font-semibold">Total (CAD)</span>
+<span class="font-headline-lg-mobile text-body-lg text-on-surface font-semibold">$1,675.80</span>
+</div>
+<!-- CTA -->
+<button class="w-full bg-tertiary-container text-on-tertiary-container font-label-caps text-label-caps py-4 rounded-lg flex justify-center items-center gap-2 hover:bg-tertiary transition-colors">
+                            Confirm Booking
+                            <span class="material-symbols-outlined" style="font-size: 18px;">lock</span>
+</button>
+<p class="text-center font-label-caps text-[10px] text-on-surface-variant uppercase tracking-wider mt-4">Secure Encrypted Transaction</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-on-primary-fixed w-full relative bottom-0 border-t border-white/10 flat no shadows grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20 mt-20">
+<div class="md:col-span-1">
+<span class="font-story-heading text-headline-lg-mobile text-on-primary">Squamish Cabins</span>
+<p class="font-body-md text-body-md text-on-primary/60 mt-4">© 2024 Squamish Modular. CSA Certified Hub.</p>
+</div>
+<div class="md:col-span-3 flex flex-wrap gap-8 md:justify-end items-start mt-8 md:mt-0">
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Contact</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Shipping</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Legal</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Sustainability</a>
+</div>
+</footer>
+</body></html>

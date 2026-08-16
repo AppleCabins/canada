@@ -1,0 +1,171 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Welcome to the Wild - Squamish Cabins</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#edeeef",
+                        "on-primary-fixed": "#0e1d25",
+                        "on-secondary-container": "#4f696c",
+                        "surface-dim": "#d9dadb",
+                        "outline-variant": "#c3c7ca",
+                        "on-surface": "#191c1d",
+                        "primary": "#192830",
+                        "tertiary-container": "#003f63",
+                        "on-secondary-fixed": "#031f22",
+                        "surface-tint": "#516169",
+                        "on-background": "#191c1d",
+                        "primary-fixed-dim": "#b9c9d3",
+                        "surface": "#f8f9fa",
+                        "surface-bright": "#f8f9fa",
+                        "inverse-primary": "#b9c9d3",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-fixed": "#cde5ff",
+                        "on-primary-fixed-variant": "#3a4951",
+                        "primary-container": "#2f3e46",
+                        "surface-variant": "#e1e3e4",
+                        "surface-container-low": "#f3f4f5",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#314b4e",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#2e3132",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#cbe8eb",
+                        "tertiary-fixed-dim": "#94ccff",
+                        "secondary-fixed-dim": "#b0cccf",
+                        "surface-container-high": "#e7e8e9",
+                        "background": "#f8f9fa",
+                        "on-primary-container": "#99a9b2",
+                        "error": "#ba1a1a",
+                        "secondary": "#496366",
+                        "on-tertiary-fixed-variant": "#004b74",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-tertiary-container": "#59adef",
+                        "on-tertiary-fixed": "#001d32",
+                        "secondary-container": "#cbe8eb",
+                        "primary-fixed": "#d5e5ef",
+                        "tertiary": "#002842",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "outline": "#73787b",
+                        "on-surface-variant": "#43474a",
+                        "on-secondary": "#ffffff"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "0.75rem"
+                    },
+                    spacing: {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "base": "8px",
+                        "margin-desktop": "80px"
+                    },
+                    fontFamily: {
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "story-heading": ["Playfair Display"],
+                        "headline-lg-mobile": ["Inter"]
+                    },
+                    fontSize: {
+                        "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.1em", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "headline-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "headline-xl": ["64px", { lineHeight: "72px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "story-heading": ["32px", { lineHeight: "44px", fontWeight: "400" }],
+                        "headline-lg-mobile": ["32px", { lineHeight: "40px", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Email clients often struggle with complex CSS, but this is a web representation */
+        body {
+            background-color: #f3f4f5; /* surface-container-low */
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-surface-container-low text-on-surface font-body-md py-10 px-4 md:px-0">
+<div class="email-container shadow-[0_40px_40px_-15px_rgba(73,99,102,0.08)] overflow-hidden rounded-xl">
+<!-- Header / Logo -->
+<div class="py-8 text-center bg-white border-b border-on-surface/10">
+<h1 class="font-story-heading text-story-heading text-primary">Apple Cabins</h1>
+</div>
+<!-- Hero Section -->
+<div class="relative w-full h-[400px]">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full" data-alt="A hyper-realistic, wide-angle architectural photograph of a sleek, modern modular cabin featuring expansive glass windows, nestled deep within a dense, misty Pacific Northwest forest. The lighting is soft and diffused, characteristic of an overcast morning in British Columbia, emphasizing the contrast between the dark green pines and the bright, minimalist interior of the cabin. The aesthetic is industrial elegance, blending high-tech precision with raw nature." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC4XGhhICMYPjDSlNYWzmf4eJZCruu-eWLFZew-4tdytT3HRmkcTl1BMqATIPOC0nWI1KDf2XYcBtr54hiy3rZpECGA3j3rfhef2OzPtUZC8dTXqvP4L80u2hPSA-VzkwGE0VJrL_UQlBze0tq5w3oZJnVxu5pEf4qUtJhrrQ2DSbai5mOj3Mp-5AJeurWYR9uGApC8OlHEwVkivq0RRDbyMGm4_kAa4NB9RGSJWGjNXBPO_NAn6Z8O')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-8 text-white">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-2 text-on-primary">Welcome to the Wild.</h2>
+<p class="font-body-lg text-body-lg text-white/90">Your sanctuary awaits.</p>
+</div>
+</div>
+<!-- Body Content -->
+<div class="p-8 bg-surface">
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                Hello Alex,
+            </p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Thank you for joining the Apple Cabins community. We believe in the intersection of advanced engineering and the untamed beauty of nature—a philosophy we call Techno-Nature.</p>
+<div class="glass-card p-6 rounded-lg mb-8 shadow-[0_40px_40px_-15px_rgba(73,99,102,0.08)]">
+<h3 class="font-label-caps text-label-caps text-primary mb-4 uppercase tracking-widest border-b border-slate-400/20 pb-2">Industrial Elegance</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Our modular cabins are precision-built structures designed to feel like a natural extension of the landscape. With expansive glass and sleek surfaces, they offer quiet luxury and a high-tech sanctuary away from the noise.
+                </p>
+</div>
+<!-- CTAs -->
+<div class="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4 mb-8">
+<a class="inline-flex justify-center items-center px-6 py-3 bg-tertiary-container text-on-tertiary-container font-label-caps text-label-caps rounded-DEFAULT hover:bg-tertiary-fixed transition-colors duration-300 w-full md:w-auto" href="#">
+                    Book a Stay
+                </a>
+<a class="inline-flex justify-center items-center px-6 py-3 border border-outline-variant/30 text-on-surface-variant font-label-caps text-label-caps rounded-DEFAULT hover:bg-surface-variant transition-colors duration-300 w-full md:w-auto bg-transparent" href="#">
+                    Own a Cabin
+                </a>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                We look forward to hosting you in the wild.
+            </p>
+<p class="font-body-md text-body-md text-primary mt-4 font-semibold">The Apple Cabins Team</p>
+</div>
+<!-- Footer -->
+<div class="bg-primary text-on-primary-fixed p-8 border-t border-white/10">
+<h4 class="font-story-heading text-headline-lg-mobile text-on-primary mb-6 text-center">Apple Cabins</h4>
+<div class="flex justify-center space-x-6 mb-8">
+<a class="text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100 font-label-caps text-label-caps" href="#">Contact</a>
+<a class="text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100 font-label-caps text-label-caps" href="#">Sustainability</a>
+</div>
+<div class="text-center text-on-primary/60 font-label-caps text-label-caps">© 2024 Apple Cabins Canada Ltd. CSA Certified Hub.</div>
+</div>
+</div>
+
+
+</body></html>

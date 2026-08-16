@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Squamish Cabins - Product Line</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#b9c9d3",
+                      "primary-fixed": "#d5e5ef",
+                      "error": "#ba1a1a",
+                      "outline-variant": "#c3c7ca",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed": "#cbe8eb",
+                      "primary-container": "#2f3e46",
+                      "on-secondary-fixed": "#031f22",
+                      "on-tertiary-fixed-variant": "#004b74",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed": "#001d32",
+                      "surface-tint": "#516169",
+                      "inverse-primary": "#b9c9d3",
+                      "secondary-container": "#cbe8eb",
+                      "on-primary": "#ffffff",
+                      "surface-bright": "#f8f9fa",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed-variant": "#3a4951",
+                      "surface-container-low": "#f3f4f5",
+                      "on-primary-fixed": "#0e1d25",
+                      "surface-container": "#edeeef",
+                      "on-secondary-container": "#4f696c",
+                      "background": "#f8f9fa",
+                      "primary": "#192830",
+                      "tertiary-container": "#003f63",
+                      "on-primary-container": "#99a9b2",
+                      "outline": "#73787b",
+                      "secondary": "#496366",
+                      "inverse-on-surface": "#f0f1f2",
+                      "on-surface-variant": "#43474a",
+                      "secondary-fixed-dim": "#b0cccf",
+                      "on-error": "#ffffff",
+                      "surface": "#f8f9fa",
+                      "tertiary-fixed": "#cde5ff",
+                      "surface-variant": "#e1e3e4",
+                      "inverse-surface": "#2e3132",
+                      "tertiary-fixed-dim": "#94ccff",
+                      "on-error-container": "#93000a",
+                      "on-surface": "#191c1d",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-high": "#e7e8e9",
+                      "on-background": "#191c1d",
+                      "on-secondary-fixed-variant": "#314b4e",
+                      "surface-dim": "#d9dadb",
+                      "surface-container-highest": "#e1e3e4",
+                      "tertiary": "#002842",
+                      "on-tertiary-container": "#59adef"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "container-max": "1440px",
+                      "margin-mobile": "20px",
+                      "margin-desktop": "80px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "story-heading": [
+                              "Playfair Display"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "headline-xl": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "story-heading": [
+                              "32px",
+                              {
+                                      "lineHeight": "44px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass-panel {
+            background: rgba(25, 40, 48, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col pt-20">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 left-0 w-full bg-white/70 dark:bg-primary/70 backdrop-blur-xl border-b border-on-surface/10 shadow-[0_40px_40px_-15px_rgba(73,99,102,0.08)] z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 z-50">
+<div class="font-story-heading text-story-heading text-primary dark:text-primary-fixed">Squamish Cabins</div>
+<!-- Mobile Menu Button (Visible only on mobile) -->
+<button class="md:hidden text-primary dark:text-primary-fixed p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<!-- Desktop Nav (Hidden on mobile) -->
+<div class="hidden md:flex space-x-8 items-center">
+<a class="text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-tertiary-container transition-colors duration-300 font-label-caps text-label-caps uppercase" href="#">Sales</a>
+<a class="text-tertiary-container dark:text-tertiary-fixed font-semibold border-b-2 border-tertiary-container hover:text-tertiary-container transition-colors duration-300 font-label-caps text-label-caps uppercase" href="#">Rentals</a>
+<a class="text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-tertiary-container transition-colors duration-300 font-label-caps text-label-caps uppercase" href="#">Gallery</a>
+<a class="text-on-surface-variant dark:text-on-primary-fixed-variant hover:text-tertiary-container transition-colors duration-300 font-label-caps text-label-caps uppercase" href="#">Specs</a>
+<button class="bg-tertiary-container text-on-tertiary px-6 py-2 rounded font-label-caps text-label-caps uppercase scale-95 active:scale-90 transition-transform">Login</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow px-margin-mobile md:px-margin-desktop pb-24 space-y-[80px]">
+<!-- Header Section -->
+<header class="pt-8 text-center">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-xl md:text-headline-xl text-primary mb-4">Our Product Line</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Discover our range of modular sanctuaries, engineered for precision and designed to blend seamlessly with the natural world.</p>
+<!-- Trust Badges -->
+<div class="flex justify-center items-center space-x-6 mt-8">
+<div class="flex items-center space-x-2 text-secondary">
+<span class="material-symbols-outlined" data-icon="verified">verified</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest">CSA Approved</span>
+</div>
+<div class="w-px h-6 bg-outline-variant/30"></div>
+<div class="flex items-center space-x-2 text-secondary">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest">Secure Logistics</span>
+</div>
+</div>
+</header>
+<!-- Product Categories -->
+<div class="space-y-[120px]">
+<!-- The Cabin Series -->
+<section class="relative group">
+<div class="aspect-[4/5] w-full rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A striking, hyper-realistic architectural visualization of a modern, minimalist modular cabin set in a lush Pacific Northwest forest. The cabin features expansive floor-to-ceiling glass windows, dark metal cladding, and warm wood accents. Soft, natural sunlight filters through the tall pine trees, illuminating the interior and highlighting the clean lines of the design. The mood is tranquil, luxurious, and technologically advanced, perfectly blending industrial elegance with raw nature." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhl1IU-NpmUxLIBxfbhP3ABsagyCSg8Xj9M63sxHNc7Tn_Yk0oviMwjDfUAUVUyZi3ZkaK-5aNyGfEDAwDmTKcYM64pV5UHW_LLQ6EA9KJ4hCRBRfgtZ3gXCIU2SOpXqpv4BZFGPaRgO8Y9PvbCTtMExbHl151D7QBi5ptUIJb1NmM89_gIWAqRYNc0qKmHXT91PL6xmm7MuSYCJbeOIs6nuugTKM9YfYfiphYPrNcTY76zepirAp-"/>
+<!-- Glassmorphism Card Overlay -->
+<div class="absolute bottom-4 left-4 right-4 glass-panel rounded-lg p-6 flex flex-col justify-end">
+<h2 class="font-story-heading text-story-heading text-primary mb-2">The Cabin Series</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Our flagship modular homes, offering expansive living spaces with unmatched structural integrity and panoramic views.</p>
+<button class="bg-[#2f3e46] text-white px-6 py-3 rounded self-start font-label-caps text-label-caps uppercase tracking-widest hover:bg-tertiary-container transition-colors">Explore Models</button>
+</div>
+</div>
+</section>
+<!-- The Capsule Series -->
+<section class="relative group">
+<div class="aspect-[4/5] w-full rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A high-end, photorealistic 3D render of a compact, futuristic 'capsule' style modular dwelling perched on a rugged mountain edge. The structure is sleek, with a curved metallic shell and seamless glass panels reflecting a breathtaking alpine sunset. The lighting is dramatic, casting long shadows and highlighting the high-tech, minimalist aesthetic of the capsule. The scene evokes a sense of ultimate isolation, luxury, and cutting-edge engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWxPGDRXPsopDx_SKXi50G7InhkT-tdBNUQxjMh2R6Nrpi_xDTL6k9GRD-mtCm9kWX87b7eh-D8Fsj_I7rLzds_WaDFKPmvSC1MfX8Js2yVkw7c4AtECFKybXmMgOj28M_D12Qvd_DtrXnNddyrgmGwvrvPx5fQGGPZWQKYlFiIAohpk9i7kE0ocpJXL7GYWeOAWAd7wG9waSnsvVA66iVDSsajQ7MuqmTfR_emsv0Se0PzzIalXvt"/>
+<!-- Glassmorphism Card Overlay -->
+<div class="absolute bottom-4 left-4 right-4 glass-panel rounded-lg p-6 flex flex-col justify-end">
+<h2 class="font-story-heading text-story-heading text-primary mb-2">The Capsule Series</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Compact, hyper-efficient sanctuaries designed for remote locations and minimal environmental footprint.</p>
+<button class="bg-[#2f3e46] text-white px-6 py-3 rounded self-start font-label-caps text-label-caps uppercase tracking-widest hover:bg-tertiary-container transition-colors">Explore Models</button>
+</div>
+</div>
+</section>
+<!-- The Home Series -->
+<section class="relative group">
+<div class="aspect-[4/5] w-full rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A highly detailed architectural exterior shot of a large, multi-module 'Home Series' modern prefab house situated near a calm, misty coastal inlet. The house features a striking combination of white stucco, vertical cedar siding, and massive glass walls. The interior is visible, showcasing minimalist, high-end furniture and bright, airy spaces. The lighting is soft and diffused, typical of a foggy Pacific Northwest morning, creating a serene, luxurious, and permanent atmosphere." data-row-span="1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKzQaqOfdtX06OMUVO3T7wEppN8bzTb-tLrD6HwZUCOv2jx0l5UvPB0--_Hhi4Jqw6HY4v8cwM3tOSPZ55UYdNfHtSWG-4yoFKblp3kmfApiwb92I4kyrbv4V0wZ2AHzwlIMmKZs8pG9BH7dcOPCdg9D3pEl1PuBK5oFcKy7Mk1iJL85XL-zgnYoyQaGbjX3Ogxi65910DrPnxGlmvDcVcDdu7bnkLfbpPw7hiHeeJAVJ_yI9_-SvG"/>
+<!-- Glassmorphism Card Overlay -->
+<div class="absolute bottom-4 left-4 right-4 glass-panel rounded-lg p-6 flex flex-col justify-end">
+<h2 class="font-story-heading text-story-heading text-primary mb-2">The Home Series</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Full-scale modular residences providing uncompromising luxury, vast layouts, and complete customization.</p>
+<button class="bg-[#2f3e46] text-white px-6 py-3 rounded self-start font-label-caps text-label-caps uppercase tracking-widest hover:bg-tertiary-container transition-colors">Explore Models</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full relative bottom-0 bg-primary dark:bg-on-primary-fixed border-t border-white/10 mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20">
+<div class="flex flex-col space-y-4">
+<span class="font-story-heading text-headline-lg-mobile text-on-primary">Squamish Modular</span>
+<p class="font-body-md text-body-md text-on-primary/60">© 2024 Squamish Modular. CSA Certified Hub.</p>
+</div>
+<div class="flex flex-col space-y-2 mt-8 md:mt-0 md:col-start-4">
+<a class="font-body-md text-body-md text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100" href="#">Contact</a>
+<a class="font-body-md text-body-md text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100" href="#">Shipping</a>
+<a class="font-body-md text-body-md text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100" href="#">Legal</a>
+<a class="font-body-md text-body-md text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100" href="#">Sustainability</a>
+</div>
+</div>
+</footer>
+</body></html>

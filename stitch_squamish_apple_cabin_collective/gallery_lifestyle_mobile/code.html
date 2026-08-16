@@ -1,0 +1,310 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Squamish Cabins - Gallery &amp; Lifestyle</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed": "#0e1d25",
+                      "surface-variant": "#e1e3e4",
+                      "secondary-fixed": "#cbe8eb",
+                      "surface-tint": "#516169",
+                      "inverse-on-surface": "#f0f1f2",
+                      "on-surface-variant": "#43474a",
+                      "outline-variant": "#c3c7ca",
+                      "on-secondary": "#ffffff",
+                      "surface-container-low": "#f3f4f5",
+                      "tertiary-fixed": "#cde5ff",
+                      "on-error-container": "#93000a",
+                      "tertiary": "#002842",
+                      "on-surface": "#191c1d",
+                      "secondary-fixed-dim": "#b0cccf",
+                      "outline": "#73787b",
+                      "surface-container-highest": "#e1e3e4",
+                      "tertiary-container": "#003f63",
+                      "primary-fixed": "#d5e5ef",
+                      "on-primary-container": "#99a9b2",
+                      "inverse-surface": "#2e3132",
+                      "primary-container": "#2f3e46",
+                      "surface": "#f8f9fa",
+                      "error": "#ba1a1a",
+                      "inverse-primary": "#b9c9d3",
+                      "on-secondary-container": "#4f696c",
+                      "on-error": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed": "#031f22",
+                      "on-tertiary-fixed-variant": "#004b74",
+                      "primary": "#192830",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed-variant": "#3a4951",
+                      "secondary-container": "#cbe8eb",
+                      "surface-bright": "#f8f9fa",
+                      "on-background": "#191c1d",
+                      "on-tertiary-fixed": "#001d32",
+                      "tertiary-fixed-dim": "#94ccff",
+                      "error-container": "#ffdad6",
+                      "surface-container-high": "#e7e8e9",
+                      "on-primary": "#ffffff",
+                      "background": "#f8f9fa",
+                      "primary-fixed-dim": "#b9c9d3",
+                      "surface-container": "#edeeef",
+                      "on-secondary-fixed-variant": "#314b4e",
+                      "on-tertiary-container": "#59adef",
+                      "secondary": "#496366",
+                      "surface-dim": "#d9dadb"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "margin-desktop": "80px",
+                      "gutter": "24px",
+                      "container-max": "1440px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "story-heading": [
+                              "Playfair Display"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-xl": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "story-heading": [
+                              "32px",
+                              {
+                                      "lineHeight": "44px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-xl": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Glassmorphism utils */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased pb-24 md:pb-0">
+<!-- Top Navigation (Mobile Bottom Nav hidden) -->
+<nav class="fixed top-0 left-0 w-full bg-white/70 dark:bg-primary/70 backdrop-blur-xl border-b border-on-surface/10 shadow-[0_40px_40px_-15px_rgba(73,99,102,0.08)] z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 z-50">
+<div class="font-story-heading text-story-heading text-primary dark:text-primary-fixed">Apple Cabins</div>
+<!-- Mobile Menu Button (Hamburger) -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Desktop Links -->
+<div class="hidden md:flex gap-gutter items-center">
+<a class="text-on-surface-variant dark:text-on-primary-fixed-variant font-label-caps text-label-caps hover:text-tertiary-container transition-colors duration-300" href="#">Sales</a>
+<a class="text-on-surface-variant dark:text-on-primary-fixed-variant font-label-caps text-label-caps hover:text-tertiary-container transition-colors duration-300" href="#">Rentals</a>
+<a class="text-tertiary-container dark:text-tertiary-fixed font-semibold border-b-2 border-tertiary-container font-label-caps text-label-caps hover:text-tertiary-container transition-colors duration-300" href="#">Gallery</a>
+<a class="text-on-surface-variant dark:text-on-primary-fixed-variant font-label-caps text-label-caps hover:text-tertiary-container transition-colors duration-300" href="#">Specs</a>
+<a class="text-on-surface dark:text-on-primary font-label-caps text-label-caps hover:text-tertiary-container transition-colors duration-300 scale-95 active:scale-90 transition-transform ml-4" href="#">Login</a>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-[80px] md:pt-[100px] flex flex-col min-h-screen">
+<!-- Hero Section - Vertical Narrative Focus -->
+<section class="w-full relative h-[70vh] flex flex-col justify-end p-margin-mobile md:p-margin-desktop bg-surface-variant">
+<div class="absolute inset-0 w-full h-full">
+<img class="w-full h-full object-cover" data-alt="A breathtaking, vertical-oriented shot of a modern, minimalist modular cabin set against a towering, mist-shrouded mountain peak in the Pacific Northwest. The cabin features expansive glass walls reflecting the surrounding pine forest. The lighting is soft and moody, emphasizing the contrast between the dark, engineered structure and the rugged, natural landscape. High-end architectural photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwEFHGFnVzxaDgYE8zV-SqvAvHQJiN0hiyUDgA5j27A49EnqcCR_a_FjJ99N8pG9EOSZvIJ4MUdAbOq6Nfq7MAj0Mp4hMfyji1bvhGKP3HWMUH0tj2mpn34qyanlWCFw-RylLbEZxYGDAe2nl4PWYZna54s7Wqlyx0SE3rrjT0qo4bnQK6RW5OnLMC9PVJpfS4cOblwrtDmV02wb4Wp7N7h2NMYouW2hSvEvprwM7gjpvz6z7SZ3FZ">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+</div>
+<div class="relative z-10 text-white max-w-2xl">
+<h1 class="font-headline-lg-mobile md:font-headline-xl text-headline-lg-mobile md:text-headline-xl mb-4 text-white">The Squamish Lifestyle</h1>
+<p class="font-body-lg text-body-lg text-white/90 mb-6">Experience the raw beauty of the Pacific Northwest from the sanctuary of precision-engineered modular design.</p>
+<button class="bg-[#192830] text-white px-6 py-3 rounded DEFAULT font-label-caps text-label-caps w-fit active:scale-95 transition-transform shadow-lg">View Available Models</button>
+</div>
+</section>
+<!-- Touch-First Gallery -->
+<section class="py-12 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface-bright">
+<div class="mb-8">
+<h2 class="font-story-heading text-story-heading text-primary mb-2">Curated Spaces</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Swipe to explore interiors designed for seamless indoor-outdoor living.</p>
+</div>
+<div class="flex overflow-x-auto gap-4 snap-x snap-mandatory no-scrollbar pb-8">
+<!-- Gallery Card 1 -->
+<div class="min-w-[85vw] md:min-w-[400px] snap-center relative rounded-xl overflow-hidden glass-card">
+<div class="h-[400px] w-full bg-surface-variant relative">
+<img class="w-full h-full object-cover" data-alt="A sleek, modern living room inside a modular cabin, captured in a vertical format. The room features minimalist furniture with clean lines, neutral tones, and subtle Slate Grey accents. Large floor-to-ceiling windows showcase a dense, green pine forest outside, blurring the line between interior and exterior. The natural light is bright and inviting, highlighting the high-quality wood finishes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVE6pAVMLQiWDHxU3Z-o0bZKsYH4jCBZgmKHVtH9u2Tk-umQDrGcBYUOGBsm0LTPzfGic_gS2xBH39L3WzGVeWzEBrOWNvSAzGkr3y_gLPM6dj9Z60H0TZyUHQvcsXkwOrXPlApaVMzTrrJ4QNOV-n6btt06T0Md_BIDZ7QMDABUlC_OLAtizYhmTgQs8KkaYCSoiYeDwtPPOSleCZ6zebC-btQnBf90SX4bnJbXejc3Np4qU2mGGQ">
+</div>
+<div class="p-4 bg-white/80 backdrop-blur-md absolute bottom-0 left-0 w-full border-t border-white/30">
+<h3 class="font-label-caps text-label-caps text-primary mb-1">The Alpine Living Room</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Expansive views with thermally efficient glazing.</p>
+</div>
+</div>
+<!-- Gallery Card 2 -->
+<div class="min-w-[85vw] md:min-w-[400px] snap-center relative rounded-xl overflow-hidden glass-card">
+<div class="h-[400px] w-full bg-surface-variant relative">
+<img class="w-full h-full object-cover" data-alt="A modern, minimalist kitchen in a modular cabin, viewed vertically. The kitchen features matte black cabinetry, light wood countertops, and high-end built-in appliances. A large window above the sink looks out onto a misty mountain valley. The lighting is a mix of cool natural daylight and warm, subtle under-cabinet LEDs, creating an atmosphere of functional luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzyrIgDo4-KdJ8DTYAayJraIdKRg6MPy29SivfhelJhqcoY2dl-JalER64E9HKAnw3kNRklY1-8WT8Qjx3XtoPcI46oTIhpahaCIM7uoqIU9K0n6Iy16PznAEwnOk3FolXwHOJ2CLWzpEM8cYkSfhP3A1NpOx4OB3OMjXQcMWzz9P5fedMlMmQr0HvWpd1EFlvPytvXGcC-WqjRzGOPz1krEeYjy3go2zxgzEOcd1ejyFDMgWWpWq7">
+</div>
+<div class="p-4 bg-white/80 backdrop-blur-md absolute bottom-0 left-0 w-full border-t border-white/30">
+<h3 class="font-label-caps text-label-caps text-primary mb-1">Precision Kitchen</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Engineered for efficiency and elegance.</p>
+</div>
+</div>
+<!-- Gallery Card 3 -->
+<div class="min-w-[85vw] md:min-w-[400px] snap-center relative rounded-xl overflow-hidden glass-card">
+<div class="h-[400px] w-full bg-surface-variant relative">
+<img class="w-full h-full object-cover" data-alt="A serene bedroom setting inside a high-tech modular cabin, shot vertically. A low-profile, plush bed is positioned facing an enormous window framing a spectacular view of rugged, snow-capped peaks. The decor is minimal, relying on textures rather than clutter, with Slate Grey and Arctic White tones. The mood is quiet, restful, and deeply connected to nature." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsXrvErwqYl0gikzuWxumcxPgA29JfhXBt_V9tb8KvHRovDDhYXICI0ol3jLfp2AEr2fpQ-r-bO9cm2qc3c02KHZr6eLGUOyqB4ONIzP_kPfMq2NsJbaZwilnAZVhGsAQdaz6YuFkF9mYYakEnEKnDCQmLq9igj-7iQjogswzn_2w9sTvftKyQt6Knfmtpj14O-aafRDqWKAOzRWHvrHCjk77fHW68Rl0R-74NckOavIxJJ_jG0FhR">
+</div>
+<div class="p-4 bg-white/80 backdrop-blur-md absolute bottom-0 left-0 w-full border-t border-white/30">
+<h3 class="font-label-caps text-label-caps text-primary mb-1">Sanctuary Bedroom</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Wake up immersed in the wilderness.</p>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-4 md:hidden">
+<div class="flex gap-2">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+</div>
+</div>
+</section>
+<!-- Simplified Specs / Lifestyle integration -->
+<section class="py-12 px-margin-mobile md:px-margin-desktop bg-surface">
+<h2 class="font-story-heading text-story-heading text-primary mb-6">Engineered for the Wild</h2>
+<div class="glass-card rounded-xl p-6 flex flex-col gap-4">
+<div class="flex justify-between items-center py-3 border-b border-outline-variant/30">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Footprint</span>
+<span class="font-body-md text-body-md text-primary font-medium">320 sq ft</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-outline-variant/30">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Insulation</span>
+<span class="font-body-md text-body-md text-primary font-medium">R-40 Eco-Foam</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-outline-variant/30">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Foundation</span>
+<span class="font-body-md text-body-md text-primary font-medium">Helical Piles (Low Impact)</span>
+</div>
+<div class="flex justify-between items-center py-3">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Assembly Time</span>
+<span class="font-body-md text-body-md text-primary font-medium">48 Hours</span>
+</div>
+</div>
+<div class="mt-8">
+<button class="w-full border border-primary/20 text-secondary bg-transparent px-6 py-3 rounded DEFAULT font-label-caps text-label-caps active:bg-surface-variant transition-colors">Download Full Spec Sheet</button>
+</div>
+</section>
+</main>
+<!-- Sticky Mobile CTA -->
+<div class="fixed bottom-0 left-0 w-full p-4 bg-white/90 backdrop-blur-lg border-t border-outline-variant/20 z-40 md:hidden flex justify-center shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
+<button class="bg-[#192830] text-white w-full max-w-[400px] py-4 rounded DEFAULT font-label-caps text-label-caps flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+            Book a Consultation
+        </button>
+</div>
+<!-- Footer -->
+<footer class="w-full relative bottom-0 border-t border-white/10 bg-primary dark:bg-on-primary-fixed pt-12 pb-32 md:pb-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop">
+<div class="mb-8 md:mb-0">
+<div class="font-story-heading text-headline-lg-mobile text-on-primary mb-4">Apple Cabins</div>
+<p class="font-body-md text-body-md text-on-primary/60">
+                    © 2024 Squamish Modular. CSA Certified Hub.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Contact</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Shipping</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Legal</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Sustainability</a>
+</div>
+</div>
+</footer>
+
+
+</body></html>

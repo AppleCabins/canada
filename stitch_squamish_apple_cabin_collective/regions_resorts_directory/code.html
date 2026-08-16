@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Regions &amp; Resorts | Squamish Cabins</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#001d32",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#43474a",
+                        "secondary-container": "#cbe8eb",
+                        "background": "#f8f9fa",
+                        "on-surface": "#191c1d",
+                        "surface-dim": "#d9dadb",
+                        "on-tertiary-fixed-variant": "#004b74",
+                        "surface-bright": "#f8f9fa",
+                        "surface": "#f8f9fa",
+                        "surface-tint": "#516169",
+                        "on-primary-fixed": "#0e1d25",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary": "#496366",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#99a9b2",
+                        "on-background": "#191c1d",
+                        "on-secondary-fixed": "#031f22",
+                        "outline-variant": "#c3c7ca",
+                        "secondary-fixed": "#cbe8eb",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#b0cccf",
+                        "outline": "#73787b",
+                        "surface-container-highest": "#e1e3e4",
+                        "tertiary": "#002842",
+                        "tertiary-container": "#003f63",
+                        "inverse-surface": "#2e3132",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#cde5ff",
+                        "primary": "#192830",
+                        "on-secondary-container": "#4f696c",
+                        "surface-container": "#edeeef",
+                        "tertiary-fixed-dim": "#94ccff",
+                        "on-secondary-fixed-variant": "#314b4e",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#59adef",
+                        "primary-fixed-dim": "#b9c9d3",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "primary-container": "#2f3e46",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#b9c9d3",
+                        "primary-fixed": "#d5e5ef",
+                        "surface-variant": "#e1e3e4",
+                        "on-primary-fixed-variant": "#3a4951",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "container-max": "1440px",
+                        "margin-desktop": "80px",
+                        "base": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "story-heading": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-xl": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "story-heading": ["32px", { "lineHeight": "44px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 40px 40px -15px rgba(73, 99, 102, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased font-body-md overflow-x-hidden min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-white/70 backdrop-blur-xl fixed top-0 left-0 w-full border-b border-on-surface/10 shadow-[0_40px_40px_-15px_rgba(73,99,102,0.08)] z-50 transition-colors duration-300">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 z-50 max-w-[1440px] mx-auto">
+<a class="font-story-heading text-story-heading text-primary flex items-center gap-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">cabin</span>
+                Squamish Cabins
+            </a>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-container transition-colors duration-300" href="#">Sales</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-container transition-colors duration-300" href="#">Rentals</a>
+<!-- Setting Rent as active based on context of exploring regions -->
+<a class="font-label-caps text-label-caps text-tertiary-container font-semibold border-b-2 border-tertiary-container hover:text-tertiary-container transition-colors duration-300" href="#">Gallery</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary-container transition-colors duration-300" href="#">Specs</a>
+</nav>
+<button class="hidden md:flex items-center justify-center bg-primary text-on-primary px-6 py-2 rounded font-label-caps text-label-caps scale-95 active:scale-90 transition-transform">
+                Login
+            </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto w-full">
+<!-- Page Header -->
+<div class="mb-16 md:mb-24 text-center max-w-3xl mx-auto">
+<h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-primary mb-6">Regions &amp; Resorts</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Discover our meticulously engineered modular cabins across Canada. Select a region to explore available sanctuaries designed for harmonious integration with the wild.</p>
+</div>
+<!-- Interactive Map Area -->
+<div class="relative w-full h-[500px] md:h-[600px] rounded-xl overflow-hidden mb-24 glass-card">
+<!-- Simulated Map Image for prototype -->
+<img class="w-full h-full object-cover" data-alt="A sprawling, highly detailed stylized map of Canada rendered in a minimalist, techno-nature aesthetic. The map uses a palette of slate greys, arctic whites, and subtle electric blue accents. Terrain features are suggested through delicate, geometric topographical lines. Small, precise glowing blue markers indicate specific regions. The overall style is clean, industrial, yet evocative of expansive wilderness, viewed from a top-down perspective." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzyDtbb2wiquwULn9DNzg7q9gmwWopJn-HNvzmJWItog0O77mBSmI7dYHkSRyNnwILOAOygg5J9sas5IomHp3kWznmznXNUqhmt9lzmjBB1dTSVHDJxPBGtyIYluSduM8J2k1wDa1hYMwGjO8vUzPmEii2xKFuN8mlZojIlHucT097Cj6Z9L6ug5_B_SWMntfwfLGRnY1JZTvzHwx8a4-5Qqb6UMhe_3SDAzZ5FZAPBsNs4khzTfmD"/>
+<!-- Map Overlay UI -->
+<div class="absolute top-6 left-6 glass-card rounded p-4 flex flex-col gap-2">
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">Active Regions</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+<span class="font-body-md text-body-md">British Columbia</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-container opacity-50"></span>
+<span class="font-body-md text-body-md">Ontario (Coming Soon)</span>
+</div>
+</div>
+<!-- Map Pins (Static for prototype) -->
+<div class="absolute top-[60%] left-[20%] group cursor-pointer transform -translate-x-1/2 -translate-y-1/2">
+<div class="relative">
+<span class="material-symbols-outlined text-tertiary-container text-4xl drop-shadow-md group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity glass-card px-4 py-2 rounded pointer-events-none whitespace-nowrap">
+<div class="font-label-caps text-label-caps text-primary">Squamish, BC</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Regions Grid -->
+<div class="mb-8">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-8 border-b border-outline-variant/20 pb-4">Explore Regions</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Region Card 1 -->
+<a class="block group glass-card rounded-xl overflow-hidden hover:shadow-[0_40px_40px_-15px_rgba(73,99,102,0.15)] transition-shadow duration-300 flex flex-col" href="#">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A breathtaking view of a modular glass and steel cabin nestled in a dense, misty pine forest in British Columbia. The scene is bathed in cool, diffuse morning light, emphasizing the minimal lines of the architecture against the rugged organic shapes of the ancient trees. The style is hyper-realistic, high-contrast, showcasing 'Industrial Elegance'." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFwSf7at125EXRsPKMnbH4Gew8OKM56MnTT187CBQRavTa5_hanowo7lMmh0TWSexkFbsG9tmX58O_DeqzG17gYQJRyQaONirvbzSaCFYzGJ-7dKMk_DHq0H2NNYVnoX65bB6P_TVlpYqjU8ZNjFlmJK5jBTp_OyPOkDknCneQ6isIQTJjOsnen3fDghjyENaKJ7LmyoFoA3hFb2e_TOadHE37ztIVd9slUpMuFv0uLs0_Ro5YH_Sn"/>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<h3 class="font-story-heading text-story-heading text-primary mb-2">British Columbia</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Our flagship region. From the towering peaks of Squamish to the rugged coastlines, experience true PNW immersion.</p>
+</div>
+<div class="border-t border-outline-variant/20 pt-4 flex justify-between items-center">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Active Resorts</span>
+<span class="font-body-lg text-body-lg text-primary font-semibold">3</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Available Cabins</span>
+<span class="font-body-lg text-body-lg text-primary font-semibold">42</span>
+</div>
+</div>
+</div>
+</a>
+<!-- Region Card 2 -->
+<a class="block group glass-card rounded-xl overflow-hidden hover:shadow-[0_40px_40px_-15px_rgba(73,99,102,0.15)] transition-shadow duration-300 flex flex-col" href="#">
+<div class="h-64 overflow-hidden relative">
+<div class="absolute inset-0 bg-primary/20 z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An expansive view over a calm, reflective lake in Ontario, surrounded by mixed deciduous and coniferous forests turning slight autumn colors. A sleek, modern modular cabin sits subtly on the rocky shoreline. The lighting is golden hour, casting long soft shadows. The image conveys serene, high-tech sanctuary." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm0gK4k4Tg6mOPG_sA00XcF4g3Que0-Axbt12aBQEhlLT5vLrYvwaI1kIcxIiAn-vOi77C6N0MFcvHnt0a1B96n2Q8ZICCVIWiu8oq-MveINRKhF0_s4_biTXIK5YnIJB1CVDZ6lSelsoywex3Bl6QHcZP_FjS-1q52d9wP0K6qK_9f2a-l7fa9RTGWEZ2xirl6_WiGFwcU-KJpA5kWKDre813Xp2ICZzj_A3EFp_DaZXhrP2uNKfN"/>
+<div class="absolute top-4 right-4 z-20 bg-surface-container-low/80 backdrop-blur px-3 py-1 rounded font-label-caps text-label-caps text-primary">Coming Soon</div>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<h3 class="font-story-heading text-story-heading text-primary mb-2">Ontario</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Expanding into the Canadian Shield. Pristine lakesides and dense woodlands waiting for your escape.</p>
+</div>
+<div class="border-t border-outline-variant/20 pt-4 flex justify-between items-center opacity-50">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Planned Resorts</span>
+<span class="font-body-lg text-body-lg text-primary font-semibold">2</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Est. Availability</span>
+<span class="font-body-lg text-body-lg text-primary font-semibold">Q3 2025</span>
+</div>
+</div>
+</div>
+</a>
+<!-- Region Card 3 -->
+<a class="block group glass-card rounded-xl overflow-hidden hover:shadow-[0_40px_40px_-15px_rgba(73,99,102,0.15)] transition-shadow duration-300 flex flex-col" href="#">
+<div class="h-64 overflow-hidden relative">
+<div class="absolute inset-0 bg-primary/20 z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A dramatic mountain landscape in Alberta with sharp, snow-capped peaks dominating the background. In the foreground, nestled among alpine firs, a futuristic, minimalist cabin structure with expansive glass walls reflects the dramatic sky. The scene is crisp, cold, and beautifully engineered." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG-pQxC7r3DeOFg5e-6NyN882gmP3_Fasz345ei9XqrZUirm4vYjo2GnO4t5cYi-bEENvprp6Gvs8_7zNITi8oReDtx1JphxcRqoO3apMIXzJtZXNWZwMvyum5GiD-BvrIVu3hunounI2tjcK64343beqHSMifo9FsQac6uEAxT4nhsbJCoScKV6gl5443TRTVuj0ledjGIUfXkWTFUSLJ25UX5ifcfbg2Fw56-U0ypTQ7PK3ntyDr"/>
+<div class="absolute top-4 right-4 z-20 bg-surface-container-low/80 backdrop-blur px-3 py-1 rounded font-label-caps text-label-caps text-primary">In Development</div>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<h3 class="font-story-heading text-story-heading text-primary mb-2">Alberta</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Rocky mountain majesty meets modular precision. Conceptual designs for high-altitude resilience.</p>
+</div>
+<div class="border-t border-outline-variant/20 pt-4 flex justify-between items-center opacity-50">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Status</span>
+<span class="font-body-lg text-body-lg text-primary font-semibold">Surveying</span>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary w-full relative bottom-0 border-t border-white/10 flat no shadows">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20 max-w-[1440px] mx-auto w-full">
+<div class="md:col-span-1 mb-8 md:mb-0">
+<div class="font-story-heading text-headline-lg-mobile text-on-primary mb-4">Squamish Cabins</div>
+<p class="font-body-md text-body-md text-on-primary/60">© 2024 Squamish Modular. CSA Certified Hub.</p>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100" href="#">Contact</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100" href="#">Shipping</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100" href="#">Legal</a>
+<a class="font-label-caps text-label-caps text-on-primary/60 hover:text-on-primary transition-colors opacity-80 hover:opacity-100" href="#">Sustainability</a>
+</div>
+</div>
+</footer>
+</body></html>

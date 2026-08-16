@@ -1,0 +1,444 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Admin Dashboard - Client Management | Apple Cabins</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#cbe8eb",
+                    "on-primary-fixed": "#0e1d25",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#b9c9d3",
+                    "surface": "#f8f9fa",
+                    "on-surface": "#191c1d",
+                    "surface-container-high": "#e7e8e9",
+                    "on-secondary-fixed": "#031f22",
+                    "error-container": "#ffdad6",
+                    "primary": "#192830",
+                    "on-primary-container": "#99a9b2",
+                    "secondary-fixed-dim": "#b0cccf",
+                    "primary-container": "#2f3e46",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#004b74",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed": "#cde5ff",
+                    "surface-container": "#edeeef",
+                    "tertiary-container": "#003f63",
+                    "tertiary-fixed-dim": "#94ccff",
+                    "surface-tint": "#516169",
+                    "on-tertiary-fixed": "#001d32",
+                    "inverse-primary": "#b9c9d3",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e1e3e4",
+                    "secondary-fixed": "#cbe8eb",
+                    "background": "#f8f9fa",
+                    "primary-fixed": "#d5e5ef",
+                    "inverse-surface": "#2e3132",
+                    "on-secondary-fixed-variant": "#314b4e",
+                    "on-tertiary-container": "#59adef",
+                    "secondary": "#496366",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#3a4951",
+                    "on-surface-variant": "#43474a",
+                    "tertiary": "#002842",
+                    "outline-variant": "#c3c7ca",
+                    "surface-dim": "#d9dadb",
+                    "inverse-on-surface": "#f0f1f2",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#4f696c",
+                    "outline": "#73787b",
+                    "surface-bright": "#f8f9fa",
+                    "on-background": "#191c1d",
+                    "surface-container-low": "#f3f4f5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "base": "8px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "headline-xl": [
+                            "Inter"
+                    ],
+                    "label-caps": [
+                            "Inter"
+                    ],
+                    "headline-lg": [
+                            "Inter"
+                    ],
+                    "headline-lg-mobile": [
+                            "Inter"
+                    ],
+                    "story-heading": [
+                            "Playfair Display"
+                    ]
+            },
+            "fontSize": {
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-xl": [
+                            "64px",
+                            {
+                                    "lineHeight": "72px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "48px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "story-heading": [
+                            "32px",
+                            {
+                                    "lineHeight": "44px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .ambient-shadow {
+            box-shadow: 0 40px 40px -15px rgba(73,99,102,0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex selection:bg-tertiary-container selection:text-on-tertiary-container">
+<!-- SideNavBar Component (Hidden on mobile) -->
+<aside class="hidden md:flex flex-col h-screen p-4 space-y-4 bg-surface-container-low dark:bg-surface-container-lowest text-primary dark:text-primary-fixed border-r border-outline-variant/20 w-64 fixed left-0 top-0 z-40">
+<div class="flex items-center space-x-3 px-2 py-4">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-outline" data-icon="person">person</span>
+</div>
+<div>
+<h1 class="font-story-heading text-body-lg font-bold text-primary dark:text-primary-fixed leading-tight">Admin Panel</h1>
+<p class="font-body-md text-[14px] text-on-surface-variant">Apple Cabins Canada Ltd.</p>
+</div>
+</div>
+<button class="w-full bg-[#1e88e5] text-white hover:bg-blue-600 transition-colors py-2 px-4 rounded font-label-caps text-label-caps flex items-center justify-center space-x-2 mt-2">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+<span class="">Add Cabin</span>
+</button>
+<nav class="flex-1 overflow-y-auto mt-6 space-y-1">
+<a class="flex items-center px-3 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:bg-secondary-container/50 transition-all translate-x-1 duration-200 group" href="#">
+<span class="material-symbols-outlined mr-3 text-outline group-hover:text-primary transition-colors" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-caps text-label-caps">Inventory</span>
+</a>
+<a class="flex items-center px-3 py-2 bg-tertiary-container text-on-tertiary-container rounded-lg font-semibold hover:bg-secondary-container/50 transition-all translate-x-1 duration-200 group" href="#">
+<span class="material-symbols-outlined mr-3 text-on-tertiary-container" data-icon="group" data-weight="fill" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-label-caps text-label-caps">Clients</span>
+</a>
+<a class="flex items-center px-3 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:bg-secondary-container/50 transition-all translate-x-1 duration-200 group" href="#">
+<span class="material-symbols-outlined mr-3 text-outline group-hover:text-primary transition-colors" data-icon="settings">settings</span>
+<span class="font-label-caps text-label-caps">Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-4 border-t border-outline-variant/20 space-y-1">
+<a class="flex items-center px-3 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:bg-secondary-container/50 transition-all translate-x-1 duration-200 group" href="#">
+<span class="material-symbols-outlined mr-3 text-outline group-hover:text-primary transition-colors" data-icon="help">help</span>
+<span class="font-label-caps text-label-caps">Support</span>
+</a>
+<a class="flex items-center px-3 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:bg-secondary-container/50 transition-all translate-x-1 duration-200 group" href="#">
+<span class="material-symbols-outlined mr-3 text-outline group-hover:text-primary transition-colors" data-icon="logout">logout</span>
+<span class="font-label-caps text-label-caps">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 p-margin-mobile md:p-margin-desktop min-h-screen">
+<!-- Header -->
+<header class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Client Management</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-2xl">Overview of all registered buyers and renters. Monitor inquiries, track statuses, and review specific client histories within the Apple Cabins ecosystem.</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="relative w-full md:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm" data-icon="search">search</span>
+<input class="w-full pl-9 pr-4 py-2 bg-surface-container-lowest border-0 border-b border-outline-variant/30 focus:border-[#1e88e5] focus:ring-0 transition-colors font-body-md text-sm" placeholder="Search clients..." type="text">
+</div>
+<button aria-label="Filter" class="bg-surface-container-lowest border border-outline-variant/30 p-2 rounded hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+</header>
+<!-- Bento Grid Layout for Client Data -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter">
+<!-- Main Client List (Spans 8 columns on extra large screens) -->
+<div class="xl:col-span-8 glass-card rounded-xl p-6 ambient-shadow flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-label-caps text-label-caps text-primary uppercase tracking-wider">Registered Clients</h3>
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-tertiary-container text-on-tertiary-container text-[10px] rounded font-semibold uppercase tracking-wide">All (124)</span>
+<span class="px-2 py-1 bg-surface-variant text-on-surface-variant text-[10px] rounded font-semibold uppercase tracking-wide cursor-pointer hover:bg-surface-container-highest transition-colors">Buyers</span>
+<span class="px-2 py-1 bg-surface-variant text-on-surface-variant text-[10px] rounded font-semibold uppercase tracking-wide cursor-pointer hover:bg-surface-container-highest transition-colors">Renters</span>
+</div>
+</div>
+<div class="overflow-x-auto flex-1">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-tertiary-container rounded-r"></div><table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant/20">
+<th class="py-3 px-2 font-label-caps text-label-caps text-on-surface-variant uppercase">Client Name</th>
+<th class="py-3 px-2 font-label-caps text-label-caps text-on-surface-variant uppercase">Type</th>
+<th class="py-3 px-2 font-label-caps text-label-caps text-on-surface-variant uppercase">Last Contact</th>
+<th class="py-3 px-2 font-label-caps text-label-caps text-on-surface-variant uppercase">Status</th>
+<th class="py-3 px-2 font-label-caps text-label-caps text-on-surface-variant uppercase text-right">Action</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-sm">
+<tr class="border-b border-outline-variant/10 hover:bg-surface-container-lowest/50 transition-colors cursor-pointer group">
+<td class="py-4 px-2">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-xs">EW</div>
+<div>
+<p class="font-semibold text-on-surface group-hover:text-tertiary-container transition-colors">Elias Woods</p>
+<p class="text-[12px] text-on-surface-variant">elias.w@example.com</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-2"><span class="px-2 py-1 bg-blue-50 text-[#1e88e5] text-[10px] rounded border border-blue-100">Buyer</span></td>
+<td class="py-4 px-2 text-on-surface-variant">Oct 24, 2024</td>
+<td class="py-4 px-2">
+<div class="flex items-center gap-1.5 text-emerald-600">
+<div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+<span class="text-[12px] font-medium">Site Prep</span>
+</div>
+</td>
+<td class="py-4 px-2 text-right">
+<button class="text-tertiary-container hover:text-tertiary transition-colors"><span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span></button>
+</td>
+</tr>
+<tr class="border-b border-outline-variant/10 hover:bg-surface-container-lowest/50 transition-colors cursor-pointer group bg-surface-container-lowest/30 relative">
+<!-- Active row indicator -->
+<td class="py-4 px-2">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-bold text-xs">SC</div>
+<div>
+<p class="font-semibold text-tertiary-container">Sarah Chen</p>
+<p class="text-[12px] text-on-surface-variant">s.chen@example.com</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-2"><span class="px-2 py-1 bg-orange-50 text-orange-600 text-[10px] rounded border border-orange-100">Renter</span></td>
+<td class="py-4 px-2 text-on-surface-variant">Oct 26, 2024</td>
+<td class="py-4 px-2">
+<div class="flex items-center gap-1.5 text-amber-600">
+<div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div>
+<span class="text-[12px] font-medium">Pending Review</span>
+</div>
+</td>
+<td class="py-4 px-2 text-right">
+<button class="text-tertiary-container hover:text-tertiary transition-colors"><span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span></button>
+</td>
+</tr>
+<tr class="border-b border-outline-variant/10 hover:bg-surface-container-lowest/50 transition-colors cursor-pointer group">
+<td class="py-4 px-2">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-bold text-xs">MJ</div>
+<div>
+<p class="font-semibold text-on-surface group-hover:text-tertiary-container transition-colors">Marcus Johnson</p>
+<p class="text-[12px] text-on-surface-variant">mjohnson@example.com</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-2"><span class="px-2 py-1 bg-blue-50 text-[#1e88e5] text-[10px] rounded border border-blue-100">Buyer</span></td>
+<td class="py-4 px-2 text-on-surface-variant">Oct 20, 2024</td>
+<td class="py-4 px-2">
+<div class="flex items-center gap-1.5 text-slate-500">
+<div class="w-1.5 h-1.5 rounded-full bg-slate-400"></div>
+<span class="text-[12px] font-medium">Completed</span>
+</div>
+</td>
+<td class="py-4 px-2 text-right">
+<button class="text-tertiary-container hover:text-tertiary transition-colors"><span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span></button>
+</td>
+</tr>
+<tr class="border-b border-outline-variant/10 hover:bg-surface-container-lowest/50 transition-colors cursor-pointer group">
+<td class="py-4 px-2">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-bold text-xs">AR</div>
+<div>
+<p class="font-semibold text-on-surface group-hover:text-tertiary-container transition-colors">Aisha Rahman</p>
+<p class="text-[12px] text-on-surface-variant">arahman@example.com</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-2"><span class="px-2 py-1 bg-orange-50 text-orange-600 text-[10px] rounded border border-orange-100">Renter</span></td>
+<td class="py-4 px-2 text-on-surface-variant">Oct 28, 2024</td>
+<td class="py-4 px-2">
+<div class="flex items-center gap-1.5 text-emerald-600">
+<div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+<span class="text-[12px] font-medium">Active Lease</span>
+</div>
+</td>
+<td class="py-4 px-2 text-right">
+<button class="text-tertiary-container hover:text-tertiary transition-colors"><span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant/20 flex justify-between items-center text-sm text-on-surface-variant">
+<span class="">Showing 1-4 of 124 clients</span>
+<div class="flex gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-variant transition-colors disabled:opacity-50" disabled=""><span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span></button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-tertiary-container text-on-tertiary-container">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-variant transition-colors">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-variant transition-colors">3</button>
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span></button>
+</div>
+</div>
+</div>
+<!-- Client Details Panel (Spans 4 columns) -->
+<div class="xl:col-span-4 flex flex-col gap-gutter">
+<!-- Profile Card -->
+<div class="glass-card rounded-xl p-6 ambient-shadow relative overflow-hidden">
+<!-- Subtle background decoration -->
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-secondary-container rounded-full blur-2xl opacity-50 pointer-events-none"></div>
+<div class="flex justify-between items-start mb-6 relative z-10">
+<h3 class="font-label-caps text-label-caps text-primary uppercase tracking-wider">Client Profile</h3>
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm" data-icon="edit">edit</span></button>
+</div>
+<div class="flex items-center gap-4 mb-6 relative z-10">
+<div class="w-16 h-16 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-headline-lg text-headline-lg-mobile">SC</div>
+<div>
+<h4 class="font-body-lg text-body-lg font-bold text-on-surface">Sarah Chen</h4>
+<p class="text-sm text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span>
+                                Vancouver, BC
+                            </p>
+</div>
+</div>
+<div class="space-y-4 font-body-md text-sm relative z-10">
+<div class="flex justify-between border-b border-outline-variant/20 pb-2">
+<span class="text-on-surface-variant font-label-caps text-label-caps">Status</span>
+<span class="text-amber-600 font-medium text-[12px] uppercase tracking-wide">Pending Review</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/20 pb-2">
+<span class="text-on-surface-variant font-label-caps text-label-caps">Phone</span>
+<span class="text-on-surface">+1 (604) 555-0192</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/20 pb-2">
+<span class="text-on-surface-variant font-label-caps text-label-caps">Email</span>
+<span class="text-on-surface">s.chen@example.com</span>
+</div>
+<div class="flex justify-between pb-2">
+<span class="text-on-surface-variant font-label-caps text-label-caps">Acquisition</span>
+<span class="text-on-surface">Organic Search</span>
+</div>
+</div>
+<div class="mt-6 flex gap-2 relative z-10">
+<button class="flex-1 bg-[#1e88e5] text-white py-2 rounded text-sm font-medium hover:bg-blue-600 transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="mail">mail</span> Message
+                        </button>
+<button class="flex-1 bg-transparent border border-outline-variant/30 text-on-surface py-2 rounded text-sm font-medium hover:bg-surface-container-low transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="description">description</span> Docs
+                        </button>
+</div>
+</div>
+<!-- Recent Activity / History -->
+<div class="glass-card rounded-xl p-6 ambient-shadow flex-1">
+<div class="flex justify-between items-start mb-6">
+<h3 class="font-label-caps text-label-caps text-primary uppercase tracking-wider">Inquiries &amp; History</h3>
+</div>
+<div class="relative border-l border-outline-variant/30 ml-3 space-y-6 pb-4">
+<!-- Timeline Item -->
+<div class="relative pl-6">
+<div class="absolute w-2.5 h-2.5 bg-amber-500 rounded-full -left-[5px] top-1.5 ring-4 ring-white/70"></div>
+<p class="text-xs text-on-surface-variant mb-1">Oct 26, 2024 • Rental Inquiry</p>
+<p class="font-medium text-sm text-on-surface">Submitted application for Alpha Model rental.</p>
+<a class="text-[#1e88e5] text-xs font-medium hover:underline mt-1 inline-block" href="#">Review Application</a>
+</div>
+<!-- Timeline Item -->
+<div class="relative pl-6">
+<div class="absolute w-2.5 h-2.5 bg-outline rounded-full -left-[5px] top-1.5 ring-4 ring-white/70"></div>
+<p class="text-xs text-on-surface-variant mb-1">Oct 22, 2024 • Interaction</p>
+<p class="text-sm text-on-surface">Attended virtual tour session.</p>
+</div>
+<!-- Timeline Item -->
+<div class="relative pl-6">
+<div class="absolute w-2.5 h-2.5 bg-outline rounded-full -left-[5px] top-1.5 ring-4 ring-white/70"></div>
+<p class="text-xs text-on-surface-variant mb-1">Oct 15, 2024 • Initial Contact</p>
+<p class="text-sm text-on-surface">Requested information packet via website.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Mobile Bottom Nav (Visible only on mobile, per rules, but since this is an admin dashboard it might not use a bottom nav, however following the structural prompt to handle mobile...) -->
+<!-- Admin dashboards typically keep sidebar off-canvas on mobile. Creating a simple mobile top bar to show menu toggle instead. -->
+<div class="md:hidden fixed top-0 left-0 right-0 h-16 bg-white/90 backdrop-blur border-b border-outline-variant/20 flex items-center px-4 z-50 justify-between">
+<h1 class="font-story-heading text-body-lg font-bold text-primary">Admin Panel</h1>
+<button class="p-2 text-on-surface">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+<div class="md:hidden h-16 w-full"></div> <!-- Spacer for mobile nav -->
+</main>
+
+
+</body></html>

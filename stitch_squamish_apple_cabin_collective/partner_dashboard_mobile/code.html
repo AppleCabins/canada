@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Squamish Cabins - Partner Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#cde5ff",
+                        "surface-tint": "#516169",
+                        "tertiary-fixed-dim": "#94ccff",
+                        "primary-fixed": "#d5e5ef",
+                        "secondary-container": "#cbe8eb",
+                        "on-secondary-fixed": "#031f22",
+                        "primary": "#192830",
+                        "surface-container-high": "#e7e8e9",
+                        "primary-fixed-dim": "#b9c9d3",
+                        "on-background": "#191c1d",
+                        "on-surface-variant": "#43474a",
+                        "inverse-on-surface": "#f0f1f2",
+                        "outline": "#73787b",
+                        "inverse-primary": "#b9c9d3",
+                        "tertiary-container": "#003f63",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#3a4951",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#0e1d25",
+                        "on-tertiary-fixed-variant": "#004b74",
+                        "background": "#f8f9fa",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#cbe8eb",
+                        "outline-variant": "#c3c7ca",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#59adef",
+                        "on-tertiary-fixed": "#001d32",
+                        "surface-container": "#edeeef",
+                        "surface-variant": "#e1e3e4",
+                        "on-secondary-fixed-variant": "#314b4e",
+                        "surface-bright": "#f8f9fa",
+                        "surface-container-low": "#f3f4f5",
+                        "primary-container": "#2f3e46",
+                        "surface-dim": "#d9dadb",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2e3132",
+                        "error": "#ba1a1a",
+                        "tertiary": "#002842",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#4f696c",
+                        "on-surface": "#191c1d",
+                        "on-primary-container": "#99a9b2",
+                        "secondary-fixed-dim": "#b0cccf",
+                        "surface": "#f8f9fa",
+                        "secondary": "#496366",
+                        "surface-container-highest": "#e1e3e4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "container-max": "1440px",
+                        "margin-desktop": "80px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "story-heading": ["Playfair Display"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-xl": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "story-heading": ["32px", { "lineHeight": "44px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #f8f9fa; /* surface */
+            color: #191c1d; /* on-surface */
+        }
+        .glass-card {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 40px 40px -15px rgba(81, 97, 105, 0.05); /* surface-tint shadow */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen flex flex-col">
+<!-- Top Navigation (Web Only) -->
+<nav class="hidden md:flex bg-white/70 backdrop-blur-xl fixed top-0 left-0 w-full flex justify-between items-center px-margin-desktop py-4 z-50 shadow-[0_40px_40px_-15px_rgba(73,99,102,0.08)] border-b border-on-surface/10 text-on-surface">
+<div class="font-story-heading text-story-heading text-primary">Squamish Cabins</div>
+<div class="flex gap-8">
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-tertiary-container transition-colors duration-300" href="#">Sales</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-tertiary-container transition-colors duration-300" href="#">Rentals</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-tertiary-container transition-colors duration-300" href="#">Gallery</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-tertiary-container transition-colors duration-300" href="#">Specs</a>
+</div>
+<button class="font-label-caps text-label-caps px-4 py-2 bg-transparent text-primary border border-outline-variant/20 rounded-DEFAULT hover:bg-secondary-container/50 transition-all scale-95 active:scale-90 transition-transform">Login</button>
+</nav>
+<!-- Side Navigation Shell for Desktop (Hidden on Mobile) -->
+<div class="hidden md:flex flex-col h-full w-64 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant/20 p-4 space-y-4 pt-24 z-40">
+<div class="flex items-center gap-3 mb-8 px-2">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A small, circular avatar portrait of an administrative user, professional yet relaxed, against a neutral background. The lighting is soft and natural, fitting the minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB17sOiZZfic4fNU_mQOZOhO5xAbYGk5YmkMBmI9V1E7PiXY0G4Jr56d0fmu1oguG-R9XCuZRD9VT4Pai4L3WaMbHB3cc8zCTE4L-X0lRsHls1em7ZVFsH19-kAXt2_lYnaXNwICMClfyDguwDc0s3otezsko8WnweGVwdJ9rhsodQ1nzrYHgDNd5_G8SS7iip3YoXa3zHACje1QeFgwaMcZFlA1HZTq7dWV_I8bVkVGAevoZyehaKF"/>
+<div>
+<p class="font-body-md text-body-md text-primary font-bold">Admin Panel</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Squamish Hub</p>
+</div>
+</div>
+<a class="text-on-surface-variant hover:bg-surface-container-high rounded-lg p-3 flex items-center gap-3 font-label-caps text-label-caps hover:bg-secondary-container/50 transition-all" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+            Inventory
+        </a>
+<a class="bg-tertiary-container text-on-tertiary-container rounded-lg font-semibold p-3 flex items-center gap-3 font-label-caps text-label-caps hover:bg-secondary-container/50 transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+            Clients
+        </a>
+<a class="text-on-surface-variant hover:bg-surface-container-high rounded-lg p-3 flex items-center gap-3 font-label-caps text-label-caps hover:bg-secondary-container/50 transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+            Settings
+        </a>
+<div class="mt-auto space-y-2 pt-8 border-t border-outline-variant/20">
+<a class="text-on-surface-variant hover:bg-surface-container-high rounded-lg p-3 flex items-center gap-3 font-label-caps text-label-caps hover:bg-secondary-container/50 transition-all" href="#">
+<span class="material-symbols-outlined">help</span>
+                Support
+            </a>
+<a class="text-on-surface-variant hover:bg-surface-container-high rounded-lg p-3 flex items-center gap-3 font-label-caps text-label-caps hover:bg-secondary-container/50 transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+                Logout
+            </a>
+</div>
+<button class="mt-4 w-full bg-primary text-on-primary font-label-caps text-label-caps py-3 rounded-lg hover:bg-primary-container transition-colors">Add Cabin</button>
+</div>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full md:pl-64 pt-6 md:pt-24 pb-24 md:pb-6 px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto z-10 relative">
+<!-- Header -->
+<header class="mb-12">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">Partner Dashboard</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Welcome back. Here is the status of your modular properties.</p>
+</header>
+<!-- Summary Metrics (Bento Grid Style) -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+<!-- Earnings -->
+<div class="glass-card rounded-xl p-6 col-span-2 md:col-span-2 flex flex-col justify-between">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Total Earnings (YTD)</p>
+<h2 class="font-headline-lg-mobile md:font-headline-xl text-headline-lg-mobile md:text-headline-xl text-primary">$124,500</h2>
+</div>
+<div class="mt-4 flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span class="font-label-caps text-label-caps">+14% vs last year</span>
+</div>
+</div>
+<!-- Occupancy -->
+<div class="glass-card rounded-xl p-6 col-span-1 md:col-span-1 flex flex-col justify-between">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Occupancy</p>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">82%</h2>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full mt-6 relative overflow-hidden">
+<div class="absolute top-0 left-0 h-full bg-tertiary-container w-[82%]"></div>
+</div>
+</div>
+<!-- Active Properties -->
+<div class="glass-card rounded-xl p-6 col-span-1 md:col-span-1 flex flex-col justify-between">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Active Units</p>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">03</h2>
+</div>
+<a class="font-label-caps text-label-caps text-tertiary-container hover:text-tertiary mt-4 flex items-center gap-1 transition-colors w-fit" href="#properties">
+                    View List <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- My Properties List -->
+<section class="mb-12" id="properties">
+<h3 class="font-story-heading text-story-heading text-primary mb-6">My Properties</h3>
+<div class="space-y-4">
+<!-- Property Card 1 -->
+<div class="glass-card rounded-xl p-4 flex flex-col sm:flex-row gap-6 items-center">
+<div class="w-full sm:w-48 h-32 rounded-lg overflow-hidden shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="A modern modular cabin nestled in a dense, misty pine forest in the Pacific Northwest. Large floor-to-ceiling windows reflect the surrounding evergreens. The aesthetic is industrial elegance, blending seamlessly with the natural landscape. High contrast lighting emphasizes the sleek architectural lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjM-EtwxVqSwsSJpYFYt7afwB6ZQTiy68SigzIE_W9HQZpuSQInDcgAKSgv6_-tlJ6azKpPh2vnNipnqAQNPTbbDIvtt35s_szbV2Kf8dS5H8D1D8Uy3fTGUR5MSA-Y8vtUB28XUyEyirohWH2jXoiMS0LRWB2L--3ztEAPNIthtwGv21eJ7mIHzW3f2D_YrRCEL_NRw8ZQhdo_jlEhoar4fwgcqSmU5N1WclTCbugJwxxyrtSSSM5"/>
+<div class="absolute top-2 left-2 bg-secondary-container/90 backdrop-blur-sm text-on-secondary-fixed font-label-caps text-label-caps px-2 py-1 rounded">Rented</div>
+</div>
+<div class="flex-1 w-full">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-body-lg text-body-lg text-primary font-semibold">The Alpine Unit A</h4>
+<span class="font-label-caps text-label-caps text-on-surface-variant hidden sm:inline-block">ID: SQ-001</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Current Lease: Oct 2023 - Oct 2024</p>
+<div class="flex gap-4">
+<button class="flex-1 sm:flex-none font-label-caps text-label-caps px-4 py-2 bg-transparent text-primary border border-outline-variant/20 rounded-DEFAULT hover:bg-secondary-container/50 transition-all text-center">View Specs</button>
+<button class="flex-1 sm:flex-none font-label-caps text-label-caps px-4 py-2 bg-transparent text-tertiary-container hover:text-tertiary transition-all text-center flex items-center justify-center gap-1">Manage <span class="material-symbols-outlined text-sm">settings</span></button>
+</div>
+</div>
+</div>
+<!-- Property Card 2 -->
+<div class="glass-card rounded-xl p-4 flex flex-col sm:flex-row gap-6 items-center">
+<div class="w-full sm:w-48 h-32 rounded-lg overflow-hidden shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="A sleek, minimalist modular home situated on a rocky cliff overlooking a serene, steel-grey lake. The structure features matte black metal siding and expansive glass panels. The mood is quiet luxury, captured during the 'blue hour' with soft, ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1MLAIum5vC27kESc_jqz2ESxpDtEnouP1-5tlrNcxbeOWTSb62RcpKk5Fmp26TbcU6diICIImrJlIPV-r7bTUL9Uyls13P2dRyjVwKEJ34dOitOLasU4Fv0JWOfS_ux4BOxQ_Ped9T6meLh1Y-cYG5rJcfI2dliYlLyKTrH38fV0A3JWgfvI2hGykpA5QDUJmqIsWfnxlpH4dv3YP5cAtyhzGdT7ofkMZONlaB2FwAbdt_KXkJYxW"/>
+<div class="absolute top-2 left-2 bg-surface-container-high/90 backdrop-blur-sm text-on-surface font-label-caps text-label-caps px-2 py-1 rounded">Vacant</div>
+</div>
+<div class="flex-1 w-full">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-body-lg text-body-lg text-primary font-semibold">The Vista Unit B</h4>
+<span class="font-label-caps text-label-caps text-on-surface-variant hidden sm:inline-block">ID: SQ-042</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Available for new tenant</p>
+<div class="flex gap-4">
+<button class="flex-1 sm:flex-none font-label-caps text-label-caps px-4 py-2 bg-transparent text-primary border border-outline-variant/20 rounded-DEFAULT hover:bg-secondary-container/50 transition-all text-center">View Specs</button>
+<button class="flex-1 sm:flex-none font-label-caps text-label-caps px-4 py-2 bg-transparent text-tertiary-container hover:text-tertiary transition-all text-center flex items-center justify-center gap-1">List Property <span class="material-symbols-outlined text-sm">publish</span></button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Payouts Graph & History -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Simplified Graph Area -->
+<div class="glass-card rounded-xl p-6 lg:col-span-2 flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-story-heading text-body-lg font-bold text-primary">Payout Trends</h3>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Last 6 Months</span>
+</div>
+<!-- Abstract visual representation of a chart using Tailwind -->
+<div class="flex-1 flex items-end gap-2 h-48 relative border-b border-outline-variant/20 pb-2">
+<div class="w-full bg-secondary-fixed/50 hover:bg-secondary-fixed transition-colors rounded-t-sm h-[40%] group relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-on-primary font-label-caps text-label-caps px-2 py-1 rounded text-[10px]">Jan</div>
+</div>
+<div class="w-full bg-secondary-fixed/50 hover:bg-secondary-fixed transition-colors rounded-t-sm h-[55%] group relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-on-primary font-label-caps text-label-caps px-2 py-1 rounded text-[10px]">Feb</div>
+</div>
+<div class="w-full bg-secondary-fixed/50 hover:bg-secondary-fixed transition-colors rounded-t-sm h-[45%] group relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-on-primary font-label-caps text-label-caps px-2 py-1 rounded text-[10px]">Mar</div>
+</div>
+<div class="w-full bg-secondary-fixed/50 hover:bg-secondary-fixed transition-colors rounded-t-sm h-[70%] group relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-on-primary font-label-caps text-label-caps px-2 py-1 rounded text-[10px]">Apr</div>
+</div>
+<div class="w-full bg-secondary-fixed/50 hover:bg-secondary-fixed transition-colors rounded-t-sm h-[85%] group relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-on-primary font-label-caps text-label-caps px-2 py-1 rounded text-[10px]">May</div>
+</div>
+<div class="w-full bg-tertiary-container rounded-t-sm h-[95%] group relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-on-primary font-label-caps text-label-caps px-2 py-1 rounded text-[10px]">Jun</div>
+</div>
+</div>
+</div>
+<!-- Recent History -->
+<div class="glass-card rounded-xl p-6 lg:col-span-1">
+<h3 class="font-story-heading text-body-lg font-bold text-primary mb-6">Recent Activity</h3>
+<ul class="space-y-4">
+<li class="flex justify-between items-center border-b border-outline-variant/10 pb-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-sm">payments</span>
+</div>
+<div>
+<p class="font-body-md text-label-caps text-primary">Payout Initiated</p>
+<p class="font-label-caps text-[10px] text-on-surface-variant">Jun 01, 2024</p>
+</div>
+</div>
+<span class="font-label-caps text-label-caps text-tertiary-container">+$4,250</span>
+</li>
+<li class="flex justify-between items-center border-b border-outline-variant/10 pb-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">build</span>
+</div>
+<div>
+<p class="font-body-md text-label-caps text-primary">Maintenance Fee</p>
+<p class="font-label-caps text-[10px] text-on-surface-variant">May 28, 2024</p>
+</div>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">-$150</span>
+</li>
+<li class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-sm">payments</span>
+</div>
+<div>
+<p class="font-body-md text-label-caps text-primary">Payout Initiated</p>
+<p class="font-label-caps text-[10px] text-on-surface-variant">May 01, 2024</p>
+</div>
+</div>
+<span class="font-label-caps text-label-caps text-tertiary-container">+$4,250</span>
+</li>
+</ul>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface-container-lowest/90 backdrop-blur-xl border-t border-outline-variant/10 z-50 px-4 py-2 flex justify-around items-center shadow-[0_-10px_40px_-15px_rgba(73,99,102,0.08)]">
+<a class="flex flex-col items-center p-2 text-tertiary-container" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-caps text-[10px] mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center p-2 text-on-surface-variant hover:text-tertiary-container transition-colors" href="#properties">
+<span class="material-symbols-outlined">real_estate_agent</span>
+<span class="font-label-caps text-[10px] mt-1">Properties</span>
+</a>
+<a class="flex flex-col items-center p-2 text-on-surface-variant hover:text-tertiary-container transition-colors" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-caps text-[10px] mt-1">Payouts</span>
+</a>
+<a class="flex flex-col items-center p-2 text-on-surface-variant hover:text-tertiary-container transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-caps text-[10px] mt-1">Profile</span>
+</a>
+</nav>
+</body></html>
